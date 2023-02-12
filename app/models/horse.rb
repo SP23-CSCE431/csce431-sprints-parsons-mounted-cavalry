@@ -1,0 +1,2 @@
+class Horse < ApplicationRecord
+end
