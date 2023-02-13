@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @cadet %>
+
+<div>
+  <%= link_to "Edit this cadet", edit_cadet_path(@cadet) %> |
+  <%= link_to "Back to cadets", cadets_path %>
+
+  <%= button_to "Destroy this cadet", @cadet, method: :delete %>
+</div>

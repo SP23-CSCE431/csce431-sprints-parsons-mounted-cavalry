@@ -1,0 +1,47 @@
+<%= form_with(model: cadet) do |form| %>
+  <% if cadet.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(cadet.errors.count, "error") %> prohibited this cadet from being saved:</h2>
+
+      <ul>
+        <% cadet.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :first_name, style: "display: block" %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div>
+    <%= form.label :last_name, style: "display: block" %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div>
+    <%= form.label :graduation_year, style: "display: block" %>
+    <%= form.number_field :graduation_year %>
+  </div>
+
+  <div>
+    <%= form.label :phone_number, style: "display: block" %>
+    <%= form.text_field :phone_number %>
+  </div>
+
+  <div>
+    <%= form.label :uin, style: "display: block" %>
+    <%= form.text_field :uin %>
+  </div>
+
+  <div>
+    <%= form.label :password, style: "display: block" %>
+    <%= form.text_field :password %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
