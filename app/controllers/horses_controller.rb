@@ -55,7 +55,7 @@ class HorsesController < ApplicationController
         @horse.destroy
 
         respond_to do |format|
-        format.html { redirect_to horses_path, notice: "Horse was successfully destroyed." }
+        format.html { redirect_to horses_path, notice: "#{@horse.name} was successfully destroyed." }
         format.json { head :no_content }
         end
     end
