@@ -8,6 +8,7 @@ class CadetsController < ApplicationController
 
   # GET /cadets/1 or /cadets/1.json
   def show
+    @cadet = Cadet.find(params[:id])
   end
 
   # GET /cadets/new
@@ -17,6 +18,7 @@ class CadetsController < ApplicationController
 
   # GET /cadets/1/edit
   def edit
+    @cadet = Cadet.find(params[:id])
   end
 
   # POST /cadets or /cadets.json
@@ -45,6 +47,10 @@ class CadetsController < ApplicationController
         format.json { render json: @cadet.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def delete
+    @cadet = Cadet.find(params[:id])
   end
 
   # DELETE /cadets/1 or /cadets/1.json
