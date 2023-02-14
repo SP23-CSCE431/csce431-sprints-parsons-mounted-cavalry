@@ -14,5 +14,7 @@ Rails.application.routes.draw do
       get :delete
       end
   end
+  
+  resources :attendances
 
 end
