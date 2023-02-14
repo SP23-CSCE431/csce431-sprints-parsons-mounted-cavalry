@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root to: "horses#index"
     
   resources :cadets do
@@ -10,11 +9,17 @@ Rails.application.routes.draw do
 
 
   resources :horses do
-      member do
+    member do
       get :delete
-      end
+    end
   end
   
   resources :attendances
+  
+  resources :staffs do
+    member do 
+      get :delete 
+    end
+  end
 
 end
