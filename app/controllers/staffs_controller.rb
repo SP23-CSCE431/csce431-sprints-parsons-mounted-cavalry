@@ -47,6 +47,10 @@ class StaffsController < ApplicationController
     end
   end
 
+  def delete
+    @staff = Staff.find(params[:id])
+  end
+
   # DELETE /staffs/1 or /staffs/1.json
   def destroy
     @staff.destroy

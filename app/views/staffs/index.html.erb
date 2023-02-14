@@ -2,13 +2,17 @@
 
 <h1>Staffs</h1>
 
-<div id="staffs">
+<%= link_to "New staff", new_staff_path %>
+
+<div id="staffs" style="display: flex; flex-wrap: wrap; gap: 50px;">
   <% @staffs.each do |staff| %>
-    <%= render staff %>
-    <p>
-      <%= link_to "Show this staff", staff %>
-    </p>
+    <div>
+      <%= render staff %>
+      <p>
+        <%= link_to "Show", staff_path(staff) %> |
+        <%= link_to "Edit", edit_staff_path(staff) %> |
+        <%= link_to "Delete", delete_staff_path(staff) %>
+      </p>
+    </div>
   <% end %>
 </div>
-
-<%= link_to "New staff", new_staff_path %>

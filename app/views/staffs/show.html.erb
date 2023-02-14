@@ -1,10 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
+<%= link_to "Back to staffs", staffs_path %>
+
 <%= render @staff %>
 
 <div>
-  <%= link_to "Edit this staff", edit_staff_path(@staff) %> |
-  <%= link_to "Back to staffs", staffs_path %>
-
-  <%= button_to "Destroy this staff", @staff, method: :delete %>
+  <%= link_to "Edit", edit_staff_path(@staff) %> |
+  <%= link_to "Delete", delete_staff_path(@staff) %>
 </div>
