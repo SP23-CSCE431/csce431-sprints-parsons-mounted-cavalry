@@ -5,5 +5,5 @@
 <div>
   <%= link_to "Edit this cadet", edit_cadet_path(@cadet) %> |
   <%= link_to "Back to cadets", cadets_path %> 
-  <%= button_to 'Delete this cadet', delete_cadet_path, data: {confirm: 'Are you sure?'} %>
+  <%= link_to "<button>Delete Cadet</button>".html_safe, delete_cadet_path(@cadet)%>
 </div>
