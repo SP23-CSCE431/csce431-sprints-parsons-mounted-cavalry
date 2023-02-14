@@ -14,14 +14,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_13_185121) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "staffs", force: :cascade do |t|
-    t.boolean "is_admin"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "phone_number"
-    t.string "email"
-  end
-
   create_table "attendances", force: :cascade do |t|
     t.integer "attendance_id"
     t.integer "cadet_id"
@@ -31,6 +23,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_13_185121) do
     t.datetime "check_in_time"
     t.datetime "check_out_time"
     t.text "purpose"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "cadets", force: :cascade do |t|
@@ -51,4 +45,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_13_185121) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "staffs", force: :cascade do |t|
+    t.boolean "is_admin"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "phone_number"
+    t.string "email"
+    t.string "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end

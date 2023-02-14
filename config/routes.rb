@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "horses#index"
+  root "staffs#index"
     
   resources :cadets do
     member do
