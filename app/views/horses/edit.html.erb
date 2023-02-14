@@ -1,0 +1,12 @@
+<div class="horses edit">
+     <h2>Update Horse</h2>
+    <%= form_for(@horse) do |f| %>
+    <% # url: horses_path(@horse), method: 'patch' %>
+
+    <%= render(partial: 'form', locals: {f: f})%>
+
+    <% end %>
+
+    <br>
+    <%= link_to("<button>Back to Horses</button>".html_safe, horses_path, :class => 'back-link') %>
+</div>  
