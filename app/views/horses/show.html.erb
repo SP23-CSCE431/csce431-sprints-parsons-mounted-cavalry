@@ -1,0 +1,31 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="horses show">
+<h2>Horse Details</h2>
+  
+    <table class="listing" summary="Task list" style="width: 30%;" border = "1">
+        <tr>
+            <th>Name:</th>
+            <td><%= @horse.name %></td>
+        </tr>
+        
+        <tr>
+            <th>Brand:</th>
+            <td><%= @horse.brand %></td>
+        </tr>
+        
+        <tr>
+            <th>Birthday:</th>
+            <td><%= @horse.birthday %></td>
+        </tr>
+    </table>
+  
+    <br>
+    <div class="actions">
+        <%= link_to("<button>Edit Horse</button>".html_safe, edit_horse_path(@horse)) %>
+        <%= link_to("<button>Delete Horse</button>".html_safe, delete_horse_path(@horse)) %>
+    </div>
+    
+    <br>
+    <%= link_to("<button>Back to Horses</button>".html_safe, horses_path, class: 'back-link') %>
+</div>
