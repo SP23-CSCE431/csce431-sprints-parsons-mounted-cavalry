@@ -1,0 +1,13 @@
+<div class="horses new">
+    <h2>Create New Horse</h2>
+
+    <%= form_for(@horse) do |f| %>
+    <% # url: horses_path, method: 'post' %>
+
+    <%= render(partial: 'form', locals: {f: f})%>
+
+    <% end %>
+    
+    <br>
+    <%= link_to("<button>Back to Horses</button>".html_safe, horses_path, :class => 'back-link') %>
+</div>

@@ -1,12 +1,25 @@
 Rails.application.routes.draw do
+  root to: "horses#index"
+    
+  resources :cadets do
+    member do
+      get :delete
+    end
+  end
+
+
+  resources :horses do
+    member do
+      get :delete
+    end
+  end
+  
+  resources :attendances
+  
   resources :staffs do
     member do 
       get :delete 
     end
   end
-  
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
 end

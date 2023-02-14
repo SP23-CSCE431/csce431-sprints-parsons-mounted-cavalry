@@ -20,9 +20,35 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_13_185121) do
     t.string "last_name"
     t.string "phone_number"
     t.string "email"
+  end
+
+  create_table "attendances", force: :cascade do |t|
+    t.integer "attendance_id"
+    t.integer "cadet_id"
+    t.integer "horse_id"
+    t.integer "staff_id"
+    t.datetime "appointment_time"
+    t.datetime "check_in_time"
+    t.datetime "check_out_time"
+    t.text "purpose"
+  end
+
+  create_table "cadets", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "graduation_year"
+    t.string "phone_number"
+    t.string "uin"
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "horses", force: :cascade do |t|
+    t.string "name"
+    t.string "brand"
+    t.date "birthday"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 end
