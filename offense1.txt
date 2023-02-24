@@ -1,0 +1,2689 @@
+Inspecting 44 files
+CWWWWWWWCCCCCWWWCCCCCCCCCCCCCCCCWEWWWWWWWWWW
+
+Offenses:
+
+Gemfile:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+source "https://rubygems.org"
+^
+Gemfile:1:8: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+source "https://rubygems.org"
+       ^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:4:6: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ruby "3.1.2"
+     ^^^^^^^
+Gemfile:7:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+gem "rails", "~> 7.0.4", ">= 7.0.4.2"
+    ^^^^^^^
+Gemfile:7:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+gem "rails", "~> 7.0.4", ">= 7.0.4.2"
+             ^^^^^^^^^^
+Gemfile:7:26: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+gem "rails", "~> 7.0.4", ">= 7.0.4.2"
+                         ^^^^^^^^^^^^
+Gemfile:10:1: C: Bundler/GemVersion: Gem version specification is required.
+gem "sprockets-rails"
+^^^^^^^^^^^^^^^^^^^^^
+Gemfile:10:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+gem "sprockets-rails"
+    ^^^^^^^^^^^^^^^^^
+Gemfile:13:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+gem "pg", "~> 1.1"
+    ^^^^
+Gemfile:13:11: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+gem "pg", "~> 1.1"
+          ^^^^^^^^
+Gemfile:16:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+gem "puma", "~> 5.0"
+    ^^^^^^
+Gemfile:16:13: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+gem "puma", "~> 5.0"
+            ^^^^^^^^
+Gemfile:19:1: C: Bundler/GemVersion: Gem version specification is required.
+gem "importmap-rails"
+^^^^^^^^^^^^^^^^^^^^^
+Gemfile:19:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+gem "importmap-rails"
+    ^^^^^^^^^^^^^^^^^
+Gemfile:22:1: C: Bundler/GemVersion: Gem version specification is required.
+gem "turbo-rails"
+^^^^^^^^^^^^^^^^^
+Gemfile:22:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+gem "turbo-rails"
+    ^^^^^^^^^^^^^
+Gemfile:25:1: C: Bundler/GemVersion: Gem version specification is required.
+gem "stimulus-rails"
+^^^^^^^^^^^^^^^^^^^^
+Gemfile:25:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+gem "stimulus-rails"
+    ^^^^^^^^^^^^^^^^
+Gemfile:28:1: C: Bundler/GemVersion: Gem version specification is required.
+gem "jbuilder"
+^^^^^^^^^^^^^^
+Gemfile:28:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+gem "jbuilder"
+    ^^^^^^^^^^
+Gemfile:40:1: C: Bundler/GemVersion: Gem version specification is required.
+gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:40:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+    ^^^^^^^^^^^^^
+Gemfile:40:34: C: [Correctable] Layout/SpaceInsidePercentLiteralDelimiters: Do not use spaces inside percent literal delimiters.
+gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+                                 ^
+Gemfile:40:62: C: [Correctable] Layout/SpaceInsidePercentLiteralDelimiters: Do not use spaces inside percent literal delimiters.
+gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+                                                             ^
+Gemfile:43:1: C: Bundler/GemVersion: Gem version specification is required.
+gem "bootsnap", require: false
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:43:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+gem "bootsnap", require: false
+    ^^^^^^^^^^
+Gemfile:53:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+^^
+Gemfile:53:3: C: Bundler/GemVersion: Gem version specification is required.
+  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:53:7: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+      ^^^^^^^
+Gemfile:53:30: C: [Correctable] Layout/SpaceInsidePercentLiteralDelimiters: Do not use spaces inside percent literal delimiters.
+  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+                             ^
+Gemfile:53:50: C: [Correctable] Layout/SpaceInsidePercentLiteralDelimiters: Do not use spaces inside percent literal delimiters.
+  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+                                                 ^
+Gemfile:54:3: C: Bundler/GemComment: Missing gem description comment.
+  gem "rspec-rails"
+  ^^^^^^^^^^^^^^^^^
+Gemfile:54:3: C: Bundler/GemVersion: Gem version specification is required.
+  gem "rspec-rails"
+  ^^^^^^^^^^^^^^^^^
+Gemfile:54:7: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  gem "rspec-rails"
+      ^^^^^^^^^^^^^
+Gemfile:55:3: C: Bundler/GemComment: Missing gem description comment.
+  gem 'rubocop'
+  ^^^^^^^^^^^^^
+Gemfile:55:3: C: Bundler/GemVersion: Gem version specification is required.
+  gem 'rubocop'
+  ^^^^^^^^^^^^^
+Gemfile:56:3: C: Bundler/GemComment: Missing gem description comment.
+  gem 'rubocop-performance'
+  ^^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:56:3: C: Bundler/GemVersion: Gem version specification is required.
+  gem 'rubocop-performance'
+  ^^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:57:3: C: Bundler/GemComment: Missing gem description comment.
+  gem 'rubocop-rails'
+  ^^^^^^^^^^^^^^^^^^^
+Gemfile:57:3: C: Bundler/GemVersion: Gem version specification is required.
+  gem 'rubocop-rails'
+  ^^^^^^^^^^^^^^^^^^^
+Gemfile:58:3: C: Bundler/GemComment: Missing gem description comment.
+  gem 'rubocop-rspec' 
+  ^^^^^^^^^^^^^^^^^^^
+Gemfile:58:3: C: Bundler/GemVersion: Gem version specification is required.
+  gem 'rubocop-rspec' 
+  ^^^^^^^^^^^^^^^^^^^
+Gemfile:58:22: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+  gem 'rubocop-rspec' 
+                     ^
+Gemfile:63:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  gem "web-console"
+^^
+Gemfile:63:3: C: Bundler/GemVersion: Gem version specification is required.
+  gem "web-console"
+  ^^^^^^^^^^^^^^^^^
+Gemfile:63:7: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  gem "web-console"
+      ^^^^^^^^^^^^^
+Gemfile:69:3: C: [Correctable] Layout/CommentIndentation: Incorrect indentation detected (column 2 instead of 4).
+  # gem "spring"
+  ^^^^^^^^^^^^^^
+Gemfile:74:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  gem "capybara", ">= 3.26"
+^^
+Gemfile:74:7: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  gem "capybara", ">= 3.26"
+      ^^^^^^^^^^
+Gemfile:74:19: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  gem "capybara", ">= 3.26"
+                  ^^^^^^^^^
+Gemfile:75:3: C: Bundler/GemComment: Missing gem description comment.
+  gem "selenium-webdriver"
+  ^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:75:3: C: Bundler/GemVersion: Gem version specification is required.
+  gem "selenium-webdriver"
+  ^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:75:7: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  gem "selenium-webdriver"
+      ^^^^^^^^^^^^^^^^^^^^
+Gemfile:76:3: C: Bundler/GemComment: Missing gem description comment.
+  gem "webdrivers"
+  ^^^^^^^^^^^^^^^^
+Gemfile:76:3: C: Bundler/GemVersion: Gem version specification is required.
+  gem "webdrivers"
+  ^^^^^^^^^^^^^^^^
+Gemfile:76:7: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  gem "webdrivers"
+      ^^^^^^^^^^^^
+Gemfile:79:1: C: Bundler/GemComment: Missing gem description comment.
+gem "rexml"
+^^^^^^^^^^^
+Gemfile:79:1: C: Bundler/GemVersion: Gem version specification is required.
+gem "rexml"
+^^^^^^^^^^^
+Gemfile:79:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+gem "rexml"
+    ^^^^^^^
+Gemfile:81:1: C: Bundler/GemComment: Missing gem description comment.
+gem "seed_dump"
+^^^^^^^^^^^^^^^
+Gemfile:81:1: C: Bundler/GemVersion: Gem version specification is required.
+gem "seed_dump"
+^^^^^^^^^^^^^^^
+Gemfile:81:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+gem "seed_dump"
+    ^^^^^^^^^^^
+app/channels/application_cable/channel.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module ApplicationCable
+^
+app/channels/application_cable/channel.rb:2:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  class Channel < ActionCable::Channel::Base
+^^
+app/channels/application_cable/channel.rb:2:19: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+  class Channel < ActionCable::Channel::Base
+                  ^^^^^^^^^^^
+app/channels/application_cable/connection.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module ApplicationCable
+^
+app/channels/application_cable/connection.rb:2:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  class Connection < ActionCable::Connection::Base
+^^
+app/channels/application_cable/connection.rb:2:22: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+  class Connection < ActionCable::Connection::Base
+                     ^^^^^^^^^^^
+app/controllers/application_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class ApplicationController < ActionController::Base
+^
+app/controllers/application_controller.rb:1:31: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+class ApplicationController < ActionController::Base
+                              ^^^^^^^^^^^^^^^^
+app/controllers/attendances_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class AttendancesController < ApplicationController
+^
+app/controllers/attendances_controller.rb:2:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  before_action :set_attendance, only: %i[ show edit update destroy ]
+^^
+app/controllers/attendances_controller.rb:2:43: C: [Correctable] Layout/SpaceInsidePercentLiteralDelimiters: Do not use spaces inside percent literal delimiters.
+  before_action :set_attendance, only: %i[ show edit update destroy ]
+                                          ^
+app/controllers/attendances_controller.rb:2:68: C: [Correctable] Layout/SpaceInsidePercentLiteralDelimiters: Do not use spaces inside percent literal delimiters.
+  before_action :set_attendance, only: %i[ show edit update destroy ]
+                                                                   ^
+app/controllers/attendances_controller.rb:5:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  def index
+^^
+app/controllers/attendances_controller.rb:6:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    @attendances = Attendance.all
+  ^^
+app/controllers/attendances_controller.rb:6:20: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    @attendances = Attendance.all
+                   ^^^^^^^^^^
+app/controllers/attendances_controller.rb:10:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  def show
+^^
+app/controllers/attendances_controller.rb:10:3: C: [Correctable] Style/EmptyMethod: Put empty method definitions on a single line.
+  def show ...
+  ^^^^^^^^
+app/controllers/attendances_controller.rb:14:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  def new
+^^
+app/controllers/attendances_controller.rb:15:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    @attendance = Attendance.new
+  ^^
+app/controllers/attendances_controller.rb:15:19: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    @attendance = Attendance.new
+                  ^^^^^^^^^^
+app/controllers/attendances_controller.rb:19:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  def edit
+^^
+app/controllers/attendances_controller.rb:19:3: C: [Correctable] Style/EmptyMethod: Put empty method definitions on a single line.
+  def edit ...
+  ^^^^^^^^
+app/controllers/attendances_controller.rb:23:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  def create
+^^
+app/controllers/attendances_controller.rb:24:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    @attendance = Attendance.new(attendance_params)
+  ^^
+app/controllers/attendances_controller.rb:24:19: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    @attendance = Attendance.new(attendance_params)
+                  ^^^^^^^^^^
+app/controllers/attendances_controller.rb:27:5: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+      if @attendance.save
+    ^^
+app/controllers/attendances_controller.rb:28:7: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+        format.html { redirect_to attendance_url(@attendance), notice: "Attendance was successfully created." }
+      ^^
+app/controllers/attendances_controller.rb:28:23: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        format.html { redirect_to attendance_url(@attendance), notice: "Attendance was successfully created." }
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/attendances_controller.rb:28:72: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
+        format.html { redirect_to attendance_url(@attendance), notice: "Attendance was successfully created." }
+                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/attendances_controller.rb:28:72: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        format.html { redirect_to attendance_url(@attendance), notice: "Attendance was successfully created." }
+                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/attendances_controller.rb:29:23: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        format.json { render :show, status: :created, location: @attendance }
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/attendances_controller.rb:31:7: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+        format.html { render :new, status: :unprocessable_entity }
+      ^^
+app/controllers/attendances_controller.rb:31:23: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        format.html { render :new, status: :unprocessable_entity }
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/attendances_controller.rb:32:23: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        format.json { render json: @attendance.errors, status: :unprocessable_entity }
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/attendances_controller.rb:38:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  def update
+^^
+app/controllers/attendances_controller.rb:39:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    respond_to do |format|
+  ^^
+app/controllers/attendances_controller.rb:40:5: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+      if @attendance.update(attendance_params)
+    ^^
+app/controllers/attendances_controller.rb:41:7: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+        format.html { redirect_to attendance_url(@attendance), notice: "Attendance was successfully updated." }
+      ^^
+app/controllers/attendances_controller.rb:41:23: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        format.html { redirect_to attendance_url(@attendance), notice: "Attendance was successfully updated." }
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/attendances_controller.rb:41:72: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
+        format.html { redirect_to attendance_url(@attendance), notice: "Attendance was successfully updated." }
+                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/attendances_controller.rb:41:72: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        format.html { redirect_to attendance_url(@attendance), notice: "Attendance was successfully updated." }
+                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/attendances_controller.rb:42:23: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        format.json { render :show, status: :ok, location: @attendance }
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/attendances_controller.rb:44:7: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+        format.html { render :edit, status: :unprocessable_entity }
+      ^^
+app/controllers/attendances_controller.rb:44:23: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        format.html { render :edit, status: :unprocessable_entity }
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/attendances_controller.rb:45:23: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        format.json { render json: @attendance.errors, status: :unprocessable_entity }
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/attendances_controller.rb:51:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  def destroy
+^^
+app/controllers/attendances_controller.rb:52:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    @attendance.destroy
+  ^^
+app/controllers/attendances_controller.rb:52:17: C: [Correctable] Rails/SaveBang: Use destroy! instead of destroy if the return value is not checked.
+    @attendance.destroy
+                ^^^^^^^
+app/controllers/attendances_controller.rb:55:5: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+      format.html { redirect_to attendances_url, notice: "Attendance was successfully destroyed." }
+    ^^
+app/controllers/attendances_controller.rb:55:21: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+      format.html { redirect_to attendances_url, notice: "Attendance was successfully destroyed." }
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/attendances_controller.rb:55:58: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
+      format.html { redirect_to attendances_url, notice: "Attendance was successfully destroyed." }
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/attendances_controller.rb:55:58: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      format.html { redirect_to attendances_url, notice: "Attendance was successfully destroyed." }
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/attendances_controller.rb:56:21: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+      format.json { head :no_content }
+                    ^^^^^^^^^^^^^^^^
+app/controllers/attendances_controller.rb:60:3: C: [Correctable] Layout/AccessModifierIndentation: Indent access modifiers like private.
+  private
+  ^^^^^^^
+app/controllers/attendances_controller.rb:60:3: C: [Correctable] Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
+  private
+  ^^^^^^^
+app/controllers/attendances_controller.rb:62:5: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+    def set_attendance ...
+    ^^^^^^^^^^^^^^^^^^
+app/controllers/attendances_controller.rb:63:5: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+      @attendance = Attendance.find(params[:id])
+    ^^
+app/controllers/attendances_controller.rb:63:21: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+      @attendance = Attendance.find(params[:id])
+                    ^^^^^^^^^^
+app/controllers/attendances_controller.rb:67:5: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+    def attendance_params ...
+    ^^^^^^^^^^^^^^^^^^^^^
+app/controllers/attendances_controller.rb:68:5: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+      params.require(:attendance).permit(:attendance_id, :cadet_id, :horse_id, :staff_id, :appointment_time, :check_in_time, :check_out_time, :purpose)
+    ^^
+app/controllers/attendances_controller.rb:68:151: C: [Correctable] Layout/LineLength: Line is too long. [151/150]
+      params.require(:attendance).permit(:attendance_id, :cadet_id, :horse_id, :staff_id, :appointment_time, :check_in_time, :check_out_time, :purpose)
+                                                                                                                                                      ^
+app/controllers/cadets_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class CadetsController < ApplicationController
+^
+app/controllers/cadets_controller.rb:2:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  before_action :set_cadet, only: %i[ show edit update destroy ]
+^^
+app/controllers/cadets_controller.rb:2:38: C: [Correctable] Layout/SpaceInsidePercentLiteralDelimiters: Do not use spaces inside percent literal delimiters.
+  before_action :set_cadet, only: %i[ show edit update destroy ]
+                                     ^
+app/controllers/cadets_controller.rb:2:63: C: [Correctable] Layout/SpaceInsidePercentLiteralDelimiters: Do not use spaces inside percent literal delimiters.
+  before_action :set_cadet, only: %i[ show edit update destroy ]
+                                                              ^
+app/controllers/cadets_controller.rb:5:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  def index
+^^
+app/controllers/cadets_controller.rb:6:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    @cadets = Cadet.all
+  ^^
+app/controllers/cadets_controller.rb:6:15: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    @cadets = Cadet.all
+              ^^^^^
+app/controllers/cadets_controller.rb:10:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  def show
+^^
+app/controllers/cadets_controller.rb:11:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    @cadet = Cadet.find(params[:id])
+  ^^
+app/controllers/cadets_controller.rb:11:14: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    @cadet = Cadet.find(params[:id])
+             ^^^^^
+app/controllers/cadets_controller.rb:15:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  def new
+^^
+app/controllers/cadets_controller.rb:16:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    @cadet = Cadet.new
+  ^^
+app/controllers/cadets_controller.rb:16:14: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    @cadet = Cadet.new
+             ^^^^^
+app/controllers/cadets_controller.rb:20:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  def edit
+^^
+app/controllers/cadets_controller.rb:21:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    @cadet = Cadet.find(params[:id])
+  ^^
+app/controllers/cadets_controller.rb:21:14: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    @cadet = Cadet.find(params[:id])
+             ^^^^^
+app/controllers/cadets_controller.rb:25:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  def create
+^^
+app/controllers/cadets_controller.rb:26:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    @cadet = Cadet.new(cadet_params)
+  ^^
+app/controllers/cadets_controller.rb:26:14: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    @cadet = Cadet.new(cadet_params)
+             ^^^^^
+app/controllers/cadets_controller.rb:29:5: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+      if @cadet.save
+    ^^
+app/controllers/cadets_controller.rb:30:7: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+        format.html { redirect_to cadet_url(@cadet), notice: "Cadet was successfully created." }
+      ^^
+app/controllers/cadets_controller.rb:30:23: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        format.html { redirect_to cadet_url(@cadet), notice: "Cadet was successfully created." }
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/cadets_controller.rb:30:62: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
+        format.html { redirect_to cadet_url(@cadet), notice: "Cadet was successfully created." }
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/cadets_controller.rb:30:62: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        format.html { redirect_to cadet_url(@cadet), notice: "Cadet was successfully created." }
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/cadets_controller.rb:31:23: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        format.json { render :show, status: :created, location: @cadet }
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/cadets_controller.rb:33:7: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+        format.html { render :new, status: :unprocessable_entity }
+      ^^
+app/controllers/cadets_controller.rb:33:23: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        format.html { render :new, status: :unprocessable_entity }
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/cadets_controller.rb:34:23: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        format.json { render json: @cadet.errors, status: :unprocessable_entity }
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/cadets_controller.rb:40:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  def update
+^^
+app/controllers/cadets_controller.rb:41:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    respond_to do |format|
+  ^^
+app/controllers/cadets_controller.rb:42:5: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+      if @cadet.update(cadet_params)
+    ^^
+app/controllers/cadets_controller.rb:43:7: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+        format.html { redirect_to cadet_url(@cadet), notice: "Cadet was successfully updated." }
+      ^^
+app/controllers/cadets_controller.rb:43:23: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        format.html { redirect_to cadet_url(@cadet), notice: "Cadet was successfully updated." }
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/cadets_controller.rb:43:62: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
+        format.html { redirect_to cadet_url(@cadet), notice: "Cadet was successfully updated." }
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/cadets_controller.rb:43:62: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        format.html { redirect_to cadet_url(@cadet), notice: "Cadet was successfully updated." }
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/cadets_controller.rb:44:23: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        format.json { render :show, status: :ok, location: @cadet }
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/cadets_controller.rb:46:7: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+        format.html { render :edit, status: :unprocessable_entity }
+      ^^
+app/controllers/cadets_controller.rb:46:23: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        format.html { render :edit, status: :unprocessable_entity }
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/cadets_controller.rb:47:23: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        format.json { render json: @cadet.errors, status: :unprocessable_entity }
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/cadets_controller.rb:52:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  def delete
+^^
+app/controllers/cadets_controller.rb:52:3: C: Style/DocumentationMethod: Missing method documentation comment.
+  def delete ...
+  ^^^^^^^^^^
+app/controllers/cadets_controller.rb:53:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    @cadet = Cadet.find(params[:id])
+  ^^
+app/controllers/cadets_controller.rb:53:14: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    @cadet = Cadet.find(params[:id])
+             ^^^^^
+app/controllers/cadets_controller.rb:57:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  def destroy
+^^
+app/controllers/cadets_controller.rb:58:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    @cadet.destroy
+  ^^
+app/controllers/cadets_controller.rb:58:12: C: [Correctable] Rails/SaveBang: Use destroy! instead of destroy if the return value is not checked.
+    @cadet.destroy
+           ^^^^^^^
+app/controllers/cadets_controller.rb:61:5: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+      format.html { redirect_to cadets_url, notice: "Cadet was successfully destroyed." }
+    ^^
+app/controllers/cadets_controller.rb:61:21: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+      format.html { redirect_to cadets_url, notice: "Cadet was successfully destroyed." }
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/cadets_controller.rb:61:53: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
+      format.html { redirect_to cadets_url, notice: "Cadet was successfully destroyed." }
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/cadets_controller.rb:61:53: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      format.html { redirect_to cadets_url, notice: "Cadet was successfully destroyed." }
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/cadets_controller.rb:62:21: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+      format.json { head :no_content }
+                    ^^^^^^^^^^^^^^^^
+app/controllers/cadets_controller.rb:66:3: C: [Correctable] Layout/AccessModifierIndentation: Indent access modifiers like private.
+  private
+  ^^^^^^^
+app/controllers/cadets_controller.rb:66:3: C: [Correctable] Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
+  private
+  ^^^^^^^
+app/controllers/cadets_controller.rb:68:5: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+    def set_cadet ...
+    ^^^^^^^^^^^^^
+app/controllers/cadets_controller.rb:69:5: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+      @cadet = Cadet.find(params[:id])
+    ^^
+app/controllers/cadets_controller.rb:69:16: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+      @cadet = Cadet.find(params[:id])
+               ^^^^^
+app/controllers/cadets_controller.rb:73:5: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+    def cadet_params ...
+    ^^^^^^^^^^^^^^^^
+app/controllers/cadets_controller.rb:74:5: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+      params.require(:cadet).permit(:first_name, :last_name, :graduation_year, :phone_number, :uin, :password)
+    ^^
+app/controllers/horses_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class HorsesController < ApplicationController
+^
+app/controllers/horses_controller.rb:2:40: C: [Correctable] Layout/SpaceInsidePercentLiteralDelimiters: Do not use spaces inside percent literal delimiters.
+    before_action :set_horse, only: %i[ show edit update destroy ]
+                                       ^
+app/controllers/horses_controller.rb:2:65: C: [Correctable] Layout/SpaceInsidePercentLiteralDelimiters: Do not use spaces inside percent literal delimiters.
+    before_action :set_horse, only: %i[ show edit update destroy ]
+                                                                ^
+app/controllers/horses_controller.rb:6:19: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+        @horses = Horse.all
+                  ^^^^^
+app/controllers/horses_controller.rb:10:5: C: [Correctable] Style/EmptyMethod: Put empty method definitions on a single line.
+    def show ...
+    ^^^^^^^^
+app/controllers/horses_controller.rb:15:18: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+        @horse = Horse.new
+                 ^^^^^
+app/controllers/horses_controller.rb:19:5: C: [Correctable] Style/EmptyMethod: Put empty method definitions on a single line.
+    def edit ...
+    ^^^^^^^^
+app/controllers/horses_controller.rb:24:18: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+        @horse = Horse.new(horse_params)
+                 ^^^^^
+app/controllers/horses_controller.rb:27:9: C: [Correctable] Layout/IndentationWidth: Use 4 (not 0) spaces for indentation.
+        if @horse.save
+        
+app/controllers/horses_controller.rb:28:27: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+            format.html { redirect_to horses_path, notice: "#{@horse.name} was successfully created." }
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/horses_controller.rb:29:27: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+            format.json { render :show, status: :created, location: @horse }
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/horses_controller.rb:31:27: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+            format.html { render :new, status: :unprocessable_entity }
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/horses_controller.rb:32:27: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+            format.json { render json: @horse.errors, status: :unprocessable_entity }
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/horses_controller.rb:40:9: C: [Correctable] Layout/IndentationWidth: Use 4 (not 0) spaces for indentation.
+        if @horse.update(horse_params)
+        
+app/controllers/horses_controller.rb:41:27: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+            format.html { redirect_to horses_path, notice: "#{@horse.name} was successfully updated." }
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/horses_controller.rb:42:27: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+            format.json { render :show, status: :ok, location: @horse }
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/horses_controller.rb:44:27: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+            format.html { render :edit, status: :unprocessable_entity }
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/horses_controller.rb:45:27: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+            format.json { render json: @horse.errors, status: :unprocessable_entity }
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/horses_controller.rb:50:5: C: Style/DocumentationMethod: Missing method documentation comment.
+    def delete ...
+    ^^^^^^^^^^
+app/controllers/horses_controller.rb:51:18: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+        @horse = Horse.find(params[:id])
+                 ^^^^^
+app/controllers/horses_controller.rb:52:8: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+    end 
+       ^
+app/controllers/horses_controller.rb:54:5: C: [Correctable] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 0.
+    def destroy
+    ^^^^^^^^^^^
+app/controllers/horses_controller.rb:55:16: C: [Correctable] Rails/SaveBang: Use destroy! instead of destroy if the return value is not checked.
+        @horse.destroy
+               ^^^^^^^
+app/controllers/horses_controller.rb:58:9: C: [Correctable] Layout/IndentationWidth: Use 4 (not 0) spaces for indentation.
+        format.html { redirect_to horses_path, notice: "#{@horse.name} was successfully destroyed." }
+        
+app/controllers/horses_controller.rb:58:23: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        format.html { redirect_to horses_path, notice: "#{@horse.name} was successfully destroyed." }
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/horses_controller.rb:59:23: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        format.json { head :no_content }
+                      ^^^^^^^^^^^^^^^^
+app/controllers/horses_controller.rb:63:5: C: [Correctable] Layout/AccessModifierIndentation: Indent access modifiers like private.
+    private
+    ^^^^^^^
+app/controllers/horses_controller.rb:63:5: C: [Correctable] Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
+    private
+    ^^^^^^^
+app/controllers/horses_controller.rb:65:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 8) spaces for indentation.
+        def set_horse
+^^^^^^^^
+app/controllers/horses_controller.rb:65:9: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+        def set_horse ...
+        ^^^^^^^^^^^^^
+app/controllers/horses_controller.rb:66:9: C: [Correctable] Layout/IndentationWidth: Use 4 (not 0) spaces for indentation.
+        @horse = Horse.find(params[:id])
+        
+app/controllers/horses_controller.rb:66:18: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+        @horse = Horse.find(params[:id])
+                 ^^^^^
+app/controllers/horses_controller.rb:70:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 8) spaces for indentation.
+        def horse_params
+^^^^^^^^
+app/controllers/horses_controller.rb:70:9: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+        def horse_params ...
+        ^^^^^^^^^^^^^^^^
+app/controllers/horses_controller.rb:71:9: C: [Correctable] Layout/IndentationWidth: Use 4 (not 0) spaces for indentation.
+        params.require(:horse).permit(
+        
+app/controllers/horses_controller.rb:71:9: C: [Correctable] Layout/RedundantLineBreak: Redundant line break detected.
+        params.require(:horse).permit( ...
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/horses_controller.rb:72:19: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+            :name, 
+                  ^
+app/controllers/horses_controller.rb:73:20: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+            :brand, 
+                   ^
+app/controllers/horses_controller.rb:74:22: C: [Correctable] Layout/MultilineMethodCallBraceLayout: Closing method call brace must be on the line after the last argument.
+            :birthday)
+                     ^
+app/controllers/horses_controller.rb:76:5: W: [Correctable] Layout/EndAlignment: end at 76, 4 is not aligned with class at 1, 0.
+    end
+    ^^^
+app/controllers/horses_controller.rb:76:8: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+    end
+       
+app/controllers/staffs_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class StaffsController < ApplicationController
+^
+app/controllers/staffs_controller.rb:2:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  before_action :set_staff, only: %i[ show edit update destroy ]
+^^
+app/controllers/staffs_controller.rb:2:38: C: [Correctable] Layout/SpaceInsidePercentLiteralDelimiters: Do not use spaces inside percent literal delimiters.
+  before_action :set_staff, only: %i[ show edit update destroy ]
+                                     ^
+app/controllers/staffs_controller.rb:2:63: C: [Correctable] Layout/SpaceInsidePercentLiteralDelimiters: Do not use spaces inside percent literal delimiters.
+  before_action :set_staff, only: %i[ show edit update destroy ]
+                                                              ^
+app/controllers/staffs_controller.rb:5:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  def index
+^^
+app/controllers/staffs_controller.rb:6:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    @staffs = Staff.all
+  ^^
+app/controllers/staffs_controller.rb:6:15: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    @staffs = Staff.all
+              ^^^^^
+app/controllers/staffs_controller.rb:10:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  def show
+^^
+app/controllers/staffs_controller.rb:10:3: C: [Correctable] Style/EmptyMethod: Put empty method definitions on a single line.
+  def show ...
+  ^^^^^^^^
+app/controllers/staffs_controller.rb:14:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  def new
+^^
+app/controllers/staffs_controller.rb:15:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    @staff = Staff.new
+  ^^
+app/controllers/staffs_controller.rb:15:14: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    @staff = Staff.new
+             ^^^^^
+app/controllers/staffs_controller.rb:19:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  def edit
+^^
+app/controllers/staffs_controller.rb:19:3: C: [Correctable] Style/EmptyMethod: Put empty method definitions on a single line.
+  def edit ...
+  ^^^^^^^^
+app/controllers/staffs_controller.rb:23:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  def create
+^^
+app/controllers/staffs_controller.rb:24:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    @staff = Staff.new(staff_params)
+  ^^
+app/controllers/staffs_controller.rb:24:14: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    @staff = Staff.new(staff_params)
+             ^^^^^
+app/controllers/staffs_controller.rb:27:5: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+      if @staff.save
+    ^^
+app/controllers/staffs_controller.rb:28:7: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+        format.html { redirect_to staff_url(@staff), notice: "Staff was successfully created." }
+      ^^
+app/controllers/staffs_controller.rb:28:23: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        format.html { redirect_to staff_url(@staff), notice: "Staff was successfully created." }
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/staffs_controller.rb:28:62: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
+        format.html { redirect_to staff_url(@staff), notice: "Staff was successfully created." }
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/staffs_controller.rb:28:62: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        format.html { redirect_to staff_url(@staff), notice: "Staff was successfully created." }
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/staffs_controller.rb:29:23: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        format.json { render :show, status: :created, location: @staff }
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/staffs_controller.rb:31:7: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+        format.html { render :new, status: :unprocessable_entity }
+      ^^
+app/controllers/staffs_controller.rb:31:23: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        format.html { render :new, status: :unprocessable_entity }
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/staffs_controller.rb:32:23: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        format.json { render json: @staff.errors, status: :unprocessable_entity }
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/staffs_controller.rb:38:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  def update
+^^
+app/controllers/staffs_controller.rb:39:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    respond_to do |format|
+  ^^
+app/controllers/staffs_controller.rb:40:5: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+      if @staff.update(staff_params)
+    ^^
+app/controllers/staffs_controller.rb:41:7: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+        format.html { redirect_to staff_url(@staff), notice: "Staff was successfully updated." }
+      ^^
+app/controllers/staffs_controller.rb:41:23: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        format.html { redirect_to staff_url(@staff), notice: "Staff was successfully updated." }
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/staffs_controller.rb:41:62: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
+        format.html { redirect_to staff_url(@staff), notice: "Staff was successfully updated." }
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/staffs_controller.rb:41:62: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        format.html { redirect_to staff_url(@staff), notice: "Staff was successfully updated." }
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/staffs_controller.rb:42:23: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        format.json { render :show, status: :ok, location: @staff }
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/staffs_controller.rb:44:7: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+        format.html { render :edit, status: :unprocessable_entity }
+      ^^
+app/controllers/staffs_controller.rb:44:23: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        format.html { render :edit, status: :unprocessable_entity }
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/staffs_controller.rb:45:23: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        format.json { render json: @staff.errors, status: :unprocessable_entity }
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/staffs_controller.rb:50:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  def delete
+^^
+app/controllers/staffs_controller.rb:50:3: C: Style/DocumentationMethod: Missing method documentation comment.
+  def delete ...
+  ^^^^^^^^^^
+app/controllers/staffs_controller.rb:51:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    @staff = Staff.find(params[:id])
+  ^^
+app/controllers/staffs_controller.rb:51:14: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    @staff = Staff.find(params[:id])
+             ^^^^^
+app/controllers/staffs_controller.rb:55:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  def destroy
+^^
+app/controllers/staffs_controller.rb:56:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    @staff.destroy
+  ^^
+app/controllers/staffs_controller.rb:56:12: C: [Correctable] Rails/SaveBang: Use destroy! instead of destroy if the return value is not checked.
+    @staff.destroy
+           ^^^^^^^
+app/controllers/staffs_controller.rb:59:5: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+      format.html { redirect_to staffs_url, notice: "Staff was successfully destroyed." }
+    ^^
+app/controllers/staffs_controller.rb:59:21: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+      format.html { redirect_to staffs_url, notice: "Staff was successfully destroyed." }
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/staffs_controller.rb:59:53: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
+      format.html { redirect_to staffs_url, notice: "Staff was successfully destroyed." }
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/staffs_controller.rb:59:53: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      format.html { redirect_to staffs_url, notice: "Staff was successfully destroyed." }
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/staffs_controller.rb:60:21: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+      format.json { head :no_content }
+                    ^^^^^^^^^^^^^^^^
+app/controllers/staffs_controller.rb:64:3: C: [Correctable] Layout/AccessModifierIndentation: Indent access modifiers like private.
+  private
+  ^^^^^^^
+app/controllers/staffs_controller.rb:64:3: C: [Correctable] Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
+  private
+  ^^^^^^^
+app/controllers/staffs_controller.rb:66:5: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+    def set_staff ...
+    ^^^^^^^^^^^^^
+app/controllers/staffs_controller.rb:67:5: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+      @staff = Staff.find(params[:id])
+    ^^
+app/controllers/staffs_controller.rb:67:16: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+      @staff = Staff.find(params[:id])
+               ^^^^^
+app/controllers/staffs_controller.rb:71:5: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+    def staff_params ...
+    ^^^^^^^^^^^^^^^^
+app/controllers/staffs_controller.rb:72:5: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+      params.require(:staff).permit(:is_admin, :first_name, :last_name, :phone_number, :email, :password)
+    ^^
+app/helpers/application_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module ApplicationHelper
+^
+app/helpers/attendances_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module AttendancesHelper
+^
+app/helpers/cadets_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module CadetsHelper
+^
+app/helpers/horses_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module HorsesHelper
+^
+app/helpers/staffs_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module StaffsHelper
+^
+app/jobs/application_job.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class ApplicationJob < ActiveJob::Base
+^
+app/jobs/application_job.rb:1:24: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+class ApplicationJob < ActiveJob::Base
+                       ^^^^^^^^^
+app/jobs/application_job.rb:6:3: C: [Correctable] Layout/CommentIndentation: Incorrect indentation detected (column 2 instead of 4).
+  # discard_on ActiveJob::DeserializationError
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/mailers/application_mailer.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class ApplicationMailer < ActionMailer::Base
+^
+app/mailers/application_mailer.rb:1:27: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+class ApplicationMailer < ActionMailer::Base
+                          ^^^^^^^^^^^^
+app/mailers/application_mailer.rb:2:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  default from: "from@example.com"
+^^
+app/mailers/application_mailer.rb:2:17: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  default from: "from@example.com"
+                ^^^^^^^^^^^^^^^^^^
+app/mailers/application_mailer.rb:3:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  layout "mailer"
+^^
+app/mailers/application_mailer.rb:3:10: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  layout "mailer"
+         ^^^^^^^^
+app/models/application_record.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class ApplicationRecord < ActiveRecord::Base
+^
+app/models/application_record.rb:1:27: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+class ApplicationRecord < ActiveRecord::Base
+                          ^^^^^^^^^^^^
+app/models/application_record.rb:2:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  primary_abstract_class
+^^
+app/models/attendance.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class Attendance < ApplicationRecord
+^
+app/models/cadet.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class Cadet < ApplicationRecord
+^
+app/models/cadet.rb:2:1: C: [Correctable] Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body beginning.
+app/models/cadet.rb:3:5: C: [Correctable] Layout/RedundantLineBreak: Redundant line break detected.
+    validates :first_name, :last_name, :graduation_year, :phone_number, :uin, ...
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/cadet.rb:3:28: C: [Correctable] Layout/MultilineMethodArgumentLineBreaks: Each argument in a multi-line method call must start on a separate line.
+    validates :first_name, :last_name, :graduation_year, :phone_number, :uin,
+                           ^^^^^^^^^^
+app/models/cadet.rb:3:40: C: [Correctable] Layout/MultilineMethodArgumentLineBreaks: Each argument in a multi-line method call must start on a separate line.
+    validates :first_name, :last_name, :graduation_year, :phone_number, :uin,
+                                       ^^^^^^^^^^^^^^^^
+app/models/cadet.rb:3:58: C: [Correctable] Layout/MultilineMethodArgumentLineBreaks: Each argument in a multi-line method call must start on a separate line.
+    validates :first_name, :last_name, :graduation_year, :phone_number, :uin,
+                                                         ^^^^^^^^^^^^^
+app/models/cadet.rb:3:73: C: [Correctable] Layout/MultilineMethodArgumentLineBreaks: Each argument in a multi-line method call must start on a separate line.
+    validates :first_name, :last_name, :graduation_year, :phone_number, :uin,
+                                                                        ^^^^
+app/models/cadet.rb:4:5: C: [Correctable] Layout/ArgumentAlignment: Align the arguments of a method call if they span more than one line.
+    presence: true, allow_blank: false
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/cadet.rb:4:21: C: [Correctable] Layout/MultilineMethodArgumentLineBreaks: Each argument in a multi-line method call must start on a separate line.
+    presence: true, allow_blank: false
+                    ^^^^^^^^^^^^^^^^^^
+app/models/cadet.rb:5:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+app/models/horse.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class Horse < ApplicationRecord
+^
+app/models/horse.rb:2:20: C: [Correctable] Layout/SpaceAfterComma: Space missing after comma.
+    validates :name,:brand, :birthday,  presence: true
+                   ^
+app/models/horse.rb:2:39: C: [Correctable] Layout/ExtraSpacing: Unnecessary spacing detected.
+    validates :name,:brand, :birthday,  presence: true
+                                      ^
+app/models/staff.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class Staff < ApplicationRecord
+^
+app/views/attendances/_attendance.json.jbuilder:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+json.extract! attendance, :id, :attendance_id, :cadet_id, :horse_id, :staff_id, :appointment_time, :check_in_time, :check_out_time, :purpose, :created_at, :updated_at
+^
+app/views/attendances/_attendance.json.jbuilder:1:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+json.extract! attendance, :id, :attendance_id, :cadet_id, :horse_id, :staff_id, :appointment_time, :check_in_time, :check_out_time, :purpose, :created_at, :updated_at
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/views/attendances/_attendance.json.jbuilder:1:151: C: [Correctable] Layout/LineLength: Line is too long. [166/150]
+json.extract! attendance, :id, :attendance_id, :cadet_id, :horse_id, :staff_id, :appointment_time, :check_in_time, :check_out_time, :purpose, :created_at, :updated_at
+                                                                                                                                                      ^^^^^^^^^^^^^^^^
+app/views/attendances/_attendance.json.jbuilder:2:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+json.url attendance_url(attendance, format: :json)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/views/attendances/index.json.jbuilder:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+json.array! @attendances, partial: "attendances/attendance", as: :attendance
+^
+app/views/attendances/index.json.jbuilder:1:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+json.array! @attendances, partial: "attendances/attendance", as: :attendance
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/views/attendances/index.json.jbuilder:1:36: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+json.array! @attendances, partial: "attendances/attendance", as: :attendance
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^
+app/views/attendances/show.json.jbuilder:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+json.partial! "attendances/attendance", attendance: @attendance
+^
+app/views/attendances/show.json.jbuilder:1:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+json.partial! "attendances/attendance", attendance: @attendance
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/views/attendances/show.json.jbuilder:1:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+json.partial! "attendances/attendance", attendance: @attendance
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+app/views/cadets/_cadet.json.jbuilder:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+json.extract! cadet, :id, :first_name, :last_name, :graduation_year, :phone_number, :uin, :password, :created_at, :updated_at
+^
+app/views/cadets/_cadet.json.jbuilder:1:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+json.extract! cadet, :id, :first_name, :last_name, :graduation_year, :phone_number, :uin, :password, :created_at, :updated_at
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/views/cadets/_cadet.json.jbuilder:2:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+json.url cadet_url(cadet, format: :json)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/views/cadets/index.json.jbuilder:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+json.array! @cadets, partial: "cadets/cadet", as: :cadet
+^
+app/views/cadets/index.json.jbuilder:1:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+json.array! @cadets, partial: "cadets/cadet", as: :cadet
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/views/cadets/index.json.jbuilder:1:31: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+json.array! @cadets, partial: "cadets/cadet", as: :cadet
+                              ^^^^^^^^^^^^^^
+app/views/cadets/show.json.jbuilder:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+json.partial! "cadets/cadet", cadet: @cadet
+^
+app/views/cadets/show.json.jbuilder:1:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+json.partial! "cadets/cadet", cadet: @cadet
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/views/cadets/show.json.jbuilder:1:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+json.partial! "cadets/cadet", cadet: @cadet
+              ^^^^^^^^^^^^^^
+app/views/horses/_horse.json.jbuilder:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+json.extract! horse, :id, :name, :brand, :birthday, :created_at, :updated_at
+^
+app/views/horses/_horse.json.jbuilder:1:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+json.extract! horse, :id, :name, :brand, :birthday, :created_at, :updated_at
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/views/horses/_horse.json.jbuilder:2:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+json.url horse_url(horse, format: :json)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/views/horses/index.json.jbuilder:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+json.array! @horses, partial: "horses/horse", as: :horse
+^
+app/views/horses/index.json.jbuilder:1:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+json.array! @horses, partial: "horses/horse", as: :horse
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/views/horses/index.json.jbuilder:1:31: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+json.array! @horses, partial: "horses/horse", as: :horse
+                              ^^^^^^^^^^^^^^
+app/views/horses/show.json.jbuilder:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+json.partial! "horses/horse", horse: @horse
+^
+app/views/horses/show.json.jbuilder:1:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+json.partial! "horses/horse", horse: @horse
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/views/horses/show.json.jbuilder:1:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+json.partial! "horses/horse", horse: @horse
+              ^^^^^^^^^^^^^^
+app/views/staffs/_staff.json.jbuilder:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+json.extract! staff, :id, :is_admin, :first_name, :last_name, :phone_number, :email, :password, :created_at, :updated_at
+^
+app/views/staffs/_staff.json.jbuilder:1:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+json.extract! staff, :id, :is_admin, :first_name, :last_name, :phone_number, :email, :password, :created_at, :updated_at
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/views/staffs/_staff.json.jbuilder:2:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+json.url staff_url(staff, format: :json)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/views/staffs/index.json.jbuilder:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+json.array! @staffs, partial: "staffs/staff", as: :staff
+^
+app/views/staffs/index.json.jbuilder:1:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+json.array! @staffs, partial: "staffs/staff", as: :staff
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/views/staffs/index.json.jbuilder:1:31: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+json.array! @staffs, partial: "staffs/staff", as: :staff
+                              ^^^^^^^^^^^^^^
+app/views/staffs/show.json.jbuilder:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+json.partial! "staffs/staff", staff: @staff
+^
+app/views/staffs/show.json.jbuilder:1:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+json.partial! "staffs/staff", staff: @staff
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/views/staffs/show.json.jbuilder:1:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+json.partial! "staffs/staff", staff: @staff
+              ^^^^^^^^^^^^^^
+config.ru:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This file is used by Rack-based servers to start the application.
+^
+config.ru:3:18: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require_relative "config/environment"
+                 ^^^^^^^^^^^^^^^^^^^^
+config.ru:5:5: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+run Rails.application
+    ^^^^^
+config.ru:6:1: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+Rails.application.load_server
+^^^^^
+db/seeds.rb:5:3: E: Lint/Syntax: unexpected token $end
+(Using Ruby 2.7 parser; configure using TargetRubyVersion parameter, under AllCops)
+spec/feature/create_cadet_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/feature/create_cadet_spec.rb:3:1: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+RSpec.describe 'Creating a cadet', type: :feature do
+^^^^^
+spec/feature/create_cadet_spec.rb:3:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+RSpec.describe 'Creating a cadet', type: :feature do
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/create_cadet_spec.rb:4:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  scenario 'valid inputs' do
+^^
+spec/feature/create_cadet_spec.rb:4:3: C: [Correctable] RSpec/Capybara/FeatureMethods: Use it instead of scenario.
+  scenario 'valid inputs' do
+  ^^^^^^^^
+spec/feature/create_cadet_spec.rb:5:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    visit new_cadet_path
+  ^^
+spec/feature/create_cadet_spec.rb:12:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/feature/create_cadet_spec.rb:13:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(page).to have_content('Cadet was successfully created.')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/create_cadet_spec.rb:14:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Cadet.last.uin).to eq('120003456')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/create_cadet_spec.rb:14:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Cadet.last.uin).to eq('120003456')
+           ^^^^^
+spec/feature/create_cadet_spec.rb:17:3: C: [Correctable] RSpec/Capybara/FeatureMethods: Use it instead of scenario.
+  scenario 'missing first_name' do
+  ^^^^^^^^
+spec/feature/create_cadet_spec.rb:18:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    visit new_cadet_path
+  ^^
+spec/feature/create_cadet_spec.rb:24:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/feature/create_cadet_spec.rb:25:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(page).not_to have_content('Cadet was successfully created.')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/create_cadet_spec.rb:28:3: C: [Correctable] RSpec/Capybara/FeatureMethods: Use it instead of scenario.
+  scenario 'missing last_name' do
+  ^^^^^^^^
+spec/feature/create_cadet_spec.rb:29:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    visit new_cadet_path
+  ^^
+spec/feature/create_cadet_spec.rb:35:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/feature/create_cadet_spec.rb:36:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(page).not_to have_content('Cadet was successfully created.')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/create_cadet_spec.rb:39:3: C: [Correctable] RSpec/Capybara/FeatureMethods: Use it instead of scenario.
+  scenario 'missing graduation_year' do
+  ^^^^^^^^
+spec/feature/create_cadet_spec.rb:40:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    visit new_cadet_path
+  ^^
+spec/feature/create_cadet_spec.rb:46:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/feature/create_cadet_spec.rb:47:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(page).not_to have_content('Cadet was successfully created.')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/create_cadet_spec.rb:50:3: C: [Correctable] RSpec/Capybara/FeatureMethods: Use it instead of scenario.
+  scenario 'missing phone_number' do
+  ^^^^^^^^
+spec/feature/create_cadet_spec.rb:51:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    visit new_cadet_path
+  ^^
+spec/feature/create_cadet_spec.rb:57:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/feature/create_cadet_spec.rb:58:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(page).not_to have_content('Cadet was successfully created.')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/create_cadet_spec.rb:61:3: C: [Correctable] RSpec/Capybara/FeatureMethods: Use it instead of scenario.
+  scenario 'missing uin' do
+  ^^^^^^^^
+spec/feature/create_cadet_spec.rb:62:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    visit new_cadet_path
+  ^^
+spec/feature/create_cadet_spec.rb:67:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/feature/create_cadet_spec.rb:68:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(page).not_to have_content('Cadet was successfully created.')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/create_cadet_spec.rb:70:1: C: [Correctable] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body end.
+spec/feature/create_cadet_spec.rb:71:4: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+end
+   
+spec/feature/edit_cadet_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/feature/edit_cadet_spec.rb:3:1: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+RSpec.describe 'Editing a cadet', type: :feature do
+^^^^^
+spec/feature/edit_cadet_spec.rb:3:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+RSpec.describe 'Editing a cadet', type: :feature do
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/edit_cadet_spec.rb:4:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  scenario 'valid inputs' do
+^^
+spec/feature/edit_cadet_spec.rb:4:3: C: [Correctable] RSpec/Capybara/FeatureMethods: Use it instead of scenario.
+  scenario 'valid inputs' do
+  ^^^^^^^^
+spec/feature/edit_cadet_spec.rb:5:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    visit edit_cadet_path
+  ^^
+spec/feature/edit_cadet_spec.rb:12:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/feature/edit_cadet_spec.rb:13:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(page).to have_content('Cadet was successfully updated.')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/edit_cadet_spec.rb:14:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Cadet.last.uin).to eq('120003456')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/edit_cadet_spec.rb:14:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Cadet.last.uin).to eq('120003456')
+           ^^^^^
+spec/feature/edit_cadet_spec.rb:17:1: C: [Correctable] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body end.
+spec/feature/edit_cadet_spec.rb:18:4: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+end
+   
+spec/feature/integration_attendance_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/feature/integration_attendance_spec.rb:3:1: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+RSpec.describe 'Creating an Attendance record', type: :feature do
+^^^^^
+spec/feature/integration_attendance_spec.rb:3:1: C: RSpec/MultipleDescribes: Do not use multiple top-level example groups - try to nest them.
+RSpec.describe 'Creating an Attendance record', type: :feature do
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:3:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+RSpec.describe 'Creating an Attendance record', type: :feature do
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:4:5: C: [Correctable] RSpec/Capybara/FeatureMethods: Use it instead of scenario.
+    scenario 'valid inputs' do
+    ^^^^^^^^
+spec/feature/integration_attendance_spec.rb:5:5: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+      visit new_attendance_path
+    ^^
+spec/feature/integration_attendance_spec.rb:6:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      fill_in "attendance[cadet_id]", with: 1
+              ^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:7:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      fill_in "attendance[horse_id]", with: 1
+              ^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:8:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      fill_in "attendance[staff_id]", with: 1
+              ^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:9:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      fill_in "attendance[appointment_time]", with: '01/01/2023 10:00 AM'
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:10:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      fill_in "attendance[check_in_time]", with: '01/01/2023 11:00 AM'
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:11:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      fill_in "attendance[check_out_time]", with: '01/01/2023 12:00 PM'
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:12:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      fill_in "attendance[purpose]", with: 'Training'
+              ^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:14:7: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+      expect(page).to have_content('Attendance was successfully created.')
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:17:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/feature/integration_attendance_spec.rb:18:1: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+RSpec.describe 'Viewing an Attendance record', type: :feature do
+^^^^^
+spec/feature/integration_attendance_spec.rb:18:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+RSpec.describe 'Viewing an Attendance record', type: :feature do
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:19:5: C: [Correctable] RSpec/Capybara/FeatureMethods: Use it instead of scenario.
+    scenario 'valid inputs' do
+    ^^^^^^^^
+spec/feature/integration_attendance_spec.rb:20:22: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+        attendance = Attendance.create(cadet_id: 1, horse_id: 1, staff_id: 1, appointment_time: '01/01/2023 10:00 AM', check_in_time: '01/01/2023 11:00 AM', check_out_time: '01/01/2023 12:00 PM', purpose: 'Training')
+                     ^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:20:33: C: [Correctable] Rails/SaveBang: Use create! instead of create if the return value is not checked. Or check persisted? on model returned from create.
+        attendance = Attendance.create(cadet_id: 1, horse_id: 1, staff_id: 1, appointment_time: '01/01/2023 10:00 AM', check_in_time: '01/01/2023 11:00 AM', check_out_time: '01/01/2023 12:00 PM', purpose: 'Training')
+                                ^^^^^^
+spec/feature/integration_attendance_spec.rb:22:9: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        expect(page).to have_content('Cadet Id')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:23:9: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        expect(page).to have_content('Horse Id')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:24:9: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        expect(page).to have_content('Staff Id')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:25:9: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        expect(page).to have_content('Appointment time')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:26:9: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        expect(page).to have_content('Check in time')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:27:9: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        expect(page).to have_content('Check out time')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:28:9: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        expect(page).to have_content('Purpose')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:32:1: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+RSpec.describe 'Editing an attendance record', type: :feature do
+^^^^^
+spec/feature/integration_attendance_spec.rb:32:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+RSpec.describe 'Editing an attendance record', type: :feature do
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:33:5: C: [Correctable] RSpec/Capybara/FeatureMethods: Use it instead of scenario.
+    scenario 'valid inputs' do
+    ^^^^^^^^
+spec/feature/integration_attendance_spec.rb:34:22: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+        attendance = Attendance.create(attendance_id: 1, cadet_id: 1, horse_id: 1, staff_id: 1, appointment_time: '01/01/2022 10:00:00', check_in_time: '01/01/2022 10:30:00', check_out_time: '01/01/2022 11:00:00', purpose: 'Training session')
+                     ^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:34:33: C: [Correctable] Rails/SaveBang: Use create! instead of create if the return value is not checked. Or check persisted? on model returned from create.
+        attendance = Attendance.create(attendance_id: 1, cadet_id: 1, horse_id: 1, staff_id: 1, appointment_time: '01/01/2022 10:00:00', check_in_time: '01/01/2022 10:30:00', check_out_time: '01/01/2022 11:00:00', purpose: 'Training session')
+                                ^^^^^^
+spec/feature/integration_attendance_spec.rb:36:17: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        fill_in "attendance[attendance_id]", with: 2
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:37:17: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        fill_in "attendance[cadet_id]", with: 2
+                ^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:38:17: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        fill_in "attendance[horse_id]", with: 2
+                ^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:39:17: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        fill_in "attendance[staff_id]", with: 2
+                ^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:40:17: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        fill_in "attendance[appointment_time]", with: '01/02/2022 10:00:00'
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:41:17: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        fill_in "attendance[check_in_time]", with: '01/02/2022 10:30:00'
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:42:17: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        fill_in "attendance[check_out_time]", with: '01/02/2022 11:00:00'
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:43:17: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        fill_in "attendance[purpose]", with: 'Training session 2'
+                ^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:45:9: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        expect(page).to have_content('Attendance was successfully updated.')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:48:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/feature/integration_attendance_spec.rb:49:1: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+RSpec.describe 'Destroying an attendance record', type: :feature do
+^^^^^
+spec/feature/integration_attendance_spec.rb:49:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+RSpec.describe 'Destroying an attendance record', type: :feature do
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:50:5: C: [Correctable] RSpec/Capybara/FeatureMethods: Use it instead of scenario.
+    scenario 'valid inputs' do
+    ^^^^^^^^
+spec/feature/integration_attendance_spec.rb:51:22: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+        attendance = Attendance.create(attendance_id: 2, cadet_id: 2, horse_id: 2, staff_id: 2, appointment_time: '01/02/2022 10:00:00', check_in_time: '01/02/2022 10:30:00', check_out_time: '01/02/2022 11:00:00', purpose: 'Training session 2')
+                     ^^^^^^^^^^
+spec/feature/integration_attendance_spec.rb:51:33: C: [Correctable] Rails/SaveBang: Use create! instead of create if the return value is not checked. Or check persisted? on model returned from create.
+        attendance = Attendance.create(attendance_id: 2, cadet_id: 2, horse_id: 2, staff_id: 2, appointment_time: '01/02/2022 10:00:00', check_in_time: '01/02/2022 10:30:00', check_out_time: '01/02/2022 11:00:00', purpose: 'Training session 2')
+                                ^^^^^^
+spec/feature/integration_attendance_spec.rb:54:9: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        expect(page).to have_content('Attendance was successfully destroyed.')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_horse_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/feature/integration_horse_spec.rb:3:1: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+RSpec.describe 'Creating a horse', type: :feature do
+^^^^^
+spec/feature/integration_horse_spec.rb:3:1: C: RSpec/MultipleDescribes: Do not use multiple top-level example groups - try to nest them.
+RSpec.describe 'Creating a horse', type: :feature do
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_horse_spec.rb:3:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+RSpec.describe 'Creating a horse', type: :feature do
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_horse_spec.rb:4:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  scenario 'valid inputs' do
+^^
+spec/feature/integration_horse_spec.rb:4:3: C: [Correctable] RSpec/Capybara/FeatureMethods: Use it instead of scenario.
+  scenario 'valid inputs' do
+  ^^^^^^^^
+spec/feature/integration_horse_spec.rb:5:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    visit new_horse_path
+  ^^
+spec/feature/integration_horse_spec.rb:6:13: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    fill_in "horse[name]", with: "Horsey"
+            ^^^^^^^^^^^^^
+spec/feature/integration_horse_spec.rb:6:34: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    fill_in "horse[name]", with: "Horsey"
+                                 ^^^^^^^^
+spec/feature/integration_horse_spec.rb:7:13: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    fill_in "horse[brand]", with: 'H1199'
+            ^^^^^^^^^^^^^^
+spec/feature/integration_horse_spec.rb:8:13: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    fill_in "horse[birthday]", with: '01/01/1999'
+            ^^^^^^^^^^^^^^^^^
+spec/feature/integration_horse_spec.rb:10:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(page).to have_content('Horsey was successfully created.')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_horse_spec.rb:12:1: C: [Correctable] RSpec/EmptyLineAfterExampleGroup: Add an empty line after describe.
+end
+^^^
+spec/feature/integration_horse_spec.rb:13:1: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+RSpec.describe 'Viewing a horse', type: :feature do
+^^^^^
+spec/feature/integration_horse_spec.rb:13:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+RSpec.describe 'Viewing a horse', type: :feature do
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_horse_spec.rb:14:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    scenario 'valid inputs' do
+  ^^
+spec/feature/integration_horse_spec.rb:14:5: C: [Correctable] RSpec/Capybara/FeatureMethods: Use it instead of scenario.
+    scenario 'valid inputs' do
+    ^^^^^^^^
+spec/feature/integration_horse_spec.rb:15:5: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+      horse = Horse.create(name: "Horsey", brand: 'H1199', birthday: '01/01/1999')
+    ^^
+spec/feature/integration_horse_spec.rb:15:15: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+      horse = Horse.create(name: "Horsey", brand: 'H1199', birthday: '01/01/1999')
+              ^^^^^
+spec/feature/integration_horse_spec.rb:15:21: C: [Correctable] Rails/SaveBang: Use create! instead of create if the return value is not checked. Or check persisted? on model returned from create.
+      horse = Horse.create(name: "Horsey", brand: 'H1199', birthday: '01/01/1999')
+                    ^^^^^^
+spec/feature/integration_horse_spec.rb:15:34: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      horse = Horse.create(name: "Horsey", brand: 'H1199', birthday: '01/01/1999')
+                                 ^^^^^^^^
+spec/feature/integration_horse_spec.rb:17:7: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+      expect(page).to have_content('Horsey')
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_horse_spec.rb:18:7: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+      expect(page).to have_content('Brand')
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_horse_spec.rb:19:7: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+      expect(page).to have_content('Birthday')
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_horse_spec.rb:21:3: C: [Correctable] Layout/BlockAlignment: end at 21, 2 is not aligned with RSpec.describe 'Viewing a horse', type: :feature do at 13, 0.
+  end
+  ^^^
+spec/feature/integration_horse_spec.rb:21:3: C: [Correctable] RSpec/EmptyLineAfterExampleGroup: Add an empty line after describe.
+  end
+  ^^^
+spec/feature/integration_horse_spec.rb:22:1: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+RSpec.describe 'Editing a horse', type: :feature do
+^^^^^
+spec/feature/integration_horse_spec.rb:22:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+RSpec.describe 'Editing a horse', type: :feature do
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_horse_spec.rb:23:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    scenario 'valid inputs' do
+  ^^
+spec/feature/integration_horse_spec.rb:23:5: C: [Correctable] RSpec/Capybara/FeatureMethods: Use it instead of scenario.
+    scenario 'valid inputs' do
+    ^^^^^^^^
+spec/feature/integration_horse_spec.rb:24:5: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+      horse = Horse.create(name: "Horsey", brand: 'H1199', birthday: '01/01/1999')
+    ^^
+spec/feature/integration_horse_spec.rb:24:15: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+      horse = Horse.create(name: "Horsey", brand: 'H1199', birthday: '01/01/1999')
+              ^^^^^
+spec/feature/integration_horse_spec.rb:24:21: C: [Correctable] Rails/SaveBang: Use create! instead of create if the return value is not checked. Or check persisted? on model returned from create.
+      horse = Horse.create(name: "Horsey", brand: 'H1199', birthday: '01/01/1999')
+                    ^^^^^^
+spec/feature/integration_horse_spec.rb:24:34: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      horse = Horse.create(name: "Horsey", brand: 'H1199', birthday: '01/01/1999')
+                                 ^^^^^^^^
+spec/feature/integration_horse_spec.rb:26:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      fill_in "horse[name]", with: "Horsey1"
+              ^^^^^^^^^^^^^
+spec/feature/integration_horse_spec.rb:26:36: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      fill_in "horse[name]", with: "Horsey1"
+                                   ^^^^^^^^^
+spec/feature/integration_horse_spec.rb:27:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      fill_in "horse[brand]", with: 'H11991'
+              ^^^^^^^^^^^^^^
+spec/feature/integration_horse_spec.rb:28:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      fill_in "horse[birthday]", with: '01/02/1999'
+              ^^^^^^^^^^^^^^^^^
+spec/feature/integration_horse_spec.rb:30:7: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+      expect(page).to have_content('Horsey1 was successfully updated.')
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_horse_spec.rb:32:3: C: [Correctable] Layout/BlockAlignment: end at 32, 2 is not aligned with RSpec.describe 'Editing a horse', type: :feature do at 22, 0.
+  end
+  ^^^
+spec/feature/integration_horse_spec.rb:32:3: C: [Correctable] RSpec/EmptyLineAfterExampleGroup: Add an empty line after describe.
+  end
+  ^^^
+spec/feature/integration_horse_spec.rb:33:1: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+RSpec.describe 'Deleting a horse', type: :feature do
+^^^^^
+spec/feature/integration_horse_spec.rb:33:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+RSpec.describe 'Deleting a horse', type: :feature do
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_horse_spec.rb:34:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    scenario 'valid inputs' do
+  ^^
+spec/feature/integration_horse_spec.rb:34:5: C: [Correctable] RSpec/Capybara/FeatureMethods: Use it instead of scenario.
+    scenario 'valid inputs' do
+    ^^^^^^^^
+spec/feature/integration_horse_spec.rb:35:5: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+      horse = Horse.create(name: "Horsey1", brand: 'H1199', birthday: '01/01/1999')
+    ^^
+spec/feature/integration_horse_spec.rb:35:15: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+      horse = Horse.create(name: "Horsey1", brand: 'H1199', birthday: '01/01/1999')
+              ^^^^^
+spec/feature/integration_horse_spec.rb:35:21: C: [Correctable] Rails/SaveBang: Use create! instead of create if the return value is not checked. Or check persisted? on model returned from create.
+      horse = Horse.create(name: "Horsey1", brand: 'H1199', birthday: '01/01/1999')
+                    ^^^^^^
+spec/feature/integration_horse_spec.rb:35:34: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      horse = Horse.create(name: "Horsey1", brand: 'H1199', birthday: '01/01/1999')
+                                 ^^^^^^^^^
+spec/feature/integration_horse_spec.rb:38:7: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+      expect(page).to have_content('Horsey1 was successfully destroyed.')
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_horse_spec.rb:40:3: C: [Correctable] Layout/BlockAlignment: end at 40, 2 is not aligned with RSpec.describe 'Deleting a horse', type: :feature do at 33, 0.
+  end
+  ^^^
+spec/feature/integration_horse_spec.rb:40:6: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+  end
+     
+spec/feature/integration_staff_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/feature/integration_staff_spec.rb:3:1: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+RSpec.describe 'Creating a staff member', type: :feature do
+^^^^^
+spec/feature/integration_staff_spec.rb:3:1: C: RSpec/MultipleDescribes: Do not use multiple top-level example groups - try to nest them.
+RSpec.describe 'Creating a staff member', type: :feature do
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_staff_spec.rb:3:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+RSpec.describe 'Creating a staff member', type: :feature do
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_staff_spec.rb:4:5: C: [Correctable] RSpec/Capybara/FeatureMethods: Use it instead of scenario.
+    scenario 'valid inputs' do
+    ^^^^^^^^
+spec/feature/integration_staff_spec.rb:5:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 6) spaces for indentation.
+        visit new_staff_path
+  ^^^^^^
+spec/feature/integration_staff_spec.rb:16:9: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        expect(page).to have_content('Staff was successfully created.')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_staff_spec.rb:17:3: C: [Correctable] Layout/BlockAlignment: end at 17, 2 is not aligned with scenario 'valid inputs' do at 4, 4.
+  end
+  ^^^
+spec/feature/integration_staff_spec.rb:20:1: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+RSpec.describe 'Viewing a staff member', type: :feature do
+^^^^^
+spec/feature/integration_staff_spec.rb:20:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+RSpec.describe 'Viewing a staff member', type: :feature do
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_staff_spec.rb:21:5: C: [Correctable] RSpec/Capybara/FeatureMethods: Use it instead of scenario.
+    scenario 'valid inputs' do
+    ^^^^^^^^
+spec/feature/integration_staff_spec.rb:22:17: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+        staff = Staff.create(
+                ^^^^^
+spec/feature/integration_staff_spec.rb:22:23: C: [Correctable] Rails/SaveBang: Use create! instead of create if the return value is not checked. Or check persisted? on model returned from create.
+        staff = Staff.create(
+                      ^^^^^^
+spec/feature/integration_staff_spec.rb:33:9: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        expect(page).to have_content('John')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_staff_spec.rb:34:9: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        expect(page).to have_content('Doe')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_staff_spec.rb:35:9: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        expect(page).to have_content('123-456-7890')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_staff_spec.rb:36:9: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        expect(page).to have_content('john.doe@tamu.edu')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_staff_spec.rb:37:9: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        expect(page).to have_content('jdoe123.')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_staff_spec.rb:41:1: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+RSpec.describe 'Editing a staff member', type: :feature do
+^^^^^
+spec/feature/integration_staff_spec.rb:41:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+RSpec.describe 'Editing a staff member', type: :feature do
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_staff_spec.rb:42:5: C: [Correctable] RSpec/Capybara/FeatureMethods: Use it instead of scenario.
+    scenario 'valid inputs' do
+    ^^^^^^^^
+spec/feature/integration_staff_spec.rb:43:17: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+        staff = Staff.create(
+                ^^^^^
+spec/feature/integration_staff_spec.rb:43:23: C: [Correctable] Rails/SaveBang: Use create! instead of create if the return value is not checked. Or check persisted? on model returned from create.
+        staff = Staff.create(
+                      ^^^^^^
+spec/feature/integration_staff_spec.rb:62:9: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        expect(page).to have_content('Staff was successfully updated.')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_staff_spec.rb:66:1: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+RSpec.describe 'Deleting a horse', type: :feature do
+^^^^^
+spec/feature/integration_staff_spec.rb:66:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+RSpec.describe 'Deleting a horse', type: :feature do
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_staff_spec.rb:67:5: C: [Correctable] RSpec/Capybara/FeatureMethods: Use it instead of scenario.
+    scenario 'valid inputs' do
+    ^^^^^^^^
+spec/feature/integration_staff_spec.rb:68:17: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+        staff = Staff.create(
+                ^^^^^
+spec/feature/integration_staff_spec.rb:68:23: C: [Correctable] Rails/SaveBang: Use create! instead of create if the return value is not checked. Or check persisted? on model returned from create.
+        staff = Staff.create(
+                      ^^^^^^
+spec/feature/integration_staff_spec.rb:79:9: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+        expect(page).to have_content('Staff was successfully destroyed.')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/integration_staff_spec.rb:81:4: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+end 
+   ^
+spec/feature/integration_staff_spec.rb:81:5: C: [Correctable] Layout/TrailingEmptyLines: 1 trailing blank lines detected.
+end  ...
+    
+spec/rails_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This file is copied to spec/ when you run 'rails generate rspec:install'
+^
+spec/rails_helper.rb:3:1: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+ENV['RAILS_ENV'] ||= 'test'
+^^^
+spec/rails_helper.rb:6:7: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+abort("The Rails environment is running in production mode!") if Rails.env.production?
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/rails_helper.rb:6:66: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+abort("The Rails environment is running in production mode!") if Rails.env.production?
+                                                                 ^^^^^
+spec/rails_helper.rb:28:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  ActiveRecord::Migration.maintain_test_schema!
+^^
+spec/rails_helper.rb:28:3: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+  ActiveRecord::Migration.maintain_test_schema!
+  ^^^^^^^^^^^^
+spec/rails_helper.rb:29:8: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+rescue ActiveRecord::PendingMigrationError => e
+       ^^^^^^^^^^^^
+spec/rails_helper.rb:30:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  abort e.to_s.strip
+^^
+spec/rails_helper.rb:30:3: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+  abort e.to_s.strip
+  ^^^^^^^^^^^^^^^^^^
+spec/rails_helper.rb:32:1: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+RSpec.configure do |config|
+^^^^^
+spec/rails_helper.rb:34:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+^^
+spec/rails_helper.rb:34:25: C: Rails/FilePath: Prefer Rails.root.join('path/to').
+  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/rails_helper.rb:62:3: C: [Correctable] Layout/CommentIndentation: Incorrect indentation detected (column 2 instead of 4).
+  # config.filter_gems_from_backtrace("gem name")
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/unit/unit_attendance_spec.rb:3:1: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+RSpec.describe Attendance, type: :model do
+^^^^^
+spec/unit/unit_attendance_spec.rb:3:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+RSpec.describe Attendance, type: :model do
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:3:16: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+RSpec.describe Attendance, type: :model do
+               ^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:5:186: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        described_class.new(attendance_id: 1, cadet_id: 1, horse_id: 1, staff_id: 1, appointment_time: '01/01/2023', check_in_time: '01/01/2023', check_out_time: '01/01/2023', purpose: "Riding Lesson")
+                                                                                                                                                                                         ^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:8:3: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  it 'is valid with valid attributes' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:9:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    expect(subject).to be_valid
+  ^^
+spec/unit/unit_attendance_spec.rb:9:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(subject).to be_valid
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:9:12: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(subject).to be_valid
+           ^^^^^^^
+spec/unit/unit_attendance_spec.rb:12:3: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  it 'is valid that attendance can be updated' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:13:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    subject.update(:attendance_id => 2)
+  ^^
+spec/unit/unit_attendance_spec.rb:13:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.update(:attendance_id => 2)
+    ^^^^^^^
+spec/unit/unit_attendance_spec.rb:13:13: C: [Correctable] Rails/SaveBang: Use update! instead of update if the return value is not checked.
+    subject.update(:attendance_id => 2)
+            ^^^^^^
+spec/unit/unit_attendance_spec.rb:13:20: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    subject.update(:attendance_id => 2)
+                   ^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:14:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.update(:cadet_id => 2)
+    ^^^^^^^
+spec/unit/unit_attendance_spec.rb:14:13: C: [Correctable] Rails/SaveBang: Use update! instead of update if the return value is not checked.
+    subject.update(:cadet_id => 2)
+            ^^^^^^
+spec/unit/unit_attendance_spec.rb:14:20: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    subject.update(:cadet_id => 2)
+                   ^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:15:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.update(:horse_id => 2)
+    ^^^^^^^
+spec/unit/unit_attendance_spec.rb:15:13: C: [Correctable] Rails/SaveBang: Use update! instead of update if the return value is not checked.
+    subject.update(:horse_id => 2)
+            ^^^^^^
+spec/unit/unit_attendance_spec.rb:15:20: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    subject.update(:horse_id => 2)
+                   ^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:16:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.update(:staff_id => 2)
+    ^^^^^^^
+spec/unit/unit_attendance_spec.rb:16:13: C: [Correctable] Rails/SaveBang: Use update! instead of update if the return value is not checked.
+    subject.update(:staff_id => 2)
+            ^^^^^^
+spec/unit/unit_attendance_spec.rb:16:20: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    subject.update(:staff_id => 2)
+                   ^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:17:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.update(:appointment_time => '01/02/2023')
+    ^^^^^^^
+spec/unit/unit_attendance_spec.rb:17:13: C: [Correctable] Rails/SaveBang: Use update! instead of update if the return value is not checked.
+    subject.update(:appointment_time => '01/02/2023')
+            ^^^^^^
+spec/unit/unit_attendance_spec.rb:17:20: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    subject.update(:appointment_time => '01/02/2023')
+                   ^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:18:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.update(:check_in_time => '01/02/2023')
+    ^^^^^^^
+spec/unit/unit_attendance_spec.rb:18:13: C: [Correctable] Rails/SaveBang: Use update! instead of update if the return value is not checked.
+    subject.update(:check_in_time => '01/02/2023')
+            ^^^^^^
+spec/unit/unit_attendance_spec.rb:18:20: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    subject.update(:check_in_time => '01/02/2023')
+                   ^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:19:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.update(:check_out_time => '01/02/2023')
+    ^^^^^^^
+spec/unit/unit_attendance_spec.rb:19:13: C: [Correctable] Rails/SaveBang: Use update! instead of update if the return value is not checked.
+    subject.update(:check_out_time => '01/02/2023')
+            ^^^^^^
+spec/unit/unit_attendance_spec.rb:19:20: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    subject.update(:check_out_time => '01/02/2023')
+                   ^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:20:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.update(:purpose => "Feeding")
+    ^^^^^^^
+spec/unit/unit_attendance_spec.rb:20:13: C: [Correctable] Rails/SaveBang: Use update! instead of update if the return value is not checked.
+    subject.update(:purpose => "Feeding")
+            ^^^^^^
+spec/unit/unit_attendance_spec.rb:20:20: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    subject.update(:purpose => "Feeding")
+                   ^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:20:32: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    subject.update(:purpose => "Feeding")
+                               ^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:21:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Attendance.find_by_attendance_id(2)).to eq(subject)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:21:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Attendance.find_by_attendance_id(2)).to eq(subject)
+           ^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:21:12: C: [Correctable] RSpec/DescribedClass: Use described_class instead of Attendance.
+    expect(Attendance.find_by_attendance_id(2)).to eq(subject)
+           ^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:21:12: C: [Correctable] Rails/DynamicFindBy: Use find_by instead of dynamic find_by_attendance_id.
+    expect(Attendance.find_by_attendance_id(2)).to eq(subject)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:21:55: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(Attendance.find_by_attendance_id(2)).to eq(subject)
+                                                      ^^^^^^^
+spec/unit/unit_attendance_spec.rb:22:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Attendance.find_by_cadet_id(2)).to eq(subject)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:22:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Attendance.find_by_cadet_id(2)).to eq(subject)
+           ^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:22:12: C: [Correctable] RSpec/DescribedClass: Use described_class instead of Attendance.
+    expect(Attendance.find_by_cadet_id(2)).to eq(subject)
+           ^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:22:12: C: [Correctable] Rails/DynamicFindBy: Use find_by instead of dynamic find_by_cadet_id.
+    expect(Attendance.find_by_cadet_id(2)).to eq(subject)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:22:50: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(Attendance.find_by_cadet_id(2)).to eq(subject)
+                                                 ^^^^^^^
+spec/unit/unit_attendance_spec.rb:23:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Attendance.find_by_horse_id(2)).to eq(subject)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:23:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Attendance.find_by_horse_id(2)).to eq(subject)
+           ^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:23:12: C: [Correctable] RSpec/DescribedClass: Use described_class instead of Attendance.
+    expect(Attendance.find_by_horse_id(2)).to eq(subject)
+           ^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:23:12: C: [Correctable] Rails/DynamicFindBy: Use find_by instead of dynamic find_by_horse_id.
+    expect(Attendance.find_by_horse_id(2)).to eq(subject)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:23:50: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(Attendance.find_by_horse_id(2)).to eq(subject)
+                                                 ^^^^^^^
+spec/unit/unit_attendance_spec.rb:24:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Attendance.find_by_staff_id(2)).to eq(subject)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:24:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Attendance.find_by_staff_id(2)).to eq(subject)
+           ^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:24:12: C: [Correctable] RSpec/DescribedClass: Use described_class instead of Attendance.
+    expect(Attendance.find_by_staff_id(2)).to eq(subject)
+           ^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:24:12: C: [Correctable] Rails/DynamicFindBy: Use find_by instead of dynamic find_by_staff_id.
+    expect(Attendance.find_by_staff_id(2)).to eq(subject)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:24:50: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(Attendance.find_by_staff_id(2)).to eq(subject)
+                                                 ^^^^^^^
+spec/unit/unit_attendance_spec.rb:25:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Attendance.find_by_appointment_time('01/02/2023')).to eq(subject)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:25:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Attendance.find_by_appointment_time('01/02/2023')).to eq(subject)
+           ^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:25:12: C: [Correctable] RSpec/DescribedClass: Use described_class instead of Attendance.
+    expect(Attendance.find_by_appointment_time('01/02/2023')).to eq(subject)
+           ^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:25:12: C: [Correctable] Rails/DynamicFindBy: Use find_by instead of dynamic find_by_appointment_time.
+    expect(Attendance.find_by_appointment_time('01/02/2023')).to eq(subject)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:25:69: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(Attendance.find_by_appointment_time('01/02/2023')).to eq(subject)
+                                                                    ^^^^^^^
+spec/unit/unit_attendance_spec.rb:26:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Attendance.find_by_check_in_time('01/02/2023')).to eq(subject)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:26:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Attendance.find_by_check_in_time('01/02/2023')).to eq(subject)
+           ^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:26:12: C: [Correctable] RSpec/DescribedClass: Use described_class instead of Attendance.
+    expect(Attendance.find_by_check_in_time('01/02/2023')).to eq(subject)
+           ^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:26:12: C: [Correctable] Rails/DynamicFindBy: Use find_by instead of dynamic find_by_check_in_time.
+    expect(Attendance.find_by_check_in_time('01/02/2023')).to eq(subject)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:26:66: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(Attendance.find_by_check_in_time('01/02/2023')).to eq(subject)
+                                                                 ^^^^^^^
+spec/unit/unit_attendance_spec.rb:27:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Attendance.find_by_check_out_time('01/02/2023')).to eq(subject)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:27:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Attendance.find_by_check_out_time('01/02/2023')).to eq(subject)
+           ^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:27:12: C: [Correctable] RSpec/DescribedClass: Use described_class instead of Attendance.
+    expect(Attendance.find_by_check_out_time('01/02/2023')).to eq(subject)
+           ^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:27:12: C: [Correctable] Rails/DynamicFindBy: Use find_by instead of dynamic find_by_check_out_time.
+    expect(Attendance.find_by_check_out_time('01/02/2023')).to eq(subject)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:27:67: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(Attendance.find_by_check_out_time('01/02/2023')).to eq(subject)
+                                                                  ^^^^^^^
+spec/unit/unit_attendance_spec.rb:28:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Attendance.find_by_purpose("Feeding")).to eq(subject)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:28:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Attendance.find_by_purpose("Feeding")).to eq(subject)
+           ^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:28:12: C: [Correctable] RSpec/DescribedClass: Use described_class instead of Attendance.
+    expect(Attendance.find_by_purpose("Feeding")).to eq(subject)
+           ^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:28:12: C: [Correctable] Rails/DynamicFindBy: Use find_by instead of dynamic find_by_purpose.
+    expect(Attendance.find_by_purpose("Feeding")).to eq(subject)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:28:39: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    expect(Attendance.find_by_purpose("Feeding")).to eq(subject)
+                                      ^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:28:57: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(Attendance.find_by_purpose("Feeding")).to eq(subject)
+                                                        ^^^^^^^
+spec/unit/unit_attendance_spec.rb:31:3: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  it 'is valid that attendance can be destroyed' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:32:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    subject.destroy
+  ^^
+spec/unit/unit_attendance_spec.rb:32:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.destroy
+    ^^^^^^^
+spec/unit/unit_attendance_spec.rb:32:13: C: [Correctable] Rails/SaveBang: Use destroy! instead of destroy if the return value is not checked.
+    subject.destroy
+            ^^^^^^^
+spec/unit/unit_attendance_spec.rb:33:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Attendance.find_by_attendance_id(2)).to be_nil
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:33:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Attendance.find_by_attendance_id(2)).to be_nil
+           ^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:33:12: C: [Correctable] RSpec/DescribedClass: Use described_class instead of Attendance.
+    expect(Attendance.find_by_attendance_id(2)).to be_nil
+           ^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:33:12: C: [Correctable] Rails/DynamicFindBy: Use find_by instead of dynamic find_by_attendance_id.
+    expect(Attendance.find_by_attendance_id(2)).to be_nil
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:35:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/unit/unit_attendance_spec.rb:40:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/unit/unit_attendance_spec.rb:45:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/unit/unit_attendance_spec.rb:50:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/unit/unit_attendance_spec.rb:55:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/unit/unit_attendance_spec.rb:56:3: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  it 'is not valid without a appointment_time' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:56:3: C: RSpec/RepeatedExample: Don't repeat examples within an example group.
+  it 'is not valid without a appointment_time' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:57:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    subject.appointment_time = nil
+  ^^
+spec/unit/unit_attendance_spec.rb:57:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.appointment_time = nil
+    ^^^^^^^
+spec/unit/unit_attendance_spec.rb:58:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(subject).not_to be_valid
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:58:12: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(subject).not_to be_valid
+           ^^^^^^^
+spec/unit/unit_attendance_spec.rb:61:3: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  it 'is not valid without an appointment_time' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:61:3: C: RSpec/RepeatedExample: Don't repeat examples within an example group.
+  it 'is not valid without an appointment_time' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:62:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    subject.appointment_time = nil
+  ^^
+spec/unit/unit_attendance_spec.rb:62:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.appointment_time = nil
+    ^^^^^^^
+spec/unit/unit_attendance_spec.rb:63:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(subject).not_to be_valid
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:63:12: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(subject).not_to be_valid
+           ^^^^^^^
+spec/unit/unit_attendance_spec.rb:65:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/unit/unit_attendance_spec.rb:66:3: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  it 'is not valid without a check_in_time' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:67:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    subject.check_in_time = nil
+  ^^
+spec/unit/unit_attendance_spec.rb:67:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.check_in_time = nil
+    ^^^^^^^
+spec/unit/unit_attendance_spec.rb:68:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(subject).not_to be_valid
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:68:12: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(subject).not_to be_valid
+           ^^^^^^^
+spec/unit/unit_attendance_spec.rb:70:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/unit/unit_attendance_spec.rb:71:3: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  it 'is not valid without a check_out_time' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:72:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    subject.check_out_time = nil
+  ^^
+spec/unit/unit_attendance_spec.rb:72:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.check_out_time = nil
+    ^^^^^^^
+spec/unit/unit_attendance_spec.rb:73:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(subject).not_to be_valid
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:73:12: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(subject).not_to be_valid
+           ^^^^^^^
+spec/unit/unit_attendance_spec.rb:75:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/unit/unit_attendance_spec.rb:76:3: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  it 'is not valid without a purpose' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:77:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    subject.purpose = nil
+  ^^
+spec/unit/unit_attendance_spec.rb:77:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.purpose = nil
+    ^^^^^^^
+spec/unit/unit_attendance_spec.rb:78:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(subject).not_to be_valid
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_attendance_spec.rb:78:12: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(subject).not_to be_valid
+           ^^^^^^^
+spec/unit/unit_cadet_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/unit/unit_cadet_spec.rb:3:1: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+RSpec.describe Cadet, type: :model do
+^^^^^
+spec/unit/unit_cadet_spec.rb:3:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+RSpec.describe Cadet, type: :model do
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:3:16: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+RSpec.describe Cadet, type: :model do
+               ^^^^^
+spec/unit/unit_cadet_spec.rb:4:1: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+  subject do
+^^
+spec/unit/unit_cadet_spec.rb:5:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    described_class.new(first_name: 'Billy', last_name: 'Bob', graduation_year: '2024', phone_number: '0123456789', uin: '120003456')
+  ^^
+spec/unit/unit_cadet_spec.rb:9:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    expect(subject).to be_valid
+  ^^
+spec/unit/unit_cadet_spec.rb:9:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(subject).to be_valid
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:9:12: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(subject).to be_valid
+           ^^^^^^^
+spec/unit/unit_cadet_spec.rb:13:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    subject.update(:first_name => "Billy2")
+  ^^
+spec/unit/unit_cadet_spec.rb:13:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.update(:first_name => "Billy2")
+    ^^^^^^^
+spec/unit/unit_cadet_spec.rb:13:13: C: [Correctable] Rails/SaveBang: Use update! instead of update if the return value is not checked.
+    subject.update(:first_name => "Billy2")
+            ^^^^^^
+spec/unit/unit_cadet_spec.rb:13:20: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    subject.update(:first_name => "Billy2")
+                   ^^^^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:13:35: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    subject.update(:first_name => "Billy2")
+                                  ^^^^^^^^
+spec/unit/unit_cadet_spec.rb:14:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.update(:last_name => "Bob2")
+    ^^^^^^^
+spec/unit/unit_cadet_spec.rb:14:13: C: [Correctable] Rails/SaveBang: Use update! instead of update if the return value is not checked.
+    subject.update(:last_name => "Bob2")
+            ^^^^^^
+spec/unit/unit_cadet_spec.rb:14:20: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    subject.update(:last_name => "Bob2")
+                   ^^^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:14:34: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    subject.update(:last_name => "Bob2")
+                                 ^^^^^^
+spec/unit/unit_cadet_spec.rb:15:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.update(:graduation_year => "2025")
+    ^^^^^^^
+spec/unit/unit_cadet_spec.rb:15:13: C: [Correctable] Rails/SaveBang: Use update! instead of update if the return value is not checked.
+    subject.update(:graduation_year => "2025")
+            ^^^^^^
+spec/unit/unit_cadet_spec.rb:15:20: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    subject.update(:graduation_year => "2025")
+                   ^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:15:40: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    subject.update(:graduation_year => "2025")
+                                       ^^^^^^
+spec/unit/unit_cadet_spec.rb:16:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.update(:phone_number => "9876543210")
+    ^^^^^^^
+spec/unit/unit_cadet_spec.rb:16:13: C: [Correctable] Rails/SaveBang: Use update! instead of update if the return value is not checked.
+    subject.update(:phone_number => "9876543210")
+            ^^^^^^
+spec/unit/unit_cadet_spec.rb:16:20: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    subject.update(:phone_number => "9876543210")
+                   ^^^^^^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:16:37: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    subject.update(:phone_number => "9876543210")
+                                    ^^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:17:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.update(:uin => "654300021")
+    ^^^^^^^
+spec/unit/unit_cadet_spec.rb:17:13: C: [Correctable] Rails/SaveBang: Use update! instead of update if the return value is not checked.
+    subject.update(:uin => "654300021")
+            ^^^^^^
+spec/unit/unit_cadet_spec.rb:17:20: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    subject.update(:uin => "654300021")
+                   ^^^^^^^
+spec/unit/unit_cadet_spec.rb:17:28: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    subject.update(:uin => "654300021")
+                           ^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:18:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Cadet.find_by_first_name("Billy2")).to eq(subject)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:18:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Cadet.find_by_first_name("Billy2")).to eq(subject)
+           ^^^^^
+spec/unit/unit_cadet_spec.rb:18:12: C: [Correctable] RSpec/DescribedClass: Use described_class instead of Cadet.
+    expect(Cadet.find_by_first_name("Billy2")).to eq(subject)
+           ^^^^^
+spec/unit/unit_cadet_spec.rb:18:12: C: [Correctable] Rails/DynamicFindBy: Use find_by instead of dynamic find_by_first_name.
+    expect(Cadet.find_by_first_name("Billy2")).to eq(subject)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:18:37: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    expect(Cadet.find_by_first_name("Billy2")).to eq(subject)
+                                    ^^^^^^^^
+spec/unit/unit_cadet_spec.rb:18:54: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(Cadet.find_by_first_name("Billy2")).to eq(subject)
+                                                     ^^^^^^^
+spec/unit/unit_cadet_spec.rb:19:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Cadet.find_by_last_name("Bob2")).to eq(subject)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:19:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Cadet.find_by_last_name("Bob2")).to eq(subject)
+           ^^^^^
+spec/unit/unit_cadet_spec.rb:19:12: C: [Correctable] RSpec/DescribedClass: Use described_class instead of Cadet.
+    expect(Cadet.find_by_last_name("Bob2")).to eq(subject)
+           ^^^^^
+spec/unit/unit_cadet_spec.rb:19:12: C: [Correctable] Rails/DynamicFindBy: Use find_by instead of dynamic find_by_last_name.
+    expect(Cadet.find_by_last_name("Bob2")).to eq(subject)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:19:36: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    expect(Cadet.find_by_last_name("Bob2")).to eq(subject)
+                                   ^^^^^^
+spec/unit/unit_cadet_spec.rb:19:51: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(Cadet.find_by_last_name("Bob2")).to eq(subject)
+                                                  ^^^^^^^
+spec/unit/unit_cadet_spec.rb:20:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Cadet.find_by_graduation_year("2025")).to eq(subject)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:20:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Cadet.find_by_graduation_year("2025")).to eq(subject)
+           ^^^^^
+spec/unit/unit_cadet_spec.rb:20:12: C: [Correctable] RSpec/DescribedClass: Use described_class instead of Cadet.
+    expect(Cadet.find_by_graduation_year("2025")).to eq(subject)
+           ^^^^^
+spec/unit/unit_cadet_spec.rb:20:12: C: [Correctable] Rails/DynamicFindBy: Use find_by instead of dynamic find_by_graduation_year.
+    expect(Cadet.find_by_graduation_year("2025")).to eq(subject)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:20:42: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    expect(Cadet.find_by_graduation_year("2025")).to eq(subject)
+                                         ^^^^^^
+spec/unit/unit_cadet_spec.rb:20:57: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(Cadet.find_by_graduation_year("2025")).to eq(subject)
+                                                        ^^^^^^^
+spec/unit/unit_cadet_spec.rb:21:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Cadet.find_by_phone_number("9876543210")).to eq(subject)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:21:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Cadet.find_by_phone_number("9876543210")).to eq(subject)
+           ^^^^^
+spec/unit/unit_cadet_spec.rb:21:12: C: [Correctable] RSpec/DescribedClass: Use described_class instead of Cadet.
+    expect(Cadet.find_by_phone_number("9876543210")).to eq(subject)
+           ^^^^^
+spec/unit/unit_cadet_spec.rb:21:12: C: [Correctable] Rails/DynamicFindBy: Use find_by instead of dynamic find_by_phone_number.
+    expect(Cadet.find_by_phone_number("9876543210")).to eq(subject)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:21:39: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    expect(Cadet.find_by_phone_number("9876543210")).to eq(subject)
+                                      ^^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:21:60: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(Cadet.find_by_phone_number("9876543210")).to eq(subject)
+                                                           ^^^^^^^
+spec/unit/unit_cadet_spec.rb:22:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Cadet.find_by_uin("654300021")).to eq(subject)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:22:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Cadet.find_by_uin("654300021")).to eq(subject)
+           ^^^^^
+spec/unit/unit_cadet_spec.rb:22:12: C: [Correctable] RSpec/DescribedClass: Use described_class instead of Cadet.
+    expect(Cadet.find_by_uin("654300021")).to eq(subject)
+           ^^^^^
+spec/unit/unit_cadet_spec.rb:22:12: C: [Correctable] Rails/DynamicFindBy: Use find_by instead of dynamic find_by_uin.
+    expect(Cadet.find_by_uin("654300021")).to eq(subject)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:22:30: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    expect(Cadet.find_by_uin("654300021")).to eq(subject)
+                             ^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:22:50: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(Cadet.find_by_uin("654300021")).to eq(subject)
+                                                 ^^^^^^^
+spec/unit/unit_cadet_spec.rb:26:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    subject.destroy
+  ^^
+spec/unit/unit_cadet_spec.rb:26:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.destroy
+    ^^^^^^^
+spec/unit/unit_cadet_spec.rb:26:13: C: [Correctable] Rails/SaveBang: Use destroy! instead of destroy if the return value is not checked.
+    subject.destroy
+            ^^^^^^^
+spec/unit/unit_cadet_spec.rb:27:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Cadet.find_by_first_name("Billy2")).to be_nil
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:27:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Cadet.find_by_first_name("Billy2")).to be_nil
+           ^^^^^
+spec/unit/unit_cadet_spec.rb:27:12: C: [Correctable] RSpec/DescribedClass: Use described_class instead of Cadet.
+    expect(Cadet.find_by_first_name("Billy2")).to be_nil
+           ^^^^^
+spec/unit/unit_cadet_spec.rb:27:12: C: [Correctable] Rails/DynamicFindBy: Use find_by instead of dynamic find_by_first_name.
+    expect(Cadet.find_by_first_name("Billy2")).to be_nil
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:27:37: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    expect(Cadet.find_by_first_name("Billy2")).to be_nil
+                                    ^^^^^^^^
+spec/unit/unit_cadet_spec.rb:31:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    subject.first_name = nil
+  ^^
+spec/unit/unit_cadet_spec.rb:31:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.first_name = nil
+    ^^^^^^^
+spec/unit/unit_cadet_spec.rb:32:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(subject).not_to be_valid
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:32:12: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(subject).not_to be_valid
+           ^^^^^^^
+spec/unit/unit_cadet_spec.rb:36:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    subject.last_name = nil
+  ^^
+spec/unit/unit_cadet_spec.rb:36:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.last_name = nil
+    ^^^^^^^
+spec/unit/unit_cadet_spec.rb:37:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(subject).not_to be_valid
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:37:12: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(subject).not_to be_valid
+           ^^^^^^^
+spec/unit/unit_cadet_spec.rb:41:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    subject.graduation_year = nil
+  ^^
+spec/unit/unit_cadet_spec.rb:41:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.graduation_year = nil
+    ^^^^^^^
+spec/unit/unit_cadet_spec.rb:42:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(subject).not_to be_valid
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:42:12: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(subject).not_to be_valid
+           ^^^^^^^
+spec/unit/unit_cadet_spec.rb:46:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    subject.phone_number = nil
+  ^^
+spec/unit/unit_cadet_spec.rb:46:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.phone_number = nil
+    ^^^^^^^
+spec/unit/unit_cadet_spec.rb:47:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(subject).not_to be_valid
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:47:12: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(subject).not_to be_valid
+           ^^^^^^^
+spec/unit/unit_cadet_spec.rb:51:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    subject.uin = nil
+  ^^
+spec/unit/unit_cadet_spec.rb:51:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.uin = nil
+    ^^^^^^^
+spec/unit/unit_cadet_spec.rb:52:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(subject).not_to be_valid
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_cadet_spec.rb:52:12: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(subject).not_to be_valid
+           ^^^^^^^
+spec/unit/unit_cadet_spec.rb:54:4: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+end
+   
+spec/unit/unit_horse_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/unit/unit_horse_spec.rb:3:1: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+RSpec.describe Horse, type: :model do
+^^^^^
+spec/unit/unit_horse_spec.rb:3:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+RSpec.describe Horse, type: :model do
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_horse_spec.rb:3:16: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+RSpec.describe Horse, type: :model do
+               ^^^^^
+spec/unit/unit_horse_spec.rb:5:35: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        described_class.new(name: "Horse", brand: 'H1199', birthday: '01/01/1999')
+                                  ^^^^^^^
+spec/unit/unit_horse_spec.rb:8:3: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  it 'is valid with valid attributes' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_horse_spec.rb:9:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    expect(subject).to be_valid
+  ^^
+spec/unit/unit_horse_spec.rb:9:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(subject).to be_valid
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_horse_spec.rb:9:12: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(subject).to be_valid
+           ^^^^^^^
+spec/unit/unit_horse_spec.rb:12:3: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  it 'is valid that horse can be updated' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_horse_spec.rb:13:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    subject.update(:name => "Horse1")
+  ^^
+spec/unit/unit_horse_spec.rb:13:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.update(:name => "Horse1")
+    ^^^^^^^
+spec/unit/unit_horse_spec.rb:13:13: C: [Correctable] Rails/SaveBang: Use update! instead of update if the return value is not checked.
+    subject.update(:name => "Horse1")
+            ^^^^^^
+spec/unit/unit_horse_spec.rb:13:20: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    subject.update(:name => "Horse1")
+                   ^^^^^^^^
+spec/unit/unit_horse_spec.rb:13:29: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    subject.update(:name => "Horse1")
+                            ^^^^^^^^
+spec/unit/unit_horse_spec.rb:14:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.update(:brand => "H1198")
+    ^^^^^^^
+spec/unit/unit_horse_spec.rb:14:13: C: [Correctable] Rails/SaveBang: Use update! instead of update if the return value is not checked.
+    subject.update(:brand => "H1198")
+            ^^^^^^
+spec/unit/unit_horse_spec.rb:14:20: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    subject.update(:brand => "H1198")
+                   ^^^^^^^^^
+spec/unit/unit_horse_spec.rb:14:30: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    subject.update(:brand => "H1198")
+                             ^^^^^^^
+spec/unit/unit_horse_spec.rb:15:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.update(:birthday => "01/02/1999")
+    ^^^^^^^
+spec/unit/unit_horse_spec.rb:15:13: C: [Correctable] Rails/SaveBang: Use update! instead of update if the return value is not checked.
+    subject.update(:birthday => "01/02/1999")
+            ^^^^^^
+spec/unit/unit_horse_spec.rb:15:20: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    subject.update(:birthday => "01/02/1999")
+                   ^^^^^^^^^^^^
+spec/unit/unit_horse_spec.rb:15:33: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    subject.update(:birthday => "01/02/1999")
+                                ^^^^^^^^^^^^
+spec/unit/unit_horse_spec.rb:16:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Horse.find_by_name("Horse1")).to eq(subject)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_horse_spec.rb:16:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Horse.find_by_name("Horse1")).to eq(subject)
+           ^^^^^
+spec/unit/unit_horse_spec.rb:16:12: C: [Correctable] RSpec/DescribedClass: Use described_class instead of Horse.
+    expect(Horse.find_by_name("Horse1")).to eq(subject)
+           ^^^^^
+spec/unit/unit_horse_spec.rb:16:12: C: [Correctable] Rails/DynamicFindBy: Use find_by instead of dynamic find_by_name.
+    expect(Horse.find_by_name("Horse1")).to eq(subject)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_horse_spec.rb:16:31: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    expect(Horse.find_by_name("Horse1")).to eq(subject)
+                              ^^^^^^^^
+spec/unit/unit_horse_spec.rb:16:48: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(Horse.find_by_name("Horse1")).to eq(subject)
+                                               ^^^^^^^
+spec/unit/unit_horse_spec.rb:17:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Horse.find_by_brand("H1198")).to eq(subject)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_horse_spec.rb:17:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Horse.find_by_brand("H1198")).to eq(subject)
+           ^^^^^
+spec/unit/unit_horse_spec.rb:17:12: C: [Correctable] RSpec/DescribedClass: Use described_class instead of Horse.
+    expect(Horse.find_by_brand("H1198")).to eq(subject)
+           ^^^^^
+spec/unit/unit_horse_spec.rb:17:12: C: [Correctable] Rails/DynamicFindBy: Use find_by instead of dynamic find_by_brand.
+    expect(Horse.find_by_brand("H1198")).to eq(subject)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_horse_spec.rb:17:32: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    expect(Horse.find_by_brand("H1198")).to eq(subject)
+                               ^^^^^^^
+spec/unit/unit_horse_spec.rb:17:48: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(Horse.find_by_brand("H1198")).to eq(subject)
+                                               ^^^^^^^
+spec/unit/unit_horse_spec.rb:18:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Horse.find_by_birthday("01/02/1999")).to eq(subject)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_horse_spec.rb:18:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Horse.find_by_birthday("01/02/1999")).to eq(subject)
+           ^^^^^
+spec/unit/unit_horse_spec.rb:18:12: C: [Correctable] RSpec/DescribedClass: Use described_class instead of Horse.
+    expect(Horse.find_by_birthday("01/02/1999")).to eq(subject)
+           ^^^^^
+spec/unit/unit_horse_spec.rb:18:12: C: [Correctable] Rails/DynamicFindBy: Use find_by instead of dynamic find_by_birthday.
+    expect(Horse.find_by_birthday("01/02/1999")).to eq(subject)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_horse_spec.rb:18:35: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    expect(Horse.find_by_birthday("01/02/1999")).to eq(subject)
+                                  ^^^^^^^^^^^^
+spec/unit/unit_horse_spec.rb:18:56: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(Horse.find_by_birthday("01/02/1999")).to eq(subject)
+                                                       ^^^^^^^
+spec/unit/unit_horse_spec.rb:21:3: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  it 'is valid that horse can be deleted' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_horse_spec.rb:22:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    subject.destroy
+  ^^
+spec/unit/unit_horse_spec.rb:22:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.destroy
+    ^^^^^^^
+spec/unit/unit_horse_spec.rb:22:13: C: [Correctable] Rails/SaveBang: Use destroy! instead of destroy if the return value is not checked.
+    subject.destroy
+            ^^^^^^^
+spec/unit/unit_horse_spec.rb:23:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Horse.find_by_name("Horse1")).to be_nil
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_horse_spec.rb:23:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Horse.find_by_name("Horse1")).to be_nil
+           ^^^^^
+spec/unit/unit_horse_spec.rb:23:12: C: [Correctable] RSpec/DescribedClass: Use described_class instead of Horse.
+    expect(Horse.find_by_name("Horse1")).to be_nil
+           ^^^^^
+spec/unit/unit_horse_spec.rb:23:12: C: [Correctable] Rails/DynamicFindBy: Use find_by instead of dynamic find_by_name.
+    expect(Horse.find_by_name("Horse1")).to be_nil
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_horse_spec.rb:23:31: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    expect(Horse.find_by_name("Horse1")).to be_nil
+                              ^^^^^^^^
+spec/unit/unit_horse_spec.rb:25:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/unit/unit_horse_spec.rb:26:3: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  it 'is not valid without a name' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_horse_spec.rb:27:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    subject.name = nil
+  ^^
+spec/unit/unit_horse_spec.rb:27:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.name = nil
+    ^^^^^^^
+spec/unit/unit_horse_spec.rb:28:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(subject).not_to be_valid
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_horse_spec.rb:28:12: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(subject).not_to be_valid
+           ^^^^^^^
+spec/unit/unit_horse_spec.rb:30:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/unit/unit_horse_spec.rb:31:3: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  it 'is not valid without a brand' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_horse_spec.rb:32:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    subject.brand = nil
+  ^^
+spec/unit/unit_horse_spec.rb:32:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.brand = nil
+    ^^^^^^^
+spec/unit/unit_horse_spec.rb:33:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(subject).not_to be_valid
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_horse_spec.rb:33:12: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(subject).not_to be_valid
+           ^^^^^^^
+spec/unit/unit_horse_spec.rb:35:1: C: [Correctable] Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/unit/unit_horse_spec.rb:36:3: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  it 'is not valid without a birthday' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_horse_spec.rb:37:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    subject.birthday = nil
+  ^^
+spec/unit/unit_horse_spec.rb:37:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.birthday = nil
+    ^^^^^^^
+spec/unit/unit_horse_spec.rb:38:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(subject).not_to be_valid
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_horse_spec.rb:38:12: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(subject).not_to be_valid
+           ^^^^^^^
+spec/unit/unit_horse_spec.rb:40:1: C: [Correctable] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body end.
+spec/unit/unit_horse_spec.rb:41:4: C: [Correctable] Layout/TrailingEmptyLines: Final newline missing.
+end
+   
+spec/unit/unit_staff_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/unit/unit_staff_spec.rb:3:1: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+RSpec.describe Staff, type: :model do
+^^^^^
+spec/unit/unit_staff_spec.rb:3:1: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+RSpec.describe Staff, type: :model do
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:3:16: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+RSpec.describe Staff, type: :model do
+               ^^^^^
+spec/unit/unit_staff_spec.rb:15:3: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  it 'is valid with valid attributes' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:16:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    expect(subject).to be_valid
+  ^^
+spec/unit/unit_staff_spec.rb:16:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(subject).to be_valid
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:16:12: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(subject).to be_valid
+           ^^^^^^^
+spec/unit/unit_staff_spec.rb:19:3: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  it 'is not valid without first name' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:20:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    subject.first_name = nil
+  ^^
+spec/unit/unit_staff_spec.rb:20:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.first_name = nil
+    ^^^^^^^
+spec/unit/unit_staff_spec.rb:21:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(subject).not_to be_valid
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:21:12: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(subject).not_to be_valid
+           ^^^^^^^
+spec/unit/unit_staff_spec.rb:24:3: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  it 'is not valid without last name' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:25:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    subject.last_name = nil
+  ^^
+spec/unit/unit_staff_spec.rb:25:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.last_name = nil
+    ^^^^^^^
+spec/unit/unit_staff_spec.rb:26:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(subject).not_to be_valid
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:26:12: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(subject).not_to be_valid
+           ^^^^^^^
+spec/unit/unit_staff_spec.rb:29:3: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  it 'is not valid without phone number' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:30:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    subject.phone_number = nil
+  ^^
+spec/unit/unit_staff_spec.rb:30:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.phone_number = nil
+    ^^^^^^^
+spec/unit/unit_staff_spec.rb:31:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(subject).not_to be_valid
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:31:12: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(subject).not_to be_valid
+           ^^^^^^^
+spec/unit/unit_staff_spec.rb:34:3: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  it 'is not valid without email' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:35:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    subject.email = nil
+  ^^
+spec/unit/unit_staff_spec.rb:35:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.email = nil
+    ^^^^^^^
+spec/unit/unit_staff_spec.rb:36:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(subject).not_to be_valid
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:36:12: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(subject).not_to be_valid
+           ^^^^^^^
+spec/unit/unit_staff_spec.rb:39:3: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  it 'is not valid without password' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:40:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    subject.password = nil
+  ^^
+spec/unit/unit_staff_spec.rb:40:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.password = nil
+    ^^^^^^^
+spec/unit/unit_staff_spec.rb:41:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(subject).not_to be_valid
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:41:12: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(subject).not_to be_valid
+           ^^^^^^^
+spec/unit/unit_staff_spec.rb:44:3: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  it 'can be updated' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:45:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    subject.update(:is_admin => true)
+  ^^
+spec/unit/unit_staff_spec.rb:45:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.update(:is_admin => true)
+    ^^^^^^^
+spec/unit/unit_staff_spec.rb:45:13: C: [Correctable] Rails/SaveBang: Use update! instead of update if the return value is not checked.
+    subject.update(:is_admin => true)
+            ^^^^^^
+spec/unit/unit_staff_spec.rb:45:20: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    subject.update(:is_admin => true)
+                   ^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:46:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.update(:first_name => 'Jane')
+    ^^^^^^^
+spec/unit/unit_staff_spec.rb:46:13: C: [Correctable] Rails/SaveBang: Use update! instead of update if the return value is not checked.
+    subject.update(:first_name => 'Jane')
+            ^^^^^^
+spec/unit/unit_staff_spec.rb:46:20: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    subject.update(:first_name => 'Jane')
+                   ^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:47:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.update(:last_name => 'Deer')
+    ^^^^^^^
+spec/unit/unit_staff_spec.rb:47:13: C: [Correctable] Rails/SaveBang: Use update! instead of update if the return value is not checked.
+    subject.update(:last_name => 'Deer')
+            ^^^^^^
+spec/unit/unit_staff_spec.rb:47:20: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    subject.update(:last_name => 'Deer')
+                   ^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:48:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.update(:phone_number => '987-654-3210')
+    ^^^^^^^
+spec/unit/unit_staff_spec.rb:48:13: C: [Correctable] Rails/SaveBang: Use update! instead of update if the return value is not checked.
+    subject.update(:phone_number => '987-654-3210')
+            ^^^^^^
+spec/unit/unit_staff_spec.rb:48:20: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    subject.update(:phone_number => '987-654-3210')
+                   ^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:49:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.update(:email => 'jane.deer@tamu.edu')
+    ^^^^^^^
+spec/unit/unit_staff_spec.rb:49:13: C: [Correctable] Rails/SaveBang: Use update! instead of update if the return value is not checked.
+    subject.update(:email => 'jane.deer@tamu.edu')
+            ^^^^^^
+spec/unit/unit_staff_spec.rb:49:20: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    subject.update(:email => 'jane.deer@tamu.edu')
+                   ^^^^^^^^^
+spec/unit/unit_staff_spec.rb:50:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.update(:password => 'jdeer321!')
+    ^^^^^^^
+spec/unit/unit_staff_spec.rb:50:13: C: [Correctable] Rails/SaveBang: Use update! instead of update if the return value is not checked.
+    subject.update(:password => 'jdeer321!')
+            ^^^^^^
+spec/unit/unit_staff_spec.rb:50:20: C: [Correctable] Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    subject.update(:password => 'jdeer321!')
+                   ^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:51:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Staff.find_by_is_admin(true)).to eq(subject)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:51:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Staff.find_by_is_admin(true)).to eq(subject)
+           ^^^^^
+spec/unit/unit_staff_spec.rb:51:12: C: [Correctable] RSpec/DescribedClass: Use described_class instead of Staff.
+    expect(Staff.find_by_is_admin(true)).to eq(subject)
+           ^^^^^
+spec/unit/unit_staff_spec.rb:51:12: C: [Correctable] Rails/DynamicFindBy: Use find_by instead of dynamic find_by_is_admin.
+    expect(Staff.find_by_is_admin(true)).to eq(subject)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:51:48: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(Staff.find_by_is_admin(true)).to eq(subject)
+                                               ^^^^^^^
+spec/unit/unit_staff_spec.rb:52:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Staff.find_by_first_name('Jane')).to eq(subject)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:52:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Staff.find_by_first_name('Jane')).to eq(subject)
+           ^^^^^
+spec/unit/unit_staff_spec.rb:52:12: C: [Correctable] RSpec/DescribedClass: Use described_class instead of Staff.
+    expect(Staff.find_by_first_name('Jane')).to eq(subject)
+           ^^^^^
+spec/unit/unit_staff_spec.rb:52:12: C: [Correctable] Rails/DynamicFindBy: Use find_by instead of dynamic find_by_first_name.
+    expect(Staff.find_by_first_name('Jane')).to eq(subject)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:52:52: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(Staff.find_by_first_name('Jane')).to eq(subject)
+                                                   ^^^^^^^
+spec/unit/unit_staff_spec.rb:53:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Staff.find_by_last_name('Deer')).to eq(subject)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:53:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Staff.find_by_last_name('Deer')).to eq(subject)
+           ^^^^^
+spec/unit/unit_staff_spec.rb:53:12: C: [Correctable] RSpec/DescribedClass: Use described_class instead of Staff.
+    expect(Staff.find_by_last_name('Deer')).to eq(subject)
+           ^^^^^
+spec/unit/unit_staff_spec.rb:53:12: C: [Correctable] Rails/DynamicFindBy: Use find_by instead of dynamic find_by_last_name.
+    expect(Staff.find_by_last_name('Deer')).to eq(subject)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:53:51: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(Staff.find_by_last_name('Deer')).to eq(subject)
+                                                  ^^^^^^^
+spec/unit/unit_staff_spec.rb:54:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Staff.find_by_phone_number('987-654-3210')).to eq(subject)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:54:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Staff.find_by_phone_number('987-654-3210')).to eq(subject)
+           ^^^^^
+spec/unit/unit_staff_spec.rb:54:12: C: [Correctable] RSpec/DescribedClass: Use described_class instead of Staff.
+    expect(Staff.find_by_phone_number('987-654-3210')).to eq(subject)
+           ^^^^^
+spec/unit/unit_staff_spec.rb:54:12: C: [Correctable] Rails/DynamicFindBy: Use find_by instead of dynamic find_by_phone_number.
+    expect(Staff.find_by_phone_number('987-654-3210')).to eq(subject)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:54:62: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(Staff.find_by_phone_number('987-654-3210')).to eq(subject)
+                                                             ^^^^^^^
+spec/unit/unit_staff_spec.rb:55:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Staff.find_by_email('jane.deer@tamu.edu')).to eq(subject)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:55:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Staff.find_by_email('jane.deer@tamu.edu')).to eq(subject)
+           ^^^^^
+spec/unit/unit_staff_spec.rb:55:12: C: [Correctable] RSpec/DescribedClass: Use described_class instead of Staff.
+    expect(Staff.find_by_email('jane.deer@tamu.edu')).to eq(subject)
+           ^^^^^
+spec/unit/unit_staff_spec.rb:55:12: C: [Correctable] Rails/DynamicFindBy: Use find_by instead of dynamic find_by_email.
+    expect(Staff.find_by_email('jane.deer@tamu.edu')).to eq(subject)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:55:61: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(Staff.find_by_email('jane.deer@tamu.edu')).to eq(subject)
+                                                            ^^^^^^^
+spec/unit/unit_staff_spec.rb:56:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Staff.find_by_password('jdeer321!')).to eq(subject)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:56:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Staff.find_by_password('jdeer321!')).to eq(subject)
+           ^^^^^
+spec/unit/unit_staff_spec.rb:56:12: C: [Correctable] RSpec/DescribedClass: Use described_class instead of Staff.
+    expect(Staff.find_by_password('jdeer321!')).to eq(subject)
+           ^^^^^
+spec/unit/unit_staff_spec.rb:56:12: C: [Correctable] Rails/DynamicFindBy: Use find_by instead of dynamic find_by_password.
+    expect(Staff.find_by_password('jdeer321!')).to eq(subject)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:56:55: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    expect(Staff.find_by_password('jdeer321!')).to eq(subject)
+                                                      ^^^^^^^
+spec/unit/unit_staff_spec.rb:59:3: C: [Correctable] Layout/IndentationConsistency: Inconsistent indentation detected.
+  it 'can be deleted' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:60:3: C: [Correctable] Layout/IndentationWidth: Use 4 (not 2) spaces for indentation.
+    subject.destroy
+  ^^
+spec/unit/unit_staff_spec.rb:60:5: C: RSpec/NamedSubject: Name your test subject if you need to reference it explicitly.
+    subject.destroy
+    ^^^^^^^
+spec/unit/unit_staff_spec.rb:60:13: C: [Correctable] Rails/SaveBang: Use destroy! instead of destroy if the return value is not checked.
+    subject.destroy
+            ^^^^^^^
+spec/unit/unit_staff_spec.rb:61:5: C: [Correctable] Style/MethodCallWithArgsParentheses: Use parentheses for method calls with arguments.
+    expect(Staff.find_by_first_name('Jane')).to be_nil
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/unit/unit_staff_spec.rb:61:12: W: Lint/ConstantResolution: Fully qualify this constant to avoid possibly ambiguous resolution.
+    expect(Staff.find_by_first_name('Jane')).to be_nil
+           ^^^^^
+spec/unit/unit_staff_spec.rb:61:12: C: [Correctable] RSpec/DescribedClass: Use described_class instead of Staff.
+    expect(Staff.find_by_first_name('Jane')).to be_nil
+           ^^^^^
+spec/unit/unit_staff_spec.rb:61:12: C: [Correctable] Rails/DynamicFindBy: Use find_by instead of dynamic find_by_first_name.
+    expect(Staff.find_by_first_name('Jane')).to be_nil
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+44 files inspected, 911 offenses detected, 684 offenses autocorrectable
