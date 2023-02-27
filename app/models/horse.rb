@@ -1,3 +1,4 @@
 class Horse < ApplicationRecord
-    validates :name,:brand, :birthday,  presence: true
+    validates :name, :birthday,  presence: true
+    validates :brand, uniqueness: true, presence: true
 end
