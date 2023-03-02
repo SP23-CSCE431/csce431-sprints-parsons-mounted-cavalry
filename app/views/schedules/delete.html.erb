@@ -1,0 +1,30 @@
+<div class="schedules delete">
+    <h2>Delete Schedule</h2>
+
+    <%= form_for(@schedule, method: 'delete') do |f| %>
+    <% # url: schedule_path(@schedule), method: 'delete' %>
+
+    <p>Are you sure you want to permanently delete this schedule?</p>
+        
+    <table class="listing" summary="Schedule list" style="width: 30%;" border = "1">
+        <tr>
+            <th>Assignee:</th>
+            <td><%= @schedule.assignee_id %></td>
+        </tr>
+
+        <tr>
+            <th>Assigner:</th>
+            <td><%= @schedule.assigner_id %></td>
+        </tr>
+    </table>
+    
+    <br>    
+    <div class="form-buttons">
+        <%= f.submit("Delete Schedule") %> 
+    </div>
+
+    <% end %>
+
+    <br>
+    <%= link_to("<button>Back to Schedules</button>".html_safe, schedules_path, class: 'back-link') %>
+</div>

@@ -10,19 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_02_021001) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_02_022509) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "attendances", force: :cascade do |t|
-    t.integer "attendance_id"
-    t.integer "cadet_id"
+    t.integer "schedule_id"
     t.integer "horse_id"
-    t.integer "staff_id"
-    t.datetime "appointment_time"
     t.datetime "check_in_time"
-    t.datetime "check_out_time"
-    t.text "purpose"
+    t.string "purpose"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -33,6 +29,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_02_021001) do
     t.string "herd"
     t.string "difficulty"
     t.string "condition"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.integer "assignee_id"
+    t.string "recurrence"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
