@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root "staffs#index"
+  root "users#index"
     
-  resources :cadets do
+  resources :users do
     member do
       get :delete
     end
@@ -15,11 +15,5 @@ Rails.application.routes.draw do
   end
   
   resources :attendances
-  
-  resources :staffs do
-    member do 
-      get :delete 
-    end
-  end
 
 end
