@@ -41,7 +41,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_13_185121) do
   create_table "horses", force: :cascade do |t|
     t.string "name"
     t.string "brand"
-    t.date "birthday"
+    t.string "herd"
+    t.string "difficulty"
+    t.string "condition"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
