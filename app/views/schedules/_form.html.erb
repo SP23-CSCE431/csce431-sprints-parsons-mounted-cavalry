@@ -12,9 +12,9 @@
   <% end %>
 
   <div>
-    <%= form.label :assignee_id, style: "display: block" %>
-    <%= form.select :assignee_id, User.order(:first_name).map { |user| [user.first_name, user.id] }, id: "id_of_the_assignee_id_select_box" %>
-    </div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.select :user_id, get_users_full_name(), {required: true, class: "form-control"} %>
+  </div>
 
   <div>
     <%= form.label :recurrence, style: "display: block" %>

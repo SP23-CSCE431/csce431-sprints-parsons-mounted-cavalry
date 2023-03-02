@@ -1,12 +1,8 @@
 <div id="<%= dom_id schedule %>">
   <p>
-    <strong>Assignee:</strong>
-    <%= schedule.assignee_id_id %>
-  </p>
-
-  <p>
-    <strong>Assigner:</strong>
-    <%= schedule.assigner_id_id %>
+    <strong>User:</strong>
+    <% user = User.find(schedule.user_id) %>
+    <%= user.first_name %> <%= user.last_name %>
   </p>
 
   <p>

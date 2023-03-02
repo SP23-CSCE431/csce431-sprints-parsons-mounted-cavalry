@@ -3,8 +3,7 @@ require 'rails_helper'
 RSpec.describe "schedules/edit", type: :view do
   let(:schedule) {
     Schedule.create!(
-      assignee_id: nil,
-      assigner_id: nil,
+      user_id: 1,
       recurrence: "MyString"
     )
   }
@@ -18,9 +17,7 @@ RSpec.describe "schedules/edit", type: :view do
 
     assert_select "form[action=?][method=?]", schedule_path(schedule), "post" do
 
-      assert_select "input[name=?]", "schedule[assignee_id_id]"
-
-      assert_select "input[name=?]", "schedule[assigner_id_id]"
+      assert_select "input[name=?]", "schedule[user_id]"
 
       assert_select "input[name=?]", "schedule[recurrence]"
     end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :schedules
   root "users#index"
     
   resources :users do

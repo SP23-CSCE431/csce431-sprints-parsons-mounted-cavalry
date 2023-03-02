@@ -1,3 +1,5 @@
 class Schedule < ApplicationRecord
-  belongs_to :user
+    validates :user_id, :recurrence, presence: true
+
+    belongs_to :user
 end

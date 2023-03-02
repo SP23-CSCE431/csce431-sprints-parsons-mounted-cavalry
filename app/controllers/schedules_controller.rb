@@ -69,6 +69,6 @@ class SchedulesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def schedule_params
-      params.require(:schedule).permit(:assignee_id, :recurrence)
+      params.require(:schedule).permit(:user_id, :recurrence)
     end
 end
