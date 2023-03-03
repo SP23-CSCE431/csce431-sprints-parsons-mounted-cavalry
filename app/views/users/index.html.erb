@@ -1,5 +1,7 @@
 <p style="color: green"><%= notice %></p>
-
+<%= link_to "<button>Sign Out</button>".html_safe, destroy_admin_session_path %>
+<br>
+<br>
 <%= link_to "<button>Schedules</button>".html_safe, schedules_path %>
 <%= link_to "<button>Attendances</button>".html_safe, attendances_path %>
 <%= link_to "<button>Horses</button>".html_safe, horses_path %>

@@ -57,4 +57,8 @@ Rails.application.configure do
 
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
+  OmniAuth.config.test_mode = true
+  #google oauth client api id's
+  ENV['GOOGLE_OAUTH_CLIENT_ID'] = '394914027015-i7ggpvrj49cg1ts8bi3r7b7tp38a59bd.apps.googleusercontent.com'
+  ENV['GOOGLE_OAUTH_CLIENT_SECRET'] = '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'
 end
