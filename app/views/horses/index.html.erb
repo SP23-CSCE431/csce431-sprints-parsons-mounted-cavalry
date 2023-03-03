@@ -13,15 +13,15 @@
             <th>Details</th>
         </tr>
     
-    <% @horses.each do |horse| %>
-    <tr>
-        <td><center><%= horse.name %></center></td>
-        <td class="Details">
-            <center>
-            <%= link_to("Show", horse_path(horse), class: 'action show') %>
-            </center>
-        </td>
-    </tr>
-    <% end %>
+        <% @horses.each do |horse| %>
+        <tr>
+            <td><center><%= horse.name %></center></td>
+            <td class="Details">
+                <center>
+                <%= link_to("Show", horse_path(horse), class: 'action show') %>
+                </center>
+            </td>
+        </tr>
+        <% end %>
     </table>
 </div>

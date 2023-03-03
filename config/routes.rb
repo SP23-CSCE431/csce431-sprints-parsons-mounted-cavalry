@@ -5,6 +5,11 @@ Rails.application.routes.draw do
     member do
       get :delete
     end
+    collection do
+      get :cadets
+      get :staffs
+      get :admins
+    end
   end
 
 
