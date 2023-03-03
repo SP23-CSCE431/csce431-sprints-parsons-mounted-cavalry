@@ -1,7 +1,7 @@
 <%= form_with(model: attendance) do |form| %>
   <% if attendance.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(attendance.errors.count, "error") %> prohibited this attendance record from being saved:</h2>
+      <h2><%= pluralize(attendance.errors.count, "error") %> prohibited this attendance from being saved:</h2>
 
       <ul>
         <% attendance.errors.each do |error| %>
@@ -12,43 +12,23 @@
   <% end %>
 
   <div>
-    <%= form.label :attendance_id, style: "display: block" %>
-    <%= form.number_field :attendance_id %>
-  </div>
-
-  <div>
-    <%= form.label :cadet_id, style: "display: block" %>
-    <%= form.number_field :cadet_id %>
+    <%= form.label :schedule_id, style: "display: block" %>
+    <%= form.select :schedule_id, get_users_by_schedule_id(), {required: true, class: "form-control"} %>
   </div>
 
   <div>
     <%= form.label :horse_id, style: "display: block" %>
-    <%= form.number_field :horse_id %>
+    <%= form.select :horse_id, get_horses_info(), {required: true, class: "form-control"} %>
   </div>
 
   <div>
-    <%= form.label :staff_id, style: "display: block" %>
-    <%= form.number_field :staff_id %>
-  </div>
-
-  <div>
-    <%= form.label :appointment_time, style: "display: block" %>
-    <%= form.datetime_field :appointment_time %>
-  </div>
-
-  <div>
-    <%= form.label :check_in_time, style: "display: block" %>
-    <%= form.datetime_field :check_in_time %>
-  </div>
-
-  <div>
-    <%= form.label :check_out_time, style: "display: block" %>
-    <%= form.datetime_field :check_out_time %>
+    <%= form.label :date, style: "display: block" %>
+    <%= form.date_field :date %>
   </div>
 
   <div>
     <%= form.label :purpose, style: "display: block" %>
-    <%= form.text_area :purpose %>
+    <%= form.text_field :purpose %>
   </div>
 
   <div>

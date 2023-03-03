@@ -1,40 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<%= link_to "Back to staffs", staffs_path %>
+<h1>Attendances</h1>
 
-<h1>Attendance Records</h1>
-
-<table class="listing" summary="Attendance records list" style="width: 50%;" border = "1">
-    <tr class="header">
-        <th>Attendance ID</th>
-        <th>Cadet ID</th>
-        <%# <th>Horse ID</th> %>
-        <%# <th>Staff ID</th> %>
-        <th>Appointment Time</th>
-        <%# <th>Check-in Time</th> %>
-        <%# <th>Check-out Time</th> %>
-        <th>Purpose</th>
-        <th>Details</th>
-    </tr>
-
+<div id="attendances">
   <% @attendances.each do |attendance| %>
-    <tr>
-      <td><center><%= attendance.attendance_id %></center></td>
-      <td><center><%= attendance.cadet_id %></center></td>
-      <%# <td><center><%= attendance.horse_id ></center></td> %>
-      <%# <td><center><%= attendance.staff_id ></center></td> %>
-      <td><center><%= attendance.appointment_time %></center></td>
-      <%# <td><center><%= attendance.check_in_time ></center></td> %>
-      <%# <td><center><%= attendance.check_out_time ></center></td> %>
-      <td><center><%= attendance.purpose %></center></td>
-      <td class="Details">
-          <center>
-          <%= link_to("Show", attendance_path(attendance), class: 'action show') %>
-          </center>
-      </td>
-    </tr>
+    <%= render attendance %>
+    <p>
+      <%= link_to "Show this attendance", attendance %>
+    </p>
   <% end %>
-</table>
+</div>
 
-<br><br>
-<%= link_to("<button>Add New Attendance Record</button>".html_safe, new_attendance_path, class: 'action new') %>
+<%= link_to "New attendance", new_attendance_path %>

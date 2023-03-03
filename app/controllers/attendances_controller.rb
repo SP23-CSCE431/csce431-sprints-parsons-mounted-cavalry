@@ -47,10 +47,10 @@ class AttendancesController < ApplicationController
     end
   end
 
-  def delete
+  def delete 
     @attendance = Attendance.find(params[:id])
-  end 
-
+  end
+  
   # DELETE /attendances/1 or /attendances/1.json
   def destroy
     @attendance.destroy
@@ -69,6 +69,6 @@ class AttendancesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def attendance_params
-      params.require(:attendance).permit(:schedule_id, :horse_id, :check_in_time, :purpose)
+      params.require(:attendance).permit(:schedule_id, :horse_id, :date, :check_in_time, :purpose)
     end
 end
