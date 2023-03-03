@@ -3,8 +3,9 @@
 <%= render @schedule %>
 
 <div>
-  <%= link_to "Edit this schedule", edit_schedule_path(@schedule) %> |
-  <%= link_to "Back to schedules", schedules_path %>
-
-  <%= button_to "Destroy this schedule", @schedule, method: :delete %>
+  <%= link_to "<button>Edit</button>".html_safe, edit_schedule_path(@schedule) %>
+  <%= link_to "<button>Delete</button>".html_safe, delete_schedule_path(@schedule) %>
 </div>
+
+<br>
+<%= link_to "<button>Back to schedules</button>".html_safe, schedules_path %>

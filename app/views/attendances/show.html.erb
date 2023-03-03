@@ -1,10 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
+<%= link_to "Back to attendances", attendances_path %>
+
 <%= render @attendance %>
 
 <div>
-  <%= link_to "Edit this attendance", edit_attendance_path(@attendance) %> |
-  <%= link_to "Back to attendances", attendances_path %>
-
-  <%= button_to "Destroy this attendance", @attendance, method: :delete %>
+  <br />
+  <%= link_to "<button>Edit</button>".html_safe, edit_attendance_path(@attendance) %>
+  <%= link_to "<button>Delete</button>".html_safe, delete_attendance_path(@attendance) %>
 </div>
+
+<br />
+<%= link_to "<button>Back to attendances</button>".html_safe, attendances_path %>

@@ -19,15 +19,12 @@
         </tr>
         <tr>
             <th>Recurrence:</th>
-            <td><%= @schedule.recurrence %></td>
+            <td><%= schedule.recurrence %></td>
         </tr>
         <tr>
             <% horse = Horse.find(@attendance.horse_id) %>
             <th>Horse:</th>
-            <td><%= horse.name %></td>
-
-            <th>Brand:</th>
-            <td><%= horse.brand %></td>
+            <td><%= horse.name %> - <%= horse.brand %></td>
         </tr>
         <tr>
             <th>Purpose:</th>

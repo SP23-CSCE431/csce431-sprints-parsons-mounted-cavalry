@@ -1,6 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
+<%= link_to "Back to Users", users_path %>
+
 <h1>Attendances</h1>
+
+<p><%= link_to "<button>New attendance</button>".html_safe, new_attendance_path %></p>
 
 <div id="attendances">
   <% @attendances.each do |attendance| %>
@@ -10,5 +14,3 @@
     </p>
   <% end %>
 </div>
-
-<%= link_to "New attendance", new_attendance_path %>

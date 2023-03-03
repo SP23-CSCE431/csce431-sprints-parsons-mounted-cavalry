@@ -1,21 +1,37 @@
 <p style="color: green"><%= notice %></p>
 
-<%= link_to "Attendance", attendances_path %> |
-<%= link_to "Horses", horses_path %>
+<%= link_to "<button>Schedules</button>".html_safe, schedules_path %>
+<%= link_to "<button>Attendances</button>".html_safe, attendances_path %>
+<%= link_to "<button>Horses</button>".html_safe, horses_path %>
 
-<h1>Users</h1>
+<div id="users index">
+  <h1>Users</h1>
 
-<%= link_to "New user", new_user_path %>
-
-<div id="users" style="display: flex; flex-wrap: wrap; gap: 50px;">
+  <%= link_to "<button>New user</button>".html_safe, new_user_path %>
+  <br><br>
+  <table class="listing" summary="User list" style="width: 60%;" border = "1">
+    <tr class="header">
+      <th>Name</th>
+      <th>Role</th>
+      <th>Classification</th>
+      <th>Skill Level</th>
+      <th>Phone Number</th>
+      <th>Email</th>
+      <th>Edit</th>
+      <th>Delete</th>
+  </tr>
   <% @users.each do |user| %>
-    <div>
-      <%= render user %>
-      <p>
-        <%= link_to "Show", user_path(user) %> |
-        <%= link_to "Edit", edit_user_path(user) %> |
-        <%= link_to "Delete", delete_user_path(user) %>
-      </p>
-    </div>
+    <tr>
+      <td><center><%= user.first_name %> <%= user.last_name %></td>
+      <% role = (user.is_admin == false && user.is_staff == false) ? "Cadet" : (user.is_admin == false) ? "Command Staff" : "Admin" %>
+      <td><center><%= role %></td>
+      <td><center><%= user.classification %></td>
+      <td><center><%= user.skill_level %></td>
+      <td><center><%= user.phone_number %></td>
+      <td><center><%= user.email %></td>
+      <td><center><%= link_to "Edit", edit_user_path(user) %></td>
+      <td><center><%= link_to "Delete", delete_user_path(user) %></td>
+    </tr>
   <% end %>
+  </table>
 </div>
