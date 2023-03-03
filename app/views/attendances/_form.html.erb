@@ -18,17 +18,17 @@
 
   <div>
     <%= form.label :horse_id, style: "display: block" %>
-    <%= form.select :horse_id, get_horses_info(), {required: true, class: "form-control"} %>
+    <%= form.select :horse_id, get_horses_info(), {:include_blank => 'None'} %>
   </div>
 
   <div>
     <%= form.label :date, style: "display: block" %>
-    <%= form.date_field :date %>
+    <%= form.date_field :date, {required: true, class: "form-control"} %>
   </div>
 
   <div>
     <%= form.label :purpose, style: "display: block" %>
-    <%= form.text_field :purpose %>
+    <%= form.select :purpose, ['Ride', 'Work', 'Ride & Work', 'Training', 'Sections', 'No']%>
   </div>
 
   <div>
