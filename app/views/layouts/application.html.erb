@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>GoogleOauthDevise</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <style>
-        .flash__alert   { color: red; }
-        .flash__notice  { color: blue; }
-        .flash__success { color: green; }
-    </style>
-  </head>
+    <head>
+        <title>GoogleOauthDevise</title>
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <style>
+            .flash__alert   { color: red; }
+            .flash__notice  { color: blue; }
+            .flash__success { color: green; }
+        </style>
+    </head>
 
   <body>
     <% if flash.any? %>

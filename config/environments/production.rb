@@ -92,6 +92,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #google oauth client api id's
-  ENV['GOOGLE_OAUTH_CLIENT_ID'] = ''
-  ENV['GOOGLE_OAUTH_CLIENT_SECRET'] = ''
+  ENV['GOOGLE_OAUTH_CLIENT_ID'] = '394914027015-l5vgscugqcjcjd2o731qgrptelp5pns8.apps.googleusercontent.com'
+  ENV['GOOGLE_OAUTH_CLIENT_SECRET'] = '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'
 end
