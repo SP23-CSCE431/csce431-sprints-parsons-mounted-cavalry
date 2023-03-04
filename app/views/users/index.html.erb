@@ -1,80 +1,40 @@
-<body class="align-items-center justify-content-center" style="overflow-x: hidden; overflow-y: hidden;">
-  <%# Navbar %>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-    <div class="container-fluid">
-      <button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand mx-auto" href="/" style="color: #dfad14;">Parsons Mounted Cavalry Attendance</a>
-      <%= link_to("<button type='button' class='btn btn-outline-danger'>Logout</button>".html_safe, '/') %>
-    </div>
-  </nav>
+<body style="min-height: 100vh;">
 
-  <%# Sidebar %>
-  <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel" style="max-width: 200px;">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title text-white" id="sidebarLabel">All Users</h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <hr style="border-top: 2px solid #dfad14;">
-    <div class="offcanvas-body">
-      <ul class="nav d-flex flex-column justify-content-center align-items-center mb-2">
-        <li class="nav-item">
-          <%= link_to "Attendance", attendances_path, class: "nav-link text-white" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Horses", horses_path, class: "nav-link text-white" %>
-        </li>
-      </ul>
-    </div>
-    <hr style="border-top: 2px solid #dfad14;">
-    <div class="d-flex justify-content-center align-items-center mx-auto" style="color: white; padding-bottom: 10px;">
-      <i class="fa-solid fa-landmark p-2"></i>
-      <i class="fa-brands fa-facebook p-2"></i>
-      <i class="fa-brands fa-twitter p-2"></i>
-      <i class="fa-brands fa-instagram p-2"></i>
-      <i class="fa-regular fa-envelope p-2"></i>
-    </div>
+<%# Content %>
+  <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 100vh;">
+    <%= image_tag("PMC_Attendance.png") %>
+    <%= image_tag("PMC_Logo.png") %>
+    <form class="border border-primary p-3">
+      <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+      </div>
+      <button class="btn btn-success" type="submit">Login</button>
+      <br>
+      <%= link_to "Admin", admins_users_path() %>
+      <%= link_to "Staff", staffs_users_path() %>
+      <%= link_to "Cadet", cadets_users_path() %>
+    </form>
   </div>
 
-  <%# Content %>
-  <div class="justify-content-center align-items-center mx-auto text-center">
-    <p style="color: green"><%= notice %></p>
-    <h1>All Users</h1>
-    <br>
-    <%= link_to "Cadets view", cadets_users_path %> |
-    <%= link_to "Staffs view", staffs_users_path %> |
-    <%= link_to "Admins view", admins_users_path %> 
-    <br><br>
-    <table class="listing" summary="Users list" style="width: 75%; margin: 0 auto;" border = "1">
-      <tr class="header">
-          <th>Is admin</th>
-          <th>Is staff</th>
-          <th>First name</th>
-          <th>Last name</th>
-          <th>Classification</th>
-          <th>Skill level</th>
-          <th>Phone number</th>
-          <th>Email</th>
-      </tr>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-      <% @users.each do |user| %>
-        <tr>
-          <td><center><%= user.is_admin %></center></td>
-          <td><center><%= user.is_staff %></center></td>
-          <td><center><%= user.first_name %></center></td>
-          <td><center><%= user.last_name %></center></td>
-          <td><center><%= user.classification %></center></td>
-          <td><center><%= user.skill_level %></center></td>
-          <td><center><%= user.phone_number %></center></td>
-          <td><center><%= user.email %></center></td>
-          <td><center><%= link_to("Show", user_path(user), class: 'action show') %></center></td>
-          <td><center><%= link_to("Update", edit_user_path(user), class: 'action update') %></center></td>
-          <td><center><%= link_to("Delete", delete_user_path(user), class: 'action delete') %></center></td>
-        </tr>
-      <% end %>
-    </table>
-    <br>
-    <%= link_to("<button>Add New User</button>".html_safe, new_user_path, class: 'action new') %>
-  </div>
+    form {
+      max-width: 400px;
+    }
+    
+    form.border-primary {
+      border-color: #dfad14 !important;
+    }
+  </style>
 </body>

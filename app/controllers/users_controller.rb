@@ -7,15 +7,18 @@ class UsersController < ApplicationController
   end
 
   def cadets
-    @cadets = User.where(role: "cadet")
+    @cadets = User.where(is_staff: false, is_admin: false)
   end
 
   def staffs
-    @staffs = User.where(role: "staff")
+    @staffs = User.where(is_staff: true)
+    @cadets = User.where(is_staff: false, is_admin: false)
   end
 
   def admins
-    @admins = User.where(role: "admin")
+    @admins = User.where(is_admin: true)
+    @staffs = User.where(is_staff: true)
+    @cadets = User.where(is_staff: false, is_admin: false)
   end
 
   # GET /users/1 or /users/1.json
