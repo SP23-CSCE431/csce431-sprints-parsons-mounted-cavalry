@@ -13,10 +13,17 @@
             <th>Brand:</th>
             <td><%= @horse.brand %></td>
         </tr>
-        
         <tr>
-            <th>Birthday:</th>
-            <td><%= @horse.birthday %></td>
+            <th>Herd:</th>
+            <td><%= @horse.herd %></td>
+        </tr>       
+        <tr>
+            <th>Difficulty:</th>
+            <td><%= @horse.difficulty %></td>
+        </tr>       
+        <tr>
+            <th>Condition:</th>
+            <td><%= @horse.condition %></td>
         </tr>
     </table>
   
@@ -25,7 +32,7 @@
         <%= link_to("<button>Edit Horse</button>".html_safe, edit_horse_path(@horse)) %>
         <%= link_to("<button>Delete Horse</button>".html_safe, delete_horse_path(@horse)) %>
     </div>
-    
-    <br>
+
+    <br />
     <%= link_to("<button>Back to Horses</button>".html_safe, horses_path, class: 'back-link') %>
 </div>

@@ -1,0 +1,27 @@
+<%= form_with(model: schedule) do |form| %>
+  <% if schedule.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
+
+      <ul>
+        <% schedule.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.select :user_id, get_users_full_name(), {required: true, class: "form-control"} %>
+  </div>
+
+  <div>
+    <%= form.label :recurrence, style: "display: block" %>
+    <%= form.text_field :recurrence %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

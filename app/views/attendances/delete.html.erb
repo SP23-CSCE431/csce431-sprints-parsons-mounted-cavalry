@@ -1,0 +1,44 @@
+<div class="attendances delete">
+    <h2>Delete Attendance</h2>
+
+    <%= form_for(@attendance, method: 'delete') do |f| %>
+    <% # url: attendance_path(@attendance), method: 'delete' %>
+
+    <p>Are you sure you want to permanently delete this attendance?</p>
+        
+    <table class="listing" summary="Attendance list" style="width: 30%;" border = "1">
+        <% schedule = Schedule.find(@attendance.schedule_id) %>
+        <tr>
+            <th>Date:</th>
+            <td><%= @attendance.date %></td>
+        </tr>
+        <tr>
+            <% user = User.find(schedule.user_id) %>
+            <th>User:</th>
+            <td><%= user.first_name %> <%= user.last_name %></td>
+        </tr>
+        <tr>
+            <th>Recurrence:</th>
+            <td><%= schedule.recurrence %></td>
+        </tr>
+        <tr>
+            <% horse = Horse.find(@attendance.horse_id) %>
+            <th>Horse:</th>
+            <td><%= horse.name %> - <%= horse.brand %></td>
+        </tr>
+        <tr>
+            <th>Purpose:</th>
+            <td><%= @attendance.purpose %></td>
+        </tr>
+    </table>
+    
+    <br>    
+    <div class="form-buttons">
+        <%= f.submit("Delete attendance") %>  
+    </div>
+
+    <% end %>
+
+    <br>
+    <%= link_to("<button>Back to attendances</button>".html_safe, attendances_path, class: 'back-link') %>
+</div>

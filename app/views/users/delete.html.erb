@@ -1,0 +1,30 @@
+<div class="users delete">
+    <h2>Delete User</h2>
+
+    <%= form_for(@user, method: 'delete') do |f| %>
+    <% # url: user_path(@user), method: 'delete' %>
+
+    <p>Are you sure you want to permanently delete this user?</p>
+        
+    <table class="listing" summary="User list" style="width: 30%;" border = "1">
+        <tr>
+            <th>First Name:</th>
+            <td><%= @user.first_name %></td>
+        </tr>
+
+        <tr>
+            <th>Last Name:</th>
+            <td><%= @user.last_name %></td>
+        </tr>
+    </table>
+    
+    <br>    
+    <div class="form-buttons">
+        <%= f.submit("Delete User") %> 
+    </div>
+
+    <% end %>
+
+    <br>
+    <%= link_to("<button>Back to Users</button>".html_safe, users_path, class: 'back-link') %>
+</div>

@@ -10,30 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_13_185121) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_02_233544) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "attendances", force: :cascade do |t|
-    t.integer "attendance_id"
-    t.integer "cadet_id"
+    t.integer "schedule_id"
     t.integer "horse_id"
-    t.integer "staff_id"
-    t.datetime "appointment_time"
-    t.datetime "check_in_time"
-    t.datetime "check_out_time"
-    t.text "purpose"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "cadets", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.integer "graduation_year"
-    t.string "phone_number"
-    t.string "uin"
-    t.string "password"
+    t.date "date"
+    t.datetime "check_in_time", precision: nil
+    t.string "purpose"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -41,18 +27,29 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_13_185121) do
   create_table "horses", force: :cascade do |t|
     t.string "name"
     t.string "brand"
-    t.date "birthday"
+    t.string "herd"
+    t.string "difficulty"
+    t.string "condition"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "staffs", force: :cascade do |t|
+  create_table "schedules", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "recurrence"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
     t.boolean "is_admin"
+    t.boolean "is_staff"
     t.string "first_name"
     t.string "last_name"
+    t.string "classification"
+    t.string "skill_level"
     t.string "phone_number"
     t.string "email"
-    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

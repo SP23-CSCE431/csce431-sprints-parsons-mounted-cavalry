@@ -1,9 +1,11 @@
-Staff.create!([
-  {is_admin: false, first_name: "John", last_name: "Doe", phone_number: "123-456-7890", email: "john.doe@tamu.edu", password: "jdoe123."},
-  {is_admin: true, first_name: "Jane", last_name: "Doe", phone_number: "987-654-3210", email: "jane.doe@tamu.edu", password: "jdoe123!"}
+User.create!([
+  {is_admin: true, is_staff: false, first_name: "John", last_name: "Doe", classification: "Super Senior", skill_level: "Advanced", phone_number: "123-456-7890", email: "john.doe@tamu.edu"},
+  {is_admin: false, is_staff: true, first_name: "Jane", last_name: "Doe", classification: "Senior", skill_level: "Intermediate", phone_number: "111-222-3333", email: "jane.doe@tamu.edu"},
+  {is_admin: false, is_staff: false, first_name: "Billy", last_name: "Bob", classification: "Sophomore", skill_level: "Beginner", phone_number: "435-675-4345", email: "billy.bob@tamu.edu"}
 ])
-Cadet.create!([
-  {first_name: "Billy", last_name: "Bob", graduation_year: 2026, phone_number: "112-358-1321", uin: "123456789", password: nil},
-  {first_name: "Ranger", last_name: "Rick", graduation_year: 2023, phone_number: "754-234-8237", uin: "637897446", password: nil},
-  {first_name: "Jimmy", last_name: "Smith", graduation_year: 2024, phone_number: "345-346-5457", uin: "267489968", password: nil}
+Horse.create!([
+  {name: "Horsey", brand: "H1149", herd: "Bravo", difficulty: "Intermediate", condition: "Healthy"},
+  {name: "Ed", brand: "J9822", herd: "Delta", difficulty: "Advanced", condition: "Healthy"},
+  {name: "Speedy", brand: "S711", herd: "Bravo", difficulty: "Easy", condition: "Healthy"}
 ])
+  
