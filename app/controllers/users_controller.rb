@@ -6,6 +6,21 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def cadets
+    @cadets = User.where(is_staff: false, is_admin: false)
+  end
+
+  def staffs
+    @staffs = User.where(is_staff: true)
+    @cadets = User.where(is_staff: false, is_admin: false)
+  end
+
+  def admins
+    @admins = User.where(is_admin: true)
+    @staffs = User.where(is_staff: true)
+    @cadets = User.where(is_staff: false, is_admin: false)
+  end
+
   # GET /users/1 or /users/1.json
   def show
   end
