@@ -2,11 +2,11 @@
     <h2>Delete Horse</h2>
 
     <%= form_for(@horse, method: 'delete') do |f| %>
-    <% # url: task_path(@task), method: 'delete' %>
+    <% # url: horse_path(@horse), method: 'delete' %>
 
     <p>Are you sure you want to permanently delete this horse?</p>
         
-    <table class="listing" summary="Task list" style="width: 30%;" border = "1">
+    <table class="listing" summary="Horse list" style="width: 30%;" border = "1">
         <tr>
             <th>Name:</th>
             <td><%= @horse.name %></td>

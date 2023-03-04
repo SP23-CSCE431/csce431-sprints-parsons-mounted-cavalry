@@ -1,0 +1,13 @@
+<div id="<%= dom_id schedule %>">
+  <p>
+    <strong>User:</strong>
+    <% user = User.find(schedule.user_id) %>
+    <%= user.first_name %> <%= user.last_name %>
+  </p>
+
+  <p>
+    <strong>Recurrence:</strong>
+    <%= schedule.recurrence %>
+  </p>
+
+</div>
