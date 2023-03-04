@@ -5,8 +5,12 @@ Rails.application.routes.draw do
     member do
       get :delete
     end
+    collection do
+      get :cadets
+      get :staffs
+      get :admins
+    end
   end
-
 
   resources :horses do
     member do
@@ -14,6 +18,16 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :attendances
+  resources :attendances do
+    member do
+      get :delete
+    end
+  end
+
+  resources :schedules do 
+    member do
+      get :delete
+    end
+  end
 
 end

@@ -25,7 +25,7 @@ class AttendancesController < ApplicationController
 
     respond_to do |format|
       if @attendance.save
-        format.html { redirect_to attendance_url(@attendance), notice: "Attendance was successfully created." }
+        format.html { redirect_to attendances_url, notice: "Attendance was successfully created." }
         format.json { render :show, status: :created, location: @attendance }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class AttendancesController < ApplicationController
   def update
     respond_to do |format|
       if @attendance.update(attendance_params)
-        format.html { redirect_to attendance_url(@attendance), notice: "Attendance was successfully updated." }
+        format.html { redirect_to attendances_url, notice: "Attendance was successfully updated." }
         format.json { render :show, status: :ok, location: @attendance }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -47,6 +47,10 @@ class AttendancesController < ApplicationController
     end
   end
 
+  def delete 
+    @attendance = Attendance.find(params[:id])
+  end
+  
   # DELETE /attendances/1 or /attendances/1.json
   def destroy
     @attendance.destroy
@@ -65,6 +69,6 @@ class AttendancesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def attendance_params
-      params.require(:attendance).permit(:attendance_id, :cadet_id, :horse_id, :staff_id, :appointment_time, :check_in_time, :check_out_time, :purpose)
+      params.require(:attendance).permit(:schedule_id, :horse_id, :date, :check_in_time, :purpose)
     end
 end

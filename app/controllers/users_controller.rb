@@ -6,6 +6,21 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def cadets
+    @cadets = User.where(is_staff: false, is_admin: false)
+  end
+
+  def staffs
+    @staffs = User.where(is_staff: true)
+    @cadets = User.where(is_staff: false, is_admin: false)
+  end
+
+  def admins
+    @admins = User.where(is_admin: true)
+    @staffs = User.where(is_staff: true)
+    @cadets = User.where(is_staff: false, is_admin: false)
+  end
+
   # GET /users/1 or /users/1.json
   def show
   end
@@ -25,7 +40,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to user_url(@user), notice: "User was successfully created." }
+        format.html { redirect_to users_url, notice: "User was successfully created." }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +53,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to user_url(@user), notice: "User was successfully updated." }
+        format.html { redirect_to users_url, notice: "User was successfully updated." }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,6 +68,10 @@ class UsersController < ApplicationController
 
   # DELETE /users/1 or /users/1.json
   def destroy
+    #schedules = Schedule.where(user_id: @user.id)
+    #schedules do |schedule|
+
+
     @user.destroy
 
     respond_to do |format|
