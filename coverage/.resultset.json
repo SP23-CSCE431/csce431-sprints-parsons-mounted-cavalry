@@ -1,40 +1,23 @@
 {
   "RSpec": {
     "coverage": {
-      "/csce431/csce431-sprints-parsons-mounted-cavalry/spec/unit/unit_attendance_spec.rb": {
+      "/csce431/csce431/csce431-sprints-parsons-mounted-cavalry/spec/unit/unit_attendance_spec.rb": {
         "lines": [
           1,
           null,
           1,
           null,
-          32,
-          32,
-          32,
+          33,
+          33,
+          33,
           null,
           null,
           1,
-          21,
+          22,
           null,
           null,
           null,
           1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
           1,
           1,
           1,
@@ -68,6 +51,23 @@
           1,
           1,
           null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
           1,
           1,
           1,
@@ -147,6 +147,13 @@
           1,
           1,
           null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
           1,
           1,
           1,
@@ -184,7 +191,7 @@
           null
         ]
       },
-      "/csce431/csce431-sprints-parsons-mounted-cavalry/spec/rails_helper.rb": {
+      "/csce431/csce431/csce431-sprints-parsons-mounted-cavalry/spec/rails_helper.rb": {
         "lines": [
           null,
           1,
@@ -251,7 +258,7 @@
           null
         ]
       },
-      "/csce431/csce431-sprints-parsons-mounted-cavalry/config/environment.rb": {
+      "/csce431/csce431/csce431-sprints-parsons-mounted-cavalry/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -260,7 +267,7 @@
           1
         ]
       },
-      "/csce431/csce431-sprints-parsons-mounted-cavalry/config/application.rb": {
+      "/csce431/csce431/csce431-sprints-parsons-mounted-cavalry/config/application.rb": {
         "lines": [
           1,
           null,
@@ -286,7 +293,7 @@
           null
         ]
       },
-      "/csce431/csce431-sprints-parsons-mounted-cavalry/config/boot.rb": {
+      "/csce431/csce431/csce431-sprints-parsons-mounted-cavalry/config/boot.rb": {
         "lines": [
           1,
           null,
@@ -294,7 +301,7 @@
           1
         ]
       },
-      "/csce431/csce431-sprints-parsons-mounted-cavalry/config/environments/test.rb": {
+      "/csce431/csce431/csce431-sprints-parsons-mounted-cavalry/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -358,7 +365,7 @@
           null
         ]
       },
-      "/csce431/csce431-sprints-parsons-mounted-cavalry/config/initializers/assets.rb": {
+      "/csce431/csce431/csce431-sprints-parsons-mounted-cavalry/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -374,7 +381,7 @@
           null
         ]
       },
-      "/csce431/csce431-sprints-parsons-mounted-cavalry/config/initializers/content_security_policy.rb": {
+      "/csce431/csce431/csce431-sprints-parsons-mounted-cavalry/config/initializers/content_security_policy.rb": {
         "lines": [
           null,
           null,
@@ -385,38 +392,6 @@
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/csce431/csce431-sprints-parsons-mounted-cavalry/config/initializers/filter_parameter_logging.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/csce431/csce431-sprints-parsons-mounted-cavalry/config/initializers/inflections.rb": {
-        "lines": [
           null,
           null,
           null,
@@ -435,7 +410,39 @@
           null
         ]
       },
-      "/csce431/csce431-sprints-parsons-mounted-cavalry/config/initializers/permissions_policy.rb": {
+      "/csce431/csce431/csce431-sprints-parsons-mounted-cavalry/config/initializers/filter_parameter_logging.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/csce431/csce431/csce431-sprints-parsons-mounted-cavalry/config/initializers/inflections.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/csce431/csce431/csce431-sprints-parsons-mounted-cavalry/config/initializers/permissions_policy.rb": {
         "lines": [
           null,
           null,
@@ -450,7 +457,7 @@
           null
         ]
       },
-      "/csce431/csce431-sprints-parsons-mounted-cavalry/config/routes.rb": {
+      "/csce431/csce431/csce431-sprints-parsons-mounted-cavalry/config/routes.rb": {
         "lines": [
           1,
           1,
@@ -482,13 +489,13 @@
           null
         ]
       },
-      "/csce431/csce431-sprints-parsons-mounted-cavalry/app/helpers/application_helper.rb": {
+      "/csce431/csce431/csce431-sprints-parsons-mounted-cavalry/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/csce431/csce431-sprints-parsons-mounted-cavalry/app/helpers/attendances_helper.rb": {
+      "/csce431/csce431/csce431-sprints-parsons-mounted-cavalry/app/helpers/attendances_helper.rb": {
         "lines": [
           1,
           1,
@@ -505,27 +512,6 @@
           null,
           1,
           0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null
-        ]
-      },
-      "/csce431/csce431-sprints-parsons-mounted-cavalry/app/helpers/horses_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/csce431/csce431-sprints-parsons-mounted-cavalry/app/helpers/schedules_helper.rb": {
-        "lines": [
-          1,
-          1,
           0,
           0,
           0,
@@ -538,15 +524,64 @@
           null
         ]
       },
-      "/csce431/csce431-sprints-parsons-mounted-cavalry/app/helpers/users_helper.rb": {
+      "/csce431/csce431/csce431-sprints-parsons-mounted-cavalry/app/helpers/horses_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/csce431/csce431-sprints-parsons-mounted-cavalry/app/models/attendance.rb": {
+      "/csce431/csce431/csce431-sprints-parsons-mounted-cavalry/app/helpers/schedules_helper.rb": {
         "lines": [
           1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null
+        ]
+      },
+      "/csce431/csce431/csce431-sprints-parsons-mounted-cavalry/app/helpers/users_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/csce431/csce431/csce431-sprints-parsons-mounted-cavalry/app/models/attendance.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          45,
+          3,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/csce431/csce431/csce431-sprints-parsons-mounted-cavalry/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/csce431/csce431/csce431-sprints-parsons-mounted-cavalry/app/models/schedule.rb": {
+        "lines": [
           1,
           1,
           null,
@@ -555,24 +590,7 @@
           null
         ]
       },
-      "/csce431/csce431-sprints-parsons-mounted-cavalry/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/csce431/csce431-sprints-parsons-mounted-cavalry/app/models/schedule.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/csce431/csce431-sprints-parsons-mounted-cavalry/app/models/user.rb": {
+      "/csce431/csce431/csce431-sprints-parsons-mounted-cavalry/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -581,7 +599,7 @@
           null
         ]
       },
-      "/csce431/csce431-sprints-parsons-mounted-cavalry/app/models/horse.rb": {
+      "/csce431/csce431/csce431-sprints-parsons-mounted-cavalry/app/models/horse.rb": {
         "lines": [
           1,
           1,
@@ -594,6 +612,6 @@
         ]
       }
     },
-    "timestamp": 1677822636
+    "timestamp": 1677870127
   }
 }

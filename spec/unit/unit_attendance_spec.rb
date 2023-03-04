@@ -116,9 +116,9 @@ RSpec.describe Attendance, type: :model do
         subject.update(:horse_id => new_horse.id)
         expect(Attendance.find_by_horse_id(new_horse.id)).to eq(subject)
       end
-      it 'update with nil horse' do
+      it 'update with nil horse is okay' do
         subject.update(:horse_id => nil)
-        expect(subject).not_to be_valid
+        expect(Attendance.find_by_horse_id(nil)).to eq(subject)
       end
       it 'update with invalid/non-existent horse' do
         subject.update(:horse_id => -1)
@@ -145,6 +145,13 @@ RSpec.describe Attendance, type: :model do
       it 'update with invalid month' do
         subject.update(:date => '2023-13-25')
         expect(subject).not_to be_valid
+      end
+    end
+    describe 'check in time change' do
+      it 'valid check in time change' do
+        time = Time.now
+        subject.update(:check_in_time => time)
+        expect(Attendance.find_by_check_in_time(time)).to eq(subject)
       end
     end
     describe 'purpose change' do
