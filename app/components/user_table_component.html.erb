@@ -1,0 +1,28 @@
+<table class="listing" summary="User list" style="width: 75%; margin: 0 auto;" border = "1">
+    <tr class="header">
+        <th>Is admin</th>
+        <th>Is staff</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Classification</th>
+        <th>Skill level</th>
+        <th>Phone number</th>
+        <th>Email</th>
+    </tr>
+
+    <% @user.each do |user| %>
+    <tr>
+        <td><center><%= user.is_admin %></center></td>
+        <td><center><%= user.is_staff %></center></td>
+        <td><center><%= user.first_name %></center></td>
+        <td><center><%= user.last_name %></center></td>
+        <td><center><%= user.classification %></center></td>
+        <td><center><%= user.skill_level %></center></td>
+        <td><center><%= user.phone_number %></center></td>
+        <td><center><%= user.email %></center></td>
+        <td><center><%= link_to("Show", user_path(user), class: 'action show') %></center></td>
+        <td><center><%= link_to("Update", edit_user_path(user), class: 'action update') %></center></td>
+        <td><center><%= link_to("Delete", delete_user_path(user), class: 'action delete') %></center></td>
+    </tr>
+    <% end %>
+</table>
