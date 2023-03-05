@@ -82,3 +82,5 @@ gem "rexml"
 gem "seed_dump"
 
 gem "view_component", "~> 2.82"
+gem "brakeman"
+
