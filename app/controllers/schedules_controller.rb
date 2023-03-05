@@ -6,6 +6,15 @@ class SchedulesController < ApplicationController
     @schedules = Schedule.all
   end
 
+  def cadets
+  end
+
+  def staffs
+  end
+
+  def admins
+  end
+
   # GET /schedules/1 or /schedules/1.json
   def show
   end
