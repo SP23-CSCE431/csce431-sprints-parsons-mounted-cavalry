@@ -80,3 +80,6 @@ end
 gem "rexml"
 
 gem "seed_dump"
+
+gem "brakeman"
+
