@@ -46,8 +46,6 @@ Rails.application.routes.draw do
 
   resources :pages do
     collection do
-      get :cadets_staffs
-      get :cadets_admins
       get :checkin_cadets
       get :checkin_staffs
       get :reports_admins
