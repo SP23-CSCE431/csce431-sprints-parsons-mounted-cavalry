@@ -1,10 +1,4 @@
 class PagesController < ApplicationController
-  def cadets_staffs
-  end
-
-  def cadets_admins
-  end
-
   def checkin_cadets
   end
 
@@ -13,6 +7,7 @@ class PagesController < ApplicationController
 
   def reports_admins
   end
+
   def reports_staffs
   end
 end
