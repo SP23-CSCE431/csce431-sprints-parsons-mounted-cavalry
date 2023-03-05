@@ -11,9 +11,13 @@
         <td><%= user.first_name %> <%= user.last_name %></td>
     </tr>
     <tr>
-        <% horse = Horse.find(attendance.horse_id) %>
         <th>Horse:</th>
-        <td><%= horse.name %> - <%= horse.brand %></td>
+        <% if Horse.exists?(attendance.horse_id) %>
+          <% horse = Horse.find(attendance.horse_id) %>
+          <td><%= horse.name %> - <%= horse.brand %></td>
+        <% else %>
+          <td>None</td>
+        <% end %>
     </tr>
     <tr>
         <th>Purpose:</th>
