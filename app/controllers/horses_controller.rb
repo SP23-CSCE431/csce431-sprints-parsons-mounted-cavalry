@@ -6,6 +6,15 @@ class HorsesController < ApplicationController
         @horses = Horse.all
     end
 
+    def cadets
+    end
+  
+    def staffs
+    end
+  
+    def admins
+    end
+
     # GET /horses/1 or /horses/1.json
     def show
     end

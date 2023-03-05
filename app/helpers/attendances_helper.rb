@@ -14,6 +14,7 @@ module AttendancesHelper
     def get_horses_info
         horses = Horse.all
         h = {}
+        h.store("None", nil)
         horses.each do |horse|
             horse_info = horse.name + " - " + horse.brand
             save_in_db = horse.id
