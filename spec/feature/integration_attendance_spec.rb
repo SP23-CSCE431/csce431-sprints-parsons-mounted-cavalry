@@ -1,6 +1,8 @@
 require 'rails_helper'
 
+# testing creation of attendance
 RSpec.describe 'Creating an attendance', type: :feature do
+    # sunny day
     scenario 'valid inputs' do
         user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '123-456-7890', email: 'j.doe@tamu.edu')
         schedule = Schedule.create(user_id: user.id, recurrence: 'MWF')
@@ -15,6 +17,7 @@ RSpec.describe 'Creating an attendance', type: :feature do
         expect(page).to have_content('Attendance was successfully created.')
     end
     
+    # sunny day
     scenario 'no horse selected' do
         user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '123-456-7890', email: 'j.doe@tamu.edu')
         schedule = Schedule.create(user_id: user.id, recurrence: 'MWF')
@@ -27,6 +30,7 @@ RSpec.describe 'Creating an attendance', type: :feature do
         expect(page).to have_content('Attendance was successfully created.')
     end
 
+    # rainy day
     scenario 'no date input' do
         user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '123-456-7890', email: 'j.doe@tamu.edu')
         schedule = Schedule.create(user_id: user.id, recurrence: 'MWF')
@@ -41,6 +45,7 @@ RSpec.describe 'Creating an attendance', type: :feature do
     end
 end
 
+# testing view of attendance
 RSpec.describe 'Viewing an attendance', type: :feature do
     scenario 'valid inputs' do
         user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '123-456-7890', email: 'j.doe@tamu.edu')
@@ -55,7 +60,9 @@ RSpec.describe 'Viewing an attendance', type: :feature do
     end
 end
 
+# testing updating of attendance
 RSpec.describe 'Updating an attendance', type: :feature do
+    # sunny day
     scenario 'valid inputs' do
         user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '123-456-7890', email: 'j.doe@tamu.edu')
         schedule = Schedule.create(user_id: user.id, recurrence: 'MWF')
@@ -75,6 +82,7 @@ RSpec.describe 'Updating an attendance', type: :feature do
         expect(page).to have_content('Attendance was successfully updated.')
     end
 
+    # sunny day
     scenario 'deselect a horse' do
         user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '123-456-7890', email: 'j.doe@tamu.edu')
         schedule = Schedule.create(user_id: user.id, recurrence: 'MWF')
@@ -93,11 +101,11 @@ RSpec.describe 'Updating an attendance', type: :feature do
         expect(page).to have_content('Attendance was successfully updated.')
     end
 
+    # rainy day
     scenario 'update with no date' do
         user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '123-456-7890', email: 'j.doe@tamu.edu')
         schedule = Schedule.create(user_id: user.id, recurrence: 'MWF')
         horse = Horse.create(name: 'Ed', brand: 'B12', herd: 'Charlie', difficulty: 'Intermediate', condition: 'Healthy')
-
 
         attendance = Attendance.create(schedule_id: schedule.id, date: '2023-12-25', check_in_time: nil, purpose: 'Training')  
         visit edit_attendance_path(id: attendance.id)
@@ -107,7 +115,9 @@ RSpec.describe 'Updating an attendance', type: :feature do
     end
 end
 
+# testing deletion of attendance
 RSpec.describe 'Deleting an attendance', type: :feature do
+    # sunny day
     scenario 'valid inputs' do
         user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '123-456-7890', email: 'j.doe@tamu.edu')
         schedule = Schedule.create(user_id: user.id, recurrence: 'MWF')
@@ -119,6 +129,8 @@ RSpec.describe 'Deleting an attendance', type: :feature do
         expect(page).to have_content('Attendance was successfully destroyed.')
     end
 
+    # if an attendance belongs to a schedule, then when that schedule is deleted
+    # the attendance must be deleted as well
     scenario 'schedule that has attendance is deleted' do
         user = User.create(is_admin: true, is_staff: true, first_name: 'Jane', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '123-456-7890', email: 'j.doe@tamu.edu')
         schedule = Schedule.create(user_id: user.id, recurrence: 'MWF')
@@ -130,6 +142,8 @@ RSpec.describe 'Deleting an attendance', type: :feature do
         expect { visit attendance_path(id: attendance.id) }.to raise_error(ActiveRecord::RecordNotFound)        
     end
 
+    # if an attendance belongs to a user, then when that user is deleted
+    # the attendance must be deleted as well
     scenario 'user that has attendance is deleted' do
         user = User.create(is_admin: true, is_staff: true, first_name: 'Jane', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '123-456-7890', email: 'j.doe@tamu.edu')
         schedule = Schedule.create(user_id: user.id, recurrence: 'MWF')
