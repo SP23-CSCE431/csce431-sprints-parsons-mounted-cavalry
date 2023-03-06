@@ -33,12 +33,12 @@
 
   <div>
     <%= form.label :classification, style: "display: block" %>
-    <%= form.text_field :classification %>
+    <%= form.select :classification, ['Sophmore', 'Junior', 'Senior']%>
   </div>
 
   <div>
     <%= form.label :skill_level, style: "display: block" %>
-    <%= form.text_field :skill_level %>
+    <%= form.select :skill_level, ['Beginner', 'Intermediate', 'Advanced']%>
   </div>
 
   <div>

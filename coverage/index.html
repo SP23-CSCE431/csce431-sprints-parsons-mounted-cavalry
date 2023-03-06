@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-03-05T18:55:24+00:00">2023-03-05T18:55:24+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-03-06T19:49:51+00:00">2023-03-06T19:49:51+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,7 +23,7 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  90.55%
+  90.44%
 </span>
 
      </span>
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>254</b> relevant lines,
-    <span class="green"><b>230</b> lines covered</span> and
+    <b>251</b> relevant lines,
+    <span class="green"><b>227</b> lines covered</span> and
     <span class="red"><b>24</b> lines missed. </span>
     (<span class="green">
-  90.55%
+  90.44%
 </span>
 )
   </div>
@@ -148,17 +148,6 @@
           </tr>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#e1012bba9835f07d3c4a02accc501be5501cb0ae" class="src_link" title="app/models/horse.rb">app/models/horse.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">8</td>
-            <td class="cell--number">6</td>
-            <td class="cell--number">6</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
-            
-          </tr>
-        
-          <tr class="t-file">
             <td class="strong t-file__name"><a href="#2247d61c0014ae75e532c3d11c60689cd0ac29a2" class="src_link" title="app/models/schedule.rb">app/models/schedule.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">6</td>
@@ -172,9 +161,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#6845e0ffe811c59bcc686bbe46487b5f1ab31a4d" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">5</td>
-            <td class="cell--number">3</td>
-            <td class="cell--number">3</td>
+            <td class="cell--number">18</td>
+            <td class="cell--number">7</td>
+            <td class="cell--number">7</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -280,11 +269,22 @@
           </tr>
         
           <tr class="t-file">
+            <td class="strong t-file__name"><a href="#1c5d68bf1a87fb96a83717b08c02921c31ad43f6" class="src_link" title="config/initializers/phonelib.rb">config/initializers/phonelib.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">1</td>
+            <td class="cell--number">1</td>
+            <td class="cell--number">1</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.00</td>
+            
+          </tr>
+        
+          <tr class="t-file">
             <td class="strong t-file__name"><a href="#ea1bc40916656e3e5a88f2a41bbd650981946450" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">58</td>
-            <td class="cell--number">37</td>
-            <td class="cell--number">37</td>
+            <td class="cell--number">56</td>
+            <td class="cell--number">35</td>
+            <td class="cell--number">35</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -1074,125 +1074,6 @@
 </div>
 
       
-        <div class="source_table" id="e1012bba9835f07d3c4a02accc501be5501cb0ae">
-  <div class="header">
-    <h3>app/models/horse.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
-
-      lines covered
-    </h4>
-
-    
-
-    <div class="t-line-summary">
-      <b>6</b> relevant lines.
-      <span class="green"><b>6</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
-    <ol>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="1">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">class Horse &lt; ApplicationRecord</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="2">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    validates :name, :condition,  presence: true</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="3">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    validates :brand, uniqueness: true, presence: true</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="4">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    validates :herd, inclusion: { in: [&#39;Alpha&#39;, &#39;Bravo&#39;, &#39;Charlie&#39;, &#39;Delta&#39;, &#39;OOS&#39;]}, presence: true</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="5">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    validates :difficulty, inclusion: { in: [&#39;Easy&#39;, &#39;Intermediate&#39;, &#39;Advanced&#39;]}, presence: true</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="6">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="7">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    has_many :attendances, dependent: :destroy</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="8">
-            
-            
-
-            
-
-            <code class="ruby">end</code>
-          </li>
-        </div>
-      
-    </ol>
-  </pre>
-</div>
-
-      
         <div class="source_table" id="2247d61c0014ae75e532c3d11c60689cd0ac29a2">
   <div class="header">
     <h3>app/models/schedule.rb</h3>
@@ -1304,8 +1185,8 @@
     
 
     <div class="t-line-summary">
-      <b>3</b> relevant lines.
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>7</b> relevant lines.
+      <span class="green"><b>7</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1328,18 +1209,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="2">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    has_many :schedules, dependent: :destroy</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="3">
+          <li class="never" data-hits="" data-linenumber="2">
             
             
 
@@ -1350,18 +1220,172 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="4">
+          <li class="covered" data-hits="1" data-linenumber="3">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    validates :first_name, :last_name, :phone_number, :email, presence: true</code>
+            <code class="ruby">    has_many :schedules, dependent: :destroy</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="5">
+          <li class="never" data-hits="" data-linenumber="4">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="5">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    validates :first_name, :last_name, :email, presence: true, allow_nil: false, allow_blank: false</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="6">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="7">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    validates :classification, inclusion: { in: [&#39;Sophmore&#39;, &#39;Junior&#39;, &#39;Senior&#39;]}, presence: true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="8">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="9">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    validates :skill_level, inclusion: { in: [&#39;Beginner&#39;, &#39;Intermediate&#39;, &#39;Advanced&#39;]}, presence: true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="11">
+            
+            
+
+            
+
+            <code class="ruby">    # Accepts valid US emails. If more countries wanted, change settings in config/initializers/phonelib.rb</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="12">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    validates :phone_number, presence: true, allow_nil: false, allow_blank: false, phone: true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="14">
+            
+            
+
+            
+
+            <code class="ruby">    # Regex format means that only accepts @tamu.edu emails</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="15">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    validates :email,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
+            
+            
+
+            
+
+            <code class="ruby">        format: { with: /[a-zA-Z0-9_.+-]+@tamu\.edu/, message: &quot;Must be a tamu email&quot;}</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="17">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
             
             
 
@@ -3448,6 +3472,48 @@
 </div>
 
       
+        <div class="source_table" id="1c5d68bf1a87fb96a83717b08c02921c31ad43f6">
+  <div class="header">
+    <h3>config/initializers/phonelib.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>1</b> relevant lines.
+      <span class="green"><b>1</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">Phonelib.default_country = &quot;US&quot;</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
         <div class="source_table" id="ea1bc40916656e3e5a88f2a41bbd650981946450">
   <div class="header">
     <h3>config/routes.rb</h3>
@@ -3462,8 +3528,8 @@
     
 
     <div class="t-line-summary">
-      <b>37</b> relevant lines.
-      <span class="green"><b>37</b> lines covered</span> and
+      <b>35</b> relevant lines.
+      <span class="green"><b>35</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -4009,7 +4075,7 @@
 
             
 
-            <code class="ruby">      get :cadets_staffs</code>
+            <code class="ruby">      get :checkin_cadets</code>
           </li>
         </div>
       
@@ -4020,7 +4086,7 @@
 
             
 
-            <code class="ruby">      get :cadets_admins</code>
+            <code class="ruby">      get :checkin_staffs</code>
           </li>
         </div>
       
@@ -4031,7 +4097,7 @@
 
             
 
-            <code class="ruby">      get :checkin_cadets</code>
+            <code class="ruby">      get :reports_admins</code>
           </li>
         </div>
       
@@ -4042,34 +4108,12 @@
 
             
 
-            <code class="ruby">      get :checkin_staffs</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="53">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      get :reports_admins</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="54">
-            <span class="hits">1</span>
-            
-
-            
-
             <code class="ruby">      get :reports_staffs</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="55">
+          <li class="never" data-hits="" data-linenumber="53">
             
             
 
@@ -4080,7 +4124,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="56">
+          <li class="never" data-hits="" data-linenumber="54">
             
             
 
@@ -4091,7 +4135,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="57">
+          <li class="never" data-hits="" data-linenumber="55">
             
             
 
@@ -4102,7 +4146,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="58">
+          <li class="never" data-hits="" data-linenumber="56">
             
             
 
@@ -4918,7 +4962,7 @@
 
             
 
-            <code class="ruby">        described_class.new(first_name: &#39;Billy&#39;, last_name: &#39;Bob&#39;, classification: &#39;Junior&#39;,  skill_level: &#39;Intermediate&#39;, phone_number: &#39;123-456-7890&#39;, email: &#39;billybob@tamu.edu&#39;, is_staff: &#39;false&#39;, is_admin: &#39;false&#39;)</code>
+            <code class="ruby">        described_class.new(first_name: &#39;Billy&#39;, last_name: &#39;Bob&#39;, classification: &#39;Junior&#39;,  skill_level: &#39;Intermediate&#39;, phone_number: &#39;8229852917&#39;, email: &#39;billybob@tamu.edu&#39;, is_staff: &#39;false&#39;, is_admin: &#39;false&#39;)</code>
           </li>
         </div>
       
@@ -5017,7 +5061,7 @@
 
             
 
-            <code class="ruby">                user = User.new(last_name: &#39;Bob&#39;, classification: &#39;Junior&#39;,  skill_level: &#39;Intermediate&#39;, phone_number: &#39;123-456-7890&#39;, email: &#39;billybob@tamu.edu&#39;, is_staff: &#39;false&#39;, is_admin: &#39;false&#39;)</code>
+            <code class="ruby">                user = User.new(last_name: &#39;Bob&#39;, classification: &#39;Junior&#39;,  skill_level: &#39;Intermediate&#39;, phone_number: &#39;8229852917&#39;, email: &#39;billybob@tamu.edu&#39;, is_staff: &#39;false&#39;, is_admin: &#39;false&#39;)</code>
           </li>
         </div>
       
@@ -5061,7 +5105,7 @@
 
             
 
-            <code class="ruby">                user = User.new(first_name: &#39;&#39;, last_name: &#39;Bob&#39;, classification: &#39;Junior&#39;,  skill_level: &#39;Intermediate&#39;, phone_number: &#39;123-456-7890&#39;, email: &#39;billybob@tamu.edu&#39;, is_staff: &#39;false&#39;, is_admin: &#39;false&#39;)</code>
+            <code class="ruby">                user = User.new(first_name: &#39;&#39;, last_name: &#39;Bob&#39;, classification: &#39;Junior&#39;,  skill_level: &#39;Intermediate&#39;, phone_number: &#39;8229852917&#39;, email: &#39;billybob@tamu.edu&#39;, is_staff: &#39;false&#39;, is_admin: &#39;false&#39;)</code>
           </li>
         </div>
       
@@ -5160,7 +5204,7 @@
 
             
 
-            <code class="ruby">                user = User.new(first_name: &#39;Billy&#39;, last_name: &#39;Bob&#39;, classification: &#39;InvalidClass&#39;,  skill_level: &#39;Intermediate&#39;, phone_number: &#39;123-456-7890&#39;, email: &#39;billybob@tamu.edu&#39;, is_staff: &#39;false&#39;, is_admin: &#39;false&#39;)</code>
+            <code class="ruby">                user = User.new(first_name: &#39;Billy&#39;, last_name: &#39;Bob&#39;, classification: &#39;InvalidClass&#39;,  skill_level: &#39;Intermediate&#39;, phone_number: &#39;8229852917&#39;, email: &#39;billybob@tamu.edu&#39;, is_staff: &#39;false&#39;, is_admin: &#39;false&#39;)</code>
           </li>
         </div>
       
@@ -5204,7 +5248,7 @@
 
             
 
-            <code class="ruby">                user = User.new(first_name: &#39;Billy&#39;, last_name: &#39;Bob&#39;, skill_level: &#39;Intermediate&#39;, phone_number: &#39;123-456-7890&#39;, email: &#39;billybob@tamu.edu&#39;, is_staff: &#39;false&#39;, is_admin: &#39;false&#39;)</code>
+            <code class="ruby">                user = User.new(first_name: &#39;Billy&#39;, last_name: &#39;Bob&#39;, skill_level: &#39;Intermediate&#39;, phone_number: &#39;8229852917&#39;, email: &#39;billybob@tamu.edu&#39;, is_staff: &#39;false&#39;, is_admin: &#39;false&#39;)</code>
           </li>
         </div>
       
@@ -5248,7 +5292,7 @@
 
             
 
-            <code class="ruby">                user = User.new(first_name: &#39;Billy&#39;, last_name: &#39;Bob&#39;, classification: &#39;&#39;,  skill_level: &#39;Intermediate&#39;, phone_number: &#39;123-456-7890&#39;, email: &#39;billybob@tamu.edu&#39;, is_staff: &#39;false&#39;, is_admin: &#39;false&#39;)</code>
+            <code class="ruby">                user = User.new(first_name: &#39;Billy&#39;, last_name: &#39;Bob&#39;, classification: &#39;&#39;,  skill_level: &#39;Intermediate&#39;, phone_number: &#39;8229852917&#39;, email: &#39;billybob@tamu.edu&#39;, is_staff: &#39;false&#39;, is_admin: &#39;false&#39;)</code>
           </li>
         </div>
       
@@ -5347,7 +5391,7 @@
 
             
 
-            <code class="ruby">                user = User.new(first_name: &#39;Billy&#39;, last_name: &#39;Bob&#39;, classification: &#39;Junior&#39;,  skill_level: &#39;InvalidSkillLevel&#39;, phone_number: &#39;123-456-7890&#39;, email: &#39;billybob@tamu.edu&#39;, is_staff: &#39;false&#39;, is_admin: &#39;false&#39;)</code>
+            <code class="ruby">                user = User.new(first_name: &#39;Billy&#39;, last_name: &#39;Bob&#39;, classification: &#39;Junior&#39;,  skill_level: &#39;InvalidSkillLevel&#39;, phone_number: &#39;8229852917&#39;, email: &#39;billybob@tamu.edu&#39;, is_staff: &#39;false&#39;, is_admin: &#39;false&#39;)</code>
           </li>
         </div>
       
@@ -5391,7 +5435,7 @@
 
             
 
-            <code class="ruby">                user = User.new(first_name: &#39;Billy&#39;, last_name: &#39;Bob&#39;, classification: &#39;Junior&#39;, phone_number: &#39;123-456-7890&#39;, email: &#39;billybob@tamu.edu&#39;, is_staff: &#39;false&#39;, is_admin: &#39;false&#39;)</code>
+            <code class="ruby">                user = User.new(first_name: &#39;Billy&#39;, last_name: &#39;Bob&#39;, classification: &#39;Junior&#39;, phone_number: &#39;8229852917&#39;, email: &#39;billybob@tamu.edu&#39;, is_staff: &#39;false&#39;, is_admin: &#39;false&#39;)</code>
           </li>
         </div>
       
@@ -5435,7 +5479,7 @@
 
             
 
-            <code class="ruby">                user = User.new(first_name: &#39;Billy&#39;, last_name: &#39;Bob&#39;, classification: &#39;Junior&#39;,  skill_level: &#39;&#39;, phone_number: &#39;123-456-7890&#39;, email: &#39;billybob@tamu.edu&#39;, is_staff: &#39;false&#39;, is_admin: &#39;false&#39;)</code>
+            <code class="ruby">                user = User.new(first_name: &#39;Billy&#39;, last_name: &#39;Bob&#39;, classification: &#39;Junior&#39;,  skill_level: &#39;&#39;, phone_number: &#39;8229852917&#39;, email: &#39;billybob@tamu.edu&#39;, is_staff: &#39;false&#39;, is_admin: &#39;false&#39;)</code>
           </li>
         </div>
       
@@ -5534,7 +5578,7 @@
 
             
 
-            <code class="ruby">                user = User.new(first_name: &#39;Billy&#39;, last_name: &#39;Bob&#39;, classification: &#39;Junior&#39;,  skill_level: &#39;Intermediate&#39;, phone_number: &#39;123-456-7&#39;, email: &#39;billybob@tamu.edu&#39;, is_staff: &#39;false&#39;, is_admin: &#39;false&#39;)</code>
+            <code class="ruby">                user = User.new(first_name: &#39;Billy&#39;, last_name: &#39;Bob&#39;, classification: &#39;Junior&#39;,  skill_level: &#39;Intermediate&#39;, phone_number: &#39;1234567&#39;, email: &#39;billybob@tamu.edu&#39;, is_staff: &#39;false&#39;, is_admin: &#39;false&#39;)</code>
           </li>
         </div>
       
@@ -5721,7 +5765,7 @@
 
             
 
-            <code class="ruby">                user = User.new(first_name: &#39;Billy&#39;, last_name: &#39;Bob&#39;, classification: &#39;Junior&#39;,  skill_level: &#39;Intermediate&#39;, phone_number: &#39;123-456-7890&#39;, email: &#39;billybob@gmail.com&#39;, is_staff: &#39;false&#39;, is_admin: &#39;false&#39;)</code>
+            <code class="ruby">                user = User.new(first_name: &#39;Billy&#39;, last_name: &#39;Bob&#39;, classification: &#39;Junior&#39;,  skill_level: &#39;Intermediate&#39;, phone_number: &#39;8229852917&#39;, email: &#39;billybob@gmail.com&#39;, is_staff: &#39;false&#39;, is_admin: &#39;false&#39;)</code>
           </li>
         </div>
       
@@ -5765,7 +5809,7 @@
 
             
 
-            <code class="ruby">                user = User.new(first_name: &#39;Billy&#39;, last_name: &#39;Bob&#39;, classification: &#39;Junior&#39;,  skill_level: &#39;Intermediate&#39;, phone_number: &#39;123-456-7890&#39;, is_staff: &#39;false&#39;, is_admin: &#39;false&#39;)</code>
+            <code class="ruby">                user = User.new(first_name: &#39;Billy&#39;, last_name: &#39;Bob&#39;, classification: &#39;Junior&#39;,  skill_level: &#39;Intermediate&#39;, phone_number: &#39;8229852917&#39;, is_staff: &#39;false&#39;, is_admin: &#39;false&#39;)</code>
           </li>
         </div>
       
@@ -5809,7 +5853,7 @@
 
             
 
-            <code class="ruby">                user = User.new(first_name: &#39;Billy&#39;, last_name: &#39;Bob&#39;, classification: &#39;Junior&#39;,  skill_level: &#39;Intermediate&#39;, phone_number: &#39;123-456-7890&#39;, email: &#39;&#39;, is_staff: &#39;false&#39;, is_admin: &#39;false&#39;)</code>
+            <code class="ruby">                user = User.new(first_name: &#39;Billy&#39;, last_name: &#39;Bob&#39;, classification: &#39;Junior&#39;,  skill_level: &#39;Intermediate&#39;, phone_number: &#39;8229852917&#39;, email: &#39;&#39;, is_staff: &#39;false&#39;, is_admin: &#39;false&#39;)</code>
           </li>
         </div>
       
@@ -5930,7 +5974,7 @@
 
             
 
-            <code class="ruby">                expect(User.find_by_name(&#39;Billy1&#39;)).to eq(subject)      </code>
+            <code class="ruby">                expect(User.find_by_first_name(&#39;Billy1&#39;)).to eq(subject)      </code>
           </li>
         </div>
       
@@ -6084,7 +6128,7 @@
 
             
 
-            <code class="ruby">                expect(Horse.find_by_brand(&#39;H1198&#39;)).to eq(subject)</code>
+            <code class="ruby">                expect(User.find_by_classification(&#39;Senior&#39;)).to eq(subject)</code>
           </li>
         </div>
       
@@ -6282,7 +6326,7 @@
 
             
 
-            <code class="ruby">                expect(User.find_by_difficulty(&#39;Advanced&#39;)).to eq(subject)</code>
+            <code class="ruby">                expect(User.find_by_skill_level(&#39;Advanced&#39;)).to eq(subject)</code>
           </li>
         </div>
       
@@ -6469,7 +6513,7 @@
 
             
 
-            <code class="ruby">                subject.update(:phone_number =&gt; &#39;234-567-1234&#39;)</code>
+            <code class="ruby">                subject.update(:phone_number =&gt; &#39;8332324164&#39;)</code>
           </li>
         </div>
       
@@ -6480,7 +6524,7 @@
 
             
 
-            <code class="ruby">                expect(Horse.find_by_herd(&#39;Delta&#39;)).to eq(subject)</code>
+            <code class="ruby">                expect(User.find_by_phone_number(&#39;8332324164&#39;)).to eq(subject)</code>
           </li>
         </div>
       
@@ -6513,7 +6557,7 @@
 
             
 
-            <code class="ruby">                subject.update(:phone_number=&gt; &#39;123-123&#39;)</code>
+            <code class="ruby">                subject.update(:phone_number=&gt; &#39;123123&#39;)</code>
           </li>
         </div>
       

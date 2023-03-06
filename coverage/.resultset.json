@@ -460,6 +460,11 @@
           null
         ]
       },
+      "/csce431/csce431-sprints-parsons-mounted-cavalry/config/initializers/phonelib.rb": {
+        "lines": [
+          1
+        ]
+      },
       "/csce431/csce431-sprints-parsons-mounted-cavalry/config/routes.rb": {
         "lines": [
           1,
@@ -508,8 +513,6 @@
           null,
           null,
           null,
-          1,
-          1,
           1,
           1,
           1,
@@ -594,27 +597,28 @@
       "/csce431/csce431-sprints-parsons-mounted-cavalry/app/models/user.rb": {
         "lines": [
           1,
+          null,
           1,
           null,
           1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
           null
         ]
       },
       "/csce431/csce431-sprints-parsons-mounted-cavalry/app/models/application_record.rb": {
         "lines": [
           1,
-          1,
-          null
-        ]
-      },
-      "/csce431/csce431-sprints-parsons-mounted-cavalry/app/models/horse.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
           1,
           null
         ]
@@ -630,6 +634,6 @@
         ]
       }
     },
-    "timestamp": 1678042524
+    "timestamp": 1678132190
   }
 }

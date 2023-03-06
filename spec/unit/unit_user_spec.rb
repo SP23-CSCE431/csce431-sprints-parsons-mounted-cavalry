@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
     subject do
-        described_class.new(first_name: 'Billy', last_name: 'Bob', classification: 'Junior',  skill_level: 'Intermediate', phone_number: '123-456-7890', email: 'billybob@tamu.edu', is_staff: 'false', is_admin: 'false')
+        described_class.new(first_name: 'Billy', last_name: 'Bob', classification: 'Junior',  skill_level: 'Intermediate', phone_number: '8229852917', email: 'billybob@tamu.edu', is_staff: 'false', is_admin: 'false')
     end
     #these tests are designed to validate the creation of a user and ensure the correct inputs
     describe 'create' do
@@ -11,11 +11,11 @@ RSpec.describe User, type: :model do
                 expect(subject).to be_valid
             end
             it 'has nil first name' do
-                user = User.new(last_name: 'Bob', classification: 'Junior',  skill_level: 'Intermediate', phone_number: '123-456-7890', email: 'billybob@tamu.edu', is_staff: 'false', is_admin: 'false')
+                user = User.new(last_name: 'Bob', classification: 'Junior',  skill_level: 'Intermediate', phone_number: '8229852917', email: 'billybob@tamu.edu', is_staff: 'false', is_admin: 'false')
                 expect(user).not_to be_valid
             end
             it 'has empty first name' do
-                user = User.new(first_name: '', last_name: 'Bob', classification: 'Junior',  skill_level: 'Intermediate', phone_number: '123-456-7890', email: 'billybob@tamu.edu', is_staff: 'false', is_admin: 'false')
+                user = User.new(first_name: '', last_name: 'Bob', classification: 'Junior',  skill_level: 'Intermediate', phone_number: '8229852917', email: 'billybob@tamu.edu', is_staff: 'false', is_admin: 'false')
                 expect(user).not_to be_valid
             end
         end
@@ -24,15 +24,15 @@ RSpec.describe User, type: :model do
                 expect(subject).to be_valid
             end
             it 'has invalid classification' do
-                user = User.new(first_name: 'Billy', last_name: 'Bob', classification: 'InvalidClass',  skill_level: 'Intermediate', phone_number: '123-456-7890', email: 'billybob@tamu.edu', is_staff: 'false', is_admin: 'false')
+                user = User.new(first_name: 'Billy', last_name: 'Bob', classification: 'InvalidClass',  skill_level: 'Intermediate', phone_number: '8229852917', email: 'billybob@tamu.edu', is_staff: 'false', is_admin: 'false')
                 expect(user).not_to be_valid
             end
             it 'has nil classification' do
-                user = User.new(first_name: 'Billy', last_name: 'Bob', skill_level: 'Intermediate', phone_number: '123-456-7890', email: 'billybob@tamu.edu', is_staff: 'false', is_admin: 'false')
+                user = User.new(first_name: 'Billy', last_name: 'Bob', skill_level: 'Intermediate', phone_number: '8229852917', email: 'billybob@tamu.edu', is_staff: 'false', is_admin: 'false')
                 expect(user).not_to be_valid
             end
             it 'has empty classification' do
-                user = User.new(first_name: 'Billy', last_name: 'Bob', classification: '',  skill_level: 'Intermediate', phone_number: '123-456-7890', email: 'billybob@tamu.edu', is_staff: 'false', is_admin: 'false')
+                user = User.new(first_name: 'Billy', last_name: 'Bob', classification: '',  skill_level: 'Intermediate', phone_number: '8229852917', email: 'billybob@tamu.edu', is_staff: 'false', is_admin: 'false')
                 expect(user).not_to be_valid
             end
         end
@@ -41,15 +41,15 @@ RSpec.describe User, type: :model do
 
             end
             it 'has invalid skill level' do
-                user = User.new(first_name: 'Billy', last_name: 'Bob', classification: 'Junior',  skill_level: 'InvalidSkillLevel', phone_number: '123-456-7890', email: 'billybob@tamu.edu', is_staff: 'false', is_admin: 'false')
+                user = User.new(first_name: 'Billy', last_name: 'Bob', classification: 'Junior',  skill_level: 'InvalidSkillLevel', phone_number: '8229852917', email: 'billybob@tamu.edu', is_staff: 'false', is_admin: 'false')
                 expect(user).not_to be_valid
             end
             it 'has nil skill level' do
-                user = User.new(first_name: 'Billy', last_name: 'Bob', classification: 'Junior', phone_number: '123-456-7890', email: 'billybob@tamu.edu', is_staff: 'false', is_admin: 'false')
+                user = User.new(first_name: 'Billy', last_name: 'Bob', classification: 'Junior', phone_number: '8229852917', email: 'billybob@tamu.edu', is_staff: 'false', is_admin: 'false')
                 expect(user).not_to be_valid
             end
             it 'has empty skill level' do
-                user = User.new(first_name: 'Billy', last_name: 'Bob', classification: 'Junior',  skill_level: '', phone_number: '123-456-7890', email: 'billybob@tamu.edu', is_staff: 'false', is_admin: 'false')
+                user = User.new(first_name: 'Billy', last_name: 'Bob', classification: 'Junior',  skill_level: '', phone_number: '8229852917', email: 'billybob@tamu.edu', is_staff: 'false', is_admin: 'false')
                 expect(user).not_to be_valid
             end
         end
@@ -58,7 +58,7 @@ RSpec.describe User, type: :model do
                 expect(subject).to be_valid
             end
             it 'has invalid phone number' do
-                user = User.new(first_name: 'Billy', last_name: 'Bob', classification: 'Junior',  skill_level: 'Intermediate', phone_number: '123-456-7', email: 'billybob@tamu.edu', is_staff: 'false', is_admin: 'false')
+                user = User.new(first_name: 'Billy', last_name: 'Bob', classification: 'Junior',  skill_level: 'Intermediate', phone_number: '1234567', email: 'billybob@tamu.edu', is_staff: 'false', is_admin: 'false')
                 expect(user).not_to be_valid
             end
             it 'has nil phone number' do
@@ -75,15 +75,15 @@ RSpec.describe User, type: :model do
                 expect(subject).to be_valid
             end
             it 'has invalid email' do
-                user = User.new(first_name: 'Billy', last_name: 'Bob', classification: 'Junior',  skill_level: 'Intermediate', phone_number: '123-456-7890', email: 'billybob@gmail.com', is_staff: 'false', is_admin: 'false')
+                user = User.new(first_name: 'Billy', last_name: 'Bob', classification: 'Junior',  skill_level: 'Intermediate', phone_number: '8229852917', email: 'billybob@gmail.com', is_staff: 'false', is_admin: 'false')
                 expect(user).not_to be_valid
             end
             it 'has nil email' do
-                user = User.new(first_name: 'Billy', last_name: 'Bob', classification: 'Junior',  skill_level: 'Intermediate', phone_number: '123-456-7890', is_staff: 'false', is_admin: 'false')
+                user = User.new(first_name: 'Billy', last_name: 'Bob', classification: 'Junior',  skill_level: 'Intermediate', phone_number: '8229852917', is_staff: 'false', is_admin: 'false')
                 expect(user).not_to be_valid
             end
             it 'has empty email' do
-                user = User.new(first_name: 'Billy', last_name: 'Bob', classification: 'Junior',  skill_level: 'Intermediate', phone_number: '123-456-7890', email: '', is_staff: 'false', is_admin: 'false')
+                user = User.new(first_name: 'Billy', last_name: 'Bob', classification: 'Junior',  skill_level: 'Intermediate', phone_number: '8229852917', email: '', is_staff: 'false', is_admin: 'false')
                 expect(user).not_to be_valid
             end
         end
@@ -94,7 +94,7 @@ RSpec.describe User, type: :model do
         describe 'name updated' do
             it 'valid name is updated' do
                 subject.update(:first_name => 'Billy1')
-                expect(User.find_by_name('Billy1')).to eq(subject)      
+                expect(User.find_by_first_name('Billy1')).to eq(subject)      
             end
             it 'tried to update with empty name' do
                 subject.update(:first_name => '')
@@ -108,7 +108,7 @@ RSpec.describe User, type: :model do
         describe 'classification updated' do
             it 'valid classification is updated' do
                 subject.update(:classification => 'Senior')
-                expect(Horse.find_by_brand('H1198')).to eq(subject)
+                expect(User.find_by_classification('Senior')).to eq(subject)
             end
             it 'tried to update with invalid classification' do
                 subject.update(:classification => 'InvalidClass')
@@ -126,7 +126,7 @@ RSpec.describe User, type: :model do
         describe 'skill_level updated' do
             it 'valid skill_level is updated' do
                 subject.update(:skill_level => 'Advanced')
-                expect(User.find_by_difficulty('Advanced')).to eq(subject)
+                expect(User.find_by_skill_level('Advanced')).to eq(subject)
             end
             it 'tried to update with invalid skill_level' do
                 subject.update(:skill_level => 'InvalidSkillLevel')
@@ -143,11 +143,11 @@ RSpec.describe User, type: :model do
         end
         describe 'phone_number updated' do
             it 'valid phone_number is updated' do
-                subject.update(:phone_number => '234-567-1234')
-                expect(Horse.find_by_herd('Delta')).to eq(subject)
+                subject.update(:phone_number => '8332324164')
+                expect(User.find_by_phone_number('8332324164')).to eq(subject)
             end
             it 'tried to update with invalid phone_number' do
-                subject.update(:phone_number=> '123-123')
+                subject.update(:phone_number=> '123123')
                 expect(subject).not_to be_valid 
             end
             it 'tried to update with empty phone_number' do
