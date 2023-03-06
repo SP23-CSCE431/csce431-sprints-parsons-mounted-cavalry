@@ -9,5 +9,9 @@
   <div class="justify-content-center align-items-center mx-auto text-center">
     <p style="color: green"><%= notice %></p>
     <h1>Admin Horses View</h1>
+    <br><br>
+    <%= link_to("<button>Add New Horse</button>".html_safe, new_horse_path, class: 'action new') %>
+    <br>
+    <%= render(HorsesTableComponent.new(@horses)) %>
   </div>
 </body>

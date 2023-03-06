@@ -10,9 +10,11 @@ class SchedulesController < ApplicationController
   end
 
   def staffs
+    @schedules = Schedule.all
   end
 
   def admins
+    @schedules = Schedule.all
   end
 
   # GET /schedules/1 or /schedules/1.json
@@ -78,6 +80,6 @@ class SchedulesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def schedule_params
-      params.require(:schedule).permit(:user_id, :recurrence)
+      params.require(:schedule).permit(:user_id, :recurrence, :monday, :tuesday, :wednesday, :thursday, :friday)
     end
 end
