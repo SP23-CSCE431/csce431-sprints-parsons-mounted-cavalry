@@ -1,36 +1,46 @@
-<div class="horses show">
-<h2>Horse Details</h2>
-  
-    <table class="listing" summary="Task list" style="width: 30%;" border = "1">
-        <tr>
-            <th>Name:</th>
-            <td><%= @horse.name %></td>
-        </tr>
-        
-        <tr>
-            <th>Brand:</th>
-            <td><%= @horse.brand %></td>
-        </tr>
-        <tr>
-            <th>Herd:</th>
-            <td><%= @horse.herd %></td>
-        </tr>       
-        <tr>
-            <th>Difficulty:</th>
-            <td><%= @horse.difficulty %></td>
-        </tr>       
-        <tr>
-            <th>Condition:</th>
-            <td><%= @horse.condition %></td>
-        </tr>
-    </table>
-  
-    <br>
-    <div class="actions">
-        <%= link_to("<button>Edit Horse</button>".html_safe, edit_horse_path(@horse)) %>
-        <%= link_to("<button>Delete Horse</button>".html_safe, delete_horse_path(@horse)) %>
-    </div>
+<body class="align-items-center justify-content-center" style="overflow-x: hidden; overflow-y: hidden;">
+  <%= render(NavbarComponent.new())%>
+  <%# Sidebar %>
+  <%= render(SidebarAdminsComponent.new())%>
+  <div class="justify-content-center align-items-center mx-auto text-center">
 
-    <br />
-    <%= link_to("<button>Back to Horses</button>".html_safe, horses_path, class: 'back-link') %>
-</div>
+    <p style="color: green"><%= notice %></p>
+
+    <div class="horses show">
+    <h2>Horse Details</h2>
+    
+        <table class="listing" summary="Task list" style="width: 30%;" border = "1">
+            <tr>
+                <th>Name:</th>
+                <td><%= @horse.name %></td>
+            </tr>
+            
+            <tr>
+                <th>Brand:</th>
+                <td><%= @horse.brand %></td>
+            </tr>
+            <tr>
+                <th>Herd:</th>
+                <td><%= @horse.herd %></td>
+            </tr>       
+            <tr>
+                <th>Difficulty:</th>
+                <td><%= @horse.difficulty %></td>
+            </tr>       
+            <tr>
+                <th>Condition:</th>
+                <td><%= @horse.condition %></td>
+            </tr>
+        </table>
+    
+        <br>
+        <div class="actions">
+            <%= link_to("<button>Edit Horse</button>".html_safe, edit_horse_path(@horse)) %>
+            <%= link_to("<button>Delete Horse</button>".html_safe, delete_horse_path(@horse)) %>
+        </div>
+
+        <br />
+        <%= link_to("<button>Back to Horses</button>".html_safe, admins_horses_path, class: 'back-link') %>
+    </div>
+  </div>
+</body>
