@@ -1,39 +1,39 @@
-<p style="color: green"><%= notice %></p>
-<%= link_to "<button>Sign Out</button>".html_safe, destroy_admin_session_path %>
-<br>
-<br>
-<%= link_to "<button>Schedules</button>".html_safe, schedules_path %>
-<%= link_to "<button>Attendances</button>".html_safe, attendances_path %>
-<%= link_to "<button>Horses</button>".html_safe, horses_path %>
+<body style="min-height: 100vh;">
+<%# Content %> 
+<div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 100vh;">
+    <%= image_tag("PMC_Attendance.png") %>
+    <%= image_tag("PMC_Logo.png") %>
+    <form class="border border-primary p-3">
+      <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+      </div>
+      <button class="btn btn-success" type="submit">Login</button>
+      <br>
+      <%= link_to "Admin", admins_schedules_path() %>
+      <%= link_to "Staff", staffs_schedules_path() %>
+      <%= link_to "Cadet", checkin_cadets_pages_path() %>
+    </form>
+  </div>
 
-<div id="users index">
-  <h1>Users</h1>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-  <%= link_to "<button>New user</button>".html_safe, new_user_path %>
-  <br><br>
-  <table class="listing" summary="User list" style="width: 60%;" border = "1">
-    <tr class="header">
-      <th>Name</th>
-      <th>Role</th>
-      <th>Classification</th>
-      <th>Skill Level</th>
-      <th>Phone Number</th>
-      <th>Email</th>
-      <th>Edit</th>
-      <th>Delete</th>
-  </tr>
-  <% @users.each do |user| %>
-    <tr>
-      <td><center><%= user.first_name %> <%= user.last_name %></td>
-      <% role = (user.is_admin == false && user.is_staff == false) ? "Cadet" : (user.is_admin == false) ? "Command Staff" : "Admin" %>
-      <td><center><%= role %></td>
-      <td><center><%= user.classification %></td>
-      <td><center><%= user.skill_level %></td>
-      <td><center><%= user.phone_number %></td>
-      <td><center><%= user.email %></td>
-      <td><center><%= link_to "Edit", edit_user_path(user) %></td>
-      <td><center><%= link_to "Delete", delete_user_path(user) %></td>
-    </tr>
-  <% end %>
-  </table>
-</div>
+    form {
+      max-width: 400px;
+    }
+    
+    form.border-primary {
+      border-color: #dfad14 !important;
+    }
+  </style>
+</body>

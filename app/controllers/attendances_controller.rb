@@ -6,6 +6,15 @@ class AttendancesController < ApplicationController
     @attendances = Attendance.all
   end
 
+  def cadets
+  end
+
+  def staffs
+  end
+
+  def admins
+  end
+
   # GET /attendances/1 or /attendances/1.json
   def show
   end
