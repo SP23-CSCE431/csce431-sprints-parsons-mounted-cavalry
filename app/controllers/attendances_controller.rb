@@ -21,7 +21,7 @@ class AttendancesController < ApplicationController
 
   # GET /attendances/new
   def new
-    @attendance = Attendance.new
+    @attendance = Attendance.new(schedule_id: params[:schedule_id], date: params[:date])
   end
 
   # GET /attendances/1/edit
@@ -34,7 +34,7 @@ class AttendancesController < ApplicationController
 
     respond_to do |format|
       if @attendance.save
-        format.html { redirect_to attendances_url, notice: "Attendance was successfully created." }
+        format.html { redirect_to root_path, notice: "Attendance was successfully created." }
         format.json { render :show, status: :created, location: @attendance }
       else
         format.html { render :new, status: :unprocessable_entity }
