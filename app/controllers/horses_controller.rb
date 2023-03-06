@@ -10,9 +10,11 @@ class HorsesController < ApplicationController
     end
   
     def staffs
+        @horses = Horse.all
     end
   
     def admins
+        @horses = Horse.all
     end
 
     # GET /horses/1 or /horses/1.json

@@ -1,11 +1,19 @@
-<p style="color: green"><%= notice %></p>
+<body class="align-items-center justify-content-center" style="overflow-x: hidden; overflow-y: hidden;">
+  <%= render(NavbarComponent.new())%>
 
-<%= render @schedule %>
+  <%# Sidebar %>
+  <%= render(SidebarAdminsComponent.new())%>
+  <div class="justify-content-center align-items-center mx-auto text-center">
+    <p style="color: green"><%= notice %></p>
 
-<div>
-  <%= link_to "<button>Edit</button>".html_safe, edit_schedule_path(@schedule) %>
-  <%= link_to "<button>Delete</button>".html_safe, delete_schedule_path(@schedule) %>
-</div>
+    <%= render @schedule %>
 
-<br>
-<%= link_to "<button>Back to schedules</button>".html_safe, schedules_path %>
+    <div>
+      <%= link_to "<button>Edit</button>".html_safe, edit_schedule_path(@schedule) %>
+      <%= link_to "<button>Delete</button>".html_safe, delete_schedule_path(@schedule) %>
+    </div>
+
+    <br>
+    <%= link_to "<button>Back to schedules</button>".html_safe, admins_schedules_path %>
+  </div>
+</body>

@@ -9,5 +9,17 @@
   <div class="justify-content-center align-items-center mx-auto text-center">
     <p style="color: green"><%= notice %></p>
     <h1>Admin Schedules View</h1>
+    <p style="color: green"><%= notice %></p>
+
+    <%= link_to "<button>New Schedule</button>".html_safe, new_schedule_path %>
+
+    <div id="schedules">
+      <% @schedules.each do |schedule| %>
+        <%= render schedule %>
+        <p>
+          <%= link_to "Show this schedule", schedule %>
+        </p>
+      <% end %>
+    </div>
   </div>
 </body>

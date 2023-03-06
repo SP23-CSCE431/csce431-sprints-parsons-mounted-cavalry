@@ -10,9 +10,11 @@ class AttendancesController < ApplicationController
   end
 
   def staffs
+    @attendances = Attendance.all
   end
 
   def admins
+    @attendances = Attendance.all
   end
 
   # GET /attendances/1 or /attendances/1.json
