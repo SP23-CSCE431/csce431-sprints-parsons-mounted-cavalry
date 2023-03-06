@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe 'Creating a horse', type: :feature do
+    before(:each) do
+        Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
+        Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
+        visit root_path
+        click_on 'Sign in with Google'
+    end
     scenario 'valid inputs' do
         visit new_horse_path
         fill_in "horse[name]", with: "Horsey"
@@ -25,7 +31,13 @@ RSpec.describe 'Creating a horse', type: :feature do
 end
 
 RSpec.describe 'Viewing a horse', type: :feature do
-        scenario 'valid inputs' do
+    before(:each) do
+        Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
+        Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
+        visit root_path
+        click_on 'Sign in with Google'
+    end
+    scenario 'valid inputs' do
         horse = Horse.create(name: 'Horsey', brand: 'H1199',  herd: 'Alpha', difficulty: 'Easy', condition: 'Healthy')
         visit horse_path(id: horse.id)
         expect(page).to have_content('Horsey')
@@ -33,10 +45,16 @@ RSpec.describe 'Viewing a horse', type: :feature do
         expect(page).to have_content('Easy')
         expect(page).to have_content('Alpha')
         expect(page).to have_content('Healthy')
-        end
+    end
 end
 
 RSpec.describe 'Editing a horse', type: :feature do
+    before(:each) do
+        Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
+        Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
+        visit root_path
+        click_on 'Sign in with Google'
+    end
     scenario 'valid inputs' do
         horse = Horse.create(name: 'Horsey', brand: 'H1199',  herd: 'Alpha', difficulty: 'Easy', condition: 'Healthy')
         visit edit_horse_path(id: horse.id)
@@ -63,6 +81,12 @@ RSpec.describe 'Editing a horse', type: :feature do
 end
 
 RSpec.describe 'Deleting a horse', type: :feature do
+    before(:each) do
+        Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
+        Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
+        visit root_path
+        click_on 'Sign in with Google'
+    end
     scenario 'valid inputs' do
         horse = Horse.create(name: 'Horsey1', brand: 'H1199',  herd: 'Alpha', difficulty: 'Easy', condition: 'Healthy')
         visit delete_horse_path(id: horse.id)

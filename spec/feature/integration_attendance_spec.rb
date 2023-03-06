@@ -3,6 +3,12 @@ require 'rails_helper'
 # testing creation of attendance
 RSpec.describe 'Creating an attendance', type: :feature do
     # sunny day
+    before(:each) do
+        Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
+        Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
+        visit root_path
+        click_on 'Sign in with Google'
+    end
     scenario 'valid inputs' do
         user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '8229852917', email: 'j.doe@tamu.edu')
         schedule = Schedule.create(user_id: user.id, recurrence: 'MWF')
@@ -47,6 +53,12 @@ end
 
 # testing view of attendance
 RSpec.describe 'Viewing an attendance', type: :feature do
+    before(:each) do
+        Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
+        Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
+        visit root_path
+        click_on 'Sign in with Google'
+    end
     scenario 'valid inputs' do
         user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '8229852917', email: 'j.doe@tamu.edu')
         schedule = Schedule.create(user_id: user.id, recurrence: 'MWF')
@@ -62,7 +74,12 @@ end
 
 # testing updating of attendance
 RSpec.describe 'Updating an attendance', type: :feature do
-    # sunny day
+    before(:each) do
+        Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
+        Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
+        visit root_path
+        click_on 'Sign in with Google'
+    end
     scenario 'valid inputs' do
         user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '8229852917', email: 'j.doe@tamu.edu')
         schedule = Schedule.create(user_id: user.id, recurrence: 'MWF')
@@ -117,7 +134,12 @@ end
 
 # testing deletion of attendance
 RSpec.describe 'Deleting an attendance', type: :feature do
-    # sunny day
+    before(:each) do
+        Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
+        Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
+        visit root_path
+        click_on 'Sign in with Google'
+    end
     scenario 'valid inputs' do
         user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '8229852917', email: 'j.doe@tamu.edu')
         schedule = Schedule.create(user_id: user.id, recurrence: 'MWF')
