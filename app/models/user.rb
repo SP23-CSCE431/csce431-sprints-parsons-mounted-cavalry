@@ -13,6 +13,6 @@ class User < ApplicationRecord
 
     # Regex format means that only accepts @tamu.edu emails
     validates :email,
-        format: { with: /[a-zA-Z0-9_.+-]+@tamu\.edu/, message: "Must be a tamu email"}
+        format: { with: /\A[a-zA-Z0-9_.+-]+@tamu\.edu\z/, message: "Must be a tamu email"}
 
 end
