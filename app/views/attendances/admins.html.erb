@@ -9,5 +9,34 @@
   <div class="justify-content-center align-items-center mx-auto text-center">
     <p style="color: green"><%= notice %></p>
     <h1>Admin Attendance View</h1>
+
+    <p><%= link_to "<button>New attendance</button>".html_safe, new_attendance_path %></p>
+    
+    
+    <table class="listing" summary="Attendance list" style="width: 75%; margin: 0 auto;" border = "1">
+        <tr class="header">
+            <th>Date</th>
+            <th>User</th>
+            <th>Horse</th>
+            <th>Purpose</th>
+            <th>Check-in-time</th>
+        </tr>
+
+        <% @attendances.each do |attendance| %>
+        <% schedule = Schedule.find(attendance.schedule_id) %>
+        <% user = User.find(schedule.user_id) %>
+        <% display = (attendance.check_in_time == nil) ? 'Not checked in' : attendance.check_in_time %>
+        <tr>
+            <td><center><%= attendance.date %></center></td>
+            <td><center><%= user.first_name %> <%= user.last_name %></center></td>
+            <td><center><%= attendance.horse_id %></center></td>
+            <td><center><%= attendance.purpose %></center></td>
+            <td><center><%= display %></center></td>
+            <td><center><%= link_to("Show", attendance_path(attendance), class: 'action show') %></center></td>
+            <td><center><%= link_to("Update", edit_attendance_path(attendance), class: 'action update') %></center></td>
+            <td><center><%= link_to("Delete", delete_attendance_path(attendance), class: 'action delete') %></center></td>
+        </tr>
+        <% end %>
+    </table>
   </div>
 </body>

@@ -1,9 +1,18 @@
-<h1>New user</h1>
+<body class="align-items-center justify-content-center" style="overflow-x: hidden; overflow-y: hidden;">
+  <%= render(NavbarComponent.new())%>
 
-<%= render "form", user: @user %>
+  <%# Sidebar %>
+  <%= render(SidebarAdminsComponent.new())%>
 
-<br>
+  <div class="justify-content-center align-items-center mx-auto text-center">
+    <h1>New user</h1>
 
-<div>
-  <%= link_to "Back to users", users_path %>
-</div>
+    <%= render "form", user: @user %>
+
+    <br>
+
+    <div>
+      <%= link_to "Back to users", admins_users_path %>
+    </div>
+  </div>
+</body>
