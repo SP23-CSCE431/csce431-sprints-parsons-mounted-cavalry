@@ -4,6 +4,8 @@
     <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand mx-auto" href="/" style="color: #dfad14;">Parsons Mounted Cavalry <strong>Attendance</strong></a>
-    <%= link_to("<button type='button' class='btn btn-outline-danger'>Logout</button>".html_safe, '/') %>
+    <div>
+        <%= link_to "Sign Out", destroy_admin_session_path, :class =>'btn btn-outline-danger', method: :post%>
+    </div>
 </div>
 </nav>
