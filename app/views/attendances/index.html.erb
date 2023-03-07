@@ -4,8 +4,6 @@
 
 <h1>Attendances</h1>
 
-<p><%= link_to "<button>New attendance</button>".html_safe, new_attendance_path %></p>
-
 <div id="attendances">
   <% @attendances.each do |attendance| %>
     <%= render attendance %>

@@ -27,11 +27,11 @@ require 'rspec/rails'
 begin
   ActiveRecord::Migration.maintain_test_schema!
 rescue ActiveRecord::PendingMigrationError => e
-  abort e.to_s.strip
+  abort(e.to_s.strip)
 end
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  config.fixture_path = "#{Rails.root}/spec/fixtures"
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
@@ -61,19 +61,20 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
-  #creates a mock token for the integration tests
-    OmniAuth.config.test_mode = true
-    OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
-      :provider => "google_oauth2",
-      :uid => "123456789",
-      :info => {
-        :name => "Tony Stark",
-        :email => "tony@tamu.com"
-      },
-      :credentials => {
-        :token => "token",
-        :refresh_token => "refresh token"
+  # creates a mock token for the integration tests
+  OmniAuth.config.test_mode = true
+  OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new(
+      {
+          provider: "google_oauth2",
+          uid: "123456789",
+          info: {
+              name: "Tony Stark",
+              email: "tony@tamu.com"
+          },
+          credentials: {
+              token: "token",
+              refresh_token: "refresh token"
+          }
       }
-    }
   )
 end

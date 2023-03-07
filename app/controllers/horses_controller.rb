@@ -36,11 +36,11 @@ class HorsesController < ApplicationController
 
         respond_to do |format|
         if @horse.save
-            format.html { redirect_to admins_horses_path, notice: "#{@horse.name} was successfully created." }
-            format.json { render :show, status: :created, location: @horse }
+            format.html { redirect_to(admins_horses_path, notice: "#{@horse.name} was successfully created.") }
+            format.json { render(:show, status: :created, location: @horse) }
         else
-            format.html { render :new, status: :unprocessable_entity }
-            format.json { render json: @horse.errors, status: :unprocessable_entity }
+            format.html { render(:new, status: :unprocessable_entity) }
+            format.json { render(json: @horse.errors, status: :unprocessable_entity) }
         end
         end
     end
@@ -49,11 +49,11 @@ class HorsesController < ApplicationController
     def update
         respond_to do |format|
         if @horse.update(horse_params)
-            format.html { redirect_to admins_horses_path, notice: "#{@horse.name} was successfully updated." }
-            format.json { render :show, status: :ok, location: @horse }
+            format.html { redirect_to(admins_horses_path, notice: "#{@horse.name} was successfully updated.") }
+            format.json { render(:show, status: :ok, location: @horse) }
         else
-            format.html { render :edit, status: :unprocessable_entity }
-            format.json { render json: @horse.errors, status: :unprocessable_entity }
+            format.html { render(:edit, status: :unprocessable_entity) }
+            format.json { render(json: @horse.errors, status: :unprocessable_entity) }
         end
         end
     end
@@ -66,8 +66,8 @@ class HorsesController < ApplicationController
         @horse.destroy
 
         respond_to do |format|
-        format.html { redirect_to admins_horses_path, notice: "#{@horse.name} was successfully destroyed." }
-        format.json { head :no_content }
+        format.html { redirect_to(admins_horses_path, notice: "#{@horse.name} was successfully destroyed.") }
+        format.json { head(:no_content) }
         end
     end
 

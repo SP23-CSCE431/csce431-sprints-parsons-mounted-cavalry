@@ -21,6 +21,12 @@ Rails/AttributeDefaultBlockValue: # (new in 2.9)
 Rails/DefaultScope:
   Enabled: true
 
+RSpec/DescribedClass:
+  Enabled: false
+
+Rails/DynamicFindBy:
+  Enabled: false
+
 Rails/EagerEvaluationLogMessage: # (new in 2.11)
   Enabled: true
 
@@ -32,6 +38,9 @@ Rails/FindById:
 
 Rails/I18nLocaleAssignment: # (new in 2.11)
   Enabled: true
+
+Rails/I18nLocaleTexts:
+  Enabled: false
 
 Rails/Inquiry:
   Enabled: true
@@ -64,7 +73,7 @@ Rails/RenderPlainText:
   Enabled: true
 
 Rails/SaveBang:
-  Enabled: true
+  Enabled: false
   AllowImplicitReturn: false
 
 Rails/ShortI18n:
@@ -75,6 +84,9 @@ Rails/SquishedSQLHeredocs: # (new in 2.8)
 
 Rails/TimeZoneAssignment: # (new in 2.10)
   Enabled: true
+
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
 
 Rails/UnusedIgnoredColumns: # (new in 2.11)
   Enabled: true
@@ -87,3 +99,9 @@ Rails/WhereExists:
 
 Rails/WhereNot:
   Enabled: true
+
+RSpec/MultipleDescribes:
+  Enabled: false
+
+RSpec/NamedSubject:
+  Enabled: false
