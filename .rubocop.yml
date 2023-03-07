@@ -346,6 +346,9 @@ Style/CommandLiteral:
 Style/ConstantVisibility:
     Enabled: true
 
+Style/Copyright:
+  Enabled: false
+
 Style/Documentation:
     Enabled: false
 
@@ -376,6 +379,9 @@ Style/HashExcept: # (new in 1.7)
 Style/HashLikeCase:
     Enabled: true
 
+Style/HashSyntax:
+    Enabled: false
+
 Style/HashTransformKeys:
     Enabled: true
 
@@ -401,7 +407,7 @@ Style/KeywordParametersOrder:
     Enabled: true
 
 Style/MethodCallWithArgsParentheses:
-    Enabled: true
+    Enabled: false
 
 Style/MissingElse:
     Enabled: false
@@ -450,6 +456,9 @@ Style/StringChars: # (new in 1.12)
 
 Style/StringConcatenation:
     Enabled: true
+
+Style/StringHashKeys:
+    Enabled: false
 
 Style/SwapValues: # (new in 1.1)
     Enabled: true

@@ -7,7 +7,6 @@
 
   <%# Content %>
   <div class="justify-content-center align-items-center mx-auto text-center">
-    <p style="color: green"><%= notice %></p>
     <h1>Admin Schedules View</h1>
     
     <% users = User.all %>
@@ -25,17 +24,24 @@
     <div style="margin: 40px">
       <h2 style="text-align: start">Sophomores</h2>
       <%= render(ScheduleViewComponent.new(sophomores)) %>
-    <p style="color: green"><%= notice %></p>
 
     <%= link_to "<button>New Schedule</button>".html_safe, new_schedule_path %>
 
-    <div id="schedules">
+    <table class="listing" summary="Schedule list" style="width: 75%; margin: 0 auto; margin-top: 15px" border="1">
+      <tr class="header">
+        <th>User</th>
+        <th>Recurrence</th>
+      </tr>
       <% @schedules.each do |schedule| %>
-        <%= render schedule %>
-        <p>
-          <%= link_to "Show this schedule", schedule %>
-        </p>
+      <% user = User.find(schedule.user_id) %>
+      <tr>
+        <td><center><%= user.first_name %> <%= user.last_name %></center></td>
+        <td><center><%= schedule.recurrence %></center></td>
+        <td><center><%= link_to("Show", schedule_path(schedule), class: 'action show') %></center></td>
+        <td><center><%= link_to("Update", edit_schedule_path(schedule), class: 'action update') %></center></td> 
+        <td><center><%= link_to("Delete", delete_schedule_path(schedule), class: 'action delete') %></center></td> 
+      </tr> 
       <% end %>
-    </div>
+    </table>
   </div>
 </body>

@@ -1,1 +1,1 @@
-json.partial! "attendances/attendance", attendance: @attendance
+json.partial!("attendances/attendance", attendance: @attendance)

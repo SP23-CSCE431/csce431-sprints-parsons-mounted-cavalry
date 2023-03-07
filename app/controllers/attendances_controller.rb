@@ -6,13 +6,16 @@ class AttendancesController < ApplicationController
     @attendances = Attendance.all
   end
 
+  # gets attendances (none) for cadet path
   def cadets
   end
 
+  # gets all attendances for staff path
   def staffs
     @attendances = Attendance.all
   end
 
+  # gets all attendances for admin path
   def admins
     @attendances = Attendance.all
   end
@@ -36,11 +39,11 @@ class AttendancesController < ApplicationController
 
     respond_to do |format|
       if @attendance.save
-        format.html { redirect_to admins_attendances_url, notice: "Attendance was successfully created." }
-        format.json { render :show, status: :created, location: @attendance }
+        format.html { redirect_to(admins_schedules_url, notice: "Attendance was successfully created.") }
+        format.json { render(:show, status: :created, location: @attendance) }
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @attendance.errors, status: :unprocessable_entity }
+        format.html { render(:new, status: :unprocessable_entity) }
+        format.json { render(json: @attendance.errors, status: :unprocessable_entity) }
       end
     end
   end
@@ -49,26 +52,27 @@ class AttendancesController < ApplicationController
   def update
     respond_to do |format|
       if @attendance.update(attendance_params)
-        format.html { redirect_to admins_attendances_url, notice: "Attendance was successfully updated." }
-        format.json { render :show, status: :ok, location: @attendance }
+        format.html { redirect_to(admins_schedules_url, notice: "Attendance was successfully updated.") }
+        format.json { render(:show, status: :ok, location: @attendance) }
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @attendance.errors, status: :unprocessable_entity }
+        format.html { render(:edit, status: :unprocessable_entity) }
+        format.json { render(json: @attendance.errors, status: :unprocessable_entity) }
       end
     end
   end
 
-  def delete 
+  # routes user to confirmation page to delete attendance
+  def delete
     @attendance = Attendance.find(params[:id])
   end
-  
+
   # DELETE /attendances/1 or /attendances/1.json
   def destroy
     @attendance.destroy
 
     respond_to do |format|
-      format.html { redirect_to admins_attendances_url, notice: "Attendance was successfully destroyed." }
-      format.json { head :no_content }
+      format.html { redirect_to(admins_schedules_url, notice: "Attendance was successfully destroyed.") }
+      format.json { head(:no_content) }
     end
   end
 
