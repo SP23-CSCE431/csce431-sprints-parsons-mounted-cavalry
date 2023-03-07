@@ -1,10 +1,20 @@
-<h1>New Attendance</h1>
-<h2>For: <%= get_user_by_schedule_id(@attendance.schedule_id) %></h2>
-<h2>Date: <%= format_date(@attendance.date) %></h2>
-<%= render "form", attendance: @attendance %>
+<body class="align-items-center justify-content-center" style="overflow-x: hidden; overflow-y: hidden;">
+  <%= render(NavbarComponent.new())%>
 
-<br>
+  <%# Sidebar %>
+  <%= render(SidebarAdminsComponent.new())%>
+  <div class="justify-content-center align-items-center mx-auto text-center">
+    <h1>New Attendance</h1>
+    <br>
+    <h2>For: <%= get_user_by_schedule_id(@attendance.schedule_id) %></h2>
+    <h2>Date: <%= format_date(@attendance.date) %></h2>
 
-<div>
-  <%= link_to "Back to attendances", attendances_path %>
-</div>
+    <%= render "form", attendance: @attendance %>
+
+    <br>
+
+    <div>
+      <%= link_to "Back to attendances", admins_attendances_path %>
+    </div>
+  </div>
+</body>

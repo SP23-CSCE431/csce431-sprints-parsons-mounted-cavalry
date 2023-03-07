@@ -25,6 +25,17 @@
     <div style="margin: 40px">
       <h2 style="text-align: start">Sophomores</h2>
       <%= render(ScheduleViewComponent.new(sophomores)) %>
+    <p style="color: green"><%= notice %></p>
+
+    <%= link_to "<button>New Schedule</button>".html_safe, new_schedule_path %>
+
+    <div id="schedules">
+      <% @schedules.each do |schedule| %>
+        <%= render schedule %>
+        <p>
+          <%= link_to "Show this schedule", schedule %>
+        </p>
+      <% end %>
     </div>
   </div>
 </body>

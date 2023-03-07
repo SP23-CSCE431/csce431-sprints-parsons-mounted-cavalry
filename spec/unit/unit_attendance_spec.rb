@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Attendance, type: :model do
   # create instances of reference that are used in creation of attendances 
-  let(:user) { User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '1234567890', email: 'j.doe@tamu.edu') }
+  let(:user) { User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu') }
   let(:schedule) { Schedule.create(user_id: user.id, recurrence: 'MWF') }
   let(:horse) { Horse.create(name: 'Ed', brand: 'B12', herd: 'Charlie', difficulty: 'Intermediate', condition: 'Healthy') }
 
@@ -96,7 +96,7 @@ RSpec.describe Attendance, type: :model do
   describe 'update' do
     describe 'schedule change' do
       it 'valid schedule change' do
-        new_user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '1234567890', email: 'j.doe@tamu.edu')
+        new_user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
         new_schedule = Schedule.create(user_id: new_user.id, recurrence: 'MWF')
         subject.update(:schedule_id => new_schedule.id)
         expect(Attendance.find_by_schedule_id(new_schedule.id)).to eq(subject)
