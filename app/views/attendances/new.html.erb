@@ -4,7 +4,10 @@
   <%# Sidebar %>
   <%= render(SidebarAdminsComponent.new())%>
   <div class="justify-content-center align-items-center mx-auto text-center">
-    <h1>New attendance</h1>
+    <h1>New Attendance</h1>
+    <br>
+    <h2>For: <%= get_user_by_schedule_id(@attendance.schedule_id) %></h2>
+    <h2>Date: <%= format_date(@attendance.date) %></h2>
 
     <%= render "form", attendance: @attendance %>
 

@@ -23,7 +23,7 @@ class AttendancesController < ApplicationController
 
   # GET /attendances/new
   def new
-    @attendance = Attendance.new
+    @attendance = Attendance.new(schedule_id: params[:schedule_id], date: params[:date])
   end
 
   # GET /attendances/1/edit

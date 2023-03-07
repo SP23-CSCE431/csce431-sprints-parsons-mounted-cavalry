@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
     validates :first_name, :last_name, :email, presence: true, allow_nil: false, allow_blank: false
 
-    validates :classification, inclusion: { in: ['Sophmore', 'Junior', 'Senior']}, presence: true
+    validates :classification, inclusion: { in: ['Sophomore', 'Junior', 'Senior']}, presence: true
 
     validates :skill_level, inclusion: { in: ['Beginner', 'Intermediate', 'Advanced']}, presence: true
 

@@ -1,0 +1,14 @@
+.schedule_view td {
+    padding: 0px;
+    transition: all 0.05s;
+}
+
+.schedule_view td:hover {
+    filter: brightness(95%);
+    cursor: pointer;
+}
+
+.schedule_view a {
+    text-decoration: none;
+    color: black;
+}
