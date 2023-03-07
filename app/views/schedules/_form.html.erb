@@ -18,31 +18,8 @@
   </div>
 
   <div>
-    <br>
-    <strong><%= form.label :recurrence, style: "display: block" %></strong>
-    <div>
-      <%= form.label :monday, class: "checkbox-inline" do %>
-        <%= form.check_box :monday, {}, "M", "" %>
-        Monday
-      <% end %>
-      <%= form.label :tuesday, class: "checkbox-inline" do %>
-        <%= form.check_box :tuesday, {}, "T", "" %>
-        Tuesday
-      <% end %>
-      <%= form.label :wednesday, class: "checkbox-inline" do %>
-        <%= form.check_box :wednesday, {}, "W", "" %>
-        Wednesday
-      <% end %>
-      <%= form.label :thursday, class: "checkbox-inline" do %>
-        <%= form.check_box :thursday, {}, "R", "" %>
-        Thursday
-      <% end %>
-      <%= form.label :friday, class: "checkbox-inline" do %>
-        <%= form.check_box :friday, {}, "F", "" %>
-        Friday
-      <% end %>
-      <br>
-    </div>
+    <%= form.label :recurrence, style: "display: block" %>
+    <%= form.text_field :recurrence %>
   </div>
 
   <div>

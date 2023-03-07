@@ -11,10 +11,8 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :schedule_id, style: "display: block" %>
-    <%= form.select :schedule_id, get_users_by_schedule_id(), {required: true, class: "form-control"} %>
-  </div>
+  <%= form.hidden_field :schedule_id %>
+  <%= form.hidden_field :date %>
 
   <div>
     <%= form.label :horse_id, style: "display: block" %>
@@ -22,15 +20,11 @@
   </div>
 
   <div>
-    <%= form.label :date, style: "display: block" %>
-    <%= form.date_field :date %>
-  </div>
-
-  <div>
     <%= form.label :purpose, style: "display: block" %>
     <%= form.select :purpose, ['Ride', 'Work', 'Ride & Work', 'Training', 'Sections', 'No']%>
   </div>
 
+  <br>
   <div>
     <%= form.submit %>
   </div>
