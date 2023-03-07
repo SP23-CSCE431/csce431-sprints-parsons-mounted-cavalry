@@ -14,7 +14,7 @@
   <div>
     <br>
     <strong><%= form.label :user_id, style: "display: block" %></strong>
-    <%= form.select :user_id, get_users_full_name(), {required: true, class: "form-control"} %>
+    <%= form.select :user_id, users_full_name(), {required: true, class: "form-control"} %>
   </div>
 
   <div>
