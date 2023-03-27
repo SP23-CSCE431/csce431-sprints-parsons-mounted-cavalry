@@ -1,4 +1,4 @@
-<body class="align-items-center justify-content-center" style="overflow-x: hidden; overflow-y: hidden;">
+<body class="align-items-center justify-content-center">
   <%# Navbar %>
   <%= render(NavbarComponent.new())%>
 
@@ -7,19 +7,41 @@
 
   <%# Content %>
   <div class="justify-content-center align-items-center mx-auto text-center">
-    <p style="color: green"><%= notice %></p>
     <h1>Admin Schedules View</h1>
-    <p style="color: green"><%= notice %></p>
+    
+    <% users = User.all %>
+
+    <% upperclass = users.select {|user| user.classification != 'Sophomore'} %>
+    <% sophomores = users.select {|user| user.classification == 'Sophomore'} %>
+
+    <h1>Week: March 13 - 17</h1>
+
+    <div style="margin: 0 40px">
+      <h2 style="text-align: start">Upperclassmen</h2>
+      <%= render(ScheduleViewComponent.new(upperclass)) %>
+    </div>
+
+    <div style="margin: 40px">
+      <h2 style="text-align: start">Sophomores</h2>
+      <%= render(ScheduleViewComponent.new(sophomores)) %>
 
     <%= link_to "<button>New Schedule</button>".html_safe, new_schedule_path %>
 
-    <div id="schedules">
+    <table class="listing" summary="Schedule list" style="width: 75%; margin: 0 auto; margin-top: 15px" border="1">
+      <tr class="header">
+        <th>User</th>
+        <th>Recurrence</th>
+      </tr>
       <% @schedules.each do |schedule| %>
-        <%= render schedule %>
-        <p>
-          <%= link_to "Show this schedule", schedule %>
-        </p>
+      <% user = User.find(schedule.user_id) %>
+      <tr>
+        <td><center><%= user.first_name %> <%= user.last_name %></center></td>
+        <td><center><%= schedule.recurrence %></center></td>
+        <td><center><%= link_to("Show", schedule_path(schedule), class: 'action show') %></center></td>
+        <td><center><%= link_to("Update", edit_schedule_path(schedule), class: 'action update') %></center></td> 
+        <td><center><%= link_to("Delete", delete_schedule_path(schedule), class: 'action delete') %></center></td> 
+      </tr> 
       <% end %>
-    </div>
+    </table>
   </div>
 </body>

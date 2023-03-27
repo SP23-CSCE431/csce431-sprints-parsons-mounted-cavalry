@@ -6,8 +6,6 @@
   <div class="justify-content-center align-items-center mx-auto text-center">
     <p style="color: green"><%= notice %></p>
 
-    <%= link_to "Back to attendances", attendances_path %>
-
     <%= render @attendance %>
 
     <div>
@@ -17,6 +15,6 @@
     </div>
 
     <br />
-    <%= link_to "<button>Back to attendances</button>".html_safe, admins_attendances_path %>
+    <%= link_to "<button>Back to attendances</button>".html_safe, admins_schedules_path %>
   </div>
 </body>

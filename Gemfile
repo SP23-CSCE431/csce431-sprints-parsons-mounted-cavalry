@@ -73,15 +73,18 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara", ">= 3.26"
   gem "selenium-webdriver"
-  gem "webdrivers"
   gem 'simplecov'
+  gem "webdrivers"
 end
 
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
 gem "rexml"
-
 gem "seed_dump"
 
-gem "view_component", "~> 2.82"
 gem "brakeman"
+gem "view_component", "~> 2.82"
 
 gem "phonelib"
