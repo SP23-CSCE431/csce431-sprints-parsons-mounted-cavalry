@@ -1,23 +1,19 @@
-<table class="listing" summary="Horse list" style="width: 75%; margin: 0 auto;" border = "1">
+<table class="listing" summary="Horse Report">
     <tr class="header">
-        <th>Name</th>
-        <th>Brand</th>
+        <th>Horse</th>
+        <th># of days used</th>
         <th>Herd</th>
         <th>Difficulty</th>
         <th>Condition</th>
-        <th>Edit</th>
-        <th>Delete</th>
     </tr>
 
     <% @horses.each do |horse| %>
     <tr>
-        <td><center><%= horse.name %></center></td>
-        <td><center><%= horse.brand %></center></td>
+        <td><center><%= "#{horse.name} - #{horse.brand}" %></center></td>
+        <td><center><%=  %></center></td>
         <td style="background-color: <%= get_horse_herd_color(horse) %> !important"><center><%= horse.herd %></center></td>
         <td style="background-color: <%= get_horse_difficulty_color(horse) %> !important"><center><%= horse.difficulty %></center></td>
         <td><center><%= horse.condition %></center></td>
-        <td><center><%= link_to("<i class='fa-solid fa-pen-to-square'></i>".html_safe, edit_horse_path(horse), class: 'action update', style: 'color: black;') %></center></td>
-        <td><center><%= link_to("<i class='fa-solid fa-trash-can'></i>".html_safe, delete_horse_path(horse), class: 'action delete', style: 'color: black;') %></center></td>
     </tr>
     <% end %>
 </table>

@@ -1,28 +1,28 @@
-<div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel" style="max-width: 200px;">
+<div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel" style="max-width: 225px; background-color: #500000;">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title text-white" id="sidebarLabel">Command Staff</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <h5 class="offcanvas-title text-white" id="sidebarLabel" style="color: #dfad14 !important;">Command Staff</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close" style="color: #dfad14 !important; background-color: transparent; border-color: transparent;"></button>
     </div>
     <hr style="border-top: 2px solid #dfad14;">
     <div class="offcanvas-body">
         <ul class="nav d-flex flex-column justify-content-center align-items-center mb-2">
         <li class="nav-item">
-            <%= link_to "Schedule", staffs_schedules_path, class: "nav-link text-white" %>
+            <%= link_to "Schedules", staffs_schedules_path, class: "nav-link #{'active' if current_page?(staffs_schedules_path)} text-white" %>
         </li>
         <li class="nav-item">
-            <%= link_to "Check-in", checkin_staffs_pages_path, class: "nav-link text-white" %>
+            <%= link_to "Check-in", checkin_staffs_pages_path, class: "nav-link #{'active' if current_page?(checkin_staffs_pages_path)} text-white" %>
         </li>
         <li class="nav-item">
-            <%= link_to "Horses", staffs_horses_path, class: "nav-link text-white" %>
+            <%= link_to "Horses", staffs_horses_path, class: "nav-link #{'active' if current_page?(staffs_horses_path)} text-white" %>
         </li>
         <li class="nav-item">
-            <%= link_to "Cadets", staffs_users_path, class: "nav-link text-white" %>
+            <%= link_to "Users", staffs_users_path, class: "nav-link #{'active' if current_page?(staffs_users_path)} text-white" %>
         </li>
+        <%# <li class="nav-item">
+            <%= link_to "Attendance", staffs_attendances_path, class: "nav-link #{'active' if current_page?(staffs_attendances_path)} text-white"
+        </li> %>
         <li class="nav-item">
-            <%= link_to "Attendance", staffs_attendances_path, class: "nav-link text-white" %>
-        </li>
-        <li class="nav-item">
-            <%= link_to "Reports", reports_staffs_pages_path, class: "nav-link text-white" %>
+            <%= link_to "Reports", reports_staffs_pages_path, class: "nav-link #{'active' if current_page?(reports_staffs_pages_path)} text-white" %>
         </li>
         </ul>
     </div>
@@ -35,3 +35,9 @@
         <a href="mailto:webmaster@corps.tamu.edu" target="_blank"><i class="fa-regular fa-envelope p-2" style="color: #dfad14;"></i></a>
     </div>
 </div>
+
+<style>
+    .nav-link.active {
+        color: #dfad14 !important;
+    }
+</style>
