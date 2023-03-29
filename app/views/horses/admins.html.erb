@@ -7,11 +7,18 @@
 
   <%# Content %>
   <div class="justify-content-center align-items-center mx-auto text-center">
-    <p style="color: green"><%= notice %></p>
-    <h1>Admin Horses View</h1>
+    <h1>Horses</h1>
+    <%= link_to("<button type='button' class='btn btn-secondary create'>+ Add Horse</button>".html_safe, new_horse_path, class: 'action new') %>
     <br><br>
-    <%= link_to("<button>Add New Horse</button>".html_safe, new_horse_path, class: 'action new') %>
-    <br>
     <%= render(HorsesTableComponent.new(@horses)) %>
   </div>
 </body>
+
+<style>
+  .create {
+    background-color: #D9D9D9 !important;
+    border: 2px solid black !important;
+    color: black !important;
+    font-weight: 500 !important;
+  }
+</style>

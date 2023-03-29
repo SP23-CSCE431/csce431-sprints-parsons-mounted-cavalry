@@ -1,14 +1,14 @@
 <body class="align-items-center justify-content-center" style="overflow-x: hidden; overflow-y: hidden;">
   <%# Navbar %>
-  <%= render(NavbarComponent.new())%>
+  <%= render(NavbarComponent.new()) %>
 
   <%# Sidebar %>
-  <%= render(SidebarCadetsComponent.new())%>
+  <%= render(SidebarCadetsComponent.new()) %>
 
   <%# Content %>
   <div class="justify-content-center align-items-center mx-auto text-center">
-    <p style="color: green"><%= notice %></p>
-    <h1>Cadet Check-in View</h1>
+    <h1>Check-in</h1>
     <br><br>
+    <%= render(NothingScheduledComponent.new()) %>
   </div>
 </body>

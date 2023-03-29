@@ -7,11 +7,18 @@
 
   <%# Content %>
   <div class="justify-content-center align-items-center mx-auto text-center">
-    <p style="color: green"><%= notice %></p>
-    <h1>Command Staff Cadets View</h1>
+    <h1>Users</h1>
+    <%= link_to("<button type='button' class='btn btn-secondary create'>+ Add User</button>".html_safe, new_user_path, class: 'action new') %>
     <br><br>
-    <%= render(UserTableComponent.new(@cadets))%>
-    <br>
-    <%= link_to("<button>Add New User</button>".html_safe, new_user_path, class: 'action new') %>
+    <%= render(UserTableComponent.new(@cadets, @staffs))%>
   </div>
 </body>
+
+<style>
+  .create {
+    background-color: #D9D9D9 !important;
+    border: 2px solid black !important;
+    color: black !important;
+    font-weight: 500 !important;
+  }
+</style>

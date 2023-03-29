@@ -1,0 +1,30 @@
+<div class="btn-group">
+    <button type="button" id="horse-usage-btn" class="btn btn-dark">Ride Report</button>
+    <button type="button" id="cadets-report-btn" class="btn btn-secondary">Users Reports</button>
+</div>
+
+<div id="report-component">
+    <br><%= render(HorseReportComponent.new(@horses)) %>
+</div>
+
+<script>
+    // Set up event listeners for button clicks
+    const horseUsageBtn = document.querySelector('#horse-usage-btn');
+    const cadetsReportBtn = document.querySelector('#cadets-report-btn');
+
+    horseUsageBtn.addEventListener('click', () => {
+        horseUsageBtn.classList.add('btn-dark');
+        horseUsageBtn.classList.remove('btn-secondary');
+        cadetsReportBtn.classList.remove('btn-dark');
+        cadetsReportBtn.classList.add('btn-secondary');
+        document.querySelector('#report-component').innerHTML = '<br><%= j render(HorseReportComponent.new(@horses)) %>';
+    });
+
+    cadetsReportBtn.addEventListener('click', () => {
+        horseUsageBtn.classList.remove('btn-dark');
+        horseUsageBtn.classList.add('btn-secondary');
+        cadetsReportBtn.classList.add('btn-dark');
+        cadetsReportBtn.classList.remove('btn-secondary');
+        document.querySelector('#report-component').innerHTML = '<br><%= j render(CadetReportsComponent.new(@cadets, @staffs)) %>';
+    });
+</script>

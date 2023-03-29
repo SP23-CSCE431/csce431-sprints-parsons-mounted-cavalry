@@ -13,14 +13,15 @@ class UsersController < ApplicationController
 
   # filters out users whose role is command staff and cadet
   def staffs
-    @staffs = User.where(is_staff: true)
+    @staffs = User.where(is_staff: true, is_admin: false)
     @cadets = User.where(is_staff: false, is_admin: false)
   end
 
   # filters out users whose role is admin, command staff, and cadet
   def admins
     @admins = User.where(is_admin: true)
-    @staffs = User.where(is_staff: true)
+    @staffs = User.where(is_staff: true, is_admin: false)
+    @staffs += @admins
     @cadets = User.where(is_staff: false, is_admin: false)
   end
 
