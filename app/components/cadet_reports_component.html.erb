@@ -1,25 +1,13 @@
 <table class="listing" summary="Cadets Report">
     <tr class="header">
         <th>Cadet</th>
-        <th>Total Attendance</th>
-        <th>Late</th>
-        <th>No Show</th>
-        <th>Work & Ride</th>
-        <th>Work</th>
-        <th>Ride</th>
-        <th>Sections</th>
-        <th>Training</th>
+        <th>Date</th>
+        <th>Infraction</th>
     </tr>
 
     <% @cadets.each do |cadet| %>
     <tr>
         <td><center><%= "#{cadet.first_name} #{cadet.last_name}" %></center></td>
-        <td><center><%=  %></center></td>
-        <td><center><%=  %></center></td>
-        <td><center><%=  %></center></td>
-        <td><center><%=  %></center></td>
-        <td><center><%=  %></center></td>
-        <td><center><%=  %></center></td>
         <td><center><%=  %></center></td>
         <td><center><%=  %></center></td>
     </tr>
@@ -31,27 +19,15 @@
 <table class="listing" summary="Staffs Report">
     <tr class="header">
         <th>Command Staff</th>
-        <th>Total Attendance</th>
-        <th>Late</th>
-        <th>No Show</th>
-        <th>Work & Ride</th>
-        <th>Work</th>
-        <th>Ride</th>
-        <th>Sections</th>
-        <th>Training</th>
+        <th>Date</th>
+        <th>Infraction</th>
     </tr>
 
     <% @staffs.each do |staff| %>
     <tr>
         <td><center><%= "#{staff.first_name} #{staff.last_name}" %></center></td>
         <td><center><%=  %></center></td>
-        <td><center><%=  %></center></td>
-        <td><center><%=  %></center></td>
-        <td><center><%=  %></center></td>
-        <td><center><%=  %></center></td>
-        <td><center><%=  %></center></td>
-        <td><center><%=  %></center></td>
-        <td><center><%=  %></center></td>
+        <td><center><%= "Absent for " %></center></td>
     </tr>
     <% end %>
 </table>
@@ -67,7 +43,7 @@
     }
 
     table.listing {
-        width: 90%;
+        width: 65%;
         margin: 0 auto;
         border-collapse: collapse;
     }
