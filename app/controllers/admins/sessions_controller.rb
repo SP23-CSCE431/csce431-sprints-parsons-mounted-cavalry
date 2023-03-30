@@ -6,6 +6,13 @@ class Admins::SessionsController < Devise::SessionsController
 
     # after sign in, redirect to appropriate path
     def after_sign_in_path_for(resource_or_scope)
-        stored_location_for(resource_or_scope) || root_path
+        @user = User.where(:email => current_admin.email).first
+        if @user.is_admin
+            admins_schedules_path()
+        elsif @user.is_staff
+            staffs_schedules_path()
+        else
+            checkin_cadets_pages_path()
+        end
     end
 end
