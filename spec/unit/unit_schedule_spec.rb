@@ -8,28 +8,42 @@ RSpec.describe Schedule, type: :model do
     described_class.new(user_id: user.id, recurrence: 'MWF')
   end
 
-  it "is valid with valid attributes" do
-    schedule = Schedule.new(user_id: user.id, recurrence: 'MWF')
-    expect(schedule).to be_valid
+  describe 'create' do
+    it 'is valid' do
+      expect(subject).to be_valid
+    end
+
+    it 'has no user' do
+      schedule = Schedule.new(recurrence: 'MWF')
+      expect(schedule).to_not be_valid
+    end
+
+    it 'has no recurrence' do
+      schedule = Schedule.new(user_id: user.id)
+      expect(schedule).to_not be_valid
+    end
+
+    it 'user already has schedule' do
+      expect(Schedule.new(user_id: user.id, recurrence: 'TR')).to raise_error()
+    end
   end
 
-  it "is not valid without a user_id" do
-    schedule = Schedule.new(recurrence: 'MWF')
-    expect(schedule).to_not be_valid
+  describe 'update' do
+    it 'valid schedule change' do
+      subject.update(:recurrence => 'TR')
+      expect(Schedule.find_by_recurrence('TR')).to(eq(subject))
+    end
+
+    it 'update with nil recurrence' do
+      subject.update(:recurrence => nil)
+      expect(subject).not_to(be_valid)
+    end
   end
 
-  it "is not valid without a recurrence" do
-    schedule = Schedule.new(user_id: user.id)
-    expect(schedule).to_not be_valid
-  end
-
-  it "belongs to a user" do
-    schedule = Schedule.new(user_id: user.id, recurrence: 'MWF')
-    expect(schedule).to respond_to(:user)
-  end
-
-  it "has many attendances" do
-    schedule = Schedule.new(user_id: user.id, recurrence: 'MWF')
-    expect(schedule).to respond_to(:attendances)
+  describe 'delete' do
+    it 'schedule can be deleted' do
+      subject.destroy
+      expect(Schedule.find_by_recurrence('TR')).to(be_nil)
+    end
   end
 end

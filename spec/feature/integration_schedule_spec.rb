@@ -1,59 +1,200 @@
 require 'rails_helper'
 
-RSpec.feature "Schedules", type: :feature do
-  before(:each) do
+RSpec.describe('Creating a schedule', type: :feature) do
+  before do
     User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'tony@tamu.edu')
     Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
     Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
     visit root_path
     click_on 'Sign in with Google'
   end
-  
 
-  it 'days are highlighted for recurrence' do
-    user = User.create!(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
-    Schedule.create!(user_id: user.id, recurrence: 'MWF')
-
+  scenario 'valid inputs - table view' do
+    user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+    
     visit 'schedules/admins'
-    css = "tr##{user.id} td.recur"
-    cells = page.all(css)
-    expect(cells.size).to(eq(3))
+    click_on 'All Schedules'
+    click_on 'John Doe - New'
+
+    find(:css, '#monday').set(true)
+    find(:css, '#tuesday').set(true)
+    find(:css, '#thursday').set(true)
+
+    click_on 'Create Schedule'
+    expect(page).to(have_content('Schedule was successfully created.'))
   end
 
-  it 'content information display' do
-    user = User.create!(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
-    schedule = Schedule.create!(user_id: user.id, recurrence: 'MWF')
-    Attendance.create!(schedule_id: schedule.id, date: '2023-03-15', check_in_time: nil, purpose: 'Training')
-
+  scenario 'valid inputs - calendar view' do
+    user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+    
     visit 'schedules/admins'
-    css = "tr##{user.id} td.attendance"
-    td = find(css).text
+    click_on 'John Doe'
+    
+    find(:css, '#monday').set(true)
+    find(:css, '#tuesday').set(true)
+    find(:css, '#thursday').set(true)
 
-    expect(td).to(have_content('Horse: None'))
-    expect(td).to(have_content('Event: Training'))
+    click_on 'Create Schedule'
+    expect(page).to(have_content('Schedule was successfully created.'))
   end
 
-  # scenario "user creates a schedule" do
-  #   user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '8229852917', email: 'j.doe@tamu.edu')
-  #   schedule = Schedule.create(user_id: user.id, recurrence: 'MWF')
+  scenario 'no recurrence given - table view' do
+    user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+    
+    visit 'schedules/admins'
+    click_on 'All Schedules'
+    click_on 'John Doe - New'
 
-  #   visit new_schedule_path
-  #   fill_in "User", with: @schedule.user_id
-  #   fill_in "Recurrence", with: @schedule.recurrence
-  #   click_on "Create Schedule"
-  #   expect(page).to have_text("Schedule was successfully created.")
-  # end
+    click_on 'Create Schedule'
+    expect(page).to(have_content('Schedule must have recurrence.'))
+  end
 
-  # scenario "user edits a schedule" do
-  #   visit edit_schedule_path(@schedule)
-  #   fill_in "Recurrence", with: "New recurrence"
-  #   click_on "Update Schedule"
-  #   expect(page).to have_text("Schedule was successfully updated.")
-  # end
+  scenario 'no recurrence given - calendar view' do
+    user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+    
+    visit 'schedules/admins'
+    click_on 'John Doe'
 
-  # scenario "user deletes a schedule" do
-  #   visit schedules_path
-  #   click_on "Destroy", href: schedule_path(@schedule)
-  #   expect(page).to have_text("Schedule was successfully destroyed.")
-  # end
+    click_on 'Create Schedule'
+    expect(page).to(have_content('Schedule must have recurrence.'))
+  end
+end
+
+RSpec.describe('Viewing a schedule', type: :feature) do
+  before do
+    User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'tony@tamu.edu')
+    Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
+    Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
+    visit root_path
+    click_on 'Sign in with Google'
+  end
+
+  scenario 'valid inputs - table view' do
+    user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+    schedule = Schedule.create(user_id: user.id, recurrence: 'MWF')
+
+    visit 'schedules/admins'
+    click_on 'All Schedules'
+
+    expect(page).to(have_content('John Doe'))
+    expect(page).to(have_content('MWF'))
+  end
+
+  scenario 'valid inputs - calendar view' do
+    user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+    schedule = Schedule.create(user_id: user.id, recurrence: 'MWF')
+
+    visit 'schedules/admins'
+    click_on 'John Doe'
+
+    expect(page).to(have_content('John Doe'))
+    expect(page).to(have_content('MWF'))
+  end
+end
+
+RSpec.describe('Editing a schedule', type: :feature) do
+  before do
+    User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'tony@tamu.edu')
+    Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
+    Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
+    visit root_path
+    click_on 'Sign in with Google'
+  end
+
+  scenario 'valid inputs - table view' do
+    user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+    schedule = Schedule.create(user_id: user.id, recurrence: 'MWF')
+
+    visit 'schedules/admins'
+    click_on 'All Schedules'
+    click_on 'John Doe - Edit'
+
+    find(:css, '#monday').set(false)
+    find(:css, '#tuesday').set(true)
+    find(:css, '#friday').set(false)
+
+    click_on 'Update Schedule'
+    expect(page).to(have_content('Schedule was successfully updated.'))
+  end
+
+  scenario 'valid inputs - calendar view' do
+    user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+    schedule = Schedule.create(user_id: user.id, recurrence: 'MWF')
+
+    visit 'schedules/admins'
+    click_on 'John Doe'
+    
+    find(:css, '#monday').set(false)
+    find(:css, '#tuesday').set(true)
+    find(:css, '#thursday').set(false)
+
+    click_on 'Update Schedule'
+    expect(page).to(have_content('Schedule was successfully updated.'))
+  end
+
+  scenario 'recurrence changed to nothing - table view' do
+    user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+    schedule = Schedule.create(user_id: user.id, recurrence: 'MWF')
+
+    visit 'schedules/admins'
+    click_on 'All Schedules'
+    click_on 'John Doe - Edit'
+
+    find(:css, '#monday').set(false)
+    find(:css, '#wednesday').set(false)
+    find(:css, '#friday').set(false)
+
+    click_on 'Update Schedule'
+    expect(page).to(have_content('Schedule must have recurrence.'))
+  end
+
+  scenario 'recurrence changed to nothing - calendar view' do
+    user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+    schedule = Schedule.create(user_id: user.id, recurrence: 'MWF')
+
+    visit 'schedules/admins'
+    click_on 'John Doe'
+
+    find(:css, '#monday').set(false)
+    find(:css, '#wednesday').set(false)
+    find(:css, '#friday').set(false)
+
+    click_on 'Update Schedule'
+    expect(page).to(have_content('Schedule must have recurrence.'))
+  end
+end
+
+RSpec.describe('Deleting a schedule', type: :feature) do
+  before do
+    User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'tony@tamu.edu')
+    Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
+    Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
+    visit root_path
+    click_on 'Sign in with Google'
+  end
+
+  scenario 'valid inputs - table view' do
+    user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+    schedule = Schedule.create(user_id: user.id, recurrence: 'MWF')
+
+    visit 'schedules/admins'
+    click_on 'All Schedules'
+    click_on 'John Doe - Delete'
+
+    click_on 'Delete'
+    expect(page).to(have_content('Schedule was successfully destroyed.'))
+  end
+
+  scenario 'valid inputs - calendar view' do
+    user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+    schedule = Schedule.create(user_id: user.id, recurrence: 'MWF')
+
+    visit 'schedules/admins'
+    click_on 'John Doe'
+    
+    click_on 'Delete'
+
+    click_on 'Update Schedule'
+    expect(page).to(have_content('Schedule was successfully destroyed.'))
+  end
 end

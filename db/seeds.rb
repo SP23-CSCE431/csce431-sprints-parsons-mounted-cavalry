@@ -5,9 +5,9 @@ User.create!(
             is_staff: false,
             first_name: "John",
             last_name: "Doe",
-            classification: "Super Senior",
+            classification: "Senior",
             skill_level: "Advanced",
-            phone_number: "123-456-7890",
+            phone_number: "435-675-4345",
             email: "john.doe@tamu.edu"
         },
         {
@@ -17,7 +17,7 @@ User.create!(
             last_name: "Doe",
             classification: "Senior",
             skill_level: "Intermediate",
-            phone_number: "111-222-3333",
+            phone_number: "435-675-4345",
             email: "jane.doe@tamu.edu"
         },
         {
@@ -29,6 +29,16 @@ User.create!(
             skill_level: "Beginner",
             phone_number: "435-675-4345",
             email: "billy.bob@tamu.edu"
+        },
+        {
+            is_admin: true,
+            is_staff: false,
+            first_name: "Zach",
+            last_name: "Thygesen",
+            classification: "Junior",
+            skill_level: "Advanced",
+            phone_number: "435-675-4345",
+            email: "zthygesen@tamu.edu"
         }
     ]
 )
