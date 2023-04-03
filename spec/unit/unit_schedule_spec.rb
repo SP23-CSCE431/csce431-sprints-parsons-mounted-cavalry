@@ -24,7 +24,8 @@ RSpec.describe Schedule, type: :model do
     end
 
     it 'user already has schedule' do
-      expect(Schedule.new(user_id: user.id, recurrence: 'TR')).to raise_error()
+      Schedule.create(user_id: user.id, recurrence: 'MWF')
+      expect(Schedule.new(user_id: user.id, recurrence: 'TR')).to_not be_valid
     end
   end
 

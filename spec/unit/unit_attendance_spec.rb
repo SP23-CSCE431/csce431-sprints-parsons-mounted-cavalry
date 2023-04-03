@@ -55,7 +55,13 @@ RSpec.describe(Attendance, type: :model) do
       end
 
       it 'has horse already scheduled for someone on date' do
-        attendance = Attendance.new(schedule_id: schedule.id, horse_id: horse.id, date: '2023-12-25', check_in_time: nil, purpose: 'Training')
+        Attendance.create(schedule_id: schedule.id, horse_id: horse.id, date: '2023-12-25', check_in_time: nil, purpose: 'Training')
+
+        new_user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+        new_schedule = Schedule.create(user_id: new_user.id, recurrence: 'MWF')
+  
+        attendance = Attendance.new(schedule_id: new_schedule.id, horse_id: horse.id, date: '2023-12-25', check_in_time: nil, purpose: 'Training')
+        
         expect(attendance).not_to(be_valid)
       end
     end
@@ -86,6 +92,8 @@ RSpec.describe(Attendance, type: :model) do
       end
 
       it 'has user already scheduled for date' do
+        Attendance.create(schedule_id: schedule.id, horse_id: horse.id, date: '2023-12-25', check_in_time: nil, purpose: 'Training')
+
         attendance = Attendance.new(schedule_id: schedule.id, horse_id: horse.id, date: '2023-12-25', check_in_time: nil, purpose: 'Training')
         expect(attendance).not_to(be_valid)
       end
@@ -195,7 +203,7 @@ RSpec.describe(Attendance, type: :model) do
       end
 
       it 'update with date that user already scheduled for' do
-        Attendance.create(schedule_id: new_schedule.id, horse_id: new_horse.id, date: '2023-12-25', check_in_time: nil, purpose: 'Training')
+        Attendance.create(schedule_id: schedule.id, horse_id: horse.id, date: '2023-12-25', check_in_time: nil, purpose: 'Training')
         subject.update(:date => '2023-12-25')
         expect(subject).not_to(be_valid)
       end
