@@ -61,10 +61,3 @@ jobs:
         with:
           name: brakeman-report.txt
           path: brakeman.txt
-  delete-artifacts:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: kolpav/purge-artifacts-action@v1
-        with:
-          token: $
-          expire-in: 0days # Set this to 0 to delete all artifacts
