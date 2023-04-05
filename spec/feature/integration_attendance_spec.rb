@@ -4,6 +4,7 @@ require 'rails_helper'
 RSpec.describe('Creating an attendance', type: :feature) do
     # sunny day
     before do
+        User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'tony@tamu.edu')
         Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
         Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
         visit root_path
@@ -31,6 +32,7 @@ end
 # testing view of attendance
 RSpec.describe('Viewing an attendance', type: :feature) do
     before do
+        User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'tony@tamu.edu')
         Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
         Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
         visit root_path
@@ -57,6 +59,7 @@ end
 # testing updating of attendance
 RSpec.describe('Updating an attendance', type: :feature) do
     before do
+        User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'tony@tamu.edu')
         Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
         Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
         visit root_path
@@ -80,6 +83,7 @@ end
 # testing deletion of attendance
 RSpec.describe('Deleting an attendance', type: :feature) do
     before do
+        User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'tony@tamu.edu')
         Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
         Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
         visit root_path

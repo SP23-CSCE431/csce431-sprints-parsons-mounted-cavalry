@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Schedules", type: :feature do
   before(:each) do
+    User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'tony@tamu.edu')
     Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
     Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
     visit root_path
