@@ -13,11 +13,13 @@ class AttendancesController < ApplicationController
   # gets all attendances for staff path
   def staffs
     @attendances = Attendance.all
+    authorize @attendances
   end
 
   # gets all attendances for admin path
   def admins
     @attendances = Attendance.all
+    authorize @attendances
   end
 
   # GET /attendances/1 or /attendances/1.json

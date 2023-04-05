@@ -26,6 +26,7 @@ class UsersController < ApplicationController
   def staffs
     @staffs = User.where(is_staff: true, is_admin: false)
     @cadets = User.where(is_staff: false, is_admin: false)
+    authorize pundit_user
   end
 
   # filters out users whose role is admin, command staff, and cadet
@@ -34,6 +35,7 @@ class UsersController < ApplicationController
     @staffs = User.where(is_staff: true, is_admin: false)
     @staffs += @admins
     @cadets = User.where(is_staff: false, is_admin: false)
+    authorize pundit_user
   end
 
   # GET /users/1 or /users/1.json
@@ -42,6 +44,7 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    authorize @user
   end
 
   # GET /users/1/edit
@@ -50,7 +53,7 @@ class UsersController < ApplicationController
   # POST /users or /users.json
   def create
     @user = User.new(user_params)
-
+    authorize @user
     respond_to do |format|
       if @user.save
         format.html { redirect_to(admins_users_url, notice: "#{@user.first_name} #{@user.last_name} was successfully created.") }
@@ -64,6 +67,7 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1 or /users/1.json
   def update
+    authorize @user
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to(admins_users_url, notice: "#{@user.first_name} #{@user.last_name} was successfully updated.") }
@@ -78,6 +82,7 @@ class UsersController < ApplicationController
   # routes user to confirmation page to delete user
   def delete
     @user = User.find(params[:id])
+    authorize @user
   end
 
   # DELETE /users/1 or /users/1.json
