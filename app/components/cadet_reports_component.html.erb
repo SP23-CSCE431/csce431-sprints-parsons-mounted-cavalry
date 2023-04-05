@@ -1,9 +1,15 @@
-<table class="listing" summary="Cadets Report">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
+
+<button class="btn btn-secondary create" style="float: right; margin-right: 10%;" onclick="exportDisciplineToExcel('<%= @curr_day.strftime("%B_%Y") %>')"><i class="fa-solid fa-file-export"></i> to Excel</button>
+<br><br>
+
+
+<table class="listing" summary="Cadets Report" id="cadetTable">
     <tr class="header">
         <th>Cadet</th>
         <th>Total Attendance</th>
-        <th>Late</th>
-        <th>No Show</th>
+        <th>Absences</th>
         <th>Work & Ride</th>
         <th>Work</th>
         <th>Ride</th>
@@ -14,26 +20,24 @@
     <% @cadets.each do |cadet| %>
     <tr>
         <td><center><%= "#{cadet.first_name} #{cadet.last_name}" %></center></td>
-        <td><center><%=  %></center></td>
-        <td><center><%=  %></center></td>
-        <td><center><%=  %></center></td>
-        <td><center><%=  %></center></td>
-        <td><center><%=  %></center></td>
-        <td><center><%=  %></center></td>
-        <td><center><%=  %></center></td>
-        <td><center><%=  %></center></td>
+        <td><center><%= get_user_total_attendance(cadet) %></center></td>
+        <td><center><%= get_user_absences(cadet) %></center></td>
+        <td><center><%= get_user_work_and_ride(cadet) %></center></td>
+        <td><center><%= get_user_work(cadet) %></center></td>
+        <td><center><%= get_user_ride(cadet) %></center></td>
+        <td><center><%= get_user_sections(cadet) %></center></td>
+        <td><center><%= get_user_training(cadet) %></center></td>
     </tr>
     <% end %>
 </table>
 
 <br>
 
-<table class="listing" summary="Staffs Report">
+<table class="listing" summary="Staffs Report" id="staffTable">
     <tr class="header">
         <th>Command Staff</th>
         <th>Total Attendance</th>
-        <th>Late</th>
-        <th>No Show</th>
+        <th>Absences</th>
         <th>Work & Ride</th>
         <th>Work</th>
         <th>Ride</th>
@@ -44,18 +48,16 @@
     <% @staffs.each do |staff| %>
     <tr>
         <td><center><%= "#{staff.first_name} #{staff.last_name}" %></center></td>
-        <td><center><%=  %></center></td>
-        <td><center><%=  %></center></td>
-        <td><center><%=  %></center></td>
-        <td><center><%=  %></center></td>
-        <td><center><%=  %></center></td>
-        <td><center><%=  %></center></td>
-        <td><center><%=  %></center></td>
-        <td><center><%=  %></center></td>
+        <td><center><%= get_user_total_attendance(staff) %></center></td>
+        <td><center><%= get_user_absences(staff) %></center></td>
+        <td><center><%= get_user_work_and_ride(staff) %></center></td>
+        <td><center><%= get_user_work(staff) %></center></td>
+        <td><center><%= get_user_ride(staff) %></center></td>
+        <td><center><%= get_user_sections(staff) %></center></td>
+        <td><center><%= get_user_training(staff) %></center></td>
     </tr>
     <% end %>
 </table>
-
 
 <style>
     tr.header {

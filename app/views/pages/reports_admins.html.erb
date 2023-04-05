@@ -8,9 +8,14 @@
   <%# Content %>
   <div class="justify-content-center align-items-center mx-auto text-center">
     <h1>Reports</h1>
-    <br>
+    <h2>
+      <%= link_to raw('<i class="fas fa-arrow-left" style="color: black;"></i>'), reports_admins_pages_path(day: (@start_day - 1).strftime) %>
+      Month: <%= @curr_day.strftime("%B %Y") %>
+      <%= link_to raw('<i class="fas fa-arrow-right" style="color: black;"></i>'), reports_admins_pages_path(day: (@end_day + 1).strftime) %>
+    </h2>
+    <%# Test: <%= @curr_day.strftime("%B") - <%= @end_day.strftime("%B") %>
 
-    <%= render(ReportsComponent.new(@horses, @cadets, @staffs))%>
+    <%= render(ReportsComponent.new(@horses, @cadets, @staffs, @start_day, @end_day, @curr_day))%>
 
   </div>
 </body>
