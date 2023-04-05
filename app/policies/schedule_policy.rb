@@ -1,15 +1,18 @@
 class SchedulePolicy < ApplicationPolicy
     attr_reader :user, :schedule
 
+    #initialization rules for schedules
     def initialize(user, schedule)
         @user = user
         @schedule = schedule
     end
 
+    #check for admin permissions
     def admins?
         user.is_admin?
     end
 
+    #check for staff permissions
     def staffs?
         user.is_staff?
     end
