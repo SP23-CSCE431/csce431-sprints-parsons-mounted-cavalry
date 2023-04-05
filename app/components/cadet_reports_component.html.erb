@@ -1,0 +1,78 @@
+<table class="listing" summary="Cadets Report">
+    <tr class="header">
+        <th>Cadet</th>
+        <th>Total Attendance</th>
+        <th>Late</th>
+        <th>No Show</th>
+        <th>Work & Ride</th>
+        <th>Work</th>
+        <th>Ride</th>
+        <th>Sections</th>
+        <th>Training</th>
+    </tr>
+
+    <% @cadets.each do |cadet| %>
+    <tr>
+        <td><center><%= "#{cadet.first_name} #{cadet.last_name}" %></center></td>
+        <td><center><%=  %></center></td>
+        <td><center><%=  %></center></td>
+        <td><center><%=  %></center></td>
+        <td><center><%=  %></center></td>
+        <td><center><%=  %></center></td>
+        <td><center><%=  %></center></td>
+        <td><center><%=  %></center></td>
+        <td><center><%=  %></center></td>
+    </tr>
+    <% end %>
+</table>
+
+<br>
+
+<table class="listing" summary="Staffs Report">
+    <tr class="header">
+        <th>Command Staff</th>
+        <th>Total Attendance</th>
+        <th>Late</th>
+        <th>No Show</th>
+        <th>Work & Ride</th>
+        <th>Work</th>
+        <th>Ride</th>
+        <th>Sections</th>
+        <th>Training</th>
+    </tr>
+
+    <% @staffs.each do |staff| %>
+    <tr>
+        <td><center><%= "#{staff.first_name} #{staff.last_name}" %></center></td>
+        <td><center><%=  %></center></td>
+        <td><center><%=  %></center></td>
+        <td><center><%=  %></center></td>
+        <td><center><%=  %></center></td>
+        <td><center><%=  %></center></td>
+        <td><center><%=  %></center></td>
+        <td><center><%=  %></center></td>
+        <td><center><%=  %></center></td>
+    </tr>
+    <% end %>
+</table>
+
+
+<style>
+    tr.header {
+        background-color: #A7A7A7;
+    }
+
+    table.listing tr:not(.header) {
+        background-color: #D1D1D1;
+    }
+
+    table.listing {
+        width: 90%;
+        margin: 0 auto;
+        border-collapse: collapse;
+    }
+
+    td, th {
+        border: 1px solid white;
+    }
+</style>

@@ -7,8 +7,12 @@
 
   <%# Content %>
   <div class="justify-content-center align-items-center mx-auto text-center">
-    <p style="color: green"><%= notice %></p>
-    <h1>Command Staff Reports View</h1>
-    <br><br>
+    <h1>Reports</h1>
+    <br>
+
+    <%= render(ReportsComponent.new(@horses, @cadets, @staffs))%>
+
   </div>
 </body>
+
+

@@ -69,11 +69,7 @@ RSpec.configure do |config|
           uid: "123456789",
           info: {
               name: "Tony Stark",
-              email: "tony@tamu.com"
-          },
-          credentials: {
-              token: "token",
-              refresh_token: "refresh token"
+              email: "tony@tamu.edu"
           }
       }
   )

@@ -1,9 +1,20 @@
 class UsersController < ApplicationController
+    include Devise::Controllers::Helpers
   before_action :set_user, only: %i[show edit update destroy]
 
   # GET /users or /users.json
   def index
     @users = User.all
+    user1 = User.where(:email => current_admin.email).first
+    if signed_in?
+        if user1.is_admin?
+            redirect_to(admins_schedules_path)
+        elsif user1.is_staff?
+            redirect_to(staffs_schedules_path)
+        else
+            redirect_to(checkin_cadets_pages_path)
+        end
+    end
   end
 
   # filters out users whose role is cadet
@@ -13,14 +24,15 @@ class UsersController < ApplicationController
 
   # filters out users whose role is command staff and cadet
   def staffs
-    @staffs = User.where(is_staff: true)
+    @staffs = User.where(is_staff: true, is_admin: false)
     @cadets = User.where(is_staff: false, is_admin: false)
   end
 
   # filters out users whose role is admin, command staff, and cadet
   def admins
     @admins = User.where(is_admin: true)
-    @staffs = User.where(is_staff: true)
+    @staffs = User.where(is_staff: true, is_admin: false)
+    @staffs += @admins
     @cadets = User.where(is_staff: false, is_admin: false)
   end
 
