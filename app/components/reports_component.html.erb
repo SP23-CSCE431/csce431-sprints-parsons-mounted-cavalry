@@ -1,11 +1,24 @@
+<br>
+
 <div class="btn-group">
     <button type="button" id="horse-usage-btn" class="btn btn-dark">Ride Report</button>
     <button type="button" id="cadets-report-btn" class="btn btn-secondary">Discipline Report</button>
 </div>
 
+<br>
+
 <div id="report-component">
-    <br><%= render(HorseReportComponent.new(@horses)) %>
+    <%= render(HorseReportComponent.new(@horses, @start_day, @end_day, @curr_day)) %>
 </div>
+
+<style>
+  .create {
+    background-color: #D9D9D9 !important;
+    border: 2px solid black !important;
+    color: black !important;
+    font-weight: 500 !important;
+  }
+</style>
 
 <script>
     // Set up event listeners for button clicks
@@ -17,7 +30,7 @@
         horseUsageBtn.classList.remove('btn-secondary');
         cadetsReportBtn.classList.remove('btn-dark');
         cadetsReportBtn.classList.add('btn-secondary');
-        document.querySelector('#report-component').innerHTML = '<br><%= j render(HorseReportComponent.new(@horses)) %>';
+        document.querySelector('#report-component').innerHTML = '<%= j render(HorseReportComponent.new(@horses, @start_day, @end_day, @curr_day)) %>';
     });
 
     cadetsReportBtn.addEventListener('click', () => {
@@ -25,6 +38,21 @@
         horseUsageBtn.classList.add('btn-secondary');
         cadetsReportBtn.classList.add('btn-dark');
         cadetsReportBtn.classList.remove('btn-secondary');
-        document.querySelector('#report-component').innerHTML = '<br><%= j render(CadetReportsComponent.new(@cadets, @staffs)) %>';
+        document.querySelector('#report-component').innerHTML = '<%= j render(CadetReportsComponent.new(@cadets, @staffs, @start_day, @end_day, @curr_day)) %>';
     });
+
+    
+    function exportDisciplineToExcel(curr_day) {
+        /* Create a new Excel workbook and sheet */
+        var wb = XLSX.utils.book_new();
+        var ws = XLSX.utils.table_to_sheet(document.getElementById("cadetTable"));
+        var ws2 = XLSX.utils.table_to_sheet(document.getElementById("staffTable"));
+
+        /* Add the sheets to the workbook */
+        XLSX.utils.book_append_sheet(wb, ws, "Cadets Report");
+        XLSX.utils.book_append_sheet(wb, ws2, "Staffs Report");
+
+        /* Save the workbook as an Excel file */
+        XLSX.writeFile(wb, curr_day + "_discipline_report.xlsx");
+    }
 </script>
