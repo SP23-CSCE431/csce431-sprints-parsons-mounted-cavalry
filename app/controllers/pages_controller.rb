@@ -18,7 +18,7 @@ class PagesController < ApplicationController
   end
 
   # path for reports for staff
-  def reports_staffs 
+  def reports_staffs
     @horses = Horse.all
     @cadets = User.where(is_staff: false, is_admin: false)
     @staffs = User.where(is_staff: true, is_admin: false)

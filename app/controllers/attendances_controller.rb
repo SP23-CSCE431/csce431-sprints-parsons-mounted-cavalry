@@ -29,6 +29,7 @@ class AttendancesController < ApplicationController
   # GET /attendances/new
   def new
     @attendance = Attendance.new(schedule_id: params[:schedule_id], date: params[:date])
+    authorize @attendance
   end
 
   # GET /attendances/1/edit
@@ -38,7 +39,7 @@ class AttendancesController < ApplicationController
   # POST /attendances or /attendances.json
   def create
     @attendance = Attendance.new(attendance_params)
-
+    authorize @attendance
     respond_to do |format|
       if @attendance.save
         format.html { redirect_to(admins_schedules_url, notice: "Attendance was successfully created.") }
@@ -52,6 +53,7 @@ class AttendancesController < ApplicationController
 
   # PATCH/PUT /attendances/1 or /attendances/1.json
   def update
+    authorize @attendance
     respond_to do |format|
       if @attendance.update(attendance_params)
         format.html { redirect_to(admins_schedules_url, notice: "Attendance was successfully updated.") }
@@ -66,12 +68,13 @@ class AttendancesController < ApplicationController
   # routes user to confirmation page to delete attendance
   def delete
     @attendance = Attendance.find(params[:id])
+    authorize @attendance
   end
 
   # DELETE /attendances/1 or /attendances/1.json
   def destroy
+    authorize @attendance
     @attendance.destroy
-
     respond_to do |format|
       format.html { redirect_to(admins_schedules_url, notice: "Attendance was successfully destroyed.") }
       format.json { head(:no_content) }

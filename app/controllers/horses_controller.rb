@@ -4,6 +4,7 @@ class HorsesController < ApplicationController
     # GET /horses or /horses.json
     def index
         @horses = Horse.all
+        authorize @horses
     end
 
     def cadets
@@ -68,6 +69,7 @@ class HorsesController < ApplicationController
     end 
     # DELETE /horses/1 or /horses/1.json
     def destroy
+        authorize @horse
         @horse.destroy
 
         respond_to do |format|

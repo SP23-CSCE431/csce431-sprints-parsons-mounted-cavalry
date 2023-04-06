@@ -70,6 +70,7 @@ class SchedulesController < ApplicationController
 
   # DELETE /schedules/1 or /schedules/1.json
   def destroy
+    authorize @schedule
     @schedule.destroy!
 
     respond_to do |format|
