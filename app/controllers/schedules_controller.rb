@@ -4,6 +4,7 @@ class SchedulesController < ApplicationController
   # GET /schedules or /schedules.json
   def index
     @schedules = Schedule.all
+    authorize @schedules
   end
 
   # gets schedules (none) for cadets path
@@ -12,11 +13,13 @@ class SchedulesController < ApplicationController
   # gets all schedules for staffs path
   def staffs
     @schedules = Schedule.all
+    authorize @schedules
   end
 
   # gets all schedules for admins path
   def admins
     @schedules = Schedule.all
+    authorize @schedules
   end
 
   # GET /schedules/1 or /schedules/1.json
@@ -24,7 +27,8 @@ class SchedulesController < ApplicationController
 
   # GET /schedules/new
   def new
-    @schedule = Schedule.new
+    @schedule = Schedule.all
+    authorize @schedule
   end
 
   # GET /schedules/1/edit
@@ -33,7 +37,7 @@ class SchedulesController < ApplicationController
   # POST /schedules or /schedules.json
   def create
     @schedule = Schedule.new(schedule_params)
-
+    authorize @schedule
     respond_to do |format|
       if @schedule.save
         format.html { redirect_to(admins_schedules_url, notice: "Schedule was successfully created.") }
@@ -47,6 +51,7 @@ class SchedulesController < ApplicationController
 
   # PATCH/PUT /schedules/1 or /schedules/1.json
   def update
+    authorize @schedule
     respond_to do |format|
       if @schedule.update(schedule_params)
         format.html { redirect_to(admins_schedules_url, notice: "Schedule was successfully updated.") }
@@ -61,10 +66,12 @@ class SchedulesController < ApplicationController
   # routes user to confirmation page to delete schedule
   def delete
     @schedule = Schedule.find(params[:id])
+    authorize @schedule
   end
 
   # DELETE /schedules/1 or /schedules/1.json
   def destroy
+    authorize @schedule
     @schedule.destroy!
 
     respond_to do |format|

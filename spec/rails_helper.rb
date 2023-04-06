@@ -69,11 +69,17 @@ RSpec.configure do |config|
           uid: "123456789",
           info: {
               name: "Tony Stark",
-              email: "tony@tamu.com"
-          },
-          credentials: {
-              token: "token",
-              refresh_token: "refresh token"
+              email: "tony@tamu.edu"
+          }
+      }
+  )
+  OmniAuth.config.mock_auth[:google_oauth3] = OmniAuth::AuthHash.new(
+      {
+          provider: "google_oauth2",
+          uid: "123456789",
+          info: {
+              name: "Tony Stark",
+              email: "tony@gmail.com"
           }
       }
   )

@@ -4,6 +4,7 @@ require 'rails_helper'
 RSpec.describe('Creating an attendance', type: :feature) do
     # sunny day
     before do
+        User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'tony@tamu.edu')
         Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
         Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
         visit root_path
@@ -31,6 +32,7 @@ end
 # testing view of attendance
 RSpec.describe('Viewing an attendance', type: :feature) do
     before do
+        User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'tony@tamu.edu')
         Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
         Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
         visit root_path
@@ -54,9 +56,48 @@ RSpec.describe('Viewing an attendance', type: :feature) do
     end
 end
 
+# testing authorization for attendance
+RSpec.describe('authorization for attendance', type: :feature) do
+    describe 'cadet viewing' do
+        before do
+            User.create(is_admin: false, is_staff: false, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'tony@tamu.edu')
+            Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
+            Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
+            visit root_path
+            click_on 'Sign in with Google'
+        end
+
+        scenario 'staff attendance' do
+            visit staffs_attendances_path
+            expect(page).to(have_content('You are not authorized to perform this action.'))
+        end
+
+        scenario 'admin attendance' do
+            visit admins_attendances_path
+            expect(page).to(have_content('You are not authorized to perform this action.'))
+        end
+    end
+
+    describe 'staff viewing' do
+        before do
+            User.create(is_admin: false, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'tony@tamu.edu')
+            Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
+            Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
+            visit root_path
+            click_on 'Sign in with Google'
+        end
+
+        scenario 'admin attendance' do
+            visit admins_attendances_path
+            expect(page).to(have_content('You are not authorized to perform this action.'))
+        end
+    end
+end
+
 # testing updating of attendance
 RSpec.describe('Updating an attendance', type: :feature) do
     before do
+        User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'tony@tamu.edu')
         Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
         Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
         visit root_path
@@ -80,6 +121,7 @@ end
 # testing deletion of attendance
 RSpec.describe('Deleting an attendance', type: :feature) do
     before do
+        User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'tony@tamu.edu')
         Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
         Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
         visit root_path
