@@ -1,4 +1,14 @@
 class PagesController < ApplicationController
+  before_action :set_dates
+  def set_dates
+    if (params[:day].present?)
+      @curr_day = Date.parse(params[:day])
+    end
+    @curr_day ||= Date.today
+    @start_day = @curr_day.beginning_of_month
+    @end_day = @curr_day.end_of_month
+  end
+
   # path for cadets to check in
   def checkin_cadets; end
 

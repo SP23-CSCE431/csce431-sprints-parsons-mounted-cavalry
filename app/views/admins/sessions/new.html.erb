@@ -1,8 +1,8 @@
 <body>
 <%# Content %> 
 <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 100vh;">
-    <%= image_tag("PMC_Attendance.png") %>
-    <%= image_tag("PMC_Logo.png") %>
+    <%= image_tag("PMC_Attendance.png", style: "width: 95%;") %>
+    <%= image_tag("PMC_Logo.png", style: "width: 60%;") %>
     <span class="border border-warning p-3">
     <div>
         <%= button_to "Sign in with Google", admin_google_oauth2_omniauth_authorize_path, :class =>"btn btn-primary"%>
