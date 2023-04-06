@@ -4,6 +4,7 @@ class AttendancesController < ApplicationController
   # GET /attendances or /attendances.json
   def index
     @attendances = Attendance.all
+    authorize @attendances
   end
 
   # gets attendances (none) for cadet path

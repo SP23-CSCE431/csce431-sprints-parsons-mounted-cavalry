@@ -4,6 +4,7 @@ class SchedulesController < ApplicationController
   # GET /schedules or /schedules.json
   def index
     @schedules = Schedule.all
+    authorize @schedules
   end
 
   # gets schedules (none) for cadets path
