@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe ScheduleViewComponent, type: :component do
+RSpec.describe 'Schedule View Component', type: :feature do
     before do
         User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'tony@tamu.edu')
         Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
@@ -13,7 +13,7 @@ RSpec.describe ScheduleViewComponent, type: :component do
 
     scenario 'days are highlighted for recurrence' do
         user = User.create!(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
-        Schedule.create!(user_id: user.id, recurrence: 'MWF')
+        Schedule.create!(user_id: user.id, recurrence: ['M', 'W', 'F'])
 
         visit 'schedules/admins'
         css = "tr##{user.id} td.recur"
@@ -23,8 +23,9 @@ RSpec.describe ScheduleViewComponent, type: :component do
 
     scenario 'content information display' do
         user = User.create!(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
-        schedule = Schedule.create!(user_id: user.id, recurrence: 'MWF')
-        Attendance.create!(schedule_id: schedule.id, date: '2023-03-15', check_in_time: nil, purpose: 'Training')
+        schedule = Schedule.create!(user_id: user.id, recurrence: ['M', 'W', 'F'])
+        monday = Date.today.beginning_of_week
+        Attendance.create!(schedule_id: schedule.id, date: monday.strftime, check_in_time: nil, purpose: 'Training')
 
         visit 'schedules/admins'
         css = "tr##{user.id} td.attendance"
@@ -39,7 +40,7 @@ RSpec.describe ScheduleViewComponent, type: :component do
         
         visit 'schedules/admins'
 
-        expect(page).to(have_css('no-schedule'))
+        expect(page).to(have_css('tr#' + user.id.to_s + ' td.invalid'))
     end
 
     scenario 'current week is displayed' do
@@ -53,10 +54,10 @@ RSpec.describe ScheduleViewComponent, type: :component do
         expect(page).to(have_content(expected_string))
     end
 
-    scenario 'can switch weeks' do
+    scenario 'can switch to last week' do
         visit 'schedules/admins'
 
-        click_on 'Last Week'
+        find(:css, '.last-week').click
 
         today = Date.today
         last_week = (today - 7)
@@ -64,6 +65,20 @@ RSpec.describe ScheduleViewComponent, type: :component do
         last_monday_month = last_week.at_beginning_of_week.strftime('%B')
 
         expected_string = last_monday_month + ' ' + last_monday_date
+        expect(page).to(have_content(expected_string))
+    end
+
+    scenario 'can switch to next week' do
+        visit 'schedules/admins'
+
+        find(:css, '.next-week').click
+
+        today = Date.today
+        next_week = (today + 7)
+        next_monday_date = next_week.at_beginning_of_week.strftime('%d')
+        next_monday_month = next_week.at_beginning_of_week.strftime('%B')
+
+        expected_string = next_monday_month + ' ' + next_monday_date
         expect(page).to(have_content(expected_string))
     end
 end

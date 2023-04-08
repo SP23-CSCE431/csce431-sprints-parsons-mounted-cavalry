@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe UsageCounterComponent, type: :component do
+RSpec.describe 'Usage Counter Component', type: :feature do
   before do
     User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'tony@tamu.edu')
     Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
@@ -13,35 +13,33 @@ RSpec.describe UsageCounterComponent, type: :component do
 
   scenario 'usage counter shows horse usage' do
     user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
-    schedule = Schedule.create(user_id: user.id, recurrence: 'MWF')
+    schedule = Schedule.create(user_id: user.id, recurrence: ['M', 'W', 'F'])
     horse = Horse.create(name: 'Horsey', brand: 'H1199', herd: 'Alpha', difficulty: 'Easy', condition: 'Healthy')
+    monday = Date.today.beginning_of_week
+    Attendance.create(schedule_id: schedule.id, date: monday.strftime, check_in_time: nil, purpose: 'Training')
 
     visit 'schedules/admins'
-    click_on 'usage_counter'
 
-    expect(page).not_to(have_content('Horsey - H1199'))
+    find('#usage-counter-btn').click
 
-    Attendance.create(schedule_id: schedule.id, date: '2023-03-15', check_in_time: nil, purpose: 'Training')
+    selector = 'tr.horse-usage-' + horse.id.to_s + ' > td'
 
-    expect(page).to(have_content('Horsey - H1199'))
-    expect(page).to(have_content('1'))
+    expect(page).to(have_selector(selector, text: 'Horsey - H1199'))
   end
 
   scenario 'usage counter shows user usage' do
     user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
-    schedule = Schedule.create(user_id: user.id, recurrence: 'MWF')
+    schedule = Schedule.create(user_id: user.id, recurrence: ['M', 'W', 'F'])
     horse = Horse.create(name: 'Horsey', brand: 'H1199', herd: 'Alpha', difficulty: 'Easy', condition: 'Healthy')
-    Attendance.create(schedule_id: schedule.id, date: '2023-03-15', check_in_time: nil, purpose: 'Training')
+    monday = Date.today.beginning_of_week
+    Attendance.create(schedule_id: schedule.id, date: monday.strftime, check_in_time: nil, purpose: 'Training')
     
     visit 'schedules/admins'
-    click_on 'usage_counter'
-    click_on 'users_usage'
 
-    expect(page).not_to(have_content('John Doe'))
+    find('#usage-counter-btn').click
 
-    Attendance.create(schedule_id: schedule.id, date: '2023-03-15', check_in_time: nil, purpose: 'Training')
+    selector = 'tr.cadet-usage-' + user.id.to_s + ' > td'
 
-    expect(page).to(have_content('John Doe'))
-    expect(page).to(have_content('1'))
+    expect(page).to(have_selector(selector, text: 'John Doe'))
   end
 end

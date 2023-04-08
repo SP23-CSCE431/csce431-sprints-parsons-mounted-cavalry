@@ -5,7 +5,7 @@ RSpec.describe Schedule, type: :model do
   let(:user) { User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '8229852917', email: 'j.doe@tamu.edu') }
 
   subject do
-    described_class.new(user_id: user.id, recurrence: 'MWF')
+    described_class.new(user_id: user.id, recurrence: ['M', 'W', 'F'])
   end
 
   describe 'create' do
@@ -14,7 +14,7 @@ RSpec.describe Schedule, type: :model do
     end
 
     it 'has no user' do
-      schedule = Schedule.new(recurrence: 'MWF')
+      schedule = Schedule.new(recurrence: ['M', 'W', 'F'])
       expect(schedule).to_not be_valid
     end
 
@@ -24,15 +24,15 @@ RSpec.describe Schedule, type: :model do
     end
 
     it 'user already has schedule' do
-      Schedule.create(user_id: user.id, recurrence: 'MWF')
-      expect(Schedule.new(user_id: user.id, recurrence: 'TR')).to_not be_valid
+      Schedule.create(user_id: user.id, recurrence: ['M', 'W', 'F'])
+      expect(Schedule.new(user_id: user.id, recurrence: ['T', 'R'])).to_not be_valid
     end
   end
 
   describe 'update' do
     it 'valid schedule change' do
-      subject.update(:recurrence => 'TR')
-      expect(Schedule.find_by_recurrence('TR')).to(eq(subject))
+      subject.update(:recurrence => ['T', 'R'])
+      expect(Schedule.find_by_recurrence(['T', 'R'])).to(eq(subject))
     end
 
     it 'update with nil recurrence' do
@@ -44,7 +44,7 @@ RSpec.describe Schedule, type: :model do
   describe 'delete' do
     it 'schedule can be deleted' do
       subject.destroy
-      expect(Schedule.find_by_recurrence('TR')).to(be_nil)
+      expect(Schedule.find_by_recurrence(['T', 'R'])).to(be_nil)
     end
   end
 end
