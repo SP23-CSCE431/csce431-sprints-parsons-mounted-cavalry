@@ -1,13 +1,31 @@
-<body class="align-items-center justify-content-center" style="overflow-x: hidden; overflow-y: hidden;">
+<body class="align-items-center justify-content-center">
   <%# Navbar %>
-  <%= render(NavbarComponent.new())%>
+  <%= render(NavbarComponent.new)%>
 
   <%# Sidebar %>
-  <%= render(SidebarCadetsComponent.new())%>
+  <%= render(SidebarCadetsComponent.new)%>
 
   <%# Content %>
   <div class="justify-content-center align-items-center mx-auto text-center">
-    <h1>Schedule</h1>
-    <br><br>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 10px 40px; justify-items: center; align-items: center;">
+      <%= render(LegendCadetsComponent.new) %>
+
+      <div class="center">
+        <h1>Schedule</h1>
+        <h2>
+          <%= link_to raw('<i class="fas fa-arrow-left" style="color: black;"></i>'), cadets_schedules_path(week: (@curr_day - 7).strftime), class: 'last-week' %>
+          Week: <%= @range %>
+          <%= link_to raw('<i class="fas fa-arrow-right" style="color: black;"></i>'), cadets_schedules_path(week: (@curr_day + 7).strftime), class: 'next-week' %>
+        </h2>
+      </div>
+    </div>
+
+    <% user = User.where(:email => current_admin.email).first %>
+
+    <h3><%= user.first_name %> <%= user.last_name %></h3>
+
+    <div style="margin: 0 40px">
+      <%= render(ScheduleViewCadetsComponent.new(user, @dates)) %>
+    </div>
   </div>
 </body>

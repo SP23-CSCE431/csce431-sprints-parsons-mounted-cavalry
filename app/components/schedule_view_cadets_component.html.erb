@@ -1,0 +1,108 @@
+<div>
+    <table class="table table-bordered schedule-view">
+        <thead>
+          <tr class="header">
+              <% @dates.each do |date| %>
+                    <th scope="col">
+                        <%= Date.parse(date).strftime('%A') %>
+                    </th>
+                <% end %>
+            </tr>
+        </thead>
+        <tbody>  
+            <% has_schedule = user_has_schedule(@user) %>
+            <tr id="<%= @user.id %>">
+                <% if has_schedule %>
+                    <%# the cells in the row are the days of the week %>
+                    <% @dates.each do |date| %>
+                        <%# if the user has an attendance scheduled on the current date, display its information %>
+                        <% attendance = get_user_attendance_by_date(@user, date) %>
+                        <% if attendance %>
+                            <% horse = get_horse(attendance.horse_id) %>
+                            <td class="<%= date %> attendance" style="background-color: <%= get_horse_difficulty_color(horse) %> !important">
+                                <div class="attendance-display">
+                                    <p><span class="bold">Horse:</span> <%= horse == nil ? 'None' : horse.name + ' - ' + horse.brand %></p>
+                                    <p><span class="bold">Event:</span> <%= attendance.purpose %></p>
+                                </div>
+                            </td>
+                        <% else %>
+                            <%# if the user does not have an attendance scheduled on the current date, check if %>
+                            <%# their schedule's recurrence calls for the current date and mark background color accordingly %>
+                            <% recurrence = get_user_schedule_recurrence(@user) %>
+                            <% if recurrence.include? get_day(date) %>
+                                <td class="<%= date %> recur" style="background-color: #83a0ee !important">
+                                    <div class="empty">Nothing scheduled</div>
+                                </td>
+                            <% else %>
+                                <td class="<%= date %> non-recur">
+                                    <div class="empty">Nothing scheduled</div>
+                                </td>
+                            <% end %> 
+                        <% end %>
+                    <% end %>
+                <% else %>
+                    <%# no cells in this row because user cannot have attendances scheduled %>
+                    <td colspan="5" class="invalid" style="padding: 10px 0; font-weight: 700;">You do not have a schedule assigned to you yet. 
+                        Please let command staff know.
+                    </td>
+                <% end %>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<style>
+    .schedule-view .header {
+        background-color: #a7a7a7;
+        vertical-align: middle;
+    }
+
+    .schedule-view tr:not(.header) {
+        background-color: #d1d1d1;
+        vertical-align: middle;
+        height: 1px;
+    }
+
+    .schedule-view td, .schedule-view th {
+        height: inherit;
+        border: 1px solid white;
+        padding: 0px;
+        transition: all 0.05s;
+    }
+
+    .schedule-view a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .schedule-view .header-cell, .schedule-view .user-cell, .schedule-view .attendance-display, .schedule-view .empty {
+        height: 100%;
+        padding: 4px;
+    }
+
+    .schedule-view .user-cell, .schedule-view .attendance-display {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .schedule-view .user-cell {
+        position: relative;
+    }
+
+    .schedule-view .user-needs-schedule {
+        position: absolute;
+        width: 25px;
+        left: -30px;
+    }
+
+    .schedule-view .attendance-display p {
+        margin: 0;
+        text-decoration: underline;
+    }
+
+    .schedule-view .bold {
+        font-weight: 700;
+    }
+</style>
