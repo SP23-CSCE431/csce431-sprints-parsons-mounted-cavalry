@@ -19,18 +19,16 @@ class UserTableComponent < ViewComponent::Base
 
   # maps the given user's permission level to a color, returns the color
   def get_user_permission_color(user)
-    colors = { 'Admin' => '#A7F1A8', 'Staff' => '#F47174'}
-  
+    colors = { 'Admin' => '#A7F1A8', 'Staff' => '#F47174' }
+
     if user.nil?
       'none'
-    else
-      if user.is_admin
-        colors['Admin']
-      elsif user.is_staff
+    elsif user.is_admin
+      colors['Admin']
+    elsif user.is_staff
         colors['Staff']
-      else
+    else
         'none'
-      end
     end
-  end  
+  end
 end

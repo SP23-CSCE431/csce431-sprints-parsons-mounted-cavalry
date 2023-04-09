@@ -5,14 +5,14 @@ class Admins::SessionsController < Devise::SessionsController
     end
 
     # after sign in, redirect to appropriate path
-    def after_sign_in_path_for(resource_or_scope)
+    def after_sign_in_path_for(_resource_or_scope)
         @user = User.where(:email => current_admin.email).first
         if @user.is_admin
-            admins_schedules_path()
+            admins_schedules_path
         elsif @user.is_staff
-            staffs_schedules_path()
+            staffs_schedules_path
         else
-            checkin_cadets_pages_path()
+            checkin_cadets_pages_path
         end
     end
 end
