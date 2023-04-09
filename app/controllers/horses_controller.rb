@@ -4,6 +4,7 @@ class HorsesController < ApplicationController
     # GET /horses or /horses.json
     def index
         @horses = Horse.all
+        authorize @horses
     end
 
     def cadets
@@ -11,10 +12,12 @@ class HorsesController < ApplicationController
   
     def staffs
         @horses = Horse.all
+        authorize @horses
     end
   
     def admins
         @horses = Horse.all
+        authorize @horses
     end
 
     # GET /horses/1 or /horses/1.json
@@ -24,6 +27,7 @@ class HorsesController < ApplicationController
     # GET /horses/new
     def new
         @horse = Horse.new
+        authorize @horse
     end
 
     # GET /horses/1/edit
@@ -33,7 +37,7 @@ class HorsesController < ApplicationController
     # POST /horses or /horses.json
     def create
         @horse = Horse.new(horse_params)
-
+        authorize @horse
         respond_to do |format|
         if @horse.save
             format.html { redirect_to(admins_horses_path, notice: "#{@horse.name} was successfully created.") }
@@ -47,6 +51,7 @@ class HorsesController < ApplicationController
 
     # PATCH/PUT /horses/1 or /horses/1.json
     def update
+        authorize @horse
         respond_to do |format|
         if @horse.update(horse_params)
             format.html { redirect_to(admins_horses_path, notice: "#{@horse.name} was successfully updated.") }
@@ -60,9 +65,11 @@ class HorsesController < ApplicationController
 
     def delete
         @horse = Horse.find(params[:id])
+        authorize @horse
     end 
     # DELETE /horses/1 or /horses/1.json
     def destroy
+        authorize @horse
         @horse.destroy
 
         respond_to do |format|

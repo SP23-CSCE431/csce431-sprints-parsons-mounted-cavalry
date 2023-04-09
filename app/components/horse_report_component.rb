@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
 class HorseReportComponent < ViewComponent::Base
-    def initialize(horses)
+    def initialize(horses, start_day, end_day, curr_day)
         super @horses = horses
+        super @start_day = start_day
+        super @end_day = end_day
+        super @curr_day = curr_day
     end
 
     # maps the given horse's difficulty level to a color, returns the color
@@ -25,5 +28,11 @@ class HorseReportComponent < ViewComponent::Base
         else
             colors[horse.herd]
         end
+    end
+
+    # gets the number of days a certain horse was used
+    def get_num_days_horse_used(horse)
+        # Get the attendances where the date is within the specified month, with the specified horse, that was actually attended 
+        Attendance.where(:date => @start_day..@end_day, :horse_id => horse.id).where.not(:check_in_time => nil).length()
     end
 end

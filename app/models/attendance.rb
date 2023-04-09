@@ -2,7 +2,7 @@ class Attendance < ApplicationRecord
     validates :date, presence: true
     validates :purpose, inclusion: { in: ['Ride', 'Work', 'Ride & Work', 'Training', 'Sections', 'No'] }, presence: true
     
-    validates_uniqueness_of :horse_id, :scope => :date, :message => 'already scheduled for this date'
+    validates_uniqueness_of :horse_id, :scope => :date, :message => 'already scheduled for this date', :allow_blank => true
     validates_uniqueness_of :schedule_id, :scope => :date, :message => 'already has this user for this date'
 
     validate :horse_id_nil_or_exists

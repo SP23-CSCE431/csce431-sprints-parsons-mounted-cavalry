@@ -1,9 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Schedule, type: :model do
-  # create instances of reference that are used in creation of schedule 
-  let(:user) { User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '8229852917', email: 'j.doe@tamu.edu') }
-
+  # create instances of reference that are used in creation of schedule
   subject do
     described_class.new(user_id: user.id, recurrence: ['M', 'W', 'F'])
   end
