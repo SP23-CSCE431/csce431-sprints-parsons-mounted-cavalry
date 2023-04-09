@@ -1,0 +1,82 @@
+<div class="legend">
+    <div class="colors">
+        <div class="legend-component">
+            <div class="legend-key easy"></div>
+            <p class="legend-desc">Easy</p>
+        </div>
+        <div class="legend-component">
+            <div class="legend-key intermediate"></div>
+            <p class="legend-desc">Intermediate</p>
+        </div>
+        <div class="legend-component">
+            <div class="legend-key advanced"></div>
+            <p class="legend-desc">Advanced</p>
+        </div>
+        <div class="legend-component">
+            <div class="legend-key recurrence"></div>
+            <p class="legend-desc">Usual Day</p>
+        </div>
+    </div>
+    <div class="legend-component">
+        <div class="legend-key">
+            <%= image_tag("exclamation_point.png", class: 'user-needs-schedule') %>
+        </div>
+        <p class="legend-desc">User has no schedule</p>
+    </div>
+</div>
+
+<style>
+    .legend {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        background-color: #d1d1d1;
+        border: 1px solid white;
+        padding: 10px;
+        gap: 10px;
+        width: 300px;
+    }
+
+    .colors {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+        gap: 10px; 
+    }
+
+    .legend-component {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .legend-key {
+        width: 30px;
+        height: 30px;
+    }
+
+    .legend-key.easy {
+        background-color: #a7f1a8;
+    }
+
+    .legend-key.intermediate {
+        background-color: #fff36d;
+    }
+
+    .legend-key.advanced {
+        background-color: #f47174;
+    }
+
+    .legend-key.recurrence {
+        background-color: #83a0ee;
+    }
+
+    .legend-desc {
+        margin: 0;
+    }
+
+    .user-needs-schedule {
+        width: 25px;
+    }
+</style>

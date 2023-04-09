@@ -4,8 +4,9 @@
   <%# Sidebar %>
   <%= render(SidebarAdminsComponent.new())%>
   <div class="justify-content-center align-items-center mx-auto text-center">
-    <h1>New schedule</h1>
-
+    <h1>New Schedule</h1>
+    <% user = User.find(@schedule.user_id) %>
+    <h2><%= user.first_name %> <%= user.last_name %></h2>
     <%= render "form", schedule: @schedule %>
 
     <br>

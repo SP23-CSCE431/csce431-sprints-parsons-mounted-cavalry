@@ -22,6 +22,11 @@ class SchedulePolicy < ApplicationPolicy
         user.is_admin || user.is_staff
     end
 
+    # rule for tabular schedules view
+    def index?
+        admin_or_staff?
+    end
+
     # rule for new schedule
     def new?
         create?

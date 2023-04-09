@@ -1,59 +1,145 @@
-<%= stylesheet_link_tag "application" %>
+<%# <%= stylesheet_link_tag "application" %>
 <div>
-    <table class="table table-bordered schedule_view">
-      <thead>
-        <tr style="background-color: #d3d3d3">
-          <th scope="col">Name</th>
-          <th scope="col">Monday - 3/13</th>
-          <th scope="col">Tuesday - 3/14</th>
-          <th scope="col">Wednesday - 3/15</th>
-          <th scope="col">Thursday - 3/16</th>
-          <th scope="col">Friday - 3/17</th>
-        </tr>
-      </thead>
-      <tbody>
-        <%# creates a row in the table for every user %>
-        <% @users.each do |user| %>
-            <tr id="<%= user.id %>" style="height: 100%; vertical-align: middle">
-                <%# the row header is the user's name and the background color corresponds to their skill level %>
-                <th style="background-color: <%= get_user_skill_level_color(user) %> !important"><%= user.first_name %> <%= user.last_name %></th>
-                <%# the rest of the cells in the row are the days of the week %>
+    <table class="table table-bordered schedule-view">
+        <thead>
+            <tr class="header">
+                <th scope="col">
+                    <div class="header-cell">Name</div>
+                </th>
                 <% @dates.each do |date| %>
-                    <%# if the user has an attendance scheduled on the current date, display its information %>
-                    <% attendance = get_user_attendance_by_date(user, date) %>
-                    <% if attendance %>
-                        <% horse = get_horse(attendance.horse_id) %>
-                        <td class="<%= date %> attendance" style="background-color: <%= get_horse_difficulty_color(horse) %> !important">
-                            <%# allow user to view scheduled attendance in greater detail via link_to %>
-                            <%= link_to attendance_path(attendance) do %>
-                                <div style="width: 100%; height: 100%; padding: 8px">
-                                    <p>Horse: <%= horse == nil ? 'None' : horse.name + ' - ' + horse.brand %></p>
-                                    <p>Event: <%= attendance.purpose %></p>
-                                </div>
-                            <% end %>
-                        </td>
-                    <% else %>
-                        <%# if the user does not have an attendance scheduled on the current date, check if %>
-                        <%# their schedule's recurrence calls for the current date and mark background color accordingly %>
-                        <%# allow user to create attendance for the current cell's date via link_to %>
-                        <% recurrence = get_user_schedule_recurrence(user) %>
-                        <% if recurrence.include? get_day(date) %>
-                            <td class="<%= date %> recur" style="background-color: #fff36d !important">
-                                <%= link_to new_attendance_path(schedule_id: get_user_schedule_id(user), date: date) do %>
-                                    <%= recurrence %>
-                                <% end %>
-                            </td>
-                        <% else %>
-                            <td class="<%= date %> empty">
-                                <%= link_to new_attendance_path(schedule_id: get_user_schedule_id(user), date: date) do %>
-                                    <%= recurrence %>
-                                <% end %>
-                            </td>
-                        <% end %> 
-                    <% end %>
+                    <th scope="col">
+                        <%= Date.parse(date).strftime('%A') %>
+                    </th>
                 <% end %>
             </tr>
-        <% end %>
-      </tbody>
+        </thead>
+        <tbody>
+            <%# creates a row in the table for every user %>
+            <% @users.each do |user| %>
+                <% has_schedule = user_has_schedule(user) %>
+
+                <tr id="<%= user.id %>">
+                    <% if has_schedule %>
+                        <%# the user has schedule, create row accordingly %>
+                        <%# the row header is the user's name and the background color corresponds to their skill level %>
+                        <th style="background-color: <%= get_user_skill_level_color(user) %> !important">
+                            <%= link_to schedule_path(get_user_schedule_id(user)) do %>
+                                <div class="user-cell"><%= user.first_name %> <%= user.last_name %></div>
+                            <% end %>
+                        </th>
+
+                        <%# the rest of the cells in the row are the days of the week %>
+                        <% @dates.each do |date| %>
+                            <%# if the user has an attendance scheduled on the current date, display its information %>
+                            <% attendance = get_user_attendance_by_date(user, date) %>
+                            <% if attendance %>
+                                <% horse = get_horse(attendance.horse_id) %>
+                                <td class="<%= date %> attendance" style="background-color: <%= get_horse_difficulty_color(horse) %> !important">
+                                    <%# allow user to view scheduled attendance in greater detail via link_to %>
+                                    <%= link_to attendance_path(attendance) do %>
+                                        <div class="attendance-display">
+                                            <p><span class="bold">Horse:</span> <%= horse == nil ? 'None' : horse.name + ' - ' + horse.brand %></p>
+                                            <p><span class="bold">Event:</span> <%= attendance.purpose %></p>
+                                        </div>
+                                    <% end %>
+                                </td>
+                            <% else %>
+                                <%# if the user does not have an attendance scheduled on the current date, check if %>
+                                <%# their schedule's recurrence calls for the current date and mark background color accordingly %>
+                                <%# allow user to create attendance for the current cell's date via link_to %>
+                                <% recurrence = get_user_schedule_recurrence(user) %>
+                                <% if recurrence.include? get_day(date) %>
+                                    <td class="<%= date %> recur" style="background-color: #83a0ee !important">
+                                        <%= link_to new_attendance_path(schedule_id: get_user_schedule_id(user), date: date) do %>
+                                            <div class="empty"></div>
+                                        <% end %>
+                                    </td>
+                                <% else %>
+                                    <td class="<%= date %> non-recur">
+                                        <%= link_to new_attendance_path(schedule_id: get_user_schedule_id(user), date: date) do %>
+                                            <div class="empty"></div>
+                                        <% end %>
+                                    </td>
+                                <% end %> 
+                            <% end %>
+                        <% end %>
+                    <% else %>
+                        <%# the user does not have schedule, create row accordingly %>
+                        <%# the row header is the user's name and the background color corresponds to their skill level %>
+                        <th style="background-color: <%= get_user_skill_level_color(user) %> !important">
+                            <%= link_to new_schedule_path(user_id: user.id) do %>
+                                <div class="user-cell">
+                                    <%= image_tag("exclamation_point.png", class: 'user-needs-schedule') %>
+                                    <%= user.first_name %> <%= user.last_name %>
+                                </div>
+                            <% end %>
+                        </th>
+                        <%# no cells in this row because user cannot have attendances scheduled %>
+                        <td colspan="5" class="invalid"></td>
+                    <% end %>
+                </tr>
+            <% end %>
+        </tbody>
     </table>
 </div>
+
+<style>
+    .schedule-view .header {
+        background-color: #a7a7a7;
+        vertical-align: middle;
+    }
+
+    .schedule-view tr:not(.header) {
+        background-color: #d1d1d1;
+        vertical-align: middle;
+        height: 1px;
+    }
+
+    .schedule-view td, .schedule-view th {
+        height: inherit;
+        border: 1px solid white;
+        padding: 0px;
+        transition: all 0.05s;
+    }
+
+    .schedule-view th:not(.header > *):hover, .schedule-view td:not(.invalid):hover {
+        box-shadow: inset 0 0 0 10em rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+    }
+
+    .schedule-view a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .schedule-view .header-cell, .schedule-view .user-cell, .schedule-view .attendance-display, .schedule-view .empty {
+        height: 100%;
+        padding: 4px;
+    }
+
+    .schedule-view .user-cell, .schedule-view .attendance-display {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .schedule-view .user-cell {
+        position: relative;
+    }
+
+    .schedule-view .user-needs-schedule {
+        position: absolute;
+        width: 25px;
+        left: -30px;
+    }
+
+    .schedule-view .attendance-display p {
+        margin: 0;
+        text-decoration: underline;
+    }
+
+    .schedule-view .bold {
+        font-weight: 700;
+    }
+</style>

@@ -11,15 +11,18 @@
     </div>
   <% end %>
 
-  <div>
-    <br>
-    <strong><%= form.label :user_id, style: "display: block" %></strong>
-    <%= form.select :user_id, users_full_name(), {required: true, class: "form-control"} %>
-  </div>
+  <%= form.hidden_field :user_id %>
 
   <div>
     <%= form.label :recurrence, style: "display: block" %>
-    <%= form.text_field :recurrence %>
+    <div class="d-flex justify-content-center" style="gap: 20px;">
+      <%= form.collection_check_boxes :recurrence, [['M', 'Monday'], ['T', 'Tuesday'], ['W', 'Wednesday'], ['R', 'Thursday'], ['F', 'Friday']], :first, :last, include_hidden: false do |b| %>
+        <div class="d-flex flex-column">
+          <%= b.label %>
+          <%= b.check_box %>
+        </div>
+      <% end %>
+    </div>
   </div>
 
   <div>
