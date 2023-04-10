@@ -79,6 +79,6 @@ RSpec.describe('Deleting a user', type: :feature) do
         user = User.create!(first_name: 'Billy', last_name: 'Bob', classification: 'Junior', skill_level: 'Intermediate', phone_number: '8229852917', email: 'billybob@tamu.edu', is_staff: 'false', is_admin: 'false')
         visit delete_user_path(id: user.id)
         click_on 'Delete User'
-        expect(page).to(have_content('Billy Bob was successfully destroyed.'))
+        expect(page).to(have_content('Billy Bob was successfully deleted.'))
     end
 end

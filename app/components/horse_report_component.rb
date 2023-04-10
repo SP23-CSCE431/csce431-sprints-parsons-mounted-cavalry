@@ -10,7 +10,7 @@ class HorseReportComponent < ViewComponent::Base
 
     # maps the given horse's difficulty level to a color, returns the color
     def get_horse_difficulty_color(horse)
-        colors = { 'Easy' => '#a7f1a8', 'Intermediate' => '#ffa756', 'Advanced' => '#f47174' }
+        colors = { 'Easy' => '#a7f1a8', 'Intermediate' => '#FFF36D', 'Advanced' => '#f47174' }
 
         if horse.nil?
             'none'

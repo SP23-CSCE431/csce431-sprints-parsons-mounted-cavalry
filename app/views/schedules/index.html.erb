@@ -1,26 +1,36 @@
-<p style="color: green"><%= notice %></p>
+<body class="align-items-center justify-content-center" style="overflow-x: hidden; overflow-y: hidden;">
+  <%= render(NavbarComponent.new())%>
 
-<h1>Schedules</h1>
-
-<%= link_to "<button>Back to Schedules</button>".html_safe, admins_schedules_path %>
-
-<table class="listing" summary="Schedule list" style="width: 75%; margin: 20px auto;">
-  <tr class="header">
-    <th><center>User</center></th>
-    <th><center>Recurrence</center></th>
-    <th><center>Edit</center></th>
-    <th><center>Delete</center></th>
-  </tr>
-
-  <% @schedules.each do |schedule| %>
-    <tr>
-      <td><center><%= user_full_name(schedule.user_id) %></center></td>
-      <td><center><%= recurrence_str(schedule.recurrence) %></center></td>
-      <td id="edit-<%= schedule.id %>"><center><%= link_to("<i class='fa-solid fa-pen-to-square'></i>".html_safe, edit_schedule_path(schedule), class: 'action update', style: 'color: black;') %></center></td>
-      <td id="delete-<%= schedule.id %>"><center><%= link_to("<i class='fa-solid fa-trash-can'></i>".html_safe, delete_schedule_path(schedule), class: 'action delete', style: 'color: black;') %></center></td>
-    </tr>
+  <%# Sidebar %>
+  <% user = User.where(:email => current_admin.email).first %>
+  <% if user.is_admin %>
+    <%= render(SidebarAdminsComponent.new())%>
+  <% elsif user.is_staff %>
+    <%= render(SidebarStaffsComponent.new())%>
   <% end %>
-</table>
+
+  <h1>All Schedules</h1>
+
+  <%= link_to "<button>Back to Schedules</button>".html_safe, admins_schedules_path %>
+
+  <table class="listing" summary="Schedule list" style="width: 75%; margin: 20px auto;">
+    <tr class="header">
+      <th><center>User</center></th>
+      <th><center>Recurrence</center></th>
+      <th><center>Edit</center></th>
+      <th><center>Delete</center></th>
+    </tr>
+
+    <% @schedules.each do |schedule| %>
+      <tr>
+        <td><center><%= user_full_name(schedule.user_id) %></center></td>
+        <td><center><%= recurrence_str(schedule.recurrence) %></center></td>
+        <td id="edit-<%= schedule.id %>"><center><%= link_to("<i class='fa-solid fa-pen-to-square'></i>".html_safe, edit_schedule_path(schedule), class: 'action update', style: 'color: black;') %></center></td>
+        <td id="delete-<%= schedule.id %>"><center><%= link_to("<i class='fa-solid fa-trash-can'></i>".html_safe, delete_schedule_path(schedule), class: 'action delete', style: 'color: black;') %></center></td>
+      </tr>
+    <% end %>
+  </table>
+</body>
 
 <style>
   tr.header {

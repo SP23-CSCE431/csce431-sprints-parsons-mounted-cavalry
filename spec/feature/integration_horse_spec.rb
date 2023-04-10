@@ -101,6 +101,6 @@ RSpec.describe('Deleting a horse', type: :feature) do
         horse = Horse.create(name: 'Horsey1', brand: 'H1199', herd: 'Alpha', difficulty: 'Easy', condition: 'Healthy')
         visit delete_horse_path(id: horse.id)
         click_on 'Delete Horse'
-        expect(page).to(have_content('Horsey1 was successfully destroyed.'))
+        expect(page).to(have_content('Horsey1 was successfully deleted.'))
     end
 end

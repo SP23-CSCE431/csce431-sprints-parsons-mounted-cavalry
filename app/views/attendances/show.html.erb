@@ -4,17 +4,21 @@
   <%# Sidebar %>
   <%= render(SidebarAdminsComponent.new())%>
   <div class="justify-content-center align-items-center mx-auto text-center">
-    <p style="color: green"><%= notice %></p>
+    <br>
+    <% schedule = Schedule.find(@attendance.schedule_id) %>
+    <% user = User.find(schedule.user_id) %>
+    <h1><%= user.first_name %> <%= user.last_name %>'s Attendance</h1>
+    <br>
 
     <%= render @attendance %>
 
     <div>
       <br />
-      <%= link_to "<button>Edit</button>".html_safe, edit_attendance_path(@attendance) %>
-      <%= link_to "<button>Delete</button>".html_safe, delete_attendance_path(@attendance) %>
+      <%= link_to "<button type='button' class='btn btn-secondary create'>Edit</button>".html_safe, edit_attendance_path(@attendance) %>
+      <%= link_to "<button type='button' class='btn btn-secondary create'>Delete</button>".html_safe, delete_attendance_path(@attendance) %>
     </div>
 
     <br />
-    <%= link_to "<button>Back to attendances</button>".html_safe, admins_schedules_path %>
+    <%= link_to "<button type='button' class='btn btn-secondary create'>Back to Schedules</button>".html_safe, admins_schedules_path %>
   </div>
 </body>

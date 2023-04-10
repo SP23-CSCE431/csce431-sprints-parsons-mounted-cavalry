@@ -11,29 +11,28 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :is_admin, style: "display: block" %>
-    <%= form.check_box :is_admin %>
+  <div style="display: inline-flex;">
+    <div style="margin-right: 10px;">
+      <%= form.label :first_name, style: "display: block" %>
+      <%= form.text_field :first_name %>
+    </div>
+    <div>
+      <%= form.label :last_name, style: "display: block" %>
+      <%= form.text_field :last_name %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :is_staff, style: "display: block" %>
-    <%= form.check_box :is_staff %>
-  </div>
+  <br>
 
-  <div>
-    <%= form.label :first_name, style: "display: block" %>
-    <%= form.text_field :first_name %>
-  </div>
-
-  <div>
-    <%= form.label :last_name, style: "display: block" %>
-    <%= form.text_field :last_name %>
-  </div>
-
-  <div>
-    <%= form.label :classification, style: "display: block" %>
-    <%= form.select :classification, ['Sophomore', 'Junior', 'Senior']%>
+  <div style="display: inline-flex;">
+    <div style="margin-right: 10px;">
+      <%= form.label :role, style: "display: block" %>
+      <%= form.select :role, options_for_select([['Cadet', 'Cadet'], ['Command Staff', 'Command Staff'], ['Admin', 'Admin']], selected: @user.is_admin ? 'Admin' : @user.is_staff ? 'Command Staff' : 'Cadet') %>
+    </div>
+    <div>
+      <%= form.label :classification, style: "display: block" %>
+      <%= form.select :classification, ['Sophomore', 'Junior', 'Senior']%>
+    </div>
   </div>
 
   <div>
@@ -52,6 +51,7 @@
   </div>
 
   <div>
-    <%= form.submit %>
+    <br>
+    <%= form.submit class: "btn btn-primary create" %>
   </div>
 <% end %>
