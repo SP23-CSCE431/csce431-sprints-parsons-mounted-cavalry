@@ -17,6 +17,77 @@
       <% end %>
     </div>
     <br>
+
+    <br>
+
+    <% if @attendance.check_in_time.nil? %>
+        <button type='button' class='btn btn-secondary create' onclick="onCheckIn()">Check In</button>
+    <% end %>
+
+    <br>
+    <br>
+
+    <div id="checkin_results"></div>
   </div>
 
 </body>
+
+<script>
+    function onCheckIn() {
+        Noty.overrideDefaults({ theme: 'relax', layout: 'topCenter' });
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var userlat = position.coords.latitude;
+                var userlong = position.coords.longitude;
+
+                var pmc = {lat: 30.609433, lng: -96.3730202};
+                var userLocation = {lat: userlat, lng: userlong};
+
+                const checkinResults = document.getElementById("checkin_results");
+                const checkinContainer = document.getElementById("checkin-container");
+                
+                if (isWithinRange(userLocation, pmc, 1)) {
+                    $.ajax({
+                      url: "/pages/checkedin",
+                      data: {id: '<%= @attendance.id %>'},
+                      type: 'patch'
+                    }).done(function() {
+                      new Noty({
+                        text: "You have been checked in!",
+                        type: "success"
+                      }).show();
+                      document.querySelector('#checkin-container').innerHTML = '<%= j render(CheckInComponent.new(@attendance)) %>';
+                    }).fail(function() {
+                      new Noty({
+                        text: "Couldn't check you in.",
+                        type: "error"
+                      }).show();
+                    });
+                    
+                } else {
+                    checkinResults.innerHTML = '<h2> YOU ARE NOT AT PARSONS MOUNTED CAVALRY! PLEASE CHECK IN WHEN YOU HAVE ARRIVED. </h2>';
+                }
+            }, function(position) {
+                new Noty({
+                text: "Could not get location",
+                type: "error"
+            }).show();
+            });
+        } else {
+            new Noty({
+            text: "Geolocation is not supported by this browser.",
+            type: "error"
+        }).show();
+        }
+
+    }
+
+    function isWithinRange(checkPoint, centerPoint, km) {
+        var ky = 40000 / 360;
+        var kx = Math.cos(Math.PI * centerPoint.lat / 180.0) * ky;
+        var dx = Math.abs(centerPoint.lng - checkPoint.lng) * kx;
+        var dy = Math.abs(centerPoint.lat - checkPoint.lat) * ky;
+        return Math.sqrt(dx * dx + dy * dy) <= km;
+    }
+</script>

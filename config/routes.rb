@@ -56,6 +56,7 @@ Rails.application.routes.draw do
       get :checkin_staffs
       get :reports_admins
       get :reports_staffs
+      patch :checkedin
     end
   end
 end

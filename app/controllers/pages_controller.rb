@@ -16,6 +16,21 @@ class PagesController < ApplicationController
     authorize pundit_user
   end
 
+  skip_before_action :verify_authenticity_token, only: [:checkedin]
+  def checkedin
+    @attendance = Attendance.find(params[:id])
+    respond_to do |format|
+      if @attendance.update(:check_in_time => Time.now)
+        format.html { redirect_to(checkin_cadets_pages_path, status: :see_other, notice: "You have been checked in.") }
+        format.js {render inline: "location.reload();" }
+        format.json { render(:show, status: :ok, location: @attendance) }
+      else
+        format.html { render(:edit, status: :unprocessable_entity) }
+        format.json { render(json: @attendance.errors, status: :unprocessable_entity) }
+      end
+    end
+  end
+
   # path for staff to check in
   def checkin_staffs
     authorize pundit_user
@@ -35,5 +50,12 @@ class PagesController < ApplicationController
     @cadets = User.where(is_staff: false, is_admin: false)
     @staffs = User.where(is_staff: true, is_admin: false)
     authorize pundit_user
+  end
+
+  private
+
+  # Only allow a list of trusted parameters through.
+  def attendance_params
+    params.require(:attendance).permit(:schedule_id, :horse_id, :date, :check_in_time, :purpose)
   end
 end
