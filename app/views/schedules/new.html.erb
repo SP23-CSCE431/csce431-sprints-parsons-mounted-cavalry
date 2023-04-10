@@ -6,7 +6,8 @@
   <div class="justify-content-center align-items-center mx-auto text-center">
     <br>
     <h1>New schedule</h1>
-
+    <% user = User.find(@schedule.user_id) %>
+    <h2><%= user.first_name %> <%= user.last_name %></h2>
     <%= render "form", schedule: @schedule %>
 
     <br>

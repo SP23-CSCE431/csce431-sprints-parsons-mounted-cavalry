@@ -1,0 +1,43 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Schedules</h1>
+
+<%= link_to "<button>Back to Schedules</button>".html_safe, admins_schedules_path %>
+
+<table class="listing" summary="Schedule list" style="width: 75%; margin: 20px auto;">
+  <tr class="header">
+    <th><center>User</center></th>
+    <th><center>Recurrence</center></th>
+    <th><center>Edit</center></th>
+    <th><center>Delete</center></th>
+  </tr>
+
+  <% @schedules.each do |schedule| %>
+    <tr>
+      <td><center><%= user_full_name(schedule.user_id) %></center></td>
+      <td><center><%= recurrence_str(schedule.recurrence) %></center></td>
+      <td id="edit-<%= schedule.id %>"><center><%= link_to("<i class='fa-solid fa-pen-to-square'></i>".html_safe, edit_schedule_path(schedule), class: 'action update', style: 'color: black;') %></center></td>
+      <td id="delete-<%= schedule.id %>"><center><%= link_to("<i class='fa-solid fa-trash-can'></i>".html_safe, delete_schedule_path(schedule), class: 'action delete', style: 'color: black;') %></center></td>
+    </tr>
+  <% end %>
+</table>
+
+<style>
+  tr.header {
+    background-color: #A7A7A7;
+  }
+
+  table.listing tr:not(.header) {
+    background-color: #D1D1D1;
+  }
+
+  table.listing {
+    width: 75%;
+    margin: 0 auto;
+    border-collapse: collapse;
+  }
+
+  td, th {
+    border: 1px solid white;
+  }
+</style>

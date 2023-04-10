@@ -16,5 +16,4 @@ Horse.create!([
   {name: "Clint", brand: "C4", herd: "Delta", difficulty: "Easy", condition: "Healthy"},
   {name: "Eddy", brand: "E5923", herd: "OOS", difficulty: "Easy", condition: "Healthy"}
 ])
-Attendance.create!([
   

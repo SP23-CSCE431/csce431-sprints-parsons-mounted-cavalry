@@ -3,33 +3,48 @@ require 'rails_helper'
 RSpec.describe Schedule, type: :model do
   # create instances of reference that are used in creation of schedule
   subject do
-    described_class.new(user_id: user.id, recurrence: 'MWF')
+    described_class.new(user_id: user.id, recurrence: ['M', 'W', 'F'])
   end
 
   let(:user) { User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '8229852917', email: 'j.doe@tamu.edu') }
+   
+  describe 'create' do
+    it 'is valid' do
+      expect(subject).to be_valid
+    end
 
-  it "is valid with valid attributes" do
-    schedule = Schedule.new(user_id: user.id, recurrence: 'MWF')
-    expect(schedule).to be_valid
+    it 'has no user' do
+      schedule = Schedule.new(recurrence: ['M', 'W', 'F'])
+      expect(schedule).to_not be_valid
+    end
+
+    it 'has no recurrence' do
+      schedule = Schedule.new(user_id: user.id)
+      expect(schedule).to_not be_valid
+    end
+
+    it 'user already has schedule' do
+      Schedule.create(user_id: user.id, recurrence: ['M', 'W', 'F'])
+      expect(Schedule.new(user_id: user.id, recurrence: ['T', 'R'])).to_not be_valid
+    end
   end
 
-  it "is not valid without a user_id" do
-    schedule = Schedule.new(recurrence: 'MWF')
-    expect(schedule).not_to be_valid
+  describe 'update' do
+    it 'valid schedule change' do
+      subject.update(:recurrence => ['T', 'R'])
+      expect(Schedule.find_by_recurrence(['T', 'R'])).to(eq(subject))
+    end
+
+    it 'update with nil recurrence' do
+      subject.update(:recurrence => nil)
+      expect(subject).not_to(be_valid)
+    end
   end
 
-  it "is not valid without a recurrence" do
-    schedule = Schedule.new(user_id: user.id)
-    expect(schedule).not_to be_valid
-  end
-
-  it "belongs to a user" do
-    schedule = Schedule.new(user_id: user.id, recurrence: 'MWF')
-    expect(schedule).to respond_to(:user)
-  end
-
-  it "has many attendances" do
-    schedule = Schedule.new(user_id: user.id, recurrence: 'MWF')
-    expect(schedule).to respond_to(:attendances)
+  describe 'delete' do
+    it 'schedule can be deleted' do
+      subject.destroy
+      expect(Schedule.find_by_recurrence(['T', 'R'])).to(be_nil)
+    end
   end
 end
