@@ -4,9 +4,8 @@
   <%# Sidebar %>
   <%= render(SidebarAdminsComponent.new())%>
   <div class="justify-content-center align-items-center mx-auto text-center">
-    <h1>New Attendance</h1>
     <br>
-    <h2>For: <%= user_by_schedule_id(@attendance.schedule_id) %></h2>
+    <h1>New Attendance for: <span style="color: red;"><%= user_by_schedule_id(@attendance.schedule_id) %></span></h1>
     <h2>Date: <%= format_date(@attendance.date) %></h2>
 
     <%= render "form", attendance: @attendance %>
@@ -14,7 +13,7 @@
     <br>
 
     <div>
-      <%= link_to "Back to attendances", admins_schedules_path %>
+      <%= link_to("<button type='button' class='btn btn-secondary create'>Back to Schedules</button>".html_safe, admins_schedules_path, :class => 'back-link') %>
     </div>
   </div>
 </body>

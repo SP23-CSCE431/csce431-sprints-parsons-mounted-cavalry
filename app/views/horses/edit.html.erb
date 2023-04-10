@@ -5,7 +5,8 @@
   <%= render(SidebarAdminsComponent.new())%>
   <div class="justify-content-center align-items-center mx-auto text-center">
     <div class="horses edit">
-        <h2>Update Horse</h2>
+        <br>
+        <h2>Edit Horse</h2>
         <%= form_for(@horse) do |f| %>
         <% # url: horses_path(@horse), method: 'patch' %>
 
@@ -14,7 +15,7 @@
         <% end %>
 
         <br>
-        <%= link_to("<button>Back to Horses</button>".html_safe, admins_horses_path, :class => 'back-link') %>
+        <%= link_to("<button type='button' class='btn btn-secondary create'>Back to Horses</button>".html_safe, admins_horses_path, :class => 'back-link') %>
     </div>  
   </div>
 </body>

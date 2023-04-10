@@ -1,47 +1,88 @@
 <br>
 
 <div class="btn-group">
-    <button type="button" id="horse-usage-btn" class="btn btn-dark">Ride Report</button>
-    <button type="button" id="cadets-report-btn" class="btn btn-secondary">Discipline Report</button>
+    <button type="button" id="horse-usage-btn" class="btn <%= (request.cookies[:report_type] == 'horse') ? 'btn-dark' : 'btn-secondary' %>">Ride Report</button>
+    <button type="button" id="cadets-report-btn" class="btn <%= (request.cookies[:report_type] == 'cadet') ? 'btn-dark' : 'btn-secondary' %>">Discipline Report</button>
 </div>
 
 <br>
 
 <div id="report-component">
-    <%= render(HorseReportComponent.new(@horses, @start_day, @end_day, @curr_day)) %>
+    <% if request.cookies[:report_type] == 'horse' %>
+        <%= render(HorseReportComponent.new(@horses, @start_day, @end_day, @curr_day)) %>
+    <% else %>
+        <%= render(CadetReportsComponent.new(@cadets, @staffs, @start_day, @end_day, @curr_day)) %>
+    <% end %>
 </div>
 
-<style>
-  .create {
-    background-color: #D9D9D9 !important;
-    border: 2px solid black !important;
-    color: black !important;
-    font-weight: 500 !important;
-  }
-</style>
-
 <script>
-    // Set up event listeners for button clicks
     const horseUsageBtn = document.querySelector('#horse-usage-btn');
     const cadetsReportBtn = document.querySelector('#cadets-report-btn');
 
+    // when horse report button is pressed, add the necessary styles to button and remove from cadet report button
     horseUsageBtn.addEventListener('click', () => {
         horseUsageBtn.classList.add('btn-dark');
         horseUsageBtn.classList.remove('btn-secondary');
         cadetsReportBtn.classList.remove('btn-dark');
         cadetsReportBtn.classList.add('btn-secondary');
         document.querySelector('#report-component').innerHTML = '<%= j render(HorseReportComponent.new(@horses, @start_day, @end_day, @curr_day)) %>';
+        document.cookie = "report_type=horse; path=/";
     });
 
+    // when cadets report button is pressed, add the necessary styles to button and remove from horse usage button
     cadetsReportBtn.addEventListener('click', () => {
         horseUsageBtn.classList.remove('btn-dark');
         horseUsageBtn.classList.add('btn-secondary');
         cadetsReportBtn.classList.add('btn-dark');
         cadetsReportBtn.classList.remove('btn-secondary');
         document.querySelector('#report-component').innerHTML = '<%= j render(CadetReportsComponent.new(@cadets, @staffs, @start_day, @end_day, @curr_day)) %>';
+        document.cookie = "report_type=cadet; path=/";
     });
 
-    
+    // helper function to get cookies
+    function getCookie(name) {
+        var value = "; " + document.cookie;
+        var parts = value.split("; " + name + "=");
+        if (parts.length == 2) {
+            return parts.pop().split(";").shift();
+        } else {
+            return "horse"; // set default report type to "horse"
+        }
+    }
+
+    // when page is loaded, make sure the correct button is clicked on already
+    window.onload = function() {
+        const reportTypeCookie = getCookie("report_type");
+        if (reportTypeCookie === "cadet") {
+            cadetsReportBtn.classList.add('btn-dark');
+            cadetsReportBtn.classList.remove('btn-secondary');
+            horseUsageBtn.classList.remove('btn-dark');
+            horseUsageBtn.classList.add('btn-secondary');
+            document.querySelector('#report-component').innerHTML = '<%= j render(CadetReportsComponent.new(@cadets, @staffs, @start_day, @end_day, @curr_day)) %>';
+        } else { // set default report type to "horse"
+            horseUsageBtn.classList.add('btn-dark');
+            horseUsageBtn.classList.remove('btn-secondary');
+            cadetsReportBtn.classList.remove('btn-dark');
+            cadetsReportBtn.classList.add('btn-secondary');
+            document.querySelector('#report-component').innerHTML = '<%= j render(HorseReportComponent.new(@horses, @start_day, @end_day, @curr_day)) %>';
+            document.cookie = "report_type=horse; path=/";
+        }
+    };
+
+    // export ride report table to excel
+    function exportRideToExcel(curr_day) {
+        /* Create a new Excel workbook and sheet */
+        var wb = XLSX.utils.book_new();
+        var ws = XLSX.utils.table_to_sheet(document.getElementById("horseTable"));
+
+        /* Add the sheets to the workbook */
+        XLSX.utils.book_append_sheet(wb, ws, "Horse Report");
+
+        /* Save the workbook as an Excel file */
+        XLSX.writeFile(wb, curr_day + "_ride_report.xlsx");
+    }
+
+    // export discipline report table to excel
     function exportDisciplineToExcel(curr_day) {
         /* Create a new Excel workbook and sheet */
         var wb = XLSX.utils.book_new();

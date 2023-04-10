@@ -24,17 +24,6 @@
 </table>
 
 <script>
-    function exportRideToExcel(curr_day) {
-    /* Create a new Excel workbook and sheet */
-    var wb = XLSX.utils.book_new();
-    var ws = XLSX.utils.table_to_sheet(document.getElementById("horseTable"));
-
-    /* Add the sheets to the workbook */
-    XLSX.utils.book_append_sheet(wb, ws, "Horse Report");
-
-    /* Save the workbook as an Excel file */
-    XLSX.writeFile(wb, curr_day + "_ride_report.xlsx");
-    }
 </script>
 
 <style>
