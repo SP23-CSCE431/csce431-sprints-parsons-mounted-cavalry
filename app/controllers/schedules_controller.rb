@@ -10,7 +10,7 @@ class SchedulesController < ApplicationController
       @curr_day = Date.parse(params[:week])
     end
     
-    @curr_day ||= Date.today
+    @curr_day ||= Date.today + 1
     @range = helpers.week_range(@curr_day)
     @dates = helpers.week_dates(@curr_day)
   end

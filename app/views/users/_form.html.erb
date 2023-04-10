@@ -12,8 +12,10 @@
   <% end %>
 
   <div>
-    <%= form.label :is_admin, style: "display: block" %>
-    <%= form.check_box :is_admin %>
+    <% if User.where(:email => current_admin.email).first.is_admin? %>
+      <%= form.label :is_admin, style: "display: block" %>
+      <%= form.check_box :is_admin %>
+    <% end %>
   </div>
 
   <div>
