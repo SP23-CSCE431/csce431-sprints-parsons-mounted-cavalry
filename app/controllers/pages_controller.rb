@@ -10,13 +10,19 @@ class PagesController < ApplicationController
   end
 
   # path for cadets to check in
+  # Gets the current user's schedules and takes their attendance for the current day, if there is any
   def checkin_cadets
     user1 = User.where(:email => current_admin.email).first
-    @attendance = Attendance.where(:date => @curr_day).first
+    schedules = Schedule.where(:user_id => user1.id).all
+    ids = schedules.ids
+    @attendance = Attendance.where(:date => @curr_day, schedule_id: ids).first
     authorize pundit_user
   end
 
+  # Skip before action is here because of errors with the ajax request
   skip_before_action :verify_authenticity_token, only: [:checkedin]
+  # path for cadets after checking in
+  # Gets the attendance from the patch ajax request, updates the check in time to the current time, and then returns to the checkin cadets page
   def checkedin
     @attendance = Attendance.find(params[:id])
     respond_to do |format|

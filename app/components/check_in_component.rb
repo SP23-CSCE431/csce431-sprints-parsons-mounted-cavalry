@@ -10,6 +10,7 @@ class CheckInComponent < ViewComponent::Base
         Horse.where(id: horse_id).first
     end
 
+    # given an attendance object, if no check in time, red, if check in time, green
     def get_checkin_time_color(attendance)
         colors = { 'CheckedIn' => '#A7F1A8', 'NotCheckedIn' => '#F47174' }
 

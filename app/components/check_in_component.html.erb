@@ -1,3 +1,4 @@
+<%# Check in table with appointment information. %>
 <table class="listing" id="checkin_table" summary="checkin appointment information">
     <tr class="header">
         <th>Date</th>
@@ -11,6 +12,7 @@
         <% horse = get_horse(@attendance.horse_id) %>    
         <td><center><%= horse == nil ? 'None' : horse.name + ' - ' + horse.brand %></center></td>
         <td><center><%= @attendance.purpose %></center></td>
+        <%# Check in time is red and blank if not checked in or green with check in time if checked in %>
         <% if @attendance.check_in_time.nil? %>
             <td style="background-color: <%= get_checkin_time_color(@attendance) %> !important"></td>
         <% else %>
@@ -19,9 +21,6 @@
     </tr>
     
 </table>
-
-
-
 
 <style>
     tr.header {

@@ -17,9 +17,9 @@
       <% end %>
     </div>
     <br>
-
     <br>
 
+    <%# Check in button %>
     <% if @attendance.check_in_time.nil? %>
         <button type='button' class='btn btn-secondary create' onclick="onCheckIn()">Check In</button>
     <% end %>
@@ -27,26 +27,30 @@
     <br>
     <br>
 
+    <%# Div for messages to pop up after clicking check in button %>
     <div id="checkin_results"></div>
   </div>
 
 </body>
 
 <script>
+    // Run when check in button is clicked
     function onCheckIn() {
         Noty.overrideDefaults({ theme: 'relax', layout: 'topCenter' });
 
+        // Navigator.geolocation is used to get user's current location in latitude and longitude
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
                 var userlat = position.coords.latitude;
                 var userlong = position.coords.longitude;
 
-                var pmc = {lat: 30.609433, lng: -96.3730202};
+                var pmc = {lat: 30.609433, lng: -96.3730202}; // 3748 F and B Rd, College Station, TX 77845
                 var userLocation = {lat: userlat, lng: userlong};
 
                 const checkinResults = document.getElementById("checkin_results");
                 const checkinContainer = document.getElementById("checkin-container");
                 
+                // If userLocation is within 1 km of PMC, then user can check in
                 if (isWithinRange(userLocation, pmc, 1)) {
                     $.ajax({
                       url: "/pages/checkedin",
@@ -83,6 +87,8 @@
 
     }
 
+    // Checks if checkpoint is within km distance of centerPoint
+    // Source: http://jsfiddle.net/Guffa/57gQa/
     function isWithinRange(checkPoint, centerPoint, km) {
         var ky = 40000 / 360;
         var kx = Math.cos(Math.PI * centerPoint.lat / 180.0) * ky;
