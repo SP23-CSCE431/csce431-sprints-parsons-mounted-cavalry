@@ -136,7 +136,7 @@ RSpec.describe('Deleting an attendance', type: :feature) do
         visit 'schedules/admins'
         visit delete_attendance_path(id: attendance.id)
         click_on 'Delete'
-        expect(page).to(have_content('Attendance was successfully destroyed.'))
+        expect(page).to(have_content('Attendance was successfully deleted.'))
     end
 
     # if an attendance belongs to a schedule, then when that schedule is deleted

@@ -4,6 +4,7 @@
   <%# Sidebar %>
   <%= render(SidebarAdminsComponent.new())%>
   <div class="justify-content-center align-items-center mx-auto text-center">
+    <br>
     <h1>New schedule</h1>
 
     <%= render "form", schedule: @schedule %>
@@ -11,7 +12,7 @@
     <br>
 
     <div>
-      <%= link_to "Back to schedules", admins_schedules_path %>
+      <%= link_to("<button type='button' class='btn btn-secondary create'>Back to Schedules</button>".html_safe, admins_schedules_path, :class => 'back-link') %>
     </div>
   </div>
 </body>

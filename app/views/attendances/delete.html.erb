@@ -5,7 +5,8 @@
   <%= render(SidebarAdminsComponent.new())%>
   <div class="justify-content-center align-items-center mx-auto text-center">
     <div class="attendances delete">
-        <h2>Delete Attendance</h2>
+        <br>
+        <h1>Delete Attendance</h1>
 
         <%= form_for(@attendance, method: 'delete') do |f| %>
         <% # url: attendance_path(@attendance), method: 'delete' %>
@@ -16,13 +17,13 @@
         
         <br>    
         <div class="form-buttons">
-            <%= f.submit("Delete attendance") %>  
+            <%= f.submit "Delete attendance", class: "btn btn-primary create" %>
         </div>
 
         <% end %>
 
         <br>
-        <%= link_to("<button>Back to attendances</button>".html_safe, admins_schedules_path, class: 'back-link') %>
+        <%= link_to("<button type='button' class='btn btn-secondary create'>Back to Schedules</button>".html_safe, admins_schedules_path, class: 'back-link') %>
     </div>
   </div>
 </body>

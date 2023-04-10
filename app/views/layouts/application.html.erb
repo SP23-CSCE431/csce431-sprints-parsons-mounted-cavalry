@@ -13,9 +13,9 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <style>
-        .flash__alert   { color: red; }
+        /* .flash__alert   { color: red; }
         .flash__notice  { color: blue; }
-        .flash__success { color: green; }
+        .flash__success { color: green; } */
         body {
             background-color: #EAEAEA;
         }
@@ -23,15 +23,33 @@
   </head>
 
   <body>
-    <header>
-      <center>
-          <% if flash.any? %>
-          <% flash.each do |key, value| -%>
-              <section class="flash flash__<%= key %>"><%= value.html_safe %></section>
-          <% end -%>
+    <%# <% flash.each do |key, value| -%>
+      <%# <section class="flash flash__<%= key "><%= value.html_safe </section> %>
+    <%# <% end -%>
+    <header style="text-align: center;">
+      <% if flash.any? %>
+        <% flash.each do |key, value| %>
+          <% if key == "alert" %>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-bottom: 0 !important;">
+              <i class="fa-solid fa-triangle-exclamation" style="color: red;"></i> <%= value.html_safe %>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
           <% end %>
-          <%= yield %>
-      </center>
+          <% if key == "notice" %>
+            <div class="alert alert-info alert-dismissible fade show" role="alert" style="margin-bottom: 0 !important;">
+              <i class="fa-sharp fa-solid fa-circle-info" style="color: blue;"></i> <%= value.html_safe %>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          <% end %>
+          <% if key == "success" %>
+            <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-bottom: 0 !important;">
+              <i class="fa-solid fa-badge-check" style="color: green;"></i> <%= value.html_safe %>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+      <%= yield %>
     </header>
   </body>
 </html>

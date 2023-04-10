@@ -40,7 +40,8 @@ class SchedulesController < ApplicationController
     authorize @schedule
     respond_to do |format|
       if @schedule.save
-        format.html { redirect_to(admins_schedules_url, notice: "Schedule was successfully created.") }
+        flash[:success] = "Schedule was successfully created."
+        format.html { redirect_to(admins_schedules_url) }
         format.json { render(:show, status: :created, location: @schedule) }
       else
         format.html { render(:new, status: :unprocessable_entity) }
@@ -54,7 +55,8 @@ class SchedulesController < ApplicationController
     authorize @schedule
     respond_to do |format|
       if @schedule.update(schedule_params)
-        format.html { redirect_to(admins_schedules_url, notice: "Schedule was successfully updated.") }
+        flash[:success] = "Schedule was successfully updated."
+        format.html { redirect_to(admins_schedules_url) }
         format.json { render(:show, status: :ok, location: @schedule) }
       else
         format.html { render(:edit, status: :unprocessable_entity) }
@@ -69,13 +71,22 @@ class SchedulesController < ApplicationController
     authorize @schedule
   end
 
+  # given a schedule id, return the user's name
+  def user_by_schedule_id(schedule_id)
+    schedule = Schedule.where(id: schedule_id).first
+    if schedule
+      user = User.where(id: schedule.user_id).first
+      "#{user.first_name} #{user.last_name}" if user
+    end
+  end
+
   # DELETE /schedules/1 or /schedules/1.json
   def destroy
     authorize @schedule
     @schedule.destroy!
 
     respond_to do |format|
-      format.html { redirect_to(admins_schedules_url, notice: "Schedule was successfully destroyed.") }
+      format.html { redirect_to(admins_schedules_url, alert: "Schedule was successfully deleted.") }
       format.json { head(:no_content) }
     end
   end

@@ -4,15 +4,17 @@
   <%# Sidebar %>
   <%= render(SidebarAdminsComponent.new())%>
   <div class="justify-content-center align-items-center mx-auto text-center">
-    <h1>Editing attendance</h1>
+    <br>
+    <h1>Edit <%= user_by_schedule_id(@attendance.schedule_id) %>'s' Attendance</h1>
+    <h2>Date: <%= format_date(@attendance.date) %></h2>
 
     <%= render "form", attendance: @attendance %>
 
     <br>
 
     <div>
-      <%= link_to "Show this attendance", @attendance %> |
-      <%= link_to "Back to attendances", admins_schedules_path %>
+      <%= link_to("<button type='button' class='btn btn-secondary create'>Show this Attendance</button>".html_safe, @attendance, class: 'back-link') %> 
+      <%= link_to("<button type='button' class='btn btn-secondary create'>Back to Schedules</button>".html_safe, admins_schedules_path, class: 'back-link') %>
     </div>
   </div>
 </body>
