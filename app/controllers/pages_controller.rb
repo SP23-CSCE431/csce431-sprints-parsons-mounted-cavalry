@@ -13,9 +13,10 @@ class PagesController < ApplicationController
   # Gets the current user's schedules and takes their attendance for the current day, if there is any
   def checkin_cadets
     user1 = User.where(:email => current_admin.email).first
-    schedules = Schedule.where(:user_id => user1.id).all
-    ids = schedules.ids
-    @attendance = Attendance.where(:date => @curr_day, schedule_id: ids).first
+    schedule = Schedule.where(:user_id => user1.id).first
+    Rails.logger.info("log sched: #{schedule&.id}")
+    @attendance = Attendance.where(:date => @curr_day.strftime, schedule_id: schedule&.id).first
+    Rails.logger.info("log att: #{@attendance&.id}")
     authorize pundit_user
   end
 

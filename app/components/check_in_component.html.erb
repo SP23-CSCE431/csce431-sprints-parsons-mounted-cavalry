@@ -8,15 +8,15 @@
     </tr>
 
     <tr>
-        <td><center><%= @attendance.date %></center></td>
-        <% horse = get_horse(@attendance.horse_id) %>    
+        <td><center><%= @attendance&.date %></center></td>
+        <% horse = get_horse(@attendance&.horse_id) %>    
         <td><center><%= horse == nil ? 'None' : horse.name + ' - ' + horse.brand %></center></td>
-        <td><center><%= @attendance.purpose %></center></td>
+        <td><center><%= @attendance&.purpose %></center></td>
         <%# Check in time is red and blank if not checked in or green with check in time if checked in %>
-        <% if @attendance.check_in_time.nil? %>
+        <% if @attendance&.check_in_time.nil? %>
             <td style="background-color: <%= get_checkin_time_color(@attendance) %> !important"></td>
         <% else %>
-            <td style="background-color: <%= get_checkin_time_color(@attendance) %> !important"><center><%= @attendance.check_in_time %></td>
+            <td style="background-color: <%= get_checkin_time_color(@attendance) %> !important"><center><%= @attendance&.check_in_time %></td>
         <% end %>
     </tr>
     

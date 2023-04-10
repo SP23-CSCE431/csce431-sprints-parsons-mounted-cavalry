@@ -14,7 +14,7 @@ class CheckInComponent < ViewComponent::Base
     def get_checkin_time_color(attendance)
         colors = { 'CheckedIn' => '#A7F1A8', 'NotCheckedIn' => '#F47174' }
 
-        if attendance.check_in_time.nil?
+        if attendance&.check_in_time.nil?
             colors['NotCheckedIn']
         else 
             colors['CheckedIn']

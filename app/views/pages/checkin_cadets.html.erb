@@ -13,16 +13,21 @@
       <% if @attendance.nil? %>
         <%= render(NothingScheduledComponent.new()) %>
       <% else %>
+        <div id="attendance-id" style="display:none"><%= @attendance.id %></div>
         <%= render(CheckInComponent.new(@attendance)) %>
+        <% if @attendance.check_in_time.nil? %>
+          <button type='button' class='btn btn-secondary create' onclick="onCheckIn()">Check In</button>
+        <% end %> 
+        
       <% end %>
     </div>
     <br>
     <br>
 
     <%# Check in button %>
-    <% if @attendance.check_in_time.nil? %>
-        <button type='button' class='btn btn-secondary create' onclick="onCheckIn()">Check In</button>
-    <% end %>
+    <%# <% if @attendance.nil? && @attendance.check_in_time.nil? %>
+        
+    <%# <% end %> 
 
     <br>
     <br>
@@ -49,12 +54,14 @@
 
                 const checkinResults = document.getElementById("checkin_results");
                 const checkinContainer = document.getElementById("checkin-container");
+
+                var attendanceId = document.getElementById("attendance-id").innerText;
                 
                 // If userLocation is within 1 km of PMC, then user can check in
                 if (isWithinRange(userLocation, pmc, 1)) {
                     $.ajax({
                       url: "/pages/checkedin",
-                      data: {id: '<%= @attendance.id %>'},
+                      data: {id: attendanceId},
                       type: 'patch'
                     }).done(function() {
                       new Noty({
