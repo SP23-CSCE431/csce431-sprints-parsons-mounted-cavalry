@@ -22,7 +22,7 @@ RSpec.describe('Creating an attendance', type: :feature) do
         date = Date.today.beginning_of_week
 
         expect(page).to(have_content('John Doe'))
-        expect(page).to(have_content(date.strftime('%A, %B%e, %Y')))
+        expect(page).to(have_content(date.strftime('%A, %B %-d, %Y')))
         find_by_id('attendance_horse_id').find(:xpath, 'option[2]').select_option
         select 'Training', from: 'attendance[purpose]'
         click_on 'Create Attendance'
