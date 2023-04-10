@@ -6,7 +6,8 @@
   <div class="justify-content-center align-items-center mx-auto text-center">
 
     <div class="schedules delete">
-        <h2>Delete Schedule</h2>
+        <br>
+        <h1>Delete Schedule</h1>
 
         <%= form_for(@schedule, method: 'delete') do |f| %>
         <% # url: schedule_path(@schedule), method: 'delete' %>
@@ -16,7 +17,7 @@
         <table class="listing" summary="Schedule list" style="width: 30%;" border = "1">
             <tr>
                 <th>User:</th>
-                <td><%= @schedule.user_id %></td>
+                <td><%= user_by_schedule_id(@schedule) %></td>
             </tr>
 
             <tr>
@@ -27,13 +28,33 @@
         
         <br>    
         <div class="form-buttons">
-            <%= f.submit("Delete Schedule") %> 
+            <%= f.submit("Delete", class: "btn btn-primary create") %> 
         </div>
 
         <% end %>
 
         <br>
-        <%= link_to("<button>Back to Schedules</button>".html_safe, admins_schedules_path, class: 'back-link') %>
+        <%= link_to("<button type='button' class='btn btn-secondary create'>Back to Schedules</button>".html_safe, admins_schedules_path, class: 'back-link') %>
     </div>
   </div>
 </body>
+
+<style>
+    tr.header {
+        background-color: #A7A7A7;
+    }
+
+    table.listing tr:not(.header) {
+        background-color: #D1D1D1;
+    }
+
+    table.listing {
+        width: 75%;
+        margin: 0 auto;
+        border-collapse: collapse;
+    }
+
+    td, th {
+        border: 1px solid white;
+    }
+</style>
