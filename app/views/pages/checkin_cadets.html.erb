@@ -10,28 +10,13 @@
     <h1>Check-in</h1>
     <br><br>
     <div id="checkin-container">
-      <%= render(NothingScheduledComponent.new()) %>
+      <% if @attendance.nil? %>
+        <%= render(NothingScheduledComponent.new()) %>
+      <% else %>
+        <%= render(CheckInComponent.new(@attendance)) %>
+      <% end %>
     </div>
     <br>
-    <button id="toggle-checkin-button">Switch to Check-in</button>
   </div>
 
-  <script>
-    const toggleCheckinButton = document.getElementById("toggle-checkin-button");
-    const checkinContainer = document.getElementById("checkin-container");
-
-    let isNothingScheduled = true;
-
-    toggleCheckinButton.addEventListener("click", () => {
-      if (isNothingScheduled) {
-        checkinContainer.innerHTML = '<%= j render(CheckInComponent.new()) %>';
-        toggleCheckinButton.innerText = "Switch to Nothing Scheduled";
-      } else {
-        checkinContainer.innerHTML = '<%= j render(NothingScheduledComponent.new()) %>';
-        toggleCheckinButton.innerText = "Switch to Check-in";
-      }
-
-      isNothingScheduled = !isNothingScheduled;
-    });
-  </script>
 </body>

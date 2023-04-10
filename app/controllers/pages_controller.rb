@@ -11,6 +11,8 @@ class PagesController < ApplicationController
 
   # path for cadets to check in
   def checkin_cadets
+    user1 = User.where(:email => current_admin.email).first
+    @attendance = Attendance.where(:date => @curr_day).first
     authorize pundit_user
   end
 
