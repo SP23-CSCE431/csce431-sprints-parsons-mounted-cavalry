@@ -8,7 +8,7 @@
     </tr>
 
     <tr>
-        <td><center><%= @attendance&.date %></center></td>
+        <td><center><%= @attendance&.date.strftime("%b %-d, %Y") %></center></td>
         <% horse = get_horse(@attendance&.horse_id) %>    
         <td><center><%= horse == nil ? 'None' : horse.name + ' - ' + horse.brand %></center></td>
         <td><center><%= @attendance&.purpose %></center></td>
@@ -16,7 +16,7 @@
         <% if @attendance&.check_in_time.nil? %>
             <td style="background-color: <%= get_checkin_time_color(@attendance) %> !important"></td>
         <% else %>
-            <td style="background-color: <%= get_checkin_time_color(@attendance) %> !important"><center><%= @attendance&.check_in_time %></td>
+            <td style="background-color: <%= get_checkin_time_color(@attendance) %> !important"><center><%= @attendance&.check_in_time.strftime("%I:%M %p") %></td>
         <% end %>
     </tr>
     

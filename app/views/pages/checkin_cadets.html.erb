@@ -64,17 +64,8 @@
                       data: {id: attendanceId},
                       type: 'patch'
                     }).done(function() {
-                      new Noty({
-                        text: "You have been checked in!",
-                        type: "success"
-                      }).show();
-                      document.querySelector('#checkin-container').innerHTML = '<%= j render(CheckInComponent.new(@attendance)) %>';
-                    }).fail(function() {
-                      new Noty({
-                        text: "Couldn't check you in.",
-                        type: "error"
-                      }).show();
-                    });
+                      location.reload();
+                    })
                     
                 } else {
                     checkinResults.innerHTML = '<h2> YOU ARE NOT AT PARSONS MOUNTED CAVALRY! PLEASE CHECK IN WHEN YOU HAVE ARRIVED. </h2>';
