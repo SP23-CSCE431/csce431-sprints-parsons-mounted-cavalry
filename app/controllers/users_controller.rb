@@ -19,22 +19,24 @@ class UsersController < ApplicationController
 
     # filters out users whose role is cadet
     def cadets
-      @cadets = User.where(is_staff: false, is_admin: false)
+      @cadets = User.where(is_staff: false, is_admin: false).where.not(classification: 'OOS')
     end
 
     # filters out users whose role is command staff and cadet
     def staffs
-      @staffs = User.where(is_staff: true, is_admin: false)
-      @cadets = User.where(is_staff: false, is_admin: false)
+      @staffs = User.where(is_staff: true, is_admin: false).where.not(classification: 'OOS')
+      @cadets = User.where(is_staff: false, is_admin: false).where.not(classification: 'OOS')
+      @oos = User.where(classification: 'OOS')
       authorize pundit_user
     end
 
     # filters out users whose role is admin, command staff, and cadet
     def admins
-      @admins = User.where(is_admin: true)
-      @staffs = User.where(is_staff: true, is_admin: false)
+      @admins = User.where(is_admin: true).where.not(classification: 'OOS')
+      @staffs = User.where(is_staff: true, is_admin: false).where.not(classification: 'OOS')
       @staffs += @admins
-      @cadets = User.where(is_staff: false, is_admin: false)
+      @cadets = User.where(is_staff: false, is_admin: false).where.not(classification: 'OOS')
+      @oos = User.where(classification: 'OOS')
       authorize pundit_user
     end
 
@@ -54,10 +56,11 @@ class UsersController < ApplicationController
     # POST /users or /users.json
     def create
       @user = User.new(user_params)
+
       authorize @user
       respond_to do |format|
         if @user.save
-          format.html { redirect_to(admins_users_url, notice: "#{@user.first_name} #{@user.last_name} was successfully created.") }
+          format.html { redirect_to(admins_users_url, notice: "#{@user.first_name} #{@user.last_name} was successfully created.#{is_admin}") }
           format.json { render(:show, status: :created, location: @user) }
         else
           format.html { render(:new, status: :unprocessable_entity) }

@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 class HorsesTableComponent < ViewComponent::Base
-  def initialize(horses)
+  def initialize(horses, oos)
     super @horses = horses
+    super @oos = oos
   end
 
   # maps the given horse's difficulty level to a color, returns the color

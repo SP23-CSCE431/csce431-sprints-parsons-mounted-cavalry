@@ -7,8 +7,8 @@ class UsageCounterComponent < ViewComponent::Base
         @start_day = dates.first
         @end_day = dates.last()
 
-        @horses_sorted = horse_num_days(Horse.all)
-        @cadets_sorted = cadet_num_days(User.all)
+        @horses_sorted = horse_num_days(Horse.where.not(herd: 'OOS'))
+        @cadets_sorted = cadet_num_days(User.where.not(classification: 'OOS'))
     end
 
     # takes in a list of horses, returns sorted array of hashes relating horse and attendance count

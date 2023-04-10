@@ -11,12 +11,14 @@ class HorsesController < ApplicationController
     end
   
     def staffs
-        @horses = Horse.all
+        @horses = Horse.where.not(herd: 'OOS')
+        @oos = Horse.where(herd: 'OOS')
         authorize @horses
     end
   
     def admins
-        @horses = Horse.all
+        @horses = Horse.where.not(herd: 'OOS')
+        @oos = Horse.where(herd: 'OOS')
         authorize @horses
     end
 

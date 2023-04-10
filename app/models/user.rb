@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
     validates :email, presence: true, allow_blank: false, uniqueness: true
 
-    validates :classification, inclusion: { in: %w[Sophomore Junior Senior] }, presence: true
+    validates :classification, inclusion: { in: %w[Sophomore Junior Senior OOS] }, presence: true
 
     validates :skill_level, inclusion: { in: %w[Beginner Intermediate Advanced] }, presence: true
 

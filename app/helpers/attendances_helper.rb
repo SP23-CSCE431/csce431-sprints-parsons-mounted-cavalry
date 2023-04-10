@@ -15,8 +15,8 @@ module AttendancesHelper
 
     # maps horse ids to their name + brand to allow for easier form selection
     def horses_info
-        horses = Horse.all
-        h = {}
+        horses = Horse.where.not(herd: 'OOS')
+        h = {}  
         h.store('None', nil)
         horses.each do |horse|
             horse_info = "#{horse.name} - #{horse.brand} (#{horse.difficulty})"

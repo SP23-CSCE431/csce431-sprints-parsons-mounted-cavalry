@@ -21,17 +21,17 @@ class PagesController < ApplicationController
 
   # path for reports for admins
   def reports_admins
-    @horses = Horse.all
-    @cadets = User.where(is_staff: false, is_admin: false)
-    @staffs = User.where(is_staff: true, is_admin: false)
+    @horses = Horse.where.not(herd: 'OOS')
+    @cadets = User.where(is_staff: false, is_admin: false).where.not(classification: 'OOS')
+    @staffs = User.where(is_staff: true, is_admin: false).where.not(classification: 'OOS')
     authorize pundit_user
   end
 
   # path for reports for staff
   def reports_staffs
-    @horses = Horse.all
-    @cadets = User.where(is_staff: false, is_admin: false)
-    @staffs = User.where(is_staff: true, is_admin: false)
+    @horses = Horse.where.not(herd: 'OOS')
+    @cadets = User.where(is_staff: false, is_admin: false).where.not(classification: 'OOS')
+    @staffs = User.where(is_staff: true, is_admin: false).where.not(classification: 'OOS')
     authorize pundit_user
   end
 end

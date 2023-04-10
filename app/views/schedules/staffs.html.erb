@@ -28,7 +28,7 @@
         </div>
       </div>
 
-    <% users = User.all %>
+    <% users = User.where.not(classification: 'OOS') %>
 
     <% upperclass = users.select {|user| user.classification != 'Sophomore'} %>
     <% sophomores = users.select {|user| user.classification == 'Sophomore'} %>
