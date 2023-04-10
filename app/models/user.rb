@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_many :schedules, dependent: :destroy
+    has_one :schedule, dependent: :destroy
 
     validates :first_name, :last_name, :email, presence: true, allow_blank: false
 

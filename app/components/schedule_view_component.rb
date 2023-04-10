@@ -2,10 +2,16 @@
 
 class ScheduleViewComponent < ViewComponent::Base
   # constructor - all starts with the given set of users
-  def initialize(users)
+  def initialize(users, dates)
     super
+    @dates = dates
     @users = users
-    @dates = %w[2023-03-13 2023-03-14 2023-03-15 2023-03-16 2023-03-17]
+  end
+
+  # takes in a user and checks if they have a schedule
+  # returns true is yes, false if no
+  def user_has_schedule(user)
+    Schedule.where(user_id: user.id).exists?
   end
 
   # takes in a user and a date, queries for an attendance that matches both
@@ -41,7 +47,7 @@ class ScheduleViewComponent < ViewComponent::Base
 
   # maps the given user's skill level to a color, returns the color
   def get_user_skill_level_color(user)
-    colors = { 'Beginner' => '#a7f1a8', 'Intermediate' => '#ffa756', 'Advanced' => '#f47174' }
+    colors = { 'Beginner' => '#a7f1a8', 'Intermediate' => '#fff36d', 'Advanced' => '#f47174' }
     colors[user.skill_level]
   end
 
@@ -52,7 +58,7 @@ class ScheduleViewComponent < ViewComponent::Base
 
   # maps the given horse's difficulty level to a color, returns the color
   def get_horse_difficulty_color(horse)
-    colors = { 'Easy' => '#a7f1a8', 'Intermediate' => '#ffa756', 'Advanced' => '#f47174' }
+    colors = { 'Easy' => '#a7f1a8', 'Intermediate' => '#fff36d', 'Advanced' => '#f47174' }
 
     if horse.nil?
       'none'

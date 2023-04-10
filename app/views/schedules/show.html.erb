@@ -9,8 +9,8 @@
     <%= render @schedule %>
 
     <div>
-      <%= link_to "<button>Edit</button>".html_safe, edit_schedule_path(@schedule) %>
-      <%= link_to "<button>Delete</button>".html_safe, delete_schedule_path(@schedule) %>
+      <%= link_to "<button>Edit</button>".html_safe, edit_schedule_path(@schedule), class: 'edit-schedule-btn' %>
+      <%= link_to "<button>Delete</button>".html_safe, delete_schedule_path(@schedule), class: 'delete-schedule-btn' %>
     </div>
 
     <br>

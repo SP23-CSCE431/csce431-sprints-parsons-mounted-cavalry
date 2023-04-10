@@ -1,0 +1,107 @@
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: #dfad14 !important">Usage Counter</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body usage">
+    <div class="btn-group">
+      <button type="button" id="horse-usage-btn" class="btn btn-dark">Horses</button>
+      <button type="button" id="cadet-usage-btn" class="btn btn-secondary">Cadets</button>
+    </div>
+
+    <div id="horse-usage">
+      <table class="table listing" summary="Horse Usage">
+        <tr class="header">
+          <th><center>Horse</center></th>
+          <th><center># Days</center></th>
+        </tr>
+
+        <%# for each horse, display their name - brand and the number of attendances they have been scheduled for %>
+        <% @horses_sorted.each do |horse| %>
+          <tr class="horse-usage-<%= horse[:horse].id %>">
+            <td style="background-color: <%= get_horse_difficulty_color(horse[:horse]) %> !important">
+              <center><%= horse[:horse].name %> - <%= horse[:horse].brand %></center>
+            </td>
+            <td><center><%= horse[:num_attendances] %></center></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+    <div id="cadet-usage">
+      <table class="table listing" summary="Cadet Usage">
+        <tr class="header">
+          <th><center>Cadet</center></th>
+          <th><center># Days</center></th>
+        </tr>
+
+        <%# for each cadet, display their name and the number of attendances they have been scheduled for %>
+        <% @cadets_sorted.each do |cadet| %>
+          <tr class="cadet-usage-<%= cadet[:cadet].id %>">
+            <td style="background-color: <%= get_user_skill_level_color(cadet[:cadet]) %> !important">
+              <center><%= cadet[:cadet].first_name %> <%= cadet[:cadet].last_name %></center>
+            </td>
+            <td><center><%= cadet[:num_attendances] %></center></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+  const horseDisplay = document.querySelector('#horse-usage');
+  const cadetDisplay = document.querySelector('#cadet-usage');
+  
+  const horseBtn = document.querySelector('#horse-usage-btn');
+  const cadetBtn = document.querySelector('#cadet-usage-btn');
+
+  // functionality to switch between horse and cadet usage counters
+  horseBtn.addEventListener('click', () => {
+    horseBtn.classList.add('btn-dark');
+    horseBtn.classList.remove('btn-secondary');
+    cadetBtn.classList.add('btn-secondary');
+    cadetBtn.classList.remove('btn-dark');
+
+    horseDisplay.style.display = 'block';
+    cadetDisplay.style.display = 'none';
+  });
+
+  cadetBtn.addEventListener('click', () => {
+    horseBtn.classList.remove('btn-dark');
+    horseBtn.classList.add('btn-secondary');
+    cadetBtn.classList.remove('btn-secondary');
+    cadetBtn.classList.add('btn-dark');
+
+    horseDisplay.style.display = 'none';
+    cadetDisplay.style.display = 'block';
+  });
+</script>
+
+<style defer>
+  .offcanvas-header {
+    background-color: #500000;
+  }
+
+  .offcanvas-body.usage {
+    background-color: #eaeaea;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  tr.header {
+    background-color: #A7A7A7;
+  }
+
+  table.listing tr:not(.header) {
+    background-color: #D1D1D1;
+  }
+
+  td, th {
+    border: 1px solid white;
+  }
+
+  #cadet-usage {
+    display: none;
+  }
+</style>

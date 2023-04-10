@@ -1,16 +1,43 @@
 <p style="color: green"><%= notice %></p>
 
-<%= link_to "Back to Users", users_path %>
-
 <h1>Schedules</h1>
 
-<%= link_to "<button>New Schedule</button>".html_safe, new_schedule_path %>
+<%= link_to "<button>Back to Schedules</button>".html_safe, admins_schedules_path %>
 
-<div id="schedules">
+<table class="listing" summary="Schedule list" style="width: 75%; margin: 20px auto;">
+  <tr class="header">
+    <th><center>User</center></th>
+    <th><center>Recurrence</center></th>
+    <th><center>Edit</center></th>
+    <th><center>Delete</center></th>
+  </tr>
+
   <% @schedules.each do |schedule| %>
-    <%= render schedule %>
-    <p>
-      <%= link_to "Show this schedule", schedule %>
-    </p>
+    <tr>
+      <td><center><%= user_full_name(schedule.user_id) %></center></td>
+      <td><center><%= recurrence_str(schedule.recurrence) %></center></td>
+      <td id="edit-<%= schedule.id %>"><center><%= link_to("<i class='fa-solid fa-pen-to-square'></i>".html_safe, edit_schedule_path(schedule), class: 'action update', style: 'color: black;') %></center></td>
+      <td id="delete-<%= schedule.id %>"><center><%= link_to("<i class='fa-solid fa-trash-can'></i>".html_safe, delete_schedule_path(schedule), class: 'action delete', style: 'color: black;') %></center></td>
+    </tr>
   <% end %>
-</div>
+</table>
+
+<style>
+  tr.header {
+    background-color: #A7A7A7;
+  }
+
+  table.listing tr:not(.header) {
+    background-color: #D1D1D1;
+  }
+
+  table.listing {
+    width: 75%;
+    margin: 0 auto;
+    border-collapse: collapse;
+  }
+
+  td, th {
+    border: 1px solid white;
+  }
+</style>
