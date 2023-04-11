@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
     include Devise::Controllers::Helpers
     include Pundit::Authorization
     before_action :authenticate_admin!
+    before_action :set_schedule_date_cookie
 
     rescue_from Pundit::NotAuthorizedError, with: :pundishing_user
 

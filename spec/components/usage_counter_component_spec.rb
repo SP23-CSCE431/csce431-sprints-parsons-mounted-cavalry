@@ -28,7 +28,7 @@ RSpec.describe 'Usage Counter Component', type: :feature do
   end
 
   scenario 'usage counter shows user usage' do
-    user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+    user = User.create(is_admin: false, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
     schedule = Schedule.create(user_id: user.id, recurrence: ['M', 'W', 'F'])
     horse = Horse.create(name: 'Horsey', brand: 'H1199', herd: 'Alpha', difficulty: 'Easy', condition: 'Healthy')
     monday = Date.today.beginning_of_week
