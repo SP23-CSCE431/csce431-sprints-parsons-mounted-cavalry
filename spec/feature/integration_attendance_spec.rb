@@ -12,7 +12,7 @@ RSpec.describe('Creating an attendance', type: :feature) do
     end
 
     scenario 'valid inputs' do
-        user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+        user = User.create(is_admin: false, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
         Schedule.create(user_id: user.id, recurrence: ['M', 'W', 'F'])
         Horse.create(name: 'Ed', brand: 'B12', herd: 'Charlie', difficulty: 'Intermediate', condition: 'Healthy')
         
@@ -41,7 +41,7 @@ RSpec.describe('Viewing an attendance', type: :feature) do
     end
 
     scenario 'valid inputs' do
-        user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+        user = User.create(is_admin: false, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
         schedule = Schedule.create(user_id: user.id, recurrence: ['M', 'W', 'F'])
         monday = Date.today.beginning_of_week
         Attendance.create(schedule_id: schedule.id, date: monday.strftime, check_in_time: nil, purpose: 'Training')
@@ -52,7 +52,7 @@ RSpec.describe('Viewing an attendance', type: :feature) do
 
         expect(page).to(have_content('John Doe'))
         expect(page).to(have_content('None'))
-        expect(page).to(have_content(monday.strftime))
+        expect(page).to(have_content(monday.strftime('%a, %b %-d, %Y')))
         expect(page).to(have_content('Not checked in'))
         expect(page).to(have_content('Training'))
     end

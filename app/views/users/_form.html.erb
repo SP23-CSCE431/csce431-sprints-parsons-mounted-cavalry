@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+    
   <div style="display: inline-flex;">
     <div style="margin-right: 10px;">
       <%= form.label :first_name, style: "display: block" %>
@@ -26,12 +26,17 @@
 
   <div style="display: inline-flex;">
     <div style="margin-right: 10px;">
-      <%= form.label :role, style: "display: block" %>
-      <%= form.select :role, options_for_select([['Cadet', 'Cadet'], ['Command Staff', 'Command Staff'], ['Admin', 'Admin']], selected: @user.is_admin ? 'Admin' : @user.is_staff ? 'Command Staff' : 'Cadet') %>
+      <% if User.where(:email => current_admin.email).first.is_admin? %>
+        <%= form.label :role, style: "display: block" %>
+        <%= form.select :role, options_for_select([['Cadet', 'Cadet'], ['Command Staff', 'Command Staff'], ['Admin', 'Admin']], selected: @user.is_admin ? 'Admin' : @user.is_staff ? 'Command Staff' : 'Cadet') %>
+      <% else %>
+        <%= form.label :role, style: "display: block" %>
+        <%= form.select :role, options_for_select([['Cadet', 'Cadet'], ['Command Staff', 'Command Staff']], selected: @user.is_admin ? 'Admin' : @user.is_staff ? 'Command Staff' : 'Cadet') %>
+      <% end %>
     </div>
     <div>
       <%= form.label :classification, style: "display: block" %>
-      <%= form.select :classification, ['Sophomore', 'Junior', 'Senior']%>
+      <%= form.select :classification, ['Sophomore', 'Junior', 'Senior', 'OOS']%>
     </div>
   </div>
 

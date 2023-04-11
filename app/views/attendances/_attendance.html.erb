@@ -3,7 +3,7 @@
     <% schedule = Schedule.find(attendance.schedule_id) %>
     <tr>
         <th>Date:</th>
-        <td><%= attendance.date %></td>
+        <td><%= attendance.date.strftime('%a, %b %-d, %Y') %></td>
     </tr>
     <tr>
         <% user = User.find(schedule.user_id) %>
@@ -30,3 +30,23 @@
     </tr>
   </table>
 </div>
+
+<style>
+  tr.header {
+    background-color: #A7A7A7;
+  }
+
+  table.listing tr:not(.header) {
+    background-color: #D1D1D1;
+  }
+
+  table.listing {
+    width: 75%;
+    margin: 0 auto;
+    border-collapse: collapse;
+  }
+
+  td, th {
+    border: 1px solid white;
+  }
+</style>

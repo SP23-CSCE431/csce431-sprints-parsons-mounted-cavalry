@@ -22,6 +22,31 @@
     <% end %>
 </table>
 
+<br>
+<h3>Out of Service</h3>
+<table class="listing" summary="Horse list" style="width: 75%; margin: 0 auto;" border = "1">
+    <tr class="header">
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Herd</th>
+        <th>Difficulty</th>
+        <th>Condition</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+    <% @oos.each do |oos| %>
+    <tr>
+        <td><center><%= oos.name %></center></td>
+        <td><center><%= oos.brand %></center></td>
+        <td style="background-color: <%= get_horse_herd_color(oos) %> !important"><center><%= oos.herd %></center></td>
+        <td style="background-color: <%= get_horse_difficulty_color(oos) %> !important"><center><%= oos.difficulty %></center></td>
+        <td><center><%= oos.condition %></center></td>
+        <td><center><%= link_to("<i class='fa-solid fa-pen-to-square'></i>".html_safe, edit_horse_path(oos), class: 'action update', style: 'color: black;') %></center></td>
+        <td><center><%= link_to("<i class='fa-solid fa-trash-can'></i>".html_safe, delete_horse_path(oos), class: 'action delete', style: 'color: black;') %></center></td>
+    </tr>
+    <% end %>
+</table>
 
 <style>
     tr.header {

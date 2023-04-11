@@ -1,4 +1,15 @@
 module SchedulesHelper
+  # get the current user's role and return proper path for that role
+  def schedules_get_user_path(user)
+    if user.is_admin
+      return admins_schedules_url
+    elsif user.is_staff
+      return staffs_schedules_url
+    else
+      return cadets_schedules_url
+    end
+  end
+
   # for every existing user, map the their full name to their id
   # return the pair for form dropdown purposes
   def users_full_name

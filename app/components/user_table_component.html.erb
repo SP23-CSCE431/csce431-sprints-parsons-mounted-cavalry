@@ -54,6 +54,38 @@
     <% end %>
 </table>
 
+<br>
+<% unless @oos.empty? %>
+    <h3>Out of Service</h3>
+    <table class="listing" summary="staff list">
+        <tr class="header">
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Classification</th>
+            <th>Skill level</th>
+            <th>Phone #</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+
+        <% @oos.each do |oos| %>
+        <tr>
+            <td><center><%= oos.first_name %></center></td>
+            <td><center><%= oos.last_name %></center></td>
+            <td><center><%= oos.classification %></center></td>
+            <td style="background-color: <%= get_user_skill_color(oos) %> !important"><center><%= oos.skill_level %></center></td>
+            <td><center><%= oos.phone_number %></center></td>
+            <td><center><%= oos.email %></center></td>
+            <td><center><%= get_user_role(oos) %></center></td>
+            <td><center><%= link_to("<i class='fa-solid fa-pen-to-square'></i>".html_safe, edit_user_path(oos), class: 'action update', style: 'color: black;') %></center></td>
+            <td><center><%= link_to("<i class='fa-solid fa-trash-can'></i>".html_safe, delete_user_path(oos), class: 'action delete', style: 'color: black;') %></center></td>
+        </tr>
+        <% end %>
+    </table>
+<% end %>
+
 <style>
     tr.header {
         background-color: #A7A7A7;

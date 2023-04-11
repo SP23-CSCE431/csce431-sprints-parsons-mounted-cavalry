@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
     include Devise::Controllers::Helpers
     before_action :set_user, only: %i[show edit update destroy]
+    before_action :get_user, only: %i[ create update destroy ]
+
+    def get_user
+      @curr_user = User.where(:email => current_admin.email).first
+    end
 
     # GET /users or /users.json
     def index
@@ -19,22 +24,24 @@ class UsersController < ApplicationController
 
     # filters out users whose role is cadet
     def cadets
-      @cadets = User.where(is_staff: false, is_admin: false)
+      @cadets = User.where(is_staff: false, is_admin: false).where.not(classification: 'OOS')
     end
 
     # filters out users whose role is command staff and cadet
     def staffs
-      @staffs = User.where(is_staff: true, is_admin: false)
-      @cadets = User.where(is_staff: false, is_admin: false)
+      @staffs = User.where(is_staff: true, is_admin: false).where.not(classification: 'OOS')
+      @cadets = User.where(is_staff: false, is_admin: false).where.not(classification: 'OOS')
+      @oos = User.where(classification: 'OOS')
       authorize pundit_user
     end
 
     # filters out users whose role is admin, command staff, and cadet
     def admins
-      @admins = User.where(is_admin: true)
-      @staffs = User.where(is_staff: true, is_admin: false)
+      @admins = User.where(is_admin: true).where.not(classification: 'OOS')
+      @staffs = User.where(is_staff: true, is_admin: false).where.not(classification: 'OOS')
       @staffs += @admins
-      @cadets = User.where(is_staff: false, is_admin: false)
+      @cadets = User.where(is_staff: false, is_admin: false).where.not(classification: 'OOS')
+      @oos = User.where(classification: 'OOS')
       authorize pundit_user
     end
 
@@ -55,6 +62,7 @@ class UsersController < ApplicationController
     # POST /users or /users.json
     def create
       @user = User.new(user_params)
+
       authorize @user
       case params[:user][:role]
       when "Cadet"
@@ -70,7 +78,7 @@ class UsersController < ApplicationController
       respond_to do |format|
         if @user.save
           flash[:success] = "#{@user.first_name} #{@user.last_name} was successfully created."
-          format.html { redirect_to(admins_users_url) }
+          format.html { redirect_to(helpers.users_get_user_path(@curr_user)) }
           format.json { render(:show, status: :created, location: @user) }
         else
           format.html { render(:new, status: :unprocessable_entity) }
@@ -96,7 +104,7 @@ class UsersController < ApplicationController
       respond_to do |format|
         if @user.update(user_params)
           flash[:success] = "#{@user.first_name} #{@user.last_name} was successfully updated."
-          format.html { redirect_to(admins_users_url) }
+          format.html { redirect_to(helpers.users_get_user_path(@curr_user)) }
           format.json { render(:show, status: :ok, location: @user) }
         else
           format.html { render(:edit, status: :unprocessable_entity) }
@@ -119,7 +127,7 @@ class UsersController < ApplicationController
       @user.destroy!
 
       respond_to do |format|
-        format.html { redirect_to(admins_users_url, alert: "#{@user.first_name} #{@user.last_name} was successfully deleted.") }
+        format.html { redirect_to(helpers.users_get_user_path(@curr_user), alert: "#{@user.first_name} #{@user.last_name} was successfully deleted.") }
         format.json { head(:no_content) }
       end
     end

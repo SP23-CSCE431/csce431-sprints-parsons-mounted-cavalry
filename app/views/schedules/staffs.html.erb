@@ -1,13 +1,46 @@
-<body class="align-items-center justify-content-center" style="overflow-x: hidden; overflow-y: hidden;">
+<body class="align-items-center justify-content-center">
   <%# Navbar %>
-  <%= render(NavbarComponent.new())%>
+  <%= render(NavbarComponent.new)%>
 
   <%# Sidebar %>
-  <%= render(SidebarStaffsComponent.new())%>
+  <%= render(SidebarStaffsComponent.new)%>
+
+  <%# Usage Counter %>
+  <%= render(UsageCounterComponent.new(@dates)) %>
 
   <%# Content %>
   <div class="justify-content-center align-items-center mx-auto text-center">
-    <h1>Schedules</h1>
-    <br><br>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 10px 40px; justify-items: center; align-items: center;">
+        <%= render(LegendComponent.new) %>
+        <div class="center" style="display: flex; flex-direction: column;">
+          <h1>Schedule</h1>
+          <div style='display: inline-flex; align-items: center; gap: 20px;'>
+            <%= link_to raw('<i class="fas fa-arrow-left" style="color: black; font-size: 30px;"></i>'), staffs_schedules_path(week: (@curr_day - 7).strftime), class: 'last-week' %>
+            <h2>Week: <%= @range %></h2>
+            <%= link_to raw('<i class="fas fa-arrow-right" style="color: black; font-size: 30px;"></i>'), staffs_schedules_path(week: (@curr_day + 7).strftime), class: 'next-week' %>
+          </div>
+          <%= link_to "<button type='button' class='btn btn-secondary create' style='margin-top: 10px;'>All Schedules</button>".html_safe, schedules_path, class: 'all-schedules' %>
+        </div>
+        <div class="usage-counter">
+          <button id="usage-counter-btn" class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+            <%= image_tag('usage_counter.png', style: 'width: 60px;') %>
+          </button>
+        </div>
+      </div>
+
+    <% users = User.where.not(is_admin: true).where.not(classification: 'OOS') %>
+
+    <% upperclass = users.select {|user| user.classification != 'Sophomore'} %>
+    <% sophomores = users.select {|user| user.classification == 'Sophomore'} %>
+
+    <div style="margin: 0 40px">
+      <h3 style="text-align: start">Upperclassmen</h2>
+      <%= render(ScheduleViewComponent.new(upperclass, @dates)) %>
+    </div>
+
+    <div style="margin: 40px">
+      <h3 style="text-align: start">Sophomores</h2>
+      <%= render(ScheduleViewComponent.new(sophomores, @dates)) %>
+    </div>
   </div>
 </body>
