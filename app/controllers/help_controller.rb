@@ -1,4 +1,4 @@
 class HelpController < ApplicationController
-    def index
-    end
+    # define index for help page
+    def index; end
 end

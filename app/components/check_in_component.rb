@@ -5,7 +5,7 @@ class CheckInComponent < ViewComponent::Base
         super @attendance = attendance
     end
 
-      # given a horse id, returns the horse
+    # given a horse id, returns the horse
     def get_horse(horse_id)
         Horse.where(id: horse_id).first
     end
@@ -16,7 +16,7 @@ class CheckInComponent < ViewComponent::Base
 
         if attendance&.check_in_time.nil?
             colors['NotCheckedIn']
-        else 
+        else
             colors['CheckedIn']
         end
     end
