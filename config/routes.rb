@@ -60,4 +60,6 @@ Rails.application.routes.draw do
       patch :checkedin_staffs
     end
   end
+
+  get 'help', to: 'help#index'
 end
