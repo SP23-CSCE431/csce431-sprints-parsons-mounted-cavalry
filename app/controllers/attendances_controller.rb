@@ -49,7 +49,8 @@ class AttendancesController < ApplicationController
     authorize @attendance
     respond_to do |format|
       if @attendance.save
-        format.html { redirect_to(helpers.attendances_get_user_path(@user), notice: "Attendance was successfully created.") }
+        flash[:success] = "Attendance was successfully created."
+        format.html { redirect_to(helpers.attendances_get_user_path(@user)) }
         format.json { render(:show, status: :created, location: @attendance) }
       else
         format.html { render(:new, status: :unprocessable_entity) }
@@ -63,7 +64,8 @@ class AttendancesController < ApplicationController
     authorize @attendance
     respond_to do |format|
       if @attendance.update(attendance_params)
-        format.html { redirect_to(helpers.attendances_get_user_path(@user), notice: "Attendance was successfully updated.") }
+        flash[:success] = "Attendance was successfully updated."
+        format.html { redirect_to(helpers.attendances_get_user_path(@user)) }
         format.json { render(:show, status: :ok, location: @attendance) }
       else
         format.html { render(:edit, status: :unprocessable_entity) }
@@ -83,7 +85,7 @@ class AttendancesController < ApplicationController
     authorize @attendance
     @attendance.destroy
     respond_to do |format|
-      format.html { redirect_to(helpers.attendances_get_user_path(@user), notice: "Attendance was successfully destroyed.") }
+      format.html { redirect_to(helpers.attendances_get_user_path(@user), alert: "Attendance was successfully deleted.") }
       format.json { head(:no_content) }
     end
   end

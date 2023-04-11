@@ -10,13 +10,20 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/cd4c62514f.js" crossorigin="anonymous"></script>
+    <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js' %>
+    <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.0/noty.js' %>
+    <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.0/noty.min.css' %>    
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+
+
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <style>
-        .flash__alert   { color: red; }
+        /* .flash__alert   { color: red; }
         .flash__notice  { color: blue; }
-        .flash__success { color: green; }
+        .flash__success { color: green; } */
         body {
             background-color: #EAEAEA;
         }
@@ -24,15 +31,33 @@
   </head>
 
   <body>
-    <header>
-      <center>
-          <% if flash.any? %>
-          <% flash.each do |key, value| -%>
-              <section class="flash flash__<%= key %>"><%= value.html_safe %></section>
-          <% end -%>
+    <%# <% flash.each do |key, value| -%>
+      <%# <section class="flash flash__<%= key "><%= value.html_safe </section> %>
+    <%# <% end -%>
+    <header style="text-align: center;">
+      <% if flash.any? %>
+        <% flash.each do |key, value| %>
+          <% if key == "alert" %>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-bottom: 0 !important;">
+              <i class="fa-solid fa-triangle-exclamation" style="color: red;"></i> <%= value.html_safe %>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
           <% end %>
-          <%= yield %>
-      </center>
+          <% if key == "notice" %>
+            <div class="alert alert-info alert-dismissible fade show" role="alert" style="margin-bottom: 0 !important;">
+              <i class="fa-sharp fa-solid fa-circle-info" style="color: blue;"></i> <%= value.html_safe %>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          <% end %>
+          <% if key == "success" %>
+            <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-bottom: 0 !important;">
+              <i class="fa-solid fa-badge-check" style="color: green;"></i> <%= value.html_safe %>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+      <%= yield %>
     </header>
   </body>
 </html>

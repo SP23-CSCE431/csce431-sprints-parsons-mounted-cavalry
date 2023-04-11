@@ -2,11 +2,15 @@
   <%= render(NavbarComponent.new())%>
 
   <%# Sidebar %>
-  <%= render(SidebarAdminsComponent.new())%>
+  <% user = User.where(:email => current_admin.email).first %>
+  <% if user.is_admin %>
+    <%= render(SidebarAdminsComponent.new())%>
+  <% elsif user.is_staff %>
+    <%= render(SidebarStaffsComponent.new())%>
+  <% end %>
   <div class="justify-content-center align-items-center mx-auto text-center">
-    <h1>New Attendance</h1>
     <br>
-    <h2>For: <%= user_by_schedule_id(@attendance.schedule_id) %></h2>
+    <h1>New Attendance for: <span><%= user_by_schedule_id(@attendance.schedule_id) %></span></h1>
     <h2>Date: <%= format_date(@attendance.date) %></h2>
 
     <%= render "form", attendance: @attendance %>
@@ -14,7 +18,7 @@
     <br>
 
     <div>
-      <%= link_to "Back to Schedules", attendances_get_user_path(User.where(:email => current_admin.email).first) %>
+      <%= link_to("<button type='button' class='btn btn-secondary create'>Back to Schedules</button>".html_safe, attendances_get_user_path(User.where(:email => current_admin.email).first), :class => 'back-link') %>
     </div>
   </div>
 </body>

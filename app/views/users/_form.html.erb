@@ -10,34 +10,34 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <% if User.where(:email => current_admin.email).first.is_admin? %>
-      <%= form.label :is_admin, style: "display: block" %>
-      <%= form.check_box :is_admin %>
-    <% else %>
-      <%= form.hidden_field :is_admin, value: false %>
-    <% end %>
+    
+  <div style="display: inline-flex;">
+    <div style="margin-right: 10px;">
+      <%= form.label :first_name, style: "display: block" %>
+      <%= form.text_field :first_name %>
+    </div>
+    <div>
+      <%= form.label :last_name, style: "display: block" %>
+      <%= form.text_field :last_name %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :is_staff, style: "display: block" %>
-    <%= form.check_box :is_staff %>
-  </div>
+  <br>
 
-  <div>
-    <%= form.label :first_name, style: "display: block" %>
-    <%= form.text_field :first_name %>
-  </div>
-
-  <div>
-    <%= form.label :last_name, style: "display: block" %>
-    <%= form.text_field :last_name %>
-  </div>
-
-  <div>
-    <%= form.label :classification, style: "display: block" %>
-    <%= form.select :classification, ['Sophomore', 'Junior', 'Senior', 'OOS']%>
+  <div style="display: inline-flex;">
+    <div style="margin-right: 10px;">
+      <% if User.where(:email => current_admin.email).first.is_admin? %>
+        <%= form.label :role, style: "display: block" %>
+        <%= form.select :role, options_for_select([['Cadet', 'Cadet'], ['Command Staff', 'Command Staff'], ['Admin', 'Admin']], selected: @user.is_admin ? 'Admin' : @user.is_staff ? 'Command Staff' : 'Cadet') %>
+      <% else %>
+        <%= form.label :role, style: "display: block" %>
+        <%= form.select :role, options_for_select([['Cadet', 'Cadet'], ['Command Staff', 'Command Staff']], selected: @user.is_admin ? 'Admin' : @user.is_staff ? 'Command Staff' : 'Cadet') %>
+      <% end %>
+    </div>
+    <div>
+      <%= form.label :classification, style: "display: block" %>
+      <%= form.select :classification, ['Sophomore', 'Junior', 'Senior', 'OOS']%>
+    </div>
   </div>
 
   <div>
@@ -56,6 +56,7 @@
   </div>
 
   <div>
-    <%= form.submit %>
+    <br>
+    <%= form.submit class: "btn btn-primary create" %>
   </div>
 <% end %>

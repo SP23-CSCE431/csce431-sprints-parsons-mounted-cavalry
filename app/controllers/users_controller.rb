@@ -55,7 +55,8 @@ class UsersController < ApplicationController
     end
 
     # GET /users/1/edit
-    def edit;
+    def edit
+      @user = User.find(params[:id])
     end
 
     # POST /users or /users.json
@@ -63,9 +64,21 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
 
       authorize @user
+      case params[:user][:role]
+      when "Cadet"
+        @user.is_staff = false
+        @user.is_admin = false
+      when "Command Staff"
+        @user.is_staff = true
+        @user.is_admin = false
+      when "Admin"
+        @user.is_admin = true
+        @user.is_staff = false
+      end
       respond_to do |format|
         if @user.save
-          format.html { redirect_to(helpers.users_get_user_path(@curr_user), notice: "#{@user.first_name} #{@user.last_name} was successfully created.") }
+          flash[:success] = "#{@user.first_name} #{@user.last_name} was successfully created."
+          format.html { redirect_to(helpers.users_get_user_path(@curr_user)) }
           format.json { render(:show, status: :created, location: @user) }
         else
           format.html { render(:new, status: :unprocessable_entity) }
@@ -77,9 +90,21 @@ class UsersController < ApplicationController
     # PATCH/PUT /users/1 or /users/1.json
     def update
       authorize @user
+      case params[:user][:role]
+      when "Cadet"
+        @user.is_staff = false
+        @user.is_admin = false
+      when "Command Staff"
+        @user.is_staff = true
+        @user.is_admin = false
+      when "Admin"
+        @user.is_admin = true
+        @user.is_staff = false
+      end
       respond_to do |format|
         if @user.update(user_params)
-          format.html { redirect_to(helpers.users_get_user_path(@curr_user), notice: "#{@user.first_name} #{@user.last_name} was successfully updated.") }
+          flash[:success] = "#{@user.first_name} #{@user.last_name} was successfully updated."
+          format.html { redirect_to(helpers.users_get_user_path(@curr_user)) }
           format.json { render(:show, status: :ok, location: @user) }
         else
           format.html { render(:edit, status: :unprocessable_entity) }
@@ -102,7 +127,7 @@ class UsersController < ApplicationController
       @user.destroy!
 
       respond_to do |format|
-        format.html { redirect_to(helpers.users_get_user_path(@curr_user), notice: "#{@user.first_name} #{@user.last_name} was successfully destroyed.") }
+        format.html { redirect_to(helpers.users_get_user_path(@curr_user), alert: "#{@user.first_name} #{@user.last_name} was successfully deleted.") }
         format.json { head(:no_content) }
       end
     end

@@ -14,12 +14,12 @@
         <%= render(LegendComponent.new) %>
         <div class="center">
           <h1>Schedule</h1>
-          <h2>
-            <%= link_to raw('<i class="fas fa-arrow-left" style="color: black;"></i>'), staffs_schedules_path(week: (@curr_day - 7).strftime), class: 'last-week' %>
-            Week: <%= @range %>
-            <%= link_to raw('<i class="fas fa-arrow-right" style="color: black;"></i>'), staffs_schedules_path(week: (@curr_day + 7).strftime), class: 'next-week' %>
-          </h2>
-          <%= link_to '<button>All Schedules</button>'.html_safe, schedules_path, class: 'all-schedules' %>
+          <div style='display: inline-flex; align-items: center; gap: 20px;'>
+            <%= link_to raw('<i class="fas fa-arrow-left" style="color: black; font-size: 30px;"></i>'), staffs_schedules_path(week: (@curr_day - 7).strftime), class: 'last-week' %>
+            <h2>Week: <%= @range %></h2>
+            <%= link_to raw('<i class="fas fa-arrow-right" style="color: black; font-size: 30px;"></i>'), staffs_schedules_path(week: (@curr_day + 7).strftime), class: 'next-week' %>
+          </div>
+          <%= link_to "<button type='button' class='btn btn-secondary create' style='margin-top: 10px;'>All Schedules</button>".html_safe, schedules_path, class: 'all-schedules' %>
         </div>
         <div class="usage-counter">
           <button id="usage-counter-btn" class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">

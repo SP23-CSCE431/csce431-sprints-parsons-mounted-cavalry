@@ -2,10 +2,16 @@
   <%= render(NavbarComponent.new())%>
 
   <%# Sidebar %>
-  <%= render(SidebarAdminsComponent.new())%>
+  <% user = User.where(:email => current_admin.email).first %>
+  <% if user.is_admin %>
+    <%= render(SidebarAdminsComponent.new())%>
+  <% elsif user.is_staff %>
+    <%= render(SidebarStaffsComponent.new())%>
+  <% end %>
   <div class="justify-content-center align-items-center mx-auto text-center">
     <div class="attendances delete">
-        <h2>Delete Attendance</h2>
+        <br>
+        <h1>Delete Attendance</h1>
 
         <%= form_for(@attendance, method: 'delete') do |f| %>
         <% # url: attendance_path(@attendance), method: 'delete' %>
@@ -16,13 +22,13 @@
         
         <br>    
         <div class="form-buttons">
-            <%= f.submit("Delete attendance") %>  
+            <%= f.submit "Delete Attendance", class: "btn btn-primary create" %>
         </div>
 
         <% end %>
 
         <br>
-        <%= link_to("<button>Back to Attendance</button>".html_safe, attendance_path(@attendance)) %>
+        <%= link_to("<button type='button' class='btn btn-secondary create'>Back to Attendance</button>".html_safe, attendance_path(@attendance), class: 'back-link') %>
     </div>
   </div>
 </body>

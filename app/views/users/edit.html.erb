@@ -2,18 +2,23 @@
   <%= render(NavbarComponent.new())%>
 
   <%# Sidebar %>
-  <%= render(SidebarAdminsComponent.new())%>
+  <% user = User.where(:email => current_admin.email).first %>
+  <% if user.is_admin %>
+    <%= render(SidebarAdminsComponent.new())%>
+  <% elsif user.is_staff %>
+    <%= render(SidebarStaffsComponent.new())%>
+  <% end %>
 
   <div class="justify-content-center align-items-center mx-auto text-center">
-    <h1>Editing user</h1>
+    <br>
+    <h1>Edit User</h1>
 
     <%= render "form", user: @user %>
 
     <br>
 
     <div>
-      <%= link_to "Show this user", @user %> |
-      <%= link_to "Back to users", users_get_user_path(User.where(:email => current_admin.email).first) %>
+      <%= link_to("<button type='button' class='btn btn-secondary create'>Back to Users</button>".html_safe, users_get_user_path(User.where(:email => current_admin.email).first), class: 'back-link') %>
     </div>
   </div>
 </body>

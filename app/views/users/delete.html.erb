@@ -2,11 +2,17 @@
   <%= render(NavbarComponent.new())%>
 
   <%# Sidebar %>
-  <%= render(SidebarAdminsComponent.new())%>
+  <% user = User.where(:email => current_admin.email).first %>
+  <% if user.is_admin %>
+    <%= render(SidebarAdminsComponent.new())%>
+  <% elsif user.is_staff %>
+    <%= render(SidebarStaffsComponent.new())%>
+  <% end %>
 
   <div class="justify-content-center align-items-center mx-auto text-center">
     <div class="users delete">
-        <h2>Delete User</h2>
+        <br>
+        <h1>Delete User</h1>
 
         <%= form_for(@user, method: 'delete') do |f| %>
         <% # url: user_path(@user), method: 'delete' %>
@@ -14,27 +20,43 @@
         <p>Are you sure you want to permanently delete this user?</p>
             
         <center>
-            <table class="listing" summary="User list" style="width: 30%;" border = "1">
+            <table class="listing" summary="User list" style="width: 30%; text-align: center;" border = "1">
                 <tr>
-                    <th>First Name:</th>
-                    <td><%= @user.first_name %></td>
-                </tr>
-                <tr>
-                    <th>Last Name:</th>
-                    <td><%= @user.last_name %></td>
+                    <th>Name:</th>
+                    <td><%= @user.first_name %> <%= @user.last_name %></td>
                 </tr>
             </table>
         </center>
         
         <br>    
         <div class="form-buttons">
-            <%= f.submit("Delete User") %> 
+            <%= f.submit("Delete User", class: "btn btn-primary create") %> 
         </div>
 
         <% end %>
 
         <br>
-        <%= link_to("<button>Back to Users</button>".html_safe, users_get_user_path(User.where(:email => current_admin.email).first), class: 'back-link') %>
+        <%= link_to("<button type='button' class='btn btn-secondary create'>Back to Users</button>".html_safe, users_get_user_path(User.where(:email => current_admin.email).first), :class => 'back-link') %>
     </div>
   </div>
 </body>
+
+<style>
+    tr.header {
+        background-color: #A7A7A7;
+    }
+
+    table.listing tr:not(.header) {
+        background-color: #D1D1D1;
+    }
+
+    table.listing {
+        width: 75%;
+        margin: 0 auto;
+        border-collapse: collapse;
+    }
+
+    td, th {
+        border: 1px solid white;
+    }
+</style>

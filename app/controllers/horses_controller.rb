@@ -47,7 +47,8 @@ class HorsesController < ApplicationController
         authorize @horse
         respond_to do |format|
         if @horse.save
-            format.html { redirect_to(helpers.horses_get_user_path(@user), notice: "#{@horse.name} was successfully created.") }
+            flash[:success] = "#{@horse.name} was successfully created."
+            format.html { redirect_to(helpers.horses_get_user_path(@user)) }
             format.json { render(:show, status: :created, location: @horse) }
         else
             format.html { render(:new, status: :unprocessable_entity) }
@@ -61,7 +62,8 @@ class HorsesController < ApplicationController
         authorize @horse
         respond_to do |format|
         if @horse.update(horse_params)
-            format.html { redirect_to(helpers.horses_get_user_path(@user), notice: "#{@horse.name} was successfully updated.") }
+            flash[:success] = "#{@horse.name} was successfully updated."
+            format.html { redirect_to(helpers.horses_get_user_path(@user)) }
             format.json { render(:show, status: :ok, location: @horse) }
         else
             format.html { render(:edit, status: :unprocessable_entity) }
@@ -80,7 +82,7 @@ class HorsesController < ApplicationController
         @horse.destroy
 
         respond_to do |format|
-        format.html { redirect_to(helpers.horses_get_user_path(@user), notice: "#{@horse.name} was successfully destroyed.") }
+        format.html { redirect_to(helpers.horses_get_user_path(@user), alert: "#{@horse.name} was successfully deleted.") }
         format.json { head(:no_content) }
         end
     end

@@ -14,7 +14,7 @@
   <%= form.hidden_field :user_id %>
 
   <div>
-    <%= form.label :recurrence, style: "display: block" %>
+    <%= form.label :recurrence, style: "display: block; font-weight: 400; font-size: 30px" %>
     <div class="d-flex justify-content-center" style="gap: 20px;">
       <%= form.collection_check_boxes :recurrence, [['M', 'Monday'], ['T', 'Tuesday'], ['W', 'Wednesday'], ['R', 'Thursday'], ['F', 'Friday']], :first, :last, include_hidden: false do |b| %>
         <div class="d-flex flex-column">
@@ -25,7 +25,9 @@
     </div>
   </div>
 
+  <br>
+
   <div>
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary create" %>
   </div>
 <% end %>

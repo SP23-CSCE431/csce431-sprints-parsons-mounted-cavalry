@@ -178,8 +178,8 @@ RSpec.describe('Deleting a schedule', type: :feature) do
     css_path = '#delete-' + schedule.id.to_s + ' > center > a'
     find(:css, css_path).click
 
-    click_on 'Delete Schedule'
-    expect(page).to(have_content('Schedule was successfully destroyed.'))
+    click_on 'Delete'
+    expect(page).to(have_content('Schedule was successfully deleted.'))
   end
 
   scenario 'valid inputs - calendar view' do
@@ -193,7 +193,7 @@ RSpec.describe('Deleting a schedule', type: :feature) do
     
     find(:css, '.delete-schedule-btn').click
 
-    click_on 'Delete Schedule'
-    expect(page).to(have_content('Schedule was successfully destroyed.'))
+    click_on 'Delete'
+    expect(page).to(have_content('Schedule was successfully deleted.'))
   end
 end
