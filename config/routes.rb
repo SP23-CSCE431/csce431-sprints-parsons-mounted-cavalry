@@ -61,5 +61,5 @@ Rails.application.routes.draw do
     end
   end
 
-  get "help", to: "help#index"
+  get 'help', to: 'help#index'
 end
