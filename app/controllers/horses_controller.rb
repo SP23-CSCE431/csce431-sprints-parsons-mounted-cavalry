@@ -1,8 +1,9 @@
 class HorsesController < ApplicationController
     before_action :set_horse, only: %i[ show edit update destroy ]
-    before_action :get_user, only: %i[ create update destroy ]
+    before_action :curr_user, only: %i[ create update destroy ]
 
-    def get_user
+    # get the currently signed in user
+    def curr_user
         @user = User.where(:email => current_admin.email).first
     end
 

@@ -1,5 +1,5 @@
 class UserPolicy < ApplicationPolicy
-    attr_reader :user, :user
+    attr_reader :user, :users
 
     # initialization for rules related to user
     def initialize(user, users)

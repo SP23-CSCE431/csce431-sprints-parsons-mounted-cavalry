@@ -18,6 +18,9 @@ Rails/AfterCommitOverride:
 Rails/AttributeDefaultBlockValue: # (new in 2.9)
   Enabled: true
 
+Rails/Date:
+  Enabled: false
+
 Rails/DefaultScope:
   Enabled: true
 

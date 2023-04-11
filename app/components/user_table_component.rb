@@ -27,23 +27,18 @@ class UserTableComponent < ViewComponent::Base
     elsif user.is_admin
       colors['Admin']
     elsif user.is_staff
-        colors['Staff']
-    else
-        'none'
+      colors['Staff']
     end
   end
 
   # maps the given user's boolean attributes to the name of their role
   def get_user_role(user)
-    role = ''
     if user.is_admin
-      role = 'Admin'
+      'Admin'
     elsif user.is_staff
-      role = 'Staff'
+      'Staff'
     else
-      role = 'Cadet'
+      'Cadet'
     end
-
-    role
   end
 end

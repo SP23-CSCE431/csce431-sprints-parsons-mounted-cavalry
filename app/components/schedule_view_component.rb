@@ -11,7 +11,7 @@ class ScheduleViewComponent < ViewComponent::Base
   # takes in a user and checks if they have a schedule
   # returns true is yes, false if no
   def user_has_schedule(user)
-    Schedule.where(user_id: user.id).exists?
+    Schedule.exists?(user_id: user.id)
   end
 
   # takes in a user and a date, queries for an attendance that matches both
