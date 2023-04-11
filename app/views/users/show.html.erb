@@ -11,7 +11,7 @@
 
     <div>
       <%= link_to "Edit this user", edit_user_path(@user) %> |
-      <%= link_to "Back to users", admins_users_path %>
+      <%= link_to "Back to users", users_get_user_path(User.where(:email => current_admin.email).first) %>
 
       <%= button_to "Destroy this user", @user, method: :delete %>
     </div>

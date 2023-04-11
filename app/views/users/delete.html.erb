@@ -34,7 +34,7 @@
         <% end %>
 
         <br>
-        <%= link_to("<button>Back to Users</button>".html_safe, admins_users_path, class: 'back-link') %>
+        <%= link_to("<button>Back to Users</button>".html_safe, users_get_user_path(User.where(:email => current_admin.email).first), class: 'back-link') %>
     </div>
   </div>
 </body>

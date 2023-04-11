@@ -17,4 +17,8 @@ class ApplicationController < ActionController::Base
         flash[:notice] = "You are not authorized to perform this action."
         redirect_to root_path
     end
+
+    def set_schedule_date_cookie
+        cookies[:schedule_date] ||= (Date.today + 1).strftime
+    end
 end

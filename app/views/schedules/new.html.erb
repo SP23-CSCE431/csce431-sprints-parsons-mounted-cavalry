@@ -12,7 +12,7 @@
     <br>
 
     <div>
-      <%= link_to "Back to schedules", admins_schedules_path %>
+      <%= link_to "Back to schedules", schedules_get_user_path(User.where(:email => current_admin.email).first) %>
     </div>
   </div>
 </body>

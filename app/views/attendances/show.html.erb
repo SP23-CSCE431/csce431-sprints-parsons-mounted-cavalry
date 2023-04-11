@@ -15,6 +15,6 @@
     </div>
 
     <br />
-    <%= link_to "<button>Back to attendances</button>".html_safe, admins_schedules_path %>
+    <%= link_to "<button>Back to Schedules</button>".html_safe, attendances_get_user_path(User.where(:email => current_admin.email).first) %>
   </div>
 </body>

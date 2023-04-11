@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
     include Devise::Controllers::Helpers
     before_action :set_user, only: %i[show edit update destroy]
+    before_action :get_user, only: %i[ create update destroy ]
+
+    def get_user
+      @curr_user = User.where(:email => current_admin.email).first
+    end
 
     # GET /users or /users.json
     def index
@@ -60,7 +65,7 @@ class UsersController < ApplicationController
       authorize @user
       respond_to do |format|
         if @user.save
-          format.html { redirect_to(admins_users_url, notice: "#{@user.first_name} #{@user.last_name} was successfully created.#{is_admin}") }
+          format.html { redirect_to(helpers.users_get_user_path(@curr_user), notice: "#{@user.first_name} #{@user.last_name} was successfully created.") }
           format.json { render(:show, status: :created, location: @user) }
         else
           format.html { render(:new, status: :unprocessable_entity) }
@@ -74,7 +79,7 @@ class UsersController < ApplicationController
       authorize @user
       respond_to do |format|
         if @user.update(user_params)
-          format.html { redirect_to(admins_users_url, notice: "#{@user.first_name} #{@user.last_name} was successfully updated.") }
+          format.html { redirect_to(helpers.users_get_user_path(@curr_user), notice: "#{@user.first_name} #{@user.last_name} was successfully updated.") }
           format.json { render(:show, status: :ok, location: @user) }
         else
           format.html { render(:edit, status: :unprocessable_entity) }
@@ -97,7 +102,7 @@ class UsersController < ApplicationController
       @user.destroy!
 
       respond_to do |format|
-        format.html { redirect_to(admins_users_url, notice: "#{@user.first_name} #{@user.last_name} was successfully destroyed.") }
+        format.html { redirect_to(helpers.users_get_user_path(@curr_user), notice: "#{@user.first_name} #{@user.last_name} was successfully destroyed.") }
         format.json { head(:no_content) }
       end
     end
