@@ -1,1 +1,45 @@
-<%= image_tag("check_in.png", style: "width: 20%;") %>
+<%# Check in table with appointment information. %>
+<table class="listing" id="checkin_table" summary="checkin appointment information">
+    <tr class="header">
+        <th>Date</th>
+        <th>Horse</th>
+        <th>Purpose</th>
+        <th>Checked In</th>
+    </tr>
+
+    <tr>
+        <td><center><%= @attendance&.date.strftime("%b %-d, %Y") %></center></td>
+        <% horse = get_horse(@attendance&.horse_id) %>    
+        <td><center><%= horse == nil ? 'None' : horse.name + ' - ' + horse.brand %></center></td>
+        <td><center><%= @attendance&.purpose %></center></td>
+        <%# Check in time is red and blank if not checked in or green with check in time if checked in %>
+        <% if @attendance&.check_in_time.nil? %>
+            <td style="background-color: <%= get_checkin_time_color(@attendance) %> !important"></td>
+        <% else %>
+            <td style="background-color: <%= get_checkin_time_color(@attendance) %> !important"><center><%= @attendance&.check_in_time.strftime("%I:%M %p") %></td>
+        <% end %>
+    </tr>
+    
+</table>
+
+<style>
+    tr.header {
+        background-color: #A7A7A7;
+    }
+
+    table.listing tr:not(.header) {
+        background-color: #D1D1D1;
+    }
+
+    table.listing {
+        width: 70%;
+        margin: 0 auto;
+        border-collapse: collapse;
+    }
+
+    td, th {
+        border: 1px solid white;
+    }
+</style>
+
+
