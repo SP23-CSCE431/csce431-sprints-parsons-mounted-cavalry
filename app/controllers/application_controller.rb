@@ -30,4 +30,3 @@ class ApplicationController < ActionController::Base
         cookies[:report_type] ||= 'horse'
     end
 end
-  

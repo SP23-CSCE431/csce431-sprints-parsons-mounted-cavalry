@@ -32,7 +32,7 @@ class HorseReportComponent < ViewComponent::Base
 
     # gets the number of days a certain horse was used
     def get_num_days_horse_used(horse)
-        # Get the attendances where the date is within the specified month, with the specified horse, that was actually attended 
-        Attendance.where(:date => @start_day..@end_day, :horse_id => horse.id).where.not(:check_in_time => nil).length()
+        # Get the attendances where the date is within the specified month, with the specified horse, that was actually attended
+        Attendance.where(:date => @start_day..@end_day, :horse_id => horse.id).where.not(:check_in_time => nil).length
     end
 end

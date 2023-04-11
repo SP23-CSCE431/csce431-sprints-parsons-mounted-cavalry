@@ -1,10 +1,11 @@
 class PagesController < ApplicationController
   before_action :set_dates
-  
+
+  # checks to see if the week has been changed
+  # if so, adjust the dates to the correct week dates
+  # if not, use the current day
   def set_dates
-    if (params[:day].present?)
-      @curr_day = Date.parse(params[:day])
-    end
+    @curr_day = Date.parse(params[:day]) if params[:day].present?
     @curr_day ||= Date.today
     @start_day = @curr_day.beginning_of_month
     @end_day = @curr_day.end_of_month
@@ -20,13 +21,13 @@ class PagesController < ApplicationController
   end
 
   # Skip before action is here because of errors with the ajax request
-  skip_before_action :verify_authenticity_token, only: [:checkedin_cadets, :checkedin_staffs]
+  skip_before_action :verify_authenticity_token, only: %i[checkedin_cadets checkedin_staffs]
   # path for cadets after checking in
   # Gets the attendance from the patch ajax request, updates the check in time to the current time, and then returns to the checkin cadets page
   def checkedin_cadets
     @attendance = Attendance.find(params[:id])
     respond_to do |format|
-      if @attendance.update(:check_in_time => Time.now)
+      if @attendance.update(:check_in_time => Time.zone.now)
         format.html { redirect_to(checkin_cadets_pages_path, status: :see_other, notice: "You have been checked in.") }
         format.json { render(:show, status: :ok, location: @attendance) }
       else
@@ -50,7 +51,7 @@ class PagesController < ApplicationController
   def checkedin_staffs
     @attendance = Attendance.find(params[:id])
     respond_to do |format|
-      if @attendance.update(:check_in_time => Time.now)
+      if @attendance.update(:check_in_time => Time.zone.now)
         format.html { redirect_to(checkin_cadets_pages_path, status: :see_other, notice: "You have been checked in.") }
         format.json { render(:show, status: :ok, location: @attendance) }
       else
@@ -76,7 +77,7 @@ class PagesController < ApplicationController
     authorize pundit_user
   end
 
-  private
+    private
 
   # Only allow a list of trusted parameters through.
   def attendance_params

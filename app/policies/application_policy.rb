@@ -1,6 +1,8 @@
 class ApplicationPolicy
     attr_reader :user, :record
 
+    include Devise::Controllers::Helpers
+
     # default initalization for policy rules
     def initialize(_user, record)
         @user = User.where(:email => current_admin.email).first
@@ -48,6 +50,7 @@ class ApplicationPolicy
         @scope = scope
         end
 
+        # define rules for scope of roles
         def resolve
         raise NotImplementedError, "You must define #resolve in #{self.class}"
         end

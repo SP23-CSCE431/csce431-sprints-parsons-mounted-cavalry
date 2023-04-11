@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
     include Devise::Controllers::Helpers
     before_action :set_user, only: %i[show edit update destroy]
-    before_action :get_user, only: %i[ create update destroy ]
+    before_action :curr_user, only: %i[create update destroy]
 
-    def get_user
+    # get the currently signed in user
+    def curr_user
       @curr_user = User.where(:email => current_admin.email).first
     end
 
@@ -127,7 +128,9 @@ class UsersController < ApplicationController
       @user.destroy!
 
       respond_to do |format|
-        format.html { redirect_to(helpers.users_get_user_path(@curr_user), alert: "#{@user.first_name} #{@user.last_name} was successfully deleted.") }
+        format.html do
+ redirect_to(helpers.users_get_user_path(@curr_user), alert: "#{@user.first_name} #{@user.last_name} was successfully deleted.")
+        end
         format.json { head(:no_content) }
       end
     end

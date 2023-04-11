@@ -13,7 +13,7 @@ RSpec.describe('Creating an attendance', type: :feature) do
 
     scenario 'valid inputs' do
         user = User.create(is_admin: false, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
-        Schedule.create(user_id: user.id, recurrence: ['M', 'W', 'F'])
+        Schedule.create(user_id: user.id, recurrence: %w[M W F])
         Horse.create(name: 'Ed', brand: 'B12', herd: 'Charlie', difficulty: 'Intermediate', condition: 'Healthy')
         
         visit 'schedules/admins'
@@ -42,7 +42,7 @@ RSpec.describe('Viewing an attendance', type: :feature) do
 
     scenario 'valid inputs' do
         user = User.create(is_admin: false, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
-        schedule = Schedule.create(user_id: user.id, recurrence: ['M', 'W', 'F'])
+        schedule = Schedule.create(user_id: user.id, recurrence: %w[M W F])
         monday = Date.today.beginning_of_week
         Attendance.create(schedule_id: schedule.id, date: monday.strftime, check_in_time: nil, purpose: 'Training')
 
@@ -108,7 +108,7 @@ RSpec.describe('Updating an attendance', type: :feature) do
 
     scenario 'valid inputs' do
         user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
-        schedule = Schedule.create(user_id: user.id, recurrence: ['M', 'W', 'F'])
+        schedule = Schedule.create(user_id: user.id, recurrence: %w[M W F])
         attendance = Attendance.create(schedule_id: schedule.id, date: '2023-03-15', check_in_time: nil, purpose: 'Training')
         horse = Horse.create(name: 'Ed', brand: 'B12', herd: 'Charlie', difficulty: 'Intermediate', condition: 'Healthy')
 
@@ -132,7 +132,7 @@ RSpec.describe('Deleting an attendance', type: :feature) do
 
     scenario 'valid inputs' do
         user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
-        schedule = Schedule.create(user_id: user.id, recurrence: ['M', 'W', 'F'])
+        schedule = Schedule.create(user_id: user.id, recurrence: %w[M W F])
         attendance = Attendance.create(schedule_id: schedule.id, date: '2023-12-25', check_in_time: nil, purpose: 'Training')
 
         visit 'schedules/admins'
@@ -145,7 +145,7 @@ RSpec.describe('Deleting an attendance', type: :feature) do
     # the attendance must be deleted as well
     scenario 'schedule that has attendance is deleted' do
         user = User.create(is_admin: true, is_staff: true, first_name: 'Jane', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
-        schedule = Schedule.create(user_id: user.id, recurrence: ['M', 'W', 'F'])
+        schedule = Schedule.create(user_id: user.id, recurrence: %w[M W F])
         attendance = Attendance.create(schedule_id: schedule.id, date: '2023-12-25', check_in_time: nil, purpose: 'Training')
         
         visit attendance_path(id: attendance.id)
@@ -159,7 +159,7 @@ RSpec.describe('Deleting an attendance', type: :feature) do
     # the attendance must be deleted as well
     scenario 'user that has attendance is deleted' do
         user = User.create(is_admin: true, is_staff: true, first_name: 'Jane', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
-        schedule = Schedule.create(user_id: user.id, recurrence: ['M', 'W', 'F'])
+        schedule = Schedule.create(user_id: user.id, recurrence: %w[M W F])
         attendance = Attendance.create(schedule_id: schedule.id, date: '2023-12-25', check_in_time: nil, purpose: 'Training')
         
         visit attendance_path(id: attendance.id)

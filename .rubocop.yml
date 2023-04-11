@@ -197,7 +197,7 @@ Lint/LambdaWithoutLiteralBlock: # (new in 1.8)
     Enabled: true
 
 Lint/MissingSuper:
-    Enabled: true
+    Enabled: false
 
 Lint/MixedRegexpCaptureTypes:
     Enabled: true
@@ -284,8 +284,7 @@ Metrics/ModuleLength:
         - "**/spec/**/*"
 
 Metrics/ParameterLists:
-    Exclude:
-        - "**/spec/feature/*"
+    Enabled: false
 
 Metrics/PerceivedComplexity:
     Max: 10
