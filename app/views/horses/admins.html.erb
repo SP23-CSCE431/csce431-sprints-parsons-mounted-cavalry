@@ -10,6 +10,6 @@
     <h1>Horses</h1>
     <%= link_to("<button type='button' class='btn btn-secondary create'>+ Add Horse</button>".html_safe, new_horse_path, class: 'action new') %>
     <br><br>
-    <%= render(HorsesTableComponent.new(@horses)) %>
+    <%= render(HorsesTableComponent.new(@horses, @oos)) %>
   </div>
 </body>

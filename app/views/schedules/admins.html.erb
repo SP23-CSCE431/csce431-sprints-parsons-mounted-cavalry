@@ -19,7 +19,7 @@
             Week: <%= @range %>
             <%= link_to raw('<i class="fas fa-arrow-right" style="color: black;"></i>'), admins_schedules_path(week: (@curr_day + 7).strftime), class: 'next-week' %>
           </h2>
-          <%= link_to '<button>All Schedules</button>'.html_safe, schedules_path, class: 'all-schedules' %>
+          <%= link_to "<button type='button' class='btn btn-secondary create'>All Schedules</button>".html_safe, schedules_path, class: 'all-schedules' %>
         </div>
         <div class="usage-counter">
           <button id="usage-counter-btn" class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
@@ -28,7 +28,7 @@
         </div>
       </div>
 
-    <% users = User.all %>
+    <% users = User.where.not(is_admin: true).where.not(classification: 'OOS') %>
 
     <% upperclass = users.select {|user| user.classification != 'Sophomore'} %>
     <% sophomores = users.select {|user| user.classification == 'Sophomore'} %>
@@ -42,6 +42,7 @@
       <h3 style="text-align: start">Sophomores</h2>
       <%= render(ScheduleViewComponent.new(sophomores, @dates)) %>
     </div>
+  </div>
 </body>
 
 

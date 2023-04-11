@@ -2,7 +2,12 @@
   <%= render(NavbarComponent.new())%>
 
   <%# Sidebar %>
-  <%= render(SidebarAdminsComponent.new())%>
+  <% user = User.where(:email => current_admin.email).first %>
+  <% if user.is_admin %>
+    <%= render(SidebarAdminsComponent.new())%>
+  <% elsif user.is_staff %>
+    <%= render(SidebarStaffsComponent.new())%>
+  <% end %>
   <div class="justify-content-center align-items-center mx-auto text-center">
 
     <div class="schedules delete">
@@ -22,7 +27,7 @@
 
             <tr>
                 <th>Recurrence:</th>
-                <td><%= @schedule.recurrence %></td>
+                <td><%= recurrence_str(@schedule.recurrence) %></td>
             </tr>
         </table>
         
@@ -34,7 +39,7 @@
         <% end %>
 
         <br>
-        <%= link_to("<button type='button' class='btn btn-secondary create'>Back to Schedules</button>".html_safe, admins_schedules_path, class: 'back-link') %>
+        <%= link_to("<button type='button' class='btn btn-secondary create'>Back to Schedules</button>".html_safe, schedules_path, class: 'back-link') %>
     </div>
   </div>
 </body>

@@ -1,16 +1,22 @@
 class SchedulesController < ApplicationController
   before_action :set_schedule, only: %i[show edit update destroy]
   before_action :set_dates
+  before_action :get_user, only: %i[ create update destroy ]
+
+  def get_user
+    @user = User.where(:email => current_admin.email).first
+  end
 
   # checks to see if the week has been changed
   # if so, adjust the dates to the correct week dates
-  # if not, use the current week dates
+  # if not, use the current cookie date
   def set_dates
     if (params[:week].present?)
       @curr_day = Date.parse(params[:week])
+    else
+      @curr_day = Date.parse(cookies[:schedule_date])
     end
-    
-    @curr_day ||= Date.today
+    cookies[:schedule_date] = @curr_day.strftime
     @range = helpers.week_range(@curr_day)
     @dates = helpers.week_dates(@curr_day)
   end
@@ -55,7 +61,7 @@ class SchedulesController < ApplicationController
     respond_to do |format|
       if @schedule.save
         flash[:success] = "Schedule was successfully created."
-        format.html { redirect_to(admins_schedules_url) }
+        format.html { redirect_to(helpers.schedules_get_user_path(@user)) }
         format.json { render(:show, status: :created, location: @schedule) }
       else
         format.html { render(:new, status: :unprocessable_entity) }
@@ -78,7 +84,7 @@ class SchedulesController < ApplicationController
 
       if @schedule.update(:user_id => user_id, :recurrence => recurrence)
         flash[:success] = "Schedule was successfully updated."
-        format.html { redirect_to(admins_schedules_url) }
+        format.html { redirect_to(helpers.schedules_get_user_path(@user)) }
         format.json { render(:show, status: :ok, location: @schedule) }
       else
         format.html { render(:edit, status: :unprocessable_entity) }
@@ -108,7 +114,7 @@ class SchedulesController < ApplicationController
     @schedule.destroy!
 
     respond_to do |format|
-      format.html { redirect_to(admins_schedules_url, alert: "Schedule was successfully deleted.") }
+      format.html { redirect_to(helpers.schedules_get_user_path(@user), alert: "Schedule was successfully deleted.") }
       format.json { head(:no_content) }
     end
   end

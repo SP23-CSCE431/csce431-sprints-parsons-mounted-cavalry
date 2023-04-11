@@ -12,7 +12,7 @@ RSpec.describe 'Schedule View Component', type: :feature do
     end
 
     scenario 'days are highlighted for recurrence' do
-        user = User.create!(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+        user = User.create!(is_admin: false, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
         Schedule.create!(user_id: user.id, recurrence: ['M', 'W', 'F'])
 
         visit 'schedules/admins'
@@ -22,7 +22,7 @@ RSpec.describe 'Schedule View Component', type: :feature do
     end
 
     scenario 'content information display' do
-        user = User.create!(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+        user = User.create!(is_admin: false, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
         schedule = Schedule.create!(user_id: user.id, recurrence: ['M', 'W', 'F'])
         monday = Date.today.beginning_of_week
         Attendance.create!(schedule_id: schedule.id, date: monday.strftime, check_in_time: nil, purpose: 'Training')
@@ -36,7 +36,7 @@ RSpec.describe 'Schedule View Component', type: :feature do
     end
     
     scenario 'user with no schedule is indicated' do
-        user = User.create!(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+        user = User.create!(is_admin: false, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
         
         visit 'schedules/admins'
 

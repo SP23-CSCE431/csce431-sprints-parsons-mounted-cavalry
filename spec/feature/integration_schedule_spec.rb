@@ -10,7 +10,7 @@ RSpec.describe('Creating a schedule', type: :feature) do
   end
 
   scenario 'valid inputs - calendar view' do
-    user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+    user = User.create(is_admin: false, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
     
     visit 'schedules/admins'
 
@@ -26,7 +26,7 @@ RSpec.describe('Creating a schedule', type: :feature) do
   end
 
   scenario 'no recurrence given - calendar view' do
-    user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+    user = User.create(is_admin: false, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
     
     visit 'schedules/admins'
     
@@ -48,7 +48,7 @@ RSpec.describe('Viewing a schedule', type: :feature) do
   end
 
   scenario 'valid inputs - table view' do
-    user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+    user = User.create(is_admin: false, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
     schedule = Schedule.create(user_id: user.id, recurrence: ['M', 'W', 'F'])
 
     visit 'schedules/admins'
@@ -59,7 +59,7 @@ RSpec.describe('Viewing a schedule', type: :feature) do
   end
 
   scenario 'valid inputs - calendar view' do
-    user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+    user = User.create(is_admin: false, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
     schedule = Schedule.create(user_id: user.id, recurrence: ['M', 'W', 'F'])
 
     visit 'schedules/admins'
@@ -82,7 +82,7 @@ RSpec.describe('Editing a schedule', type: :feature) do
   end
 
   scenario 'valid inputs - table view' do
-    user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+    user = User.create(is_admin: false, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
     schedule = Schedule.create(user_id: user.id, recurrence: ['M', 'W', 'F'])
 
     visit 'schedules/admins'
@@ -100,7 +100,7 @@ RSpec.describe('Editing a schedule', type: :feature) do
   end
 
   scenario 'valid inputs - calendar view' do
-    user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+    user = User.create(is_admin: false, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
     schedule = Schedule.create(user_id: user.id, recurrence: ['M', 'W', 'F'])
 
     visit 'schedules/admins'
@@ -120,7 +120,7 @@ RSpec.describe('Editing a schedule', type: :feature) do
   end
 
   scenario 'recurrence changed to nothing - table view' do
-    user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+    user = User.create(is_admin: false, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
     schedule = Schedule.create(user_id: user.id, recurrence: ['M', 'W', 'F'])
 
     visit 'schedules/admins'
@@ -139,7 +139,7 @@ RSpec.describe('Editing a schedule', type: :feature) do
   end
 
   scenario 'recurrence changed to nothing - calendar view' do
-    user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+    user = User.create(is_admin: false, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
     schedule = Schedule.create(user_id: user.id, recurrence: ['M', 'W', 'F'])
 
     visit 'schedules/admins'
@@ -160,7 +160,7 @@ end
 
 RSpec.describe('Deleting a schedule', type: :feature) do
   before do
-    User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'tony@tamu.edu')
+    User.create(is_admin: false, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'tony@tamu.edu')
     Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
     Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
     visit root_path
@@ -183,7 +183,7 @@ RSpec.describe('Deleting a schedule', type: :feature) do
   end
 
   scenario 'valid inputs - calendar view' do
-    user = User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
+    user = User.create(is_admin: false, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
     schedule = Schedule.create(user_id: user.id, recurrence: ['M', 'W', 'F'])
 
     visit 'schedules/admins'

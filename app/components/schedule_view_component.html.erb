@@ -1,4 +1,3 @@
-<%# <%= stylesheet_link_tag "application" %>
 <div>
     <table class="table table-bordered schedule-view">
         <thead>
@@ -23,7 +22,7 @@
                         <%# the user has schedule, create row accordingly %>
                         <%# the row header is the user's name and the background color corresponds to their skill level %>
                         <th style="background-color: <%= get_user_skill_level_color(user) %> !important">
-                            <%= link_to schedule_path(get_user_schedule_id(user)) do %>
+                            <%= link_to edit_schedule_path(get_user_schedule_id(user)) do %>
                                 <div class="user-cell"><%= user.first_name %> <%= user.last_name %></div>
                             <% end %>
                         </th>

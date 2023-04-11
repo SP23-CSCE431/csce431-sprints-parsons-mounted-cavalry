@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 class UserTableComponent < ViewComponent::Base
-  def initialize(cadets, staffs)
+  def initialize(cadets, staffs, oos)
       super @cadets = cadets
       super @staffs = staffs
+      super @oos = oos
   end
 
   # maps the given user's skill level to a color, returns the color
@@ -30,5 +31,19 @@ class UserTableComponent < ViewComponent::Base
     else
         'none'
     end
+  end
+
+  # maps the given user's boolean attributes to the name of their role
+  def get_user_role(user)
+    role = ''
+    if user.is_admin
+      role = 'Admin'
+    elsif user.is_staff
+      role = 'Staff'
+    else
+      role = 'Cadet'
+    end
+
+    role
   end
 end
