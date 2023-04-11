@@ -52,7 +52,7 @@ RSpec.describe('Viewing an attendance', type: :feature) do
 
         expect(page).to(have_content('John Doe'))
         expect(page).to(have_content('None'))
-        expect(page).to(have_content(monday.strftime))
+        expect(page).to(have_content(monday.strftime('%a, %b %-d, %Y')))
         expect(page).to(have_content('Not checked in'))
         expect(page).to(have_content('Training'))
     end

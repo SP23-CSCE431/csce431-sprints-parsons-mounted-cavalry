@@ -68,7 +68,9 @@ RSpec.describe('Viewing a schedule', type: :feature) do
     find(:css, css_path).click
 
     expect(page).to(have_content('John Doe'))
-    expect(page).to(have_content('Mon, Wed, Fri'))
+    expect(page).to have_field('schedule_recurrence_m', checked: true)
+    expect(page).to have_field('schedule_recurrence_w', checked: true)
+    expect(page).to have_field('schedule_recurrence_f', checked: true)
   end
 end
 
@@ -109,8 +111,6 @@ RSpec.describe('Editing a schedule', type: :feature) do
     css_path = 'tr#' + user.id.to_s + ' > th > a'
     find(:css, css_path).click
     
-    find(:css, '.edit-schedule-btn').click
-    
     find(:css, '#schedule_recurrence_m').set(false)
     find(:css, '#schedule_recurrence_t').set(true)
     find(:css, '#schedule_recurrence_f').set(false)
@@ -147,8 +147,6 @@ RSpec.describe('Editing a schedule', type: :feature) do
     css_path = 'tr#' + user.id.to_s + ' > th > a'
     find(:css, css_path).click
     
-    find(:css, '.edit-schedule-btn').click
-    
     find(:css, '#schedule_recurrence_m').set(false)
     find(:css, '#schedule_recurrence_w').set(false)
     find(:css, '#schedule_recurrence_f').set(false)
@@ -177,21 +175,6 @@ RSpec.describe('Deleting a schedule', type: :feature) do
 
     css_path = '#delete-' + schedule.id.to_s + ' > center > a'
     find(:css, css_path).click
-
-    click_on 'Delete'
-    expect(page).to(have_content('Schedule was successfully deleted.'))
-  end
-
-  scenario 'valid inputs - calendar view' do
-    user = User.create(is_admin: false, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'j.doe@tamu.edu')
-    schedule = Schedule.create(user_id: user.id, recurrence: ['M', 'W', 'F'])
-
-    visit 'schedules/admins'
-    
-    css_path = 'tr#' + user.id.to_s + ' > th > a'
-    find(:css, css_path).click
-    
-    find(:css, '.delete-schedule-btn').click
 
     click_on 'Delete'
     expect(page).to(have_content('Schedule was successfully deleted.'))

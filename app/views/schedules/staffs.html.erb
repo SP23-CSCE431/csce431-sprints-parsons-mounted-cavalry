@@ -12,7 +12,7 @@
   <div class="justify-content-center align-items-center mx-auto text-center">
       <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 10px 40px; justify-items: center; align-items: center;">
         <%= render(LegendComponent.new) %>
-        <div class="center">
+        <div class="center" style="display: flex; flex-direction: column;">
           <h1>Schedule</h1>
           <div style='display: inline-flex; align-items: center; gap: 20px;'>
             <%= link_to raw('<i class="fas fa-arrow-left" style="color: black; font-size: 30px;"></i>'), staffs_schedules_path(week: (@curr_day - 7).strftime), class: 'last-week' %>
