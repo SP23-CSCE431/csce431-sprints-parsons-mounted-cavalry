@@ -5,6 +5,7 @@
   <%= render(SidebarAdminsComponent.new())%>
 
   <div class="justify-content-center align-items-center mx-auto text-center">
+    <br>
     <h1>New user</h1>
 
     <%= render "form", user: @user %>
@@ -12,7 +13,7 @@
     <br>
 
     <div>
-      <%= link_to "Back to users", admins_users_path %>
+      <%= link_to("<button type='button' class='btn btn-secondary create'>Back to Users</button>".html_safe, admins_users_path, :class => 'back-link') %>
     </div>
   </div>
 </body>

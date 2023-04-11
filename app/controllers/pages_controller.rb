@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   before_action :set_dates
+  
   def set_dates
     if (params[:day].present?)
       @curr_day = Date.parse(params[:day])
