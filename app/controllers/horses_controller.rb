@@ -1,5 +1,11 @@
 class HorsesController < ApplicationController
     before_action :set_horse, only: %i[ show edit update destroy ]
+    before_action :curr_user, only: %i[ create update destroy ]
+
+    # get the currently signed in user
+    def curr_user
+        @user = User.where(:email => current_admin.email).first
+    end
 
     # GET /horses or /horses.json
     def index
@@ -11,12 +17,14 @@ class HorsesController < ApplicationController
     end
   
     def staffs
-        @horses = Horse.all
+        @horses = Horse.where.not(herd: 'OOS')
+        @oos = Horse.where(herd: 'OOS')
         authorize @horses
     end
   
     def admins
-        @horses = Horse.all
+        @horses = Horse.where.not(herd: 'OOS')
+        @oos = Horse.where(herd: 'OOS')
         authorize @horses
     end
 
@@ -41,7 +49,7 @@ class HorsesController < ApplicationController
         respond_to do |format|
         if @horse.save
             flash[:success] = "#{@horse.name} was successfully created."
-            format.html { redirect_to(admins_horses_path) }
+            format.html { redirect_to(helpers.horses_get_user_path(@user)) }
             format.json { render(:show, status: :created, location: @horse) }
         else
             format.html { render(:new, status: :unprocessable_entity) }
@@ -56,7 +64,7 @@ class HorsesController < ApplicationController
         respond_to do |format|
         if @horse.update(horse_params)
             flash[:success] = "#{@horse.name} was successfully updated."
-            format.html { redirect_to(admins_horses_path) }
+            format.html { redirect_to(helpers.horses_get_user_path(@user)) }
             format.json { render(:show, status: :ok, location: @horse) }
         else
             format.html { render(:edit, status: :unprocessable_entity) }
@@ -75,7 +83,7 @@ class HorsesController < ApplicationController
         @horse.destroy
 
         respond_to do |format|
-        format.html { redirect_to(admins_horses_path, alert: "#{@horse.name} was successfully deleted.") }
+        format.html { redirect_to(helpers.horses_get_user_path(@user), alert: "#{@horse.name} was successfully deleted.") }
         format.json { head(:no_content) }
         end
     end

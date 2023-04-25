@@ -1,8 +1,13 @@
-<body class="align-items-center justify-content-center" style="overflow-x: hidden; overflow-y: hidden;">
+<body class="align-items-center justify-content-center">
   <%= render(NavbarComponent.new())%>
 
   <%# Sidebar %>
-  <%= render(SidebarAdminsComponent.new())%>
+  <% user = User.where(:email => current_admin.email).first %>
+  <% if user.is_admin %>
+    <%= render(SidebarAdminsComponent.new())%>
+  <% elsif user.is_staff %>
+    <%= render(SidebarStaffsComponent.new())%>
+  <% end %>
 
   <div class="justify-content-center align-items-center mx-auto text-center">
     <br>
@@ -13,7 +18,7 @@
     <br>
 
     <div>
-      <%= link_to("<button type='button' class='btn btn-secondary create'>Back to Users</button>".html_safe, admins_users_path, :class => 'back-link') %>
+      <%= link_to("<button type='button' class='btn btn-secondary create'>Back to Users</button>".html_safe, users_get_user_path(User.where(:email => current_admin.email).first), :class => 'back-link') %>
     </div>
   </div>
 </body>

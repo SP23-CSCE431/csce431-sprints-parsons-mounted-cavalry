@@ -56,6 +56,10 @@ Rails.application.routes.draw do
       get :checkin_staffs
       get :reports_admins
       get :reports_staffs
+      patch :checkedin_cadets
+      patch :checkedin_staffs
     end
   end
+
+  get 'help', to: 'help#index'
 end

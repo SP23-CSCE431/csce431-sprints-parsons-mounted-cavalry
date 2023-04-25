@@ -1,4 +1,15 @@
 module SchedulesHelper
+  # get the current user's role and return proper path for that role
+  def schedules_get_user_path(user)
+    if user.is_admin
+      admins_schedules_url
+    elsif user.is_staff
+      staffs_schedules_url
+    else
+      cadets_schedules_url
+    end
+  end
+
   # for every existing user, map the their full name to their id
   # return the pair for form dropdown purposes
   def users_full_name
@@ -16,7 +27,7 @@ module SchedulesHelper
   def user_full_name(user_id)
     user = User.find(user_id)
 
-    user.first_name + ' ' + user.last_name
+    "#{user.first_name} #{user.last_name}"
   end
 
   # maps a recurrence to a string of abbreviated days for better readability
@@ -25,7 +36,7 @@ module SchedulesHelper
     recur_str = ''
 
     recurrence.each do |c|
-      recur_str += days[c] + ', '
+      recur_str += "#{days[c]}, "
     end
 
     recur_str.chop.chop
@@ -39,12 +50,13 @@ module SchedulesHelper
     friday = monday + 4
     friday_month = friday.strftime('%B')
 
-    range_str = monday.strftime('%B %d') + ' - '
-    if (monday_month != friday_month)
-      range_str += friday.strftime('%B %d')
-    else
-      range_str += friday.strftime('%d')
-    end
+    range_str = "#{monday.strftime('%B %d')} - "
+    range_str +=
+        if monday_month == friday_month
+             friday.strftime('%d')
+        else
+             friday.strftime('%B %d')
+        end
 
     range_str
   end
@@ -57,8 +69,8 @@ module SchedulesHelper
     next_day = monday
 
     # get Tuesday-Friday dates
-    for i in 1..4
-      next_day = next_day + 1
+    (1..4).each do |_i|
+      next_day += 1
       dates.append(next_day.strftime)
     end
 

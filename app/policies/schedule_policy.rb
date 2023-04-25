@@ -63,6 +63,7 @@ class SchedulePolicy < ApplicationPolicy
         @scope = scope
         end
 
+        # define rules for scope of roles
         def resolve
             if user.is_admin?
                 scope.all

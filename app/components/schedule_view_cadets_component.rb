@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-class ScheduleViewComponent < ViewComponent::Base
+class ScheduleViewCadetsComponent < ViewComponent::Base
   # constructor - all starts with the given set of users
-  def initialize(users, dates)
+  def initialize(user, dates)
     super
     @dates = dates
-    @users = users
+    @user = user
   end
 
   # takes in a user and checks if they have a schedule

@@ -1,4 +1,4 @@
-<body class="align-items-center justify-content-center" style="overflow-x: hidden; overflow-y: hidden;">
+<body class="align-items-center justify-content-center">
   <%# Navbar %>
   <%= render(NavbarComponent.new()) %>
 
@@ -9,29 +9,84 @@
   <div class="justify-content-center align-items-center mx-auto text-center">
     <h1>Check-in</h1>
     <br><br>
+    <%# If they have an appointment for the day, render checkin component and button, if not then render nothing scheduled component %>
     <div id="checkin-container">
-      <%= render(NothingScheduledComponent.new()) %>
+      <% if @attendance.nil? %>
+        <%= render(NothingScheduledComponent.new()) %>
+      <% else %>
+        <div id="attendance-id" style="display:none"><%= @attendance.id %></div>
+        <%= render(CheckInComponent.new(@attendance)) %>
+        <br>
+        <br>
+        <% if @attendance.check_in_time.nil? %>
+          <button type='button' class='btn btn-secondary create' onclick="onCheckIn()">Check In</button>
+        <% end %> 
+        
+      <% end %>
     </div>
     <br>
-    <button id="toggle-checkin-button">Switch to Check-in</button>
+    <br>
+
+    <%# Div for messages to pop up after clicking check in button %>
+    <div id="checkin_results"></div>
   </div>
 
-  <script>
-    const toggleCheckinButton = document.getElementById("toggle-checkin-button");
-    const checkinContainer = document.getElementById("checkin-container");
-
-    let isNothingScheduled = true;
-
-    toggleCheckinButton.addEventListener("click", () => {
-      if (isNothingScheduled) {
-        checkinContainer.innerHTML = '<%= j render(CheckInComponent.new()) %>';
-        toggleCheckinButton.innerText = "Switch to Nothing Scheduled";
-      } else {
-        checkinContainer.innerHTML = '<%= j render(NothingScheduledComponent.new()) %>';
-        toggleCheckinButton.innerText = "Switch to Check-in";
-      }
-
-      isNothingScheduled = !isNothingScheduled;
-    });
-  </script>
 </body>
+
+<script>
+    // Run when check in button is clicked
+    function onCheckIn() {
+        Noty.overrideDefaults({ theme: 'relax', layout: 'topCenter' });
+
+        // Navigator.geolocation is used to get user's current location in latitude and longitude
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var userlat = position.coords.latitude;
+                var userlong = position.coords.longitude;
+
+                var pmc = {lat: 30.609433, lng: -96.3730202}; // 3748 F and B Rd, College Station, TX 77845
+                var userLocation = {lat: userlat, lng: userlong};
+
+                const checkinResults = document.getElementById("checkin_results");
+                const checkinContainer = document.getElementById("checkin-container");
+
+                var attendanceId = document.getElementById("attendance-id").innerText;
+                
+                // If userLocation is within 1 km of PMC, then user can check in
+                if (isWithinRange(userLocation, pmc, 1)) {
+                    $.ajax({
+                      url: "/pages/checkedin_staffs",
+                      data: {id: attendanceId},
+                      type: 'patch'
+                    }).done(function() {
+                      location.reload();
+                    })
+                    
+                } else {
+                    checkinResults.innerHTML = '<h2> YOU ARE NOT AT PARSONS MOUNTED CAVALRY! PLEASE CHECK IN WHEN YOU HAVE ARRIVED. </h2>';
+                }
+            }, function(position) {
+                new Noty({
+                text: "Could not get location",
+                type: "error"
+            }).show();
+            });
+        } else {
+            new Noty({
+            text: "Geolocation is not supported by this browser.",
+            type: "error"
+        }).show();
+        }
+
+    }
+
+    // Checks if checkpoint is within km distance of centerPoint
+    // Source: http://jsfiddle.net/Guffa/57gQa/
+    function isWithinRange(checkPoint, centerPoint, km) {
+        var ky = 40000 / 360;
+        var kx = Math.cos(Math.PI * centerPoint.lat / 180.0) * ky;
+        var dx = Math.abs(centerPoint.lng - checkPoint.lng) * kx;
+        var dy = Math.abs(centerPoint.lat - checkPoint.lat) * ky;
+        return Math.sqrt(dx * dx + dy * dy) <= km;
+    }
+</script>

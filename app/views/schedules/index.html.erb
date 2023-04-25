@@ -1,6 +1,10 @@
-<body class="align-items-center justify-content-center" style="overflow-x: hidden; overflow-y: hidden;">
+<body class="align-items-center justify-content-center">
   <%= render(NavbarComponent.new())%>
 
+<h1>Schedules</h1>
+
+<%= link_to "<button type='button' class='btn btn-secondary create'>Back to Schedules</button>".html_safe, schedules_get_user_path(User.where(:email => current_admin.email).first) %>
+<br><br>
   <%# Sidebar %>
   <% user = User.where(:email => current_admin.email).first %>
   <% if user.is_admin %>
@@ -10,8 +14,6 @@
   <% end %>
 
   <h1>All Schedules</h1>
-
-  <%= link_to "<button>Back to Schedules</button>".html_safe, admins_schedules_path %>
 
   <table class="listing" summary="Schedule list" style="width: 75%; margin: 20px auto;">
     <tr class="header">
