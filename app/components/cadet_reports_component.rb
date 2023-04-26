@@ -14,13 +14,13 @@ class CadetReportsComponent < ViewComponent::Base
         Attendance.joins(:schedule).where('schedules.user_id = ? AND date >= ? AND date <= ?', user.id, @start_day, @end_day).count
     end
 
-    # Given a user, returns an integer of the user's total absences within the specified month
+    # Given a user, returns an integer of the user's total absences within the specified month before today's date
     def get_user_absences(user)
         Attendance.joins(:schedule).where(
-            'schedules.user_id = ? AND date >= ? AND date <= ? AND check_in_time IS NULL',
+            'schedules.user_id = ? AND date >= ? AND date < ? AND check_in_time IS NULL',
             user.id,
             @start_day,
-            @end_day
+            @curr_day
         ).count
     end
 
