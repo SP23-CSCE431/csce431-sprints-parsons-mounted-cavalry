@@ -84,7 +84,11 @@
             paging: false,
             lengthChange: false,
             info: false,
-            "orderMulti": true
+            "orderMulti": true,
+            stateSave: true,
+            columnDefs: [
+                { orderable: false, targets: [5, 6] }
+            ]
         });
     });
 
@@ -93,7 +97,11 @@
             paging: false,
             lengthChange: false,
             info: false,
-            "orderMulti": true
+            "orderMulti": true,
+            stateSave: true,
+            columnDefs: [
+                { orderable: false, targets: [5, 6] }
+            ]
         });
     });
 </script>
