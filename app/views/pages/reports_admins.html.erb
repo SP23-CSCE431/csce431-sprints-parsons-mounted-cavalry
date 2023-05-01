@@ -7,7 +7,7 @@
   <%= render(SidebarAdminsComponent.new())%>
 
   <%# Content %>
-  <div class="justify-content-center align-items-center mx-auto text-center">
+  <div class="justify-content-center align-items-center mx-auto text-center" style="padding-bottom: 5%">
     <h1>Reports</h1>
     <h2>
       <%= link_to raw('<i class="fas fa-arrow-left arrow-left"></i>'), reports_admins_pages_path(day: (@start_day - 1).strftime) %>
