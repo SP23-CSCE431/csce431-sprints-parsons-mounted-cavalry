@@ -12,6 +12,10 @@ RSpec.describe User, type: :model do
                 expect(subject).to be_valid
             end
 
+            it 'has tamu prefix' do
+                user = User.new(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'tony@corps.tamu.edu')
+                expect(user).to be_valid
+            end
             it 'has nil first name' do
                 user = User.new(last_name: 'Bob', classification: 'Junior', skill_level: 'Intermediate', phone_number: '8229852917', email: 'billybob@tamu.edu', is_staff: 'false', is_admin: 'false')
                 expect(user).not_to be_valid
