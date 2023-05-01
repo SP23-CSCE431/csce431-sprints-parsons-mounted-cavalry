@@ -24,12 +24,15 @@
     </tr>
 
     <% @schedules.each do |schedule| %>
-      <tr>
-        <td><center><%= user_full_name(schedule.user_id) %></center></td>
-        <td><center><%= recurrence_str(schedule.recurrence) %></center></td>
-        <td id="edit-<%= schedule.id %>"><center><%= link_to("<i class='fa-solid fa-pen-to-square'></i>".html_safe, edit_schedule_path(schedule), class: 'action update', style: 'color: black;') %></center></td>
-        <td id="delete-<%= schedule.id %>"><center><%= link_to("<i class='fa-solid fa-trash-can'></i>".html_safe, delete_schedule_path(schedule), class: 'action delete', style: 'color: black;') %></center></td>
-      </tr>
+      <% user = User.find(schedule.user_id) %>
+      <% unless (user.is_admin || (user.classification == 'OOS')) %>
+        <tr>
+          <td><center><%= user_full_name(schedule.user_id) %></center></td>
+          <td><center><%= recurrence_str(schedule.recurrence) %></center></td>
+          <td id="edit-<%= schedule.id %>"><center><%= link_to("<i class='fa-solid fa-pen-to-square'></i>".html_safe, edit_schedule_path(schedule), class: 'action update', style: 'color: black;') %></center></td>
+          <td id="delete-<%= schedule.id %>"><center><%= link_to("<i class='fa-solid fa-trash-can'></i>".html_safe, delete_schedule_path(schedule), class: 'action delete', style: 'color: black;') %></center></td>
+        </tr>
+      <% end %>
     <% end %>
   </table>
 </body>
