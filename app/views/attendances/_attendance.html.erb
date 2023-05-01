@@ -26,7 +26,8 @@
     <tr>
       <th>Check in Time:</th>
       <% display = (attendance.check_in_time == nil) ? 'Not checked in' : attendance.check_in_time.strftime("%I:%M %p") %>
-      <td><%= display %></td>
+      <% color = (attendance.check_in_time == nil) ? '#f47174' : '#a7f1a8' %>
+      <td style="background-color: <%= color %> !important"><%= display %></td>
     </tr>
   </table>
 </div>
