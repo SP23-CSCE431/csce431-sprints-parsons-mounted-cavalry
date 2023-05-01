@@ -13,9 +13,9 @@
       <div class="center">
         <h1>Schedule</h1>
         <h2>
-          <%= link_to raw('<i class="fas fa-arrow-left" style="color: black;"></i>'), cadets_schedules_path(week: (@curr_day - 7).strftime), class: 'last-week' %>
+          <%= link_to raw('<i class="fas fa-arrow-left arrow-left"></i>'), cadets_schedules_path(week: (@curr_day - 7).strftime), class: 'last-week' %>
           Week: <%= @range %>
-          <%= link_to raw('<i class="fas fa-arrow-right" style="color: black;"></i>'), cadets_schedules_path(week: (@curr_day + 7).strftime), class: 'next-week' %>
+          <%= link_to raw('<i class="fas fa-arrow-right arrow-right"></i>'), cadets_schedules_path(week: (@curr_day + 7).strftime), class: 'next-week' %>
         </h2>
       </div>
     </div>
@@ -29,3 +29,20 @@
     </div>
   </div>
 </body>
+
+<style>
+  a:focus {
+    outline: none;
+  }
+  .fas:hover {
+    color: black;
+  }
+  
+  .arrow-left {
+    color: gray;
+  }
+  
+  .arrow-right {
+    color: gray;
+  }
+</style>

@@ -1,12 +1,12 @@
 <div>
-    <table class="table table-bordered schedule-view">
+    <table class="table table-bordered schedule-view" id=<%= @is_upperClass ? "upperClass" : "sophomore" %>>
         <thead>
             <tr class="header">
-                <th scope="col">
+                <th scope="col" style="text-align: center !important;">
                     <div class="header-cell">Name</div>
                 </th>
                 <% @dates.each do |date| %>
-                    <th scope="col">
+                    <th scope="col" style="text-align: center !important;">
                         <%= Date.parse(date).strftime('%A') %>
                     </th>
                 <% end %>
@@ -21,11 +21,11 @@
                     <% if has_schedule %>
                         <%# the user has schedule, create row accordingly %>
                         <%# the row header is the user's name and the background color corresponds to their skill level %>
-                        <th style="background-color: <%= get_user_skill_level_color(user) %> !important">
+                        <td style="background-color: <%= get_user_skill_level_color(user) %> !important">
                             <%= link_to edit_schedule_path(get_user_schedule_id(user)) do %>
                                 <div class="user-cell"><%= user.first_name %> <%= user.last_name %></div>
                             <% end %>
-                        </th>
+                        </td>
 
                         <%# the rest of the cells in the row are the days of the week %>
                         <% @dates.each do |date| %>
@@ -65,16 +65,20 @@
                     <% else %>
                         <%# the user does not have schedule, create row accordingly %>
                         <%# the row header is the user's name and the background color corresponds to their skill level %>
-                        <th style="background-color: <%= get_user_skill_level_color(user) %> !important">
+                        <td style="background-color: <%= get_user_skill_level_color(user) %> !important">
                             <%= link_to new_schedule_path(user_id: user.id) do %>
                                 <div class="user-cell">
                                     <%= image_tag("exclamation_point.png", class: 'user-needs-schedule') %>
                                     <%= user.first_name %> <%= user.last_name %>
                                 </div>
                             <% end %>
-                        </th>
+                        </td>
                         <%# no cells in this row because user cannot have attendances scheduled %>
-                        <td colspan="5" class="invalid"></td>
+                        <td class="invalid"></td>
+                        <td class="invalid"></td>
+                        <td class="invalid"></td>
+                        <td class="invalid"></td>
+                        <td class="invalid"></td>
                     <% end %>
                 </tr>
             <% end %>
@@ -97,7 +101,7 @@
     .schedule-view td, .schedule-view th {
         height: inherit;
         border: 1px solid white;
-        padding: 0px;
+        padding: 0px !important;
         transition: all 0.05s;
     }
 
@@ -141,4 +145,52 @@
     .schedule-view .bold {
         font-weight: 700;
     }
+    
+    .dataTables_filter {
+        float: left !important;
+        margin-bottom: 5px;
+    }
+
+    .invalid {
+        border: none !important;
+    }
+
+    .table.dataTable.no-footer {
+        border-bottom: none;
+    }
+
 </style>
+
+<script>
+    var sophomore = document.getElementById("sophomore")
+
+    if (sophomore) {
+        $(document).ready(function() {
+            $('#sophomore').DataTable( {
+                paging: false,
+                lengthChange: false,
+                info: false,
+                "orderMulti": true,
+                stateSave: true,
+                columnDefs: [
+                    { targets: [0], orderable: true },
+                    { targets: [1, 2, 3, 4, 5], orderable: false }
+                ]
+            });
+        });
+    } else {
+        $(document).ready(function() {
+            $('#upperClass').DataTable( {
+                paging: false,
+                lengthChange: false,
+                info: false,
+                "orderMulti": true,
+                stateSave: true,
+                columnDefs: [
+                    { targets: [0], orderable: true },
+                    { targets: [1, 2, 3, 4, 5], orderable: false }
+                ]
+            });
+        });
+    }
+</script>

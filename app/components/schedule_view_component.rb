@@ -2,10 +2,11 @@
 
 class ScheduleViewComponent < ViewComponent::Base
   # constructor - all starts with the given set of users
-  def initialize(users, dates)
+  def initialize(users, dates, upperClass)
     super
     @dates = dates
     @users = users
+    @is_upperClass = upperClass
   end
 
   # takes in a user and checks if they have a schedule

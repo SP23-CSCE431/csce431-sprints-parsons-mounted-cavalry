@@ -15,22 +15,25 @@
 
   <h1>All Schedules</h1>
 
-  <table class="listing" summary="Schedule list" style="width: 75%; margin: 20px auto;">
-    <tr class="header">
-      <th><center>User</center></th>
-      <th><center>Recurrence</center></th>
-      <th><center>Edit</center></th>
-      <th><center>Delete</center></th>
-    </tr>
-
-    <% @schedules.each do |schedule| %>
-      <tr>
-        <td><center><%= user_full_name(schedule.user_id) %></center></td>
-        <td><center><%= recurrence_str(schedule.recurrence) %></center></td>
-        <td id="edit-<%= schedule.id %>"><center><%= link_to("<i class='fa-solid fa-pen-to-square'></i>".html_safe, edit_schedule_path(schedule), class: 'action update', style: 'color: black;') %></center></td>
-        <td id="delete-<%= schedule.id %>"><center><%= link_to("<i class='fa-solid fa-trash-can'></i>".html_safe, delete_schedule_path(schedule), class: 'action delete', style: 'color: black;') %></center></td>
+  <table class="listing" summary="Schedule list" style="width: 75%; margin: 20px auto;" id="schedules-table">
+    <thead>
+      <tr class="header">
+        <th><center>User</center></th>
+        <th><center>Recurrence</center></th>
+        <th><center>Edit</center></th>
+        <th><center>Delete</center></th>
       </tr>
-    <% end %>
+    </thead>
+    <tbody>
+      <% @schedules.each do |schedule| %>
+        <tr>
+          <td><center><%= user_full_name(schedule.user_id) %></center></td>
+          <td><center><%= recurrence_str(schedule.recurrence) %></center></td>
+          <td id="edit-<%= schedule.id %>"><center><%= link_to("<i class='fa-solid fa-pen-to-square'></i>".html_safe, edit_schedule_path(schedule), class: 'action update', style: 'color: black;') %></center></td>
+          <td id="delete-<%= schedule.id %>"><center><%= link_to("<i class='fa-solid fa-trash-can'></i>".html_safe, delete_schedule_path(schedule), class: 'action delete', style: 'color: black;') %></center></td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 </body>
 
@@ -52,4 +55,25 @@
   td, th {
     border: 1px solid white;
   }
+
+  .dataTables_filter {
+      padding-left: 12.5%;
+      float: left !important;
+      margin-bottom: 5px;
+  }
 </style>
+
+<script>
+  $(document).ready(function() {
+      $('#schedules-table').DataTable( {
+          paging: false,
+          lengthChange: false,
+          info: false,
+          "orderMulti": true,
+          stateSave: true,
+          columnDefs: [
+              { orderable: false, targets: [2, 3] }
+          ]
+      });
+  });
+</script>
