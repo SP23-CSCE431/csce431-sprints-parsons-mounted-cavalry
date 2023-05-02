@@ -10,39 +10,45 @@
     </div>
 
     <div id="horse-usage">
-      <table class="table listing" summary="Horse Usage">
-        <tr class="header">
-          <th><center>Horse</center></th>
-          <th><center># Days</center></th>
-        </tr>
-
-        <%# for each horse, display their name - brand and the number of attendances they have been scheduled for %>
-        <% @horses_sorted.each do |horse| %>
-          <tr class="horse-usage-<%= horse[:horse].id %>">
-            <td style="background-color: <%= get_horse_difficulty_color(horse[:horse]) %> !important">
-              <center><%= horse[:horse].name %> - <%= horse[:horse].brand %></center>
-            </td>
-            <td><center><%= horse[:num_attendances] %></center></td>
+      <table class="table listing" summary="Horse Usage" id="horsy-usage">
+        <thead>
+          <tr class="header">
+            <th><center>Horse</center></th>
+            <th><center># Days</center></th>
           </tr>
-        <% end %>
+        </thead>
+        <tbody>
+          <%# for each horse, display their name - brand and the number of attendances they have been scheduled for %>
+          <% @horses_sorted.each do |horse| %>
+            <tr class="horse-usage-<%= horse[:horse].id %>">
+              <td style="background-color: <%= get_horse_difficulty_color(horse[:horse]) %> !important">
+                <center><%= horse[:horse].name %> - <%= horse[:horse].brand %></center>
+              </td>
+              <td><center><%= horse[:num_attendances] %></center></td>
+            </tr>
+          <% end %>
+        </tbody>
       </table>
     </div>
     <div id="cadet-usage">
-      <table class="table listing" summary="Cadet Usage">
-        <tr class="header">
-          <th><center>Cadet</center></th>
-          <th><center># Days</center></th>
-        </tr>
-
-        <%# for each cadet, display their name and the number of attendances they have been scheduled for %>
-        <% @cadets_sorted.each do |cadet| %>
-          <tr class="cadet-usage-<%= cadet[:cadet].id %>">
-            <td style="background-color: <%= get_user_skill_level_color(cadet[:cadet]) %> !important">
-              <center><%= cadet[:cadet].first_name %> <%= cadet[:cadet].last_name %></center>
-            </td>
-            <td><center><%= cadet[:num_attendances] %></center></td>
+      <table class="table listing" summary="Cadet Usage" id="cadety-usage">
+        <thead>
+          <tr class="header">
+            <th><center>Cadet</center></th>
+            <th><center># Days</center></th>
           </tr>
-        <% end %>
+        </thead>
+        <tbody>
+          <%# for each cadet, display their name and the number of attendances they have been scheduled for %>
+          <% @cadets_sorted.each do |cadet| %>
+            <tr class="cadet-usage-<%= cadet[:cadet].id %>">
+              <td style="background-color: <%= get_user_skill_level_color(cadet[:cadet]) %> !important">
+                <center><%= cadet[:cadet].first_name %> <%= cadet[:cadet].last_name %></center>
+              </td>
+              <td><center><%= cadet[:num_attendances] %></center></td>
+            </tr>
+          <% end %>
+        </tbody>
       </table>
     </div>
   </div>
@@ -75,6 +81,26 @@
     horseDisplay.style.display = 'none';
     cadetDisplay.style.display = 'block';
   });
+
+  $(document).ready(function() {
+      $('#horsy-usage').DataTable( {
+          paging: false,
+          lengthChange: false,
+          info: false,
+          "orderMulti": true,
+          stateSave: true
+      });
+  });
+
+  $(document).ready(function() {
+      $('#cadety-usage').DataTable( {
+          paging: false,
+          lengthChange: false,
+          info: false,
+          "orderMulti": true,
+          stateSave: true
+      });
+  });
 </script>
 
 <style defer>
@@ -103,5 +129,11 @@
 
   #cadet-usage {
     display: none;
+  }
+
+  .dataTables_filter {
+      padding-left: 10px;
+      float: left !important;
+      margin-bottom: 5px;
   }
 </style>

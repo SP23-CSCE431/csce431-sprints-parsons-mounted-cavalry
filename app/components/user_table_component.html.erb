@@ -1,63 +1,6 @@
 <h3>Cadets</h3>
-<table class="listing" summary="cadet list">
-    <tr class="header">
-        <th>First name</th>
-        <th>Last name</th>
-        <th>Classification</th>
-        <th>Skill level</th>
-        <th>Phone #</th>
-        <th>Email</th>
-        <th>Edit</th>
-        <th>Delete</th>
-    </tr>
-
-    <% @cadets.each do |cadet| %>
-    <tr>
-        <td><center><%= cadet.first_name %></center></td>
-        <td><center><%= cadet.last_name %></center></td>
-        <td><center><%= cadet.classification %></center></td>
-        <td style="background-color: <%= get_user_skill_color(cadet) %> !important"><center><%= cadet.skill_level %></center></td>
-        <td><center><%= cadet.phone_number %></center></td>
-        <td><center><%= cadet.email %></center></td>
-        <td><center><%= link_to("<i class='fa-solid fa-pen-to-square'></i>".html_safe, edit_user_path(cadet), class: 'action update', style: 'color: black;') %></center></td>
-        <td><center><%= link_to("<i class='fa-solid fa-trash-can'></i>".html_safe, delete_user_path(cadet), class: 'action delete', style: 'color: black;') %></center></td>
-    </tr>
-    <% end %>
-</table>
-<br>
-<h3>Staff</h3>
-<table class="listing" summary="staff list">
-    <tr class="header">
-        <th>First name</th>
-        <th>Last name</th>
-        <th>Classification</th>
-        <th>Skill level</th>
-        <th>Phone #</th>
-        <th>Email</th>
-        <th>Admin</th>
-        <th>Edit</th>
-        <th>Delete</th>
-    </tr>
-
-    <% @staffs.each do |staff| %>
-    <tr>
-        <td><center><%= staff.first_name %></center></td>
-        <td><center><%= staff.last_name %></center></td>
-        <td><center><%= staff.classification %></center></td>
-        <td style="background-color: <%= get_user_skill_color(staff) %> !important"><center><%= staff.skill_level %></center></td>
-        <td><center><%= staff.phone_number %></center></td>
-        <td><center><%= staff.email %></center></td>
-        <td style="background-color: <%= get_user_permission_color(staff) %> !important"><center><%= %></center></td>
-        <td><center><%= link_to("<i class='fa-solid fa-pen-to-square'></i>".html_safe, edit_user_path(staff), class: 'action update', style: 'color: black;') %></center></td>
-        <td><center><%= link_to("<i class='fa-solid fa-trash-can'></i>".html_safe, delete_user_path(staff), class: 'action delete', style: 'color: black;') %></center></td>
-    </tr>
-    <% end %>
-</table>
-
-<br>
-<% unless @oos.empty? %>
-    <h3>Out of Service</h3>
-    <table class="listing" summary="staff list">
+<table class="listing" summary="cadet list" id="cadetsList">
+    <thead>
         <tr class="header">
             <th>First name</th>
             <th>Last name</th>
@@ -65,24 +8,90 @@
             <th>Skill level</th>
             <th>Phone #</th>
             <th>Email</th>
-            <th>Role</th>
             <th>Edit</th>
             <th>Delete</th>
         </tr>
-
-        <% @oos.each do |oos| %>
+    </thead>
+    <tbody>
+        <% @cadets.each do |cadet| %>
         <tr>
-            <td><center><%= oos.first_name %></center></td>
-            <td><center><%= oos.last_name %></center></td>
-            <td><center><%= oos.classification %></center></td>
-            <td style="background-color: <%= get_user_skill_color(oos) %> !important"><center><%= oos.skill_level %></center></td>
-            <td><center><%= oos.phone_number %></center></td>
-            <td><center><%= oos.email %></center></td>
-            <td><center><%= get_user_role(oos) %></center></td>
-            <td><center><%= link_to("<i class='fa-solid fa-pen-to-square'></i>".html_safe, edit_user_path(oos), class: 'action update', style: 'color: black;') %></center></td>
-            <td><center><%= link_to("<i class='fa-solid fa-trash-can'></i>".html_safe, delete_user_path(oos), class: 'action delete', style: 'color: black;') %></center></td>
+            <td><center><%= cadet.first_name %></center></td>
+            <td><center><%= cadet.last_name %></center></td>
+            <td><center><%= cadet.classification %></center></td>
+            <td style="background-color: <%= get_user_skill_color(cadet) %> !important"><center><%= cadet.skill_level %></center></td>
+            <td><center><%= cadet.phone_number %></center></td>
+            <td><center><%= cadet.email %></center></td>
+            <td><center><%= link_to("<i class='fa-solid fa-pen-to-square'></i>".html_safe, edit_user_path(cadet), class: 'action update', style: 'color: black;') %></center></td>
+            <td><center><%= link_to("<i class='fa-solid fa-trash-can'></i>".html_safe, delete_user_path(cadet), class: 'action delete', style: 'color: black;') %></center></td>
         </tr>
         <% end %>
+    </tbody>
+</table>
+<br>
+<h3>Staff</h3>
+<table class="listing" summary="staff list" id="staffsList">
+    <thead>
+        <tr class="header">
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Classification</th>
+            <th>Skill level</th>
+            <th>Phone #</th>
+            <th>Email</th>
+            <th>Admin</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @staffs.each do |staff| %>
+        <tr>
+            <td><center><%= staff.first_name %></center></td>
+            <td><center><%= staff.last_name %></center></td>
+            <td><center><%= staff.classification %></center></td>
+            <td style="background-color: <%= get_user_skill_color(staff) %> !important"><center><%= staff.skill_level %></center></td>
+            <td><center><%= staff.phone_number %></center></td>
+            <td><center><%= staff.email %></center></td>
+            <td style="background-color: <%= get_user_permission_color(staff) %> !important"><center><%= %></center></td>
+            <td><center><%= link_to("<i class='fa-solid fa-pen-to-square'></i>".html_safe, edit_user_path(staff), class: 'action update', style: 'color: black;') %></center></td>
+            <td><center><%= link_to("<i class='fa-solid fa-trash-can'></i>".html_safe, delete_user_path(staff), class: 'action delete', style: 'color: black;') %></center></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<br>
+<% unless @oos.empty? %>
+    <h3>Out of Service</h3>
+    <table class="listing" summary="staff list" id="OOSList">
+        <thead>
+            <tr class="header">
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Classification</th>
+                <th>Skill level</th>
+                <th>Phone #</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @oos.each do |oos| %>
+            <tr>
+                <td><center><%= oos.first_name %></center></td>
+                <td><center><%= oos.last_name %></center></td>
+                <td><center><%= oos.classification %></center></td>
+                <td style="background-color: <%= get_user_skill_color(oos) %> !important"><center><%= oos.skill_level %></center></td>
+                <td><center><%= oos.phone_number %></center></td>
+                <td><center><%= oos.email %></center></td>
+                <td><center><%= get_user_role(oos) %></center></td>
+                <td><center><%= link_to("<i class='fa-solid fa-pen-to-square'></i>".html_safe, edit_user_path(oos), class: 'action update', style: 'color: black;') %></center></td>
+                <td><center><%= link_to("<i class='fa-solid fa-trash-can'></i>".html_safe, delete_user_path(oos), class: 'action delete', style: 'color: black;') %></center></td>
+            </tr>
+            <% end %>
+        </tbody>
     </table>
 <% end %>
 
@@ -104,4 +113,51 @@
     td, th {
         border: 1px solid white;
     }
+
+    .dataTables_filter {
+        padding-left: 5%;
+        float: left !important;
+        margin-bottom: 5px;
+    }
 </style>
+
+<script>
+    $(document).ready(function() {
+        $('#cadetsList').DataTable( {
+            paging: false,
+            lengthChange: false,
+            info: false,
+            "orderMulti": true,
+            stateSave: true,
+            columnDefs: [
+                { orderable: false, targets: [6, 7] }
+            ]
+        });
+    });
+
+    $(document).ready(function() {
+        $('#OOSList').DataTable( {
+            paging: false,
+            lengthChange: false,
+            info: false,
+            "orderMulti": true,
+            stateSave: true,
+            columnDefs: [
+                { orderable: false, targets: [7, 8] }
+            ]
+        });
+    });
+
+    $(document).ready(function() {
+        $('#staffsList').DataTable( {
+            paging: false,
+            lengthChange: false,
+            info: false,
+            "orderMulti": true,
+            stateSave: true,
+            columnDefs: [
+                { orderable: false, targets: [7, 8] }
+            ]
+        });
+    });
+</script>

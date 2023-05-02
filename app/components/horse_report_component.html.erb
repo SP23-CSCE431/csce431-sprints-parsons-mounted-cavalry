@@ -1,26 +1,27 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
-
 <button class="btn btn-secondary create" style="float: right; margin-right: 10%;" onclick="exportRideToExcel('<%= @curr_day.strftime("%B_%Y") %>')"><i class="fa-solid fa-file-export"></i> to Excel</button>
 <br><br>
 
-<table class="listing" summary="Horse Report" id="horseTable">
-    <tr class="header">
-        <th>Horse</th>
-        <th># of days used</th>
-        <th>Herd</th>
-        <th>Difficulty</th>
-        <th>Condition</th>
-    </tr>
-
-    <% @horses.each do |horse| %>
-    <tr>
-        <td><center><%= "#{horse.name} - #{horse.brand}" %></center></td>
-        <td><center><%= get_num_days_horse_used(horse) %></center></td>
-        <td style="background-color: <%= get_horse_herd_color(horse) %> !important"><center><%= horse.herd %></center></td>
-        <td style="background-color: <%= get_horse_difficulty_color(horse) %> !important"><center><%= horse.difficulty %></center></td>
-        <td><center><%= horse.condition %></center></td>
-    </tr>
-    <% end %>
+<table class="listing horse" summary="Horse Report" id="horseTable">
+    <thead>
+        <tr class="header">
+            <th>Horse</th>
+            <th># of days used</th>
+            <th>Herd</th>
+            <th>Difficulty</th>
+            <th>Condition</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @horses.each do |horse| %>
+        <tr>
+            <td><center><%= "#{horse.name} - #{horse.brand}" %></center></td>
+            <td><center><%= get_num_days_horse_used(horse) %></center></td>
+            <td style="background-color: <%= get_horse_herd_color(horse) %> !important"><center><%= horse.herd %></center></td>
+            <td style="background-color: <%= get_horse_difficulty_color(horse) %> !important"><center><%= horse.difficulty %></center></td>
+            <td><center><%= horse.condition %></center></td>
+        </tr>
+        <% end %>
+    </tbody>
 </table>
 
 <style>
@@ -41,4 +42,11 @@
     td, th {
         border: 1px solid white;
     }
+
+    .dataTables_filter {
+        padding-left: 12.5%;
+        float: left !important;
+        margin-bottom: 5px;
+    }
 </style>
+

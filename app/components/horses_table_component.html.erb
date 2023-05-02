@@ -1,51 +1,57 @@
-<table class="listing" summary="Horse list" style="width: 75%; margin: 0 auto;" border = "1">
-    <tr class="header">
-        <th>Name</th>
-        <th>Brand</th>
-        <th>Herd</th>
-        <th>Difficulty</th>
-        <th>Condition</th>
-        <th>Edit</th>
-        <th>Delete</th>
-    </tr>
-
-    <% @horses.each do |horse| %>
-    <tr>
-        <td><center><%= horse.name %></center></td>
-        <td><center><%= horse.brand %></center></td>
-        <td style="background-color: <%= get_horse_herd_color(horse) %> !important"><center><%= horse.herd %></center></td>
-        <td style="background-color: <%= get_horse_difficulty_color(horse) %> !important"><center><%= horse.difficulty %></center></td>
-        <td><center><%= horse.condition %></center></td>
-        <td><center><%= link_to("<i class='fa-solid fa-pen-to-square'></i>".html_safe, edit_horse_path(horse), class: 'action update', style: 'color: black;') %></center></td>
-        <td><center><%= link_to("<i class='fa-solid fa-trash-can'></i>".html_safe, delete_horse_path(horse), class: 'action delete', style: 'color: black;') %></center></td>
-    </tr>
-    <% end %>
+<table class="listing" summary="Horse list" style="max-width: 75% !important; margin: 0 auto;" border = "1" id="horsesList">
+    <thead>
+        <tr class="header">
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Herd</th>
+            <th>Difficulty</th>
+            <th>Condition</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @horses.each do |horse| %>
+        <tr>
+            <td><center><%= horse.name %></center></td>
+            <td><center><%= horse.brand %></center></td>
+            <td style="background-color: <%= get_horse_herd_color(horse) %> !important"><center><%= horse.herd %></center></td>
+            <td style="background-color: <%= get_horse_difficulty_color(horse) %> !important"><center><%= horse.difficulty %></center></td>
+            <td><center><%= horse.condition %></center></td>
+            <td><center><%= link_to("<i class='fa-solid fa-pen-to-square'></i>".html_safe, edit_horse_path(horse), class: 'action update', style: 'color: black;') %></center></td>
+            <td><center><%= link_to("<i class='fa-solid fa-trash-can'></i>".html_safe, delete_horse_path(horse), class: 'action delete', style: 'color: black;') %></center></td>
+        </tr>
+        <% end %>
+    </tbody>
 </table>
 
 <br>
 <h3>Out of Service</h3>
-<table class="listing" summary="Horse list" style="width: 75%; margin: 0 auto;" border = "1">
-    <tr class="header">
-        <th>Name</th>
-        <th>Brand</th>
-        <th>Herd</th>
-        <th>Difficulty</th>
-        <th>Condition</th>
-        <th>Edit</th>
-        <th>Delete</th>
-    </tr>
-
-    <% @oos.each do |oos| %>
-    <tr>
-        <td><center><%= oos.name %></center></td>
-        <td><center><%= oos.brand %></center></td>
-        <td style="background-color: <%= get_horse_herd_color(oos) %> !important"><center><%= oos.herd %></center></td>
-        <td style="background-color: <%= get_horse_difficulty_color(oos) %> !important"><center><%= oos.difficulty %></center></td>
-        <td><center><%= oos.condition %></center></td>
-        <td><center><%= link_to("<i class='fa-solid fa-pen-to-square'></i>".html_safe, edit_horse_path(oos), class: 'action update', style: 'color: black;') %></center></td>
-        <td><center><%= link_to("<i class='fa-solid fa-trash-can'></i>".html_safe, delete_horse_path(oos), class: 'action delete', style: 'color: black;') %></center></td>
-    </tr>
-    <% end %>
+<table class="listing" summary="Horse list" style="width: 75%; margin: 0 auto;" border = "1" id="OOSList">
+    <thead>
+        <tr class="header">
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Herd</th>
+            <th>Difficulty</th>
+            <th>Condition</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @oos.each do |oos| %>
+        <tr>
+            <td><center><%= oos.name %></center></td>
+            <td><center><%= oos.brand %></center></td>
+            <td style="background-color: <%= get_horse_herd_color(oos) %> !important"><center><%= oos.herd %></center></td>
+            <td style="background-color: <%= get_horse_difficulty_color(oos) %> !important"><center><%= oos.difficulty %></center></td>
+            <td><center><%= oos.condition %></center></td>
+            <td><center><%= link_to("<i class='fa-solid fa-pen-to-square'></i>".html_safe, edit_horse_path(oos), class: 'action update', style: 'color: black;') %></center></td>
+            <td><center><%= link_to("<i class='fa-solid fa-trash-can'></i>".html_safe, delete_horse_path(oos), class: 'action delete', style: 'color: black;') %></center></td>
+        </tr>
+        <% end %>
+    </tbody>
 </table>
 
 <style>
@@ -66,4 +72,38 @@
     td, th {
         border: 1px solid white;
     }
+
+    .dataTables_filter {
+        padding-left: 12.5%;
+        float: left !important;
+        margin-bottom: 5px;
+    }
 </style>
+
+<script>
+    $(document).ready(function() {
+        $('#horsesList').DataTable( {
+            paging: false,
+            lengthChange: false,
+            info: false,
+            "orderMulti": true,
+            stateSave: true,
+            columnDefs: [
+                { orderable: false, targets: [5, 6] }
+            ]
+        });
+    });
+
+    $(document).ready(function() {
+        $('#OOSList').DataTable( {
+            paging: false,
+            lengthChange: false,
+            info: false,
+            "orderMulti": true,
+            stateSave: true,
+            columnDefs: [
+                { orderable: false, targets: [5, 6] }
+            ]
+        });
+    });
+</script>

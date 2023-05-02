@@ -16,9 +16,9 @@ RSpec.describe('Creating an attendance', type: :feature) do
         Schedule.create(user_id: user.id, recurrence: %w[M W F])
         Horse.create(name: 'Ed', brand: 'B12', herd: 'Charlie', difficulty: 'Intermediate', condition: 'Healthy')
         
-        visit 'schedules/admins'
+        visit 'schedules/staffs'
         cells = page.all("tr##{user.id} td > a")
-        cells[0].click
+        cells[1].click
         date = Date.today.beginning_of_week
 
         expect(page).to(have_content('John Doe'))

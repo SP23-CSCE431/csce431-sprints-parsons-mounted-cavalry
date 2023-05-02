@@ -6,7 +6,7 @@
   <%= render(SidebarStaffsComponent.new())%>
 
   <%# Content %>
-  <div class="justify-content-center align-items-center mx-auto text-center">
+  <div class="justify-content-center align-items-center mx-auto text-center" style="padding-bottom: 5%">
     <h1>Horses</h1>
     <%= link_to("<button type='button' class='btn btn-secondary create'>+ Add Horse</button>".html_safe, new_horse_path, class: 'action new') %>
     <br><br>

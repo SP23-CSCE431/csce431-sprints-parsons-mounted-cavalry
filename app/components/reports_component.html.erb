@@ -1,3 +1,4 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
 <br>
 
 <div class="btn-group">
@@ -16,6 +17,9 @@
 </div>
 
 <script>
+
+
+
     const horseUsageBtn = document.querySelector('#horse-usage-btn');
     const cadetsReportBtn = document.querySelector('#cadets-report-btn');
 
@@ -27,6 +31,15 @@
         cadetsReportBtn.classList.add('btn-secondary');
         document.querySelector('#report-component').innerHTML = '<%= j render(HorseReportComponent.new(@horses, @start_day, @end_day, @curr_day)) %>';
         document.cookie = "report_type=horse; path=/";
+        $(document).ready(function() {
+            $('#horseTable').DataTable( {
+                paging: false,
+                lengthChange: false,
+                info: false,
+                "orderMulti": true,
+                stateSave: true
+            });
+        });
     });
 
     // when cadets report button is pressed, add the necessary styles to button and remove from horse usage button
@@ -37,6 +50,24 @@
         cadetsReportBtn.classList.remove('btn-secondary');
         document.querySelector('#report-component').innerHTML = '<%= j render(CadetReportsComponent.new(@cadets, @staffs, @start_day, @end_day, @curr_day)) %>';
         document.cookie = "report_type=cadet; path=/";
+        $(document).ready(function() {
+            $('#cadetTable').DataTable( {
+                paging: false,
+                lengthChange: false,
+                info: false,
+                "orderMulti": true,
+                stateSave: true
+            });
+        });
+        $(document).ready(function() {
+            $('#staffTable').DataTable( {
+                paging: false,
+                lengthChange: false,
+                info: false,
+                "orderMulti": true,
+                stateSave: true
+            });
+        });
     });
 
     // helper function to get cookies
@@ -59,6 +90,25 @@
             horseUsageBtn.classList.remove('btn-dark');
             horseUsageBtn.classList.add('btn-secondary');
             document.querySelector('#report-component').innerHTML = '<%= j render(CadetReportsComponent.new(@cadets, @staffs, @start_day, @end_day, @curr_day)) %>';
+            $(document).ready(function() {
+                $('#cadetTable').DataTable( {
+                    paging: false,
+                    lengthChange: false,
+                    info: false,
+                    "orderMulti": true,
+                    stateSave: true
+                });
+            });
+
+            $(document).ready(function() {
+                $('#staffTable').DataTable( {
+                    paging: false,
+                    lengthChange: false,
+                    info: false,
+                    "orderMulti": true,
+                    stateSave: true
+                });
+            });
         } else { // set default report type to "horse"
             horseUsageBtn.classList.add('btn-dark');
             horseUsageBtn.classList.remove('btn-secondary');
@@ -66,6 +116,15 @@
             cadetsReportBtn.classList.add('btn-secondary');
             document.querySelector('#report-component').innerHTML = '<%= j render(HorseReportComponent.new(@horses, @start_day, @end_day, @curr_day)) %>';
             document.cookie = "report_type=horse; path=/";
+            $(document).ready(function() {
+                $('#horseTable').DataTable( {
+                    paging: false,
+                    lengthChange: false,
+                    info: false,
+                    "orderMulti": true,
+                    stateSave: true
+                });
+            });
         }
     };
 
@@ -73,7 +132,7 @@
     function exportRideToExcel(curr_day) {
         /* Create a new Excel workbook and sheet */
         var wb = XLSX.utils.book_new();
-        var ws = XLSX.utils.table_to_sheet(document.getElementById("horseTable"));
+        var ws = XLSX.utils.table_to_sheet(document.getElementsByClassName("listing")[0]);
 
         /* Add the sheets to the workbook */
         XLSX.utils.book_append_sheet(wb, ws, "Horse Report");
@@ -86,8 +145,8 @@
     function exportDisciplineToExcel(curr_day) {
         /* Create a new Excel workbook and sheet */
         var wb = XLSX.utils.book_new();
-        var ws = XLSX.utils.table_to_sheet(document.getElementById("cadetTable"));
-        var ws2 = XLSX.utils.table_to_sheet(document.getElementById("staffTable"));
+        var ws = XLSX.utils.table_to_sheet(document.getElementsByClassName("listing")[0]);
+        var ws2 = XLSX.utils.table_to_sheet(document.getElementsByClassName("listing")[1]);
 
         /* Add the sheets to the workbook */
         XLSX.utils.book_append_sheet(wb, ws, "Cadets Report");

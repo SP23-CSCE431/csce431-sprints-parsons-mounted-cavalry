@@ -21,7 +21,27 @@ RSpec.describe('Creating a user', type: :feature) do
         expect(page).to(have_content('Billy Bob was successfully created.'))
     end
 end
+RSpec.describe('Creating a user with tamu email prefix', type: :feature) do
+    before do
+        User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'tony@tamu.edu')
+        Rails.application.env_config["devise.mapping"] = Devise.mappings[:admin]
+        Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
+        visit root_path
+        click_on 'Sign in with Google'
+    end
 
+    it 'valid inputs' do
+        visit new_user_path
+        fill_in "user[first_name]", with: "Billy"
+        fill_in "user[last_name]", with: 'Bob'
+        select "Junior", from: "user[classification]"
+        select "Intermediate", from: "user[skill_level]"
+        fill_in "user[phone_number]", with: '8229852917'
+        fill_in "user[email]", with: 'billybob@corps.tamu.edu'
+        click_on 'Create User'
+        expect(page).to(have_content('Billy Bob was successfully created.'))
+    end
+end
 RSpec.describe('Viewing a user', type: :feature) do
     before do
         User.create(is_admin: true, is_staff: true, first_name: 'John', last_name: 'Doe', classification: 'Senior', skill_level: 'Advanced', phone_number: '2025550136', email: 'tony@tamu.edu')
