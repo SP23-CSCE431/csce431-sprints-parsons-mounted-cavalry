@@ -39,8 +39,14 @@
                                         <div class="attendance-display">
                                             <p><span class="bold">Horse:</span> <%= horse == nil ? 'None' : horse.name + ' - ' + horse.brand %></p>
                                             <p><span class="bold">Event:</span> <%= attendance.purpose %></p>
+                                            <% if attendance.check_in_time %>
+                                                <span><i class="fa fa-check-circle-o fa-lg"></i></span>
+                                            <% else %>
+                                                <span><i class="fa fa-times-circle-o fa-lg"></i></span>
+                                            <% end %>                                        
                                         </div>
                                     <% end %>
+
                                 </td>
                             <% else %>
                                 <%# if the user does not have an attendance scheduled on the current date, check if %>
@@ -139,7 +145,6 @@
 
     .schedule-view .attendance-display p {
         margin: 0;
-        text-decoration: underline;
     }
 
     .schedule-view .bold {
