@@ -14,7 +14,7 @@ RSpec.describe('Creating a schedule', type: :feature) do
 
     visit 'schedules/admins'
 
-    css_path = "tr##{user.id} > th > a"
+    css_path = "tr##{user.id} > td > a"
     find(:css, css_path).click
 
     find(:css, '#schedule_recurrence_m').set(true)
@@ -30,7 +30,7 @@ RSpec.describe('Creating a schedule', type: :feature) do
 
     visit 'schedules/admins'
 
-    css_path = "tr##{user.id} > th > a"
+    css_path = "tr##{user.id} > td > a"
     find(:css, css_path).click
 
     click_on 'Create Schedule'
@@ -64,8 +64,8 @@ RSpec.describe('Viewing a schedule', type: :feature) do
 
     visit 'schedules/admins'
 
-    css_path = "tr##{user.id} > th > a"
-    find(:css, css_path).click
+    css_path = "tr##{user.id} > td > a"
+    first(css_path).click
 
     expect(page).to(have_content('John Doe'))
     expect(page).to have_field('schedule_recurrence_m', checked: true)
@@ -107,8 +107,8 @@ RSpec.describe('Editing a schedule', type: :feature) do
 
     visit 'schedules/admins'
 
-    css_path = "tr##{user.id} > th > a"
-    find(:css, css_path).click
+    css_path = "tr##{user.id} > td > a"
+    first(css_path).click
 
     find(:css, '#schedule_recurrence_m').set(false)
     find(:css, '#schedule_recurrence_t').set(true)
@@ -143,8 +143,8 @@ RSpec.describe('Editing a schedule', type: :feature) do
 
     visit 'schedules/admins'
 
-    css_path = "tr##{user.id} > th > a"
-    find(:css, css_path).click
+    css_path = "tr##{user.id} > td > a"
+    first(css_path).click
 
     find(:css, '#schedule_recurrence_m').set(false)
     find(:css, '#schedule_recurrence_w').set(false)

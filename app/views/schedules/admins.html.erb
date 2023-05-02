@@ -15,9 +15,9 @@
         <div class="center" style="display: flex; flex-direction: column;">
           <h1>Schedule</h1>
           <div style='display: inline-flex; align-items: center; gap: 20px;'>
-            <%= link_to raw('<i class="fas fa-arrow-left" style="color: black; font-size: 30px;"></i>'), admins_schedules_path(week: (@curr_day - 7).strftime), class: 'last-week' %>
+            <%= link_to raw('<i class="fas fa-arrow-left arrow-left" style="font-size: 30px;"></i>'), admins_schedules_path(week: (@curr_day - 7).strftime), class: 'last-week' %>
             <h2>Week: <%= @range %></h2>
-            <%= link_to raw('<i class="fas fa-arrow-right" style="color: black; font-size: 30px;"></i>'), admins_schedules_path(week: (@curr_day + 7).strftime), class: 'next-week' %>
+            <%= link_to raw('<i class="fas fa-arrow-right arrow-right style="font-size: 30px;"></i>'), admins_schedules_path(week: (@curr_day + 7).strftime), class: 'next-week' %>
           </div>
           <%= link_to "<button type='button' class='btn btn-secondary create' style='margin-top: 10px;'>All Schedules</button>".html_safe, schedules_path, class: 'all-schedules' %>
         </div>
@@ -35,14 +35,28 @@
 
     <div style="margin: 0 40px">
       <h3 style="text-align: start">Upperclassmen</h2>
-      <%= render(ScheduleViewComponent.new(upperclass, @dates)) %>
+      <%= render(ScheduleViewComponent.new(upperclass, @dates, true)) %>
     </div>
 
     <div style="margin: 40px">
       <h3 style="text-align: start">Sophomores</h2>
-      <%= render(ScheduleViewComponent.new(sophomores, @dates)) %>
+      <%= render(ScheduleViewComponent.new(sophomores, @dates, false)) %>
     </div>
   </div>
 </body>
 
-
+<style>
+  a:focus {
+    outline: none;
+  }
+  .fas:hover {
+    color: black;
+  }
+  
+  .arrow-left {
+    color: gray;
+  }
+  
+  .arrow-right {
+  }
+</style>
